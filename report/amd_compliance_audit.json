@@ -1,5 +1,5 @@
 {
-  "status": "NAMING_AND_CURRENT_FILE_ADMISSION_CHECKED_OTHER_GAPS_PENDING",
+  "status": "REPOSITORY_MATERIALS_COMPLETED_PUBLIC_PERMISSION_AND_CLEAN_BUILD_UNVERIFIED",
   "guide_pdf_pages": [
     22,
     23,
@@ -11,17 +11,17 @@
     {
       "path": "build/result.json",
       "source": "flyvis-lossless-study/vivado2026_1_20261026/RESULT.json",
-      "sha256": "cc2e63975cd91954ee421600853d6f700a57cdf7f295df13c0eba5d23363c2c0"
+      "sha256": "cf16485775e66eaa042c716f2f56872c0704fe5bbf1c233128403bcdeda45c6f"
     },
     {
       "path": "build/commands.json",
       "source": "flyvis-lossless-study/vivado2026_1_20261026/COMMANDS.json",
-      "sha256": "6dec855550d3a473ac23c0184b94f10de46b5de35a16af824a3bbc2864c6a887"
+      "sha256": "ea2449bd8bbb48735e141f6bb779443e2f1acf5589154aa42700d21fb44fdea2"
     },
     {
       "path": "build/source_manifest.json",
       "source": "flyvis-lossless-study/vivado2026_1_20261026/FINAL_MANIFEST_SHA256.json",
-      "sha256": "df0eab3b7928f380229f4730dc695ba5bd26341e892c7c1cc1f7f7666a49f72a"
+      "sha256": "8a3e201d3fe38d747f299f9e33530b311d2e07d83905fb0daf26c4b5f738cd74"
     },
     {
       "path": "board/saved_run_analysis.json",
@@ -31,7 +31,7 @@
     {
       "path": "board/analysis_formulas.json",
       "source": "flyvis-lossless-study/ov5640_live_v261_analysis_20261026/COMMANDS_AND_FORMULAS.json",
-      "sha256": "c42b8074ca949c579a4b2bb5db501c71f5089ab7ec9dc5802d6c29f65c14b49f"
+      "sha256": "08c6d90da45ac28e01b84a37f27a233bde86dd51169d3fdbf0cf5d7515c67681"
     },
     {
       "path": "sim/fp32_operators.json",
@@ -46,21 +46,28 @@
     {
       "path": "sim/recurrence800.json",
       "source": "flyvis-lossless-study/runs/acceptance800_20261013/acceptance.json",
-      "sha256": "a8409937221b15e0af71cc2ce4d79d17e99654dd4e340d5191359875431fab28"
+      "sha256": "2833eee1b5aafe1151f8b8c4a22e1adac140b9b0c8f0082065a127e3bd6e887f"
     },
     {
       "path": "report/ai_chat_excerpts.json",
       "source": "deliverables/skill-guide-audit-20261021/skill/evidence/chat_excerpts.json",
-      "sha256": "c865b9b03e966b7d1cc9355140ee555f26ee711beb4c0944e90df3f0b99073d2"
+      "sha256": "e68c7e027ad74bf447431f3887f5ac0b18c2528019a21187e8fdf2f57574fe86"
     }
   ],
   "naming_violations": [],
   "pending": [
-    "Historical candidate functionality not certified after path normalization; current package admission and JS syntax checked separately",
-    "Close clean-checkout build dependency graph, including vendor IP and original build paths",
-    "Add operator raw output/reference sample after credential and camera privacy review",
-    "Select final approved design report; drafts are not automatically final",
-    "Review third-party redistribution scope, exact public inventory and new publication approval"
+    "Repository remains private; public restoration not authorized",
+    "ALIENTEK redistribution permission unresolved",
+    "Current official-download-to-BIT / clean-machine Vivado build not executed",
+    "Historical variants not fully reaccepted after path normalization",
+    "AI record is selected current engineering exchanges, not complete historical transcripts"
   ],
-  "previous_naming_violation_count": 3380
+  "previous_naming_violation_count": 3380,
+  "updated": "2026-10-29",
+  "delivery_additions": [
+    "report/design_report.pdf",
+    "report/ai_collaboration_record.md",
+    "build/vendor_dependency_review.md",
+    "board/reproduce.md"
+  ]
 }

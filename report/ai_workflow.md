@@ -1,15 +1,7 @@
-# AI collaboration summary
+# AI collaboration: scoped engineering records
 
-Original conversations,local source paths,source-line metadata and internal memory/session references have been withdrawn. The linked JSON files now contain retrospective engineering summaries only. They are not verbatim prompts/answers and do not establish compliance with a requirement for original collaboration records.
+Only the short project-delivery exchanges selected in [ai_collaboration_record.md](ai_collaboration_record.md) are included as verbatim excerpts. They are from the current repository-completion task; they are not evidence that every historical development conversation is available. Earlier private conversations remain withdrawn. No full chat export, personal remark, internal conversation identifier or memory reference is included.
 
-## Retrospective workflow summary (not verbatim)
+The existing ai_chat_excerpts.json and project_ai_excerpts.json remain labelled retrospective summaries, not transcripts. Original engineering evidence supports its own historical scope; these short new exchanges do not establish new board, GPU, EDA, biological or performance validation.
 
-1. Human fixes model,precision,input source and hardware-operation boundaries.
-2. Assistant reads current source and accepted evidence, proposes the smallest isolated change and preserves a known-good version.
-3. CPU checks cover changed behavior and rejection paths. No automatic promotion from mock/simulation to physical PASS.
-4. Operator runs device steps when authorized; results bind run/input/state/firmware identities.
-5. Assistant audits saved evidence, reports failures and timing scope, and corrects false assumptions.
-
-Open-source export examples: ignored session-specific payload relocation initially caused a false negative; exact allowed relocation was then checked instead of weakening the firmware check. Four historical corrupted fixtures were identified as already-invalid inputs rather than new syntax regressions. These are retrospective summaries; exact current checks are in sim/normalized_export_checks.json and sim/public_runtime_prepare.json.
-
-No automated delegation or autonomous board operation is required to use this project. The user's operator-controlled board workflow remains authoritative. Historical dialogue grants no new hardware authorization.
+The scoped record contains the exact selected user instruction and assistant response, actual verification feedback, and the correction made when a repository-access method could not read the private repository. Selection and omitted material are explicitly identified. This provides an auditable current prompt/answer/correction example without restoring the withdrawn conversations.

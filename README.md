@@ -1,6 +1,6 @@
 # FlyVis visual neural network on Zynq-7020
 
-Competition open-source delivery, 2026-10-29. Full configured FlyVis network:45,669 nodes,1,513,231 connections,721 visual inputs,strict FP32/Euler,5ms model step. PL executes the neural updates; PS handles OV5640 capture/mapping/DDR records; PC displays results and independently audits states.
+Competition source delivery, 2026-10-29. Repository remains private; no restoration of previously withdrawn conversations. Full configured FlyVis network:45,669 nodes,1,513,231 connections,721 visual inputs,strict FP32/Euler,5ms model step. PL executes the neural updates; PS handles OV5640 capture/mapping/DDR records; PC displays results and independently audits states.
 
 ## Current implementation
 
@@ -12,9 +12,9 @@ Competition open-source delivery, 2026-10-29. Full configured FlyVis network:45,
 
 ## Build and run
 
-Use Vivado2026.1 for the final SoC,Python3.12 x64 on Windows,and the original working PYNQ2.7 SD environment with vendor OV5640/video2lcd support on the ALIENTEK Zynq-7020. Inspect the selected runtime README and existing prepare/build scripts before use. Original source layout and machine-path references are preserved; port those paths to the target checkout. Session keys and operator Notebooks are generated for each deployment, not checked in. Hardware loading/capture/reset is operator-controlled. Do not run historical preparation helpers merely because they are present.
+For the current PC entry use [board/runtime/README.md](board/runtime/README.md): Windows x64/Python3.12, install its requirements, then `python run.py --check-only`. For an operator-requested live experiment use `python run.py --ip YOUR_PC_IPV4` and the generated fixed Notebook. Board operations remain manual and require exclusive ownership; failed/unknown states are not retried automatically.
 
-This is the full source delivery, not a certified one-command clean-machine rebuild. The current runnable dependency packaging is a separate deliverable; see original runtime preparation code. Full saved scientific datasets and model checkpoints are obtained using the original provenance, not silently replaced by synthetic results.
+For firmware use Vivado2026.1 and [build/portable/README.md](build/portable/README.md). [Official vendor acquisition](build/vendor_dependency_review.md) documents the required reference and 56-file identity check. Fresh official-download-to-BIT reproduction and third-party redistribution permission remain unverified. Do not treat old source variants or archived scripts as the current entry.
 
 ## Evidence
 
@@ -26,7 +26,7 @@ All published paths and hashes are in public_manifest.json. Personal running not
 
 ## AMD guide audit
 
-[Requirements and completion gaps](report/amd_requirements.md), [actual reports](build/), [verification summaries](sim/), [operation boundary](board/reproduce.md), [AI collaboration summary](report/ai_chat_excerpts.json). This local candidate is not yet compliant for publication; clean-rebuild and evidence gaps are enumerated in report/amd_compliance_audit.json.
+[Requirement-to-file map](report/amd_requirements.md), [seven-page design report](report/design_report.pdf), [actual implementation reports](build/), [verification summaries](sim/), [operation steps](board/reproduce.md), and [selected current AI collaboration record](report/ai_collaboration_record.md). Repository delivery is distinct from public-release permission and fresh source-to-BIT validation; remaining boundaries are in report/amd_compliance_audit.json.
 
 ## Normalized export verification
 

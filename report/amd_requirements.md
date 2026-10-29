@@ -1,23 +1,21 @@
-# AMD submission requirements and current audit
+# AMD delivery map — verified repository contents
 
-Source: original 28-page2026 AMD guide, PDF pages22–25 (printed19–22), sections3.3.3–3.3.5. SHA256:c6ad82acd4f7bdcd13bd412e232ed85d05f2a87dd5e2cdd04f9d219f88b569fc. Source PDF is not redistributed in this repository.
+Original 2026 AMD guide, sections3.3.3–3.3.5, PDF pages22–25, SHA256 `c6ad82acd4f7bdcd13bd412e232ed85d05f2a87dd5e2cdd04f9d219f88b569fc`. The guide is not redistributed. Its seven bullets are report topics, not seven assumed portal attachments.
 
-## Required deliverables
+## Materials in this repository
 
-3.3.3.3 strongly requests GitHub/Gitee open source under a redistributable license, recommending MIT or Apache-2.0. Source text does not literally say mandatory; the team has chosen public open-source delivery.
+- Source and current GUI: [source](../source/); current deployable PC entry [board/runtime](../board/runtime/README.md).
+- Verification: [sim](../sim/), [saved operator-run analysis](../board/saved_run_analysis.json), actual saved input/initial state/full state/reference and identities in `board/runtime/checks/`.
+- Synthesis/implementation and build: [build](../build/), [portable steps](../build/portable/README.md), [official vendor acquisition](../build/vendor_dependency_review.md).
+- Skill: [index](../skill/README.md), scope, usage, failure conditions, historical effects and limitations. Generic cross-board bonus is not claimed.
+- Seven report topics: [seven-page design report](design_report.pdf) and [detailed engineering report](technical_report.md). Background/innovation, diagram, partition/interfaces, optimization comparisons, AI collaboration, Skill extraction and reproduction are all addressed.
+- Selected current AI prompt/answer/correction record: [ai_collaboration_record.md](ai_collaboration_record.md). Older JSONs are summaries; private historical chats remain withdrawn. A complete historical transcript is not claimed.
+- Identity and attribution: root `public_manifest.json`, `license` and `third_party_notices.md`. The manifest name is an inventory convention; it does not mean the repository is public.
 
-3.3.5.1 requires full applicable RTL/HLS/PS project sources; simulation/verification results and explanation; synthesis and implementation reports with resources, clocks and performance; board projects/scripts/measured outputs and reference comparisons; reproducible build scripts. A file archive without a resolved dependency chain is insufficient for a clean rebuild claim.
+## Honest remaining boundaries
 
-3.3.5.2 requires root skill/ with README.md describing each item's scope, usage and failure conditions. Each item must state validated effects and originating failures/observations. Generic PYNQ cross-project/cross-board reuse is extra credit, not automatically established by this board.
+Repository remains PRIVATE under the user's withdrawal instruction. AMD strongly requests GitHub/Gitee open source under a redistributable license; being on private GitHub does not fulfill public access. Publication requires a separate user decision and resolution of the third-party scope.
 
-3.3.5.3 requires background/innovation, principles/block diagram, partition rationale/interfaces, before/after optimization data, AI prompts/answers/self-correction, skill extraction/validation/boundaries and from-zero reproduction instructions. Keep the short design report concise and link detailed evidence here; repository details do not silently waive required report topics.
+Official manufacturer download locators have been verified, but today's full vendor archive was not downloaded and its derived build files were not proved byte-identical. The 56-file hash list and fail-stop preparation are available. Third-party redistribution permission and a clean-machine source-to-BIT build remain unverified. Existing historical source variants were not all reaccepted after path normalization. The included PDF is the current engineering submission copy; team signoff and contest-site upload are outside this repository check.
 
-3.3.5.4 requires English lowercase/digit/underscore/hyphen path names, no Chinese/spaces/special characters. The explicit README.md name is retained. Directory layout src/sim/build/board/data/skill/report is recommended; alternatives need a README directory mapping.
-
-Vivado/Vitis2026.1 recommended or2025.2; other versions require explanation and reproducibility. Declare exact device, actual board output and baseline performance/resource comparison. Public repository availability and a license alone do not prove reproducibility.
-
-## Current status
-
-Full implementation/source snapshots and audited Skill material exist. build/ now includes actual routed resource/timing reports and build command metadata. sim/ includes original CPU/RTL summaries with their original evidence levels. board/ contains existing saved-run analysis; it is not raw board output and does not replace the original state records. report/ai_chat_excerpts.json contains a retrospective engineering summary only; original prompts/answers are not publicly distributed.
-
-NOT READY: naming violations remain; some source README files describe historical modes; build scripts still reference original paths and dependencies outside a clean checkout. Final design report, sanitized raw board/reference sample and fully resolved rebuild instructions remain to be completed. Do not mark these as passed based on this document. See amd_compliance_audit.json for precise inventory.
+Tool/device and performance evidence must retain the original version and scope. No new board/GPU/camera/EDA experiment was run to fill documentation gaps.

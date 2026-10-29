@@ -1,11 +1,17 @@
 # Current operation and reproduction boundary
 
-Board: ALIENTEK LingHangZhe Zynq-7020 xc7z020clg400-2, OV5640 module, original working PYNQ2.7 SD image. The runtime relies on original vendor ov5640/video2lcd and IIC support. A stock unrelated PYNQ image is not claimed equivalent.
+Board: ALIENTEK LingHangZhe Zynq-7020 xc7z020clg400-2, OV5640, original working PYNQ2.7 SD environment. Current computation retains all 45,669 nodes, 1,513,231 connections, strict FP32 and 5ms model steps. PS handles capture/input mapping and DDR; PL advances states; PC audits and displays. Camera mapping is `direct-grey-center-square-area/v2`, not an unverified claim of equality to historical GPU BoxEye inputs.
 
-Current computation: full45669/1513231 strict FP32 network,721 inputs,dt5ms. PS captures/maps and manages DDR ring; PL advances neural state; PC audits and displays. Do not equate mathematical model time with wall time or GUI frames.
+## One PC entry and one operator Notebook
 
-Known working deployment workflow: use the separately verified deployment package with Python3.12x64; start.cmd sets PC IPv4 and starts receiver8798; download fixed60second Notebook once, upload to board; after exclusive board release, operator restarts/runs that Notebook and confirms the prompt. Wait NORMAL_CAMERA_CLOSED plus PC PASS_ALL_SAVED_STATES and zero mismatches. Start another round only after clean close. Failure or unknown DDR ownership is not an automatic retry instruction.
+1. Follow [runtime/README.md](runtime/README.md). Use Windows x64/Python3.12, create/activate a Python environment in `board/runtime`, then run `python -m pip install -r requirements.txt`.
+2. Run `python run.py --check-only`. It recomputes the saved 721-input/45,669-state sample using the included independent CPU reference. This is software verification, not a new camera or board test. Sample identities are in `runtime/checks/`.
+3. Only for an operator-requested experiment: run `python run.py --ip YOUR_PC_IPV4` (or `start.cmd` in the activated environment). This creates fresh session identities and opens the existing receiver. No token copying or second PC coordinator is needed.
+4. Download the generated fixed Notebook, upload it to the original board Jupyter, then run it manually only after the board is exclusively released and its loading/allocation prompt is confirmed. Do not execute embedded historical Notebooks from other source snapshots.
+5. Wait for board `NORMAL_CAMERA_CLOSED` and PC `PASS_ALL_SAVED_STATES`, with zero mismatches. Use the page's next-round action and the same fixed Notebook only after normal close. Failure, unknown ownership or unknown commit state requires preservation and diagnosis, not automatic retry/reset/free.
 
-This source repository currently lacks a completely portable packaging/build path. Do not substitute a stale embedded Notebook from source history. A clean-checkout build must resolve run_build.py dependencies and original vendor IP paths, regenerate session identities and notebook payloads, then validate PC-only protocol/self-check before operator device execution. No device was started for this audit.
+The PC saved-sample check and isolated fresh-session preparation have passed previously; [software preparation evidence](../sim/public_runtime_prepare.json) is distinct from a new live run. Raw camera pixels are not distributed; this sample does not retest image mapping. Existing [saved-run analysis](saved_run_analysis.json) retains its historical evidence level.
 
-Existing saved-run analysis is in saved_run_analysis.json; no new numerical verification was executed. Raw frame privacy/session credentials must be reviewed before publishing an example, with actual721 input/full state/reference identity retained.
+## Rebuild the firmware
+
+See [portable build](../build/portable/README.md) and [official vendor acquisition and identity instructions](../build/vendor_dependency_review.md). Obtain matching vendor dependencies, validate them, prepare a fresh output and run the documented Vivado stages only when authorized. Current source-to-BIT reproduction on another machine is not certified. No GPU, service, camera, board or EDA was started for the documentation update.

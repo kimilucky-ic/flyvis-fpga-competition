@@ -1,0 +1,22 @@
+{
+  "status": "PASS_DOCUMENTATION_AND_DELIVERY_CHECK",
+  "base_commit": "064c1606684568d5976b82cf9acce2fc8d9ddcef",
+  "report_pages": 7,
+  "first_six_page_content_streams_unchanged": true,
+  "pdf_all_pages_rendered_and_visually_reviewed": true,
+  "report_sha256": "dea329d731897b9c894432d2de1beaad1398d70922b1d311b1a6b57a60e7f653",
+  "local_links_checked": 53,
+  "bad_links": [],
+  "accepted_source_runtime_firmware_unchanged": true,
+  "selected_ai_excerpts_only": true,
+  "vendor_dependency_count": 56,
+  "official_resource_index": "https://www.openedv.com/docs/boards/fpga/zdyz_linhanz%28V2%29.html",
+  "vendor_archive_downloaded": false,
+  "redistribution_permission_verified": false,
+  "clean_machine_vivado_build": false,
+  "hardware_operations": 0,
+  "gpu_runs": 0,
+  "camera_starts": 0,
+  "eda_runs": 0,
+  "repository_visibility_restored": false
+}

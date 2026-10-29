@@ -46,7 +46,7 @@ flowchart LR
 
 ## 5. AI协作与纠错
 
-工作方式是用户确定范围和实际操作权限，AI阅读源码/报告、实现隔离候选并做软件检查，用户执行实板操作，再审核真实记录。大型模型没有替代原神经计算。不含聊天原文的工程协作摘要见[project_ai_excerpts.json](project_ai_excerpts.json)，导航与解释见[ai_workflow.md](ai_workflow.md)。公开材料不包含原始对话、逐行来源、本机路径或内部引用；摘要不能冒充原始协作记录。
+工作方式是用户确定范围和实际操作权限，AI阅读源码/报告、实现隔离候选并做软件检查，用户执行实板操作，再审核真实记录。大型模型没有替代原神经计算。历史工程协作摘要见[project_ai_excerpts.json](project_ai_excerpts.json)。本次交付任务的少量真实提示、回答与纠错记录见[ai_collaboration_record.md](ai_collaboration_record.md)，明确区分原文节选和编辑摘要；不恢复此前撤回的私人对话，不冒充完整历史记录。导航与范围见[ai_workflow.md](ai_workflow.md)。
 
 本次开源导出也发生实际纠错：第一次把合法的新会话目录重定位误判为载荷不一致；检查现有生成器后，验证改为只允许live_board.py中的精确会话目录替换及相应manifest变化，其余载荷逐字节比对。不能为了通过检查而接受任意源码差异。来源为[sim/public_runtime_prepare.json](../sim/public_runtime_prepare.json)。
 
@@ -60,4 +60,4 @@ flowchart LR
 
 运行程序会生成新的本地会话和固定Notebook；操作者准备板端，按提示执行一次。当前公开候选仅验证了prepare-only生成和载荷身份，没有启动HTTP、浏览器或新实板验收。固件重建见[build/portable/README.md](../build/portable/README.md)，文件准备已通过CPU正反例检查，尚无新的异机Vivado复建。
 
-待解决：厂商相机依赖的明确再分发许可或合法可获取路线；完全从公共仓库开始的重建验证；完整历史功能在规范路径下的迁移验证；最终报告及公开清单确认。原已验收工程和RAR不被覆盖。当前目录是可审查候选，不能以文档完整替代这些未完成条件。
+七页设计报告见[design_report.pdf](design_report.pdf)。厂家官方获取入口及逐项校验步骤已补充于[依赖说明](../build/vendor_dependency_review.md)。待解决：厂商再分发许可；当前官方资料下载到完整BIT的独立复建验证；完整历史功能在规范路径下的迁移验证；团队最终签字及公开发布确认。原已验收工程和RAR不被覆盖。当前目录是可审查候选，不能以文档完整替代这些未完成条件。
