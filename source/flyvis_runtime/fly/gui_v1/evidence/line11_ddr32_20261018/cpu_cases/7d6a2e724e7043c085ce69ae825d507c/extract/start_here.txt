@@ -1,0 +1,5 @@
+PC: leave the original GUI running. Board: extract this private ZIP into a NEW directory.
+Only after releasing other board tasks, open START_DDR.ipynb and run its ONE code cell.
+It loads this image once, allocates 32 DDR slots once, restores once, checks first state on PC, then runs 31 more steps.
+No GPU/camera/decoder. Initial-state readback unsupported; complete post-step states are checked.
+On ANY error keep this kernel and DDR; do not retry/reset/reload. This package alone is not authorization.

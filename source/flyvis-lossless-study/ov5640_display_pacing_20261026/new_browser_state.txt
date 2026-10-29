@@ -1,0 +1,29 @@
+Browser tab: 5, Title: "FlyVis · 全网络视觉实验", URL: "http://127.0.0.1:50545/".
+0 AXWebArea FlyVis · 全网络视觉实验, URL: 127.0.0.1:50545/
+	1 container details
+		2 heading 运行与验收, Value: 2
+			3 text 运行与验收
+		4 button 关闭, ID: closeDetails
+		5 text 电脑已保存 219 步（60秒有界运行）；全状态验收：CPU_REPLAY_ONLY · 0/219 步，差异 0 项
+板端状态：OFFLINE_SAVED_RECORD_REPLAY
+相机关闭：已确认
+		6 text 本轮记录已接收，当前为最后保存帧；相机关闭状态单独显示。
+		7 container
+			8 button (expanded) 启动方式, Secondary Actions: Collapse
+				9 text 启动方式
+			10 text 上一轮相机正常关闭且全部状态验收通过后，点击页面“开始下一轮60秒”。旧记录自动保留。首次将 
+			11 link Description: 固定Notebook, Value: 127.0.0.1:50545/fixed-notebook
+			12 text  下载并上传到板卡，关闭之前已正常结束的旧Notebook内核。以后无需重新下载或上传：电脑点击“开始下一轮60秒”，板端在同一固定Notebook中选择“重启内核并运行全部”，再确认一次。仅上一轮正常关闭且验收通过后这样操作；异常保留内核。每轮从初始神经状态开始。确认一次后运行60秒；初始化、末批保存和电脑验收另计。每64步打印一次进度。
+		13 button (collapsed) 读数与记录说明, Secondary Actions: Expand
+			14 text 读数与记录说明
+		15 container
+			16 button (expanded) 当前帧详细计时, Secondary Actions: Collapse
+				17 text 当前帧详细计时
+			18 text 核心名义时间 22.000 ms；取帧 4.2 ms；PS映射 2.9 ms
+输入/STEP/发布 25.7 ms；DDR复制 2.7 ms
+网页取数 17.5 ms；输入图准备 6.0 ms；骨架准备 4.2 ms；绘制 0.5 ms（准备阶段并行，不能相加）
+			19 text 本页绘制 189 帧；平均更新间隔 63.8 ms；平均取数 25.9 ms / 骨架准备 5.6 ms / 绘制 0.7 ms。仅网页侧计时，不是摄像头到屏幕延迟。
+			20 button 下载显示计时, ID: exportDisplayTiming
+		21 text 约22ms为核心计数对应的名义时间，不等于端到端帧时长。当前不包含光流解码。模型步长5ms，与墙钟速度分开；保存帧不代表相机正在运行。颜色及外部相机时序仍有未完成的物理验证项。
+
+The focused UI element is 16 button (expanded) 当前帧详细计时, Secondary Actions: Collapse

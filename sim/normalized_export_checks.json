@@ -1,0 +1,16 @@
+{
+  "status": "PASS_NORMALIZED_ADMISSION_REJECTIONS_AND_UI_SYNTAX",
+  "negative_cases": [
+    {
+      "coherent_manifest": false,
+      "error": "Package mismatch: flyvis_official.bit"
+    },
+    {
+      "coherent_manifest": true,
+      "error": "BIT/HWH mismatch"
+    }
+  ],
+  "js_files": 3,
+  "scope": "no HTTP service,neural simulation or device execution",
+  "board_operations": 0
+}

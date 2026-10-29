@@ -1,0 +1,270 @@
+
+import ast
+import json
+import hashlib
+import uuid
+from pathlib import Path
+from importlib.metadata import distribution
+​
+dist = distribution("pynq")
+targets = {
+    "pynq/overlay.py": {"Overlay": ("__init__", "download")},
+    "pynq/bitstream.py": {"Bitstream": ("download",)},
+    "pynq/pl_server/embedded_device.py": {
+        "EmbeddedDevice": ("download", "set_axi_port_width", "allocate")},
+    "pynq/buffer.py": {
+        "PynqBuffer": ("flush", "invalidate", "freebuffer"),
+        "MODULE": ("allocate",)},
+}
+sources = {"pynq_version": dist.version, "files": {},
+           "scope": "FILE_READS_ONLY_NO_PYNQ_IMPORT_OR_DOWNLOAD"}
+​
+for relative, classes in targets.items():
+    path = Path(dist.locate_file(relative))
+    raw = path.read_bytes()
+    text = raw.decode("utf-8")
+    sources["files"][relative] = {
+        "path": str(path),
+        "sha256": hashlib.sha256(raw).hexdigest(),
+        "text": text,
+    }
+    tree = ast.parse(text)
+    for node in tree.body:
+        owner = node.name if isinstance(node, ast.ClassDef) else "MODULE"
+        members = node.body if isinstance(node, ast.ClassDef) else [node]
+        for member in members:
+            if isinstance(member, ast.FunctionDef) and member.name in classes.get(owner, ()):
+                print("\nSOURCE:", relative, owner + "." + member.name)
+                print(ast.get_source_segment(text, member))
+​
+record = Path("runtime_sources_" + uuid.uuid4().hex[:8] + ".json")
+with record.open("x") as stream:
+    json.dump(sources, stream, indent=2)
+​
+print("\nSaved:", record)
+print("PYNQ:", dist.version, "SOURCE_FILES:", len(sources["files"]))
+
+SOURCE: pynq/overlay.py Overlay.__init__
+def __init__(self, bitfile_name, dtbo=None,
+                 download=True, ignore_version=False, device=None):
+        """Return a new Overlay object.
+
+        An overlay instantiates a bitstream object as a member initially.
+
+        Parameters
+        ----------
+        bitfile_name : str
+            The bitstream name or absolute path as a string.
+        dtbo : str
+            The dtbo file name or absolute path as a string.
+        download : bool
+            Whether the overlay should be downloaded.
+        ignore_version : bool
+            Indicate whether or not to ignore the driver versions.
+        device : pynq.Device
+            Device on which to load the Overlay. Defaults to
+            pynq.Device.active_device
+
+        Note
+        ----
+        This class requires a HWH file to be next to bitstream file
+        with same name (e.g. `base.bit` and `base.hwh`).
+
+        """
+        super().__init__(bitfile_name, dtbo, partial=False, device=device)
+
+        self._register_drivers()
+
+        self.parser = self.device.get_bitfile_metadata(self.bitfile_name)
+
+        self.ip_dict = self.gpio_dict = self.interrupt_controllers = \
+            self.interrupt_pins = self.hierarchy_dict = dict()
+        self._deepcopy_dict_from(self.parser)
+        self.clock_dict = self.parser.clock_dict
+        self.pr_dict = dict()
+        self.ignore_version = ignore_version
+        description = _complete_description(
+            self.ip_dict, self.hierarchy_dict, self.ignore_version,
+            self.mem_dict, self.device, self)
+        self._ip_map = _IPMap(description)
+
+        if download:
+            self.download()
+
+        self.__doc__ = _build_docstring(self._ip_map._description,
+                                        bitfile_name,
+                                        "overlay")
+
+SOURCE: pynq/overlay.py Overlay.download
+def download(self, dtbo=None):
+        """The method to download a full bitstream onto PL.
+
+        After the bitstream has been downloaded, the "timestamp" in PL will be
+        updated. In addition, all the dictionaries on PL will
+        be reset automatically.
+
+        This method will use parameter `dtbo` or `self.dtbo` to configure the
+        device tree.
+
+        The download method will also configure some of the PS registers
+        based on the metadata file provided, e.g. PL clocks,
+        AXI master port width.
+
+        Parameters
+        ----------
+        dtbo : str
+            The path of the dtbo file.
+
+        """
+        for i in self.clock_dict:
+            if 'enable' in self.clock_dict[i]:
+                enable = self.clock_dict[i]['enable']
+                div0 = self.clock_dict[i]['divisor0']
+                div1 = self.clock_dict[i]['divisor1']
+                if enable:
+                    Clocks.set_pl_clk(i, div0, div1)
+                else:
+                    Clocks.set_pl_clk(i)
+
+        super().download(self.parser)
+        if dtbo:
+            super().insert_dtbo(dtbo)
+        elif self.dtbo:
+            super().insert_dtbo()
+
+SOURCE: pynq/bitstream.py Bitstream.download
+def download(self, parser=None):
+        """Download the bitstream onto PL and update PL information.
+
+        If device tree blob has been specified during initialization, this
+        method will also insert the corresponding device tree blob into the
+        system. This is same for both full bitstream and partial bitstream.
+
+        Note
+        ----
+        For partial bitstream, this method does not guarantee isolation between
+        static and dynamic regions.
+
+        Returns
+        -------
+        None
+
+        """
+        self.device.download(self, parser)
+
+SOURCE: pynq/pl_server/embedded_device.py EmbeddedDevice.set_axi_port_width
+def set_axi_port_width(self, parser):
+        """This method will set the AXI port width.
+
+        This is useful to resolve discrepancy between the PS configurations
+        during boot and the PS configurations required by the bitstream. It
+        is usually to be resolved for full bitstream reconfiguration.
+
+        Check https://www.xilinx.com/support/answers/66295.html for more
+        information on the meaning of register values.
+
+        Currently only zynq ultrascale devices support data width changes.
+
+        """
+        from pynq.registers import Register
+        if not hasattr(parser, 'ps_name'):
+            # Setting port widths not supported for xclbin-only designs
+            return
+        parameter_dict = parser.ip_dict[parser.ps_name]['parameters']
+        if parser.family_ps == 'zynq_ultra_ps_e':
+            for para in ZU_FPD_SLCR_REG:
+                if para in parameter_dict:
+                    width = parameter_dict[para]
+                    for reg_name in ZU_FPD_SLCR_REG[para]:
+                        addr = ZU_FPD_SLCR_REG[para][reg_name]['addr']
+                        f = ZU_FPD_SLCR_REG[para][reg_name]['field']
+                        Register(addr)[f[0]:f[1]] = ZU_FPD_SLCR_VALUE[width]
+            for para in ZU_AXIFM_REG:
+                if para in parameter_dict:
+                    width = parameter_dict[para]
+                    for reg_name in ZU_AXIFM_REG[para]:
+                        addr = ZU_AXIFM_REG[para][reg_name]['addr']
+                        f = ZU_AXIFM_REG[para][reg_name]['field']
+                        Register(addr)[f[0]:f[1]] = ZU_AXIFM_VALUE[width]
+
+SOURCE: pynq/pl_server/embedded_device.py EmbeddedDevice.download
+def download(self, bitstream, parser=None):
+        if parser is None:
+            from .xclbin_parser import XclBin
+            parser = XclBin(xclbin_data=DEFAULT_XCLBIN)
+
+        if not bitstream.binfile_name:
+            _preload_binfile(bitstream, parser)
+
+        if not bitstream.partial:
+            self.shutdown()
+            flag = 0
+        else:
+            flag = 1
+
+        with open(self.BS_FPGA_MAN_FLAGS, 'w') as fd:
+            fd.write(str(flag))
+        with open(self.BS_FPGA_MAN, 'w') as fd:
+            fd.write(bitstream.binfile_name)
+
+        self.set_axi_port_width(parser)
+
+        self._xrt_download(parser.xclbin_data)
+        super().post_download(bitstream, parser)
+
+SOURCE: pynq/buffer.py PynqBuffer.freebuffer
+def freebuffer(self):
+        """Free the underlying memory
+
+        This will free the memory regardless of whether other objects
+        may still be using the buffer so ensure that no other references
+        to the array exist prior to freeing.
+
+        """
+        if hasattr(self, 'pointer') and self.pointer:
+            if self.return_to:
+                self.return_to.return_pointer(self.pointer)
+            self.pointer = 0
+
+SOURCE: pynq/buffer.py PynqBuffer.flush
+def flush(self):
+        """Flush the underlying memory if necessary
+
+        """
+        if not self.coherent:
+            self.device.flush(self.bo, self.offset,
+                              self.virtual_address, self.nbytes)
+
+SOURCE: pynq/buffer.py PynqBuffer.invalidate
+def invalidate(self):
+        """Invalidate the underlying memory if necessary
+
+        """
+        if not self.coherent:
+            self.device.invalidate(self.bo, self.offset,
+                                   self.virtual_address, self.nbytes)
+
+SOURCE: pynq/buffer.py MODULE.allocate
+def allocate(shape, dtype='u4', target=None, **kwargs):
+    """Allocate a PYNQ buffer
+
+    This API mimics the numpy ndarray constructor with the following
+    differences:
+
+     * The default dtype is 32-bit unsigned int rather than float
+     * A new ``target`` keyword parameter to determine where the
+       buffer should be allocated
+
+    The target determines where the buffer gets allocated
+
+     * If None then the currently active device is used
+     * If a Device is specified then the main memory
+
+    """
+    from .pl_server import Device
+    if target is None:
+        target = Device.active_device
+    return target.allocate(shape, dtype, **kwargs)
+
+Saved: runtime_sources_cdf96516.json
+PYNQ: 2.7.0 SOURCE_FILES: 4

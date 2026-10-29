@@ -1,0 +1,16 @@
+CPU-only; all original accepted results are read-only.
+Completed one bounded run; do NOT repeat production calculations in this directory.
+For a separately scoped reproduction, first create a NEW sibling directory.
+Existing command order was:
+  python -B diagnostic.py prepare
+  python -B diagnostic.py run
+  python -B diagnostic.py analyze
+  python -B operator_audit.py
+  python -B diagnostic.py audit
+  python -B finish.py
+No training, CUDA, WSL or board call occurs. Python3.14 / NumPy / CPU PyTorch /
+OpenCV and Matplotlib from the existing environment. Torch one thread and CUDA
+hidden by the accepted CPU-only common module.
+Five paired counterfactuals are diagnostic data, NOT independent holdout cases.
+Teacher/same-old probes are offline diagnostics, NOT production CNN recovery.
+The original model, original failures, threshold/ROI and GUI/FPGA source are preserved.

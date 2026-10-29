@@ -1,0 +1,171 @@
+{
+  "status": "PASS",
+  "fresh_tests": [
+    "generator_r1",
+    "cpu_r1",
+    "short_rows_r1",
+    "hazard_positive_r2",
+    "contexts_positive_r2",
+    "hazard_negative_r2"
+  ],
+  "short_row_fallback": {
+    "status": "PASS_SHORT_ROW_DESCRIPTOR_PIPELINE_CPU_ONLY",
+    "completed_passes": 2,
+    "partial_reset_edges": 2,
+    "ordered_edges_checked": 10,
+    "cycles": 244,
+    "stalled_cycles": 13,
+    "fallback_transitions": 5,
+    "fallback_stalled_cycles": 6,
+    "board_operations": 0
+  },
+  "fresh_small_tests": {
+    "hazard_positive_r2": {
+      "identity_sha256": "0d5509c654054f31541ce6c0c2d57f655dc44a5c57b7e7d7cbdacae3e7da4297",
+      "result": {
+        "status": "PASS_INTEGER_FP32_RTL_CPU_ONLY",
+        "steps": 8,
+        "nodes": 8,
+        "edges_per_step": 8,
+        "stress": 1,
+        "cycles": 11373,
+        "host_oracle_vector_pairs": 10196,
+        "state_bit_mismatches": 0,
+        "edge_mismatches": 0,
+        "self_feedback_transitions": 7,
+        "input_stalls": 1935,
+        "edge_stalls": 1425,
+        "pipeline_output_stalls": 67,
+        "state_output_stalls": 13,
+        "hazard_wait_cycles": 1333,
+        "maximum_pending": 1,
+        "step_cycles": [
+          1396,
+          1443,
+          1425,
+          1397,
+          1398,
+          1446,
+          1426,
+          1442
+        ],
+        "phase_cycles": [
+          7703,
+          64,
+          8,
+          2209,
+          8,
+          56,
+          56,
+          64,
+          64,
+          384,
+          544,
+          64,
+          64,
+          77,
+          8
+        ],
+        "board_operations": 0
+      },
+      "rerun": true
+    },
+    "contexts_positive_r2": {
+      "identity_sha256": "2fed01285f6b84f98b6a83634d5919c81249faa97f79c1f896303e75681d9941",
+      "result": {
+        "status": "PASS_INTEGER_FP32_RTL_CPU_ONLY",
+        "steps": 8,
+        "nodes": 65,
+        "edges_per_step": 65,
+        "stress": 1,
+        "cycles": 30279,
+        "host_oracle_vector_pairs": 10196,
+        "state_bit_mismatches": 0,
+        "edge_mismatches": 0,
+        "self_feedback_transitions": 7,
+        "input_stalls": 1937,
+        "edge_stalls": 13275,
+        "pipeline_output_stalls": 771,
+        "state_output_stalls": 83,
+        "hazard_wait_cycles": 12537,
+        "maximum_pending": 1,
+        "step_cycles": [
+          3727,
+          3740,
+          3757,
+          3818,
+          3826,
+          3800,
+          3798,
+          3813
+        ],
+        "phase_cycles": [
+          7705,
+          520,
+          8,
+          14483,
+          8,
+          56,
+          56,
+          520,
+          520,
+          3120,
+          1632,
+          520,
+          520,
+          603,
+          8
+        ],
+        "board_operations": 0
+      },
+      "rerun": true
+    },
+    "hazard_negative_r2": {
+      "identity_sha256": "5081d21a95be7cf39346c031f87de4dd22e25a51d432aad1ffbfdcf3cb7b6540",
+      "result": {
+        "status": "PASS_INTERLOCK_DISABLED_MUTANT_REJECTED",
+        "returncode": 2,
+        "board_operations": 0
+      },
+      "rerun": true
+    }
+  },
+  "unchanged_elaborated_lane_sources": {
+    "fp32_rne.sv": "c6cd2f47d0c45fd608bcd4279166c6702d721fb8db9654caf52078b8900458c1",
+    "banked_state_mem.sv": "5d128838f71621f77ee4e0948bc7b65785a4717f73236c7f76bc164a1ba66d68",
+    "sync_mem.sv": "08089f6a6ffd9fd9cb1df6ac0d7379b96cac4e3d5d87d1d9b46c75f6078783fa",
+    "flyvis_lane.sv": "937a8bb6f7c6817f5a8165bfeff63858d557c88593149339c17da08452fa1ec3",
+    "host_reference.cpp": "cdcf122f006c830d4e144d6a04f906fbd0de54e154956529d602b6ddf22056a2",
+    "lane_scoreboard.cpp": "dfb175cde7f4c8e4b61947e5a242ad9df57e084bc4169ae0062c96d91a0b7bb3"
+  },
+  "path_rebased_only_sources": [
+    "banked_state_mem.sv"
+  ],
+  "initialization_images_bit_identical": 50,
+  "small_host_test_build": "O0, original strict FP32 compiler flags; full network test retains O2",
+  "operator_acceptance": "EXACT_SOURCE_IDENTITY_REUSE_operators_r2_NOT_RERUN",
+  "baseline_seals": {
+    "hole_skip_20261016": {
+      "files": 282,
+      "manifest_sha256": "e714374330212b46c463db424e2f798ba79555d1c66c7a07552ab3f172386239"
+    },
+    "row_prefetch_20261016": {
+      "files": 285,
+      "manifest_sha256": "3397ceba154fcf94774039e1cd2ac0133bd586e68fa329f372c6ed080b0d4b60"
+    },
+    "synapse_stream_20261016": {
+      "files": 286,
+      "manifest_sha256": "33b541def9209d8db0ab875ed7f9873b5d42b24a4769fec75c714413f53d4c47"
+    },
+    "throughput_20261016": {
+      "files": 321,
+      "manifest_sha256": "c217fb7b3a93ac998c5dacbcef8d928da201239f25a8c3f48fb91459e634e957"
+    },
+    "pipeline100_20261015": {
+      "files": 532,
+      "manifest_sha256": "7b2b5a35654f288e8019be407f493ba519e4c0d2637bfec7ff793bcc3fa445fd"
+    }
+  },
+  "front_memory_enabled_clock_latency": 2,
+  "board_operations": 0
+}

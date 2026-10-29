@@ -1,0 +1,75 @@
+- banner:
+  - link "FlyVis 实验台首页":
+    - /url: /
+    - generic: ⬡
+    - strong: FlyVis / VISION LAB
+  - generic: 果蝇视觉神经网络实验台 FPGA 创新设计大赛
+  - generic: OFFLINE REPLAY · 真实软件结果
+- main:
+  - heading "从一束光，到运动感知" [level=1]
+  - navigation "实验台功能入口":
+    - button "一看就懂 · 比赛演示" [pressed]
+    - button "更多离线实验"
+    - button "科研对照"
+    - button "实验与设备 · 高级"
+  - generic: ON 60° · 亮边缘运动
+  - generic: 原始 Full 网络 · 同一次真实 GPU 计算结果
+  - generic: 离线回放 / OFFLINE REPLAY
+  - generic "新计算 · GPU实时数据驱动骨架亮度"
+  - option "数字运动刺激" [selected]
+  - option "真实摄像头"
+  - option "ON" [selected]
+  - option "OFF"
+  - option "0°"
+  - option "30°"
+  - option "60°" [selected]
+  - option "90°"
+  - option "120°"
+  - option "150°"
+  - option "180°"
+  - option "210°"
+  - option "240°"
+  - option "270°"
+  - option "300°"
+  - option "330°"
+  - option "GPU · 原始像素（需无其它计算任务）"
+  - option "CPU · 缓存骨架，只更新亮度（默认）" [selected]
+  - button "▶ 播放"
+  - button "回到开头"
+  - text: 回放速度
+  - combobox "回放速度":
+    - option "12.125 步/秒 · 40秒" [selected]
+    - option "6 步/秒 · 约81秒"
+    - option "24 步/秒 · 约20秒"
+  - slider "全部画面共用的时间轴": "217"
+  - generic: 适应
+  - generic: 亮边缘移动
+  - generic: 运动后
+  - generic: 第 217 / 484 步 · 0.090 s
+  - button "录屏视图"
+  - button "放大科学讲解" [active]
+  - button "生成40秒演示视频"
+  - status: 已暂停 · 亮边缘正在移动 · 输入 0.085 s → 神经活动与光流 0.090 s · C版画面已同步 · 已核验固定镜头（当前无需三维绘图）
+  - paragraph
+  - generic "同一步输入、神经元与官方光流。科学解读：亮边缘沿 60° 移动；网络读出：朝右上运动；T4：a、b、c组升高；d组降低；T5：四组活动都降低（－）；与刺激前相比，变化越大越亮。＋是升高，－是降低；变亮也可能是活动降低。"
+  - generic "深入分析 · 原始图表、曲线、视角控制"
+  - generic: 真实骨架 + 同类型模型活动 · 非单个生物细胞测量
+  - generic: 当前未做新推理 · FPGA NOT_CONNECTED
+  - generic "深入看：5,768 个 T4/T5 模型神经元的空间活动"
+  - generic "本次数据来源、时间定义与计算身份"
+  - generic "功能依据、参考方向与指标定义"
+  - paragraph: T4主要参与亮边缘运动（ON），T5主要参与暗边缘运动（OFF）。八类共同参与同一网络计算；ON60是输入条件，不是模型给出的分类。a–d的方向仅作参考偏好，不代表本次单方向实验测得的调谐。亮度显示|Δ|，请同时读＋/－与原值。
+  - paragraph: 参考偏好：T4a 向左 180° · T4b 向右 0° · T4c 向上 90° · T4d 向下 270° · T5a 向左 180° · T5b 向右 0° · T5c 向上 90° · T5d 向下 270°
+  - paragraph:
+    - link "Maisak et al. 2013, ON/OFF and direction selective T4/T5":
+      - /url: https://www.nature.com/articles/nature12320
+    - link "Lappalainen et al. 2024, FlyVis task and official optic-flow decoder":
+      - /url: https://www.nature.com/articles/s41586-024-07939-3
+    - link "Official FlyVis reference preferred directions":
+      - /url: https://github.com/TuragaLab/flyvis/blob/92b3845cc426dd309a1a0e1b3890156c42e14021/flyvis/utils/groundtruth_utils.py
+  - paragraph: 事后主窗统计（200–285，primary331 ROI）：原始平均向量方向70.905°，偏10.905°；扣固定基线后的派生方向62.238°，偏2.238°。两者不是当前中心点读数，也不是识别准确率。Q/E/angle衡量干预相对Sham的差异；本实验未定义识别PASS阈值。
+  - link "继续探索：阻断 T4 / T5 后，运动响应怎样改变？ →":
+    - /url: "#scientificPilot"
+  - text: → →
+  - generic: FlyVis 1.2.0 · 原始官方预训练网络 · 可追溯实验数据
+  - generic: 软件仿真证据 / GPU、摄像头与 FPGA 适配接口已预留

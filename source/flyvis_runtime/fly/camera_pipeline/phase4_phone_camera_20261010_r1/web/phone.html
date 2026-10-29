@@ -1,0 +1,20 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>FlyVis 手机刺激</title><link rel="stylesheet" href="style.css"></head>
+<body><main><h1>手机视觉刺激</h1><p>先设参数并准备会话，再进入全屏。电脑摄像头拍摄的是新的真实输入。</p>
+<div class="controls">
+<label>刺激类型<select id="family"><option value="edge">ON / OFF 移动边缘</option><option value="dot">黑点移动</option><option value="flicker">明暗闪烁</option><option value="fade">全画面亮度渐变</option><option value="gradient">空间灰阶渐变移动</option><option value="calibration">灰阶与方向校准</option></select></label>
+<label>极性<select id="polarity"><option>OFF</option><option>ON</option></select></label>
+<label>方向<select id="direction"><option value="0">向右 0°</option><option value="45">右下 45°</option><option value="90">向下 90°</option><option value="135">左下 135°</option><option value="180">向左 180°</option><option value="225">左上 225°</option><option value="270">向上 270°</option><option value="315">右上 315°</option></select></label>
+<label>速度（逻辑像素/秒）<input id="speed" type="number" min="1" max="1200" value="320"></label>
+<label>变化持续时间（秒）<input id="duration" type="number" min="0.5" max="20" step="0.5" value="2"></label>
+<label>黑点半径（逻辑像素）<input id="radius" type="number" min="4" max="96" value="24"></label>
+<label>闪烁频率（Hz）<input id="frequency" type="number" min="0.25" max="4" step="0.25" value="1"></label>
+<label>空间渐变周期（逻辑像素）<input id="period" type="number" min="64" max="1280" value="640"></label>
+<label>黑点控制<select id="dotControl"><option value="automatic">自动运动</option><option value="touch">手指拖动</option></select></label>
+</div>
+<p>移动前保持 1 秒，结束后保持 1 秒。方向使用画面坐标：右为 0°，下为 90°。速度是本页 640×640 的逻辑像素速度。</p>
+<div class="actions"><button id="arm">准备本次刺激</button><button id="standby" disabled>全屏待机</button><button id="start" disabled>全屏开始</button><button id="stop" disabled>停止</button><button id="calibrate">查看校准画面</button></div>
+<p id="status" role="status">未准备。尚未开启电脑摄像头。</p><p id="session" class="identity"></p>
+<div id="stage"><canvas id="stimulus" width="640" height="640" aria-label="黑白视觉刺激"></canvas><button id="exitStage">返回参数</button></div>
+<p>先全屏待机，电脑开始录制后轻触刺激画面开始。运动结束后保持最终画面，电脑结束录制后再返回参数。全屏不支持时使用固定视口呈现；画面不叠加文字。参数变更后请重新准备会话。</p>
+<p>实际手机亮度、刷新率、色彩和电脑相机设置需另行检查；浏览器帧回调不等于屏幕光学呈现时刻。</p>
+</main><script src="player.js"></script></body></html>

@@ -1,0 +1,21 @@
+{
+  "skill": null,
+  "status": "NOT_RUN",
+  "operator": null,
+  "date": null,
+  "task_and_scope": null,
+  "target_identity": null,
+  "tool_versions": {},
+  "source_and_input_hashes": {},
+  "prerequisites": [],
+  "authorization_scope": null,
+  "expected_gates": [],
+  "steps": [],
+  "actual_effect": null,
+  "first_failure": null,
+  "evidence_files_and_sha256": [],
+  "failure_conditions_observed": [],
+  "correction_trajectory": [],
+  "unverified_boundaries": [],
+  "independent_reuser": null
+}

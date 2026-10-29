@@ -1,0 +1,74 @@
+Frozen CNN follow-up: long autonomy + new controlled inputs, 2026-10-16.
+This file describes the bounded CPU experiment; it does not authorize new runs.
+
+Existing environment: Python3.14.5, NumPy2.4.6, PyTorch2.12.0+cpu.
+One CPU thread; no GPU, WSL, new dependencies, board, GUI or scheduler.
+The31,168-parameter CNN is NOT fitted or selected in this experiment.
+
+READ-ONLY dependencies:
+1. ../cnn_t4t5_cpu_refinement_20261016/shared.py, training/ridge.pt and accepted
+   identity/pre-registration files;
+2. ../cnn_t4t5_replacement_20261016/common.py, cnn.py, experiment.py,
+   decoder_cpu.py, mapping.npz and R_CANDIDATE.json;
+3. pinned original a0, expanded parameters, official decoder checkpoint and
+   fly/gpu_phase2/r_only.py;
+4. original721-point controlled stimuli, metadata and fixed331-position ROI.
+Absolute paths, sizes/times and SHA256 are frozen in PREREGISTRATION.json.
+
+For a separately authorized reproduction, copy only these sources into a NEW
+sibling directory, preserving the read-only sibling dependencies:
+core.py, prepare.py, run.py, analyze.py, audit.py, plots.py.
+Run strictly in order:
+python -B prepare.py
+python -B run.py
+python -B analyze.py
+python -B audit.py
+python -B plots.py
+Never run these commands over this sealed result directory. No automatic retry,
+training, threshold change or architecture enlargement on failure is permitted.
+The prepare step writes a fresh identity specific to the new folder. The new
+inputs are not independent holdout for any subsequent training that sees them.
+
+Preparation performs only array/identity/resource tests, zero neural steps.
+It validates extended-length metric arithmetic against the exact original485
+frame implementation, including rejection of weak references. It checks the
+actual new inputs before neural inference and freezes the complete case list,
+time windows, thresholds, model and code. These inputs never affect model fit.
+
+run.py computes13 actual conditions, Full and CNN each; first short condition
+also has exactH+R-only Sham. Maximum22185 commits across27 trajectories.
+-10 new short cases485steps: ON/OFF120/300; ON1201.5x and OFF120.5x;
+  ON/OFF120 stationary local apertures at y+5 and y-5.
+-2 new2000step sinusoidal grating conditions. Gray0-1s, forward1-3s,
+  hold3-4s, reverse4-6s, hold6-7s, halfspeed7-9s, hold9-10s.
+  Grating family contrasts increase/decrease coexist; it is not pureON/OFF.
+-one2000step static gray control.
+All original-state, no reset across epochs, common full45669 a0, dt=.005.
+
+CNN production: current input brightness[721] drives original R39901;
+CNN uses23 own old-state fields including own old H5768. Both candidates read
+the same old canonical state, checks occur before complete next-state commit.
+OriginalTargets.step is guarded to raise during every CNN trajectory. No
+nativeH update, teacher reset, reference feedback or future-state replay.
+Full/Sham are separate reference executions and never supply nextR to CNN.
+
+Output runs/<case>/<Full|CNN|Sham>/:
+states_raw.npy [allocated_steps,45669], float32, step k stores a[k+1];
+VALIDITY.json explicitly gives valid_rows and invalid_range;
+chain.jsonl links input, old state, next state, step_id and times;
+final.npy is last committed state, flow.npy contains only valid decoded rows;
+RESULT.json records actual calls, completion/failure and wall time.
+On failure, ONLY states_raw[:valid_rows] are valid. The uncommitted allocated
+tail MUST NOT be used, decoded, compared, or counted. No fallback or zeros.
+Analysis saves per-step ALL-H/ALL-R errors, central8x7 trajectories and fixed
+window metrics; it never executes a neural model/decoder. Audit rehashes saved
+complete states and chains without neural computation or old fault-suite rerun.
+
+Metrics: inherited H response relativeL2<=.20, flowE<=.20,M[.8,1.2],field-angle
+<=15deg, same331ROI/baseline160:200. Primary windows are explicit per case.
+Low response does NOT become PASS; it is NOT_EVALUABLE. New gray numeric bounds
+are pre-registered in model units, not a direction-classifier false-positive
+rate. Field angle and E compare against original Full, not real optical-flow
+truth, physical velocity, biological behavior or direction accuracy.
+Review SUMMARY.json, METRICS.csv and REPORT.md for actual outcomes, including
+any failed or non-evaluable windows. No result here is FPGA evidence.

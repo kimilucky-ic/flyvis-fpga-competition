@@ -1,0 +1,5 @@
+PASS stage boundaries and unknown/negative time reject; cues never claim actual edge events
+PASS two32step CPU fixtures: raw frame/input/full state retained through writer, archives, duplicate upload, and PC source mapping audit
+PASS raw corruption, wrong condition, timestamp mismatch, mixed demo schema and conflicting resend rejected
+PASS 1081 accepted v3 packets remain readable with unchanged hashes
+FIXTURES C:\Users\hzy72\Documents\ChatGPT\fpga\flyvis_runtime\fpga\flyvis-lossless-study\ov5640_motion_experiment_20261026\evidence\cpu_1793014779488850300

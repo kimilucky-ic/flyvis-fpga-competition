@@ -1,0 +1,56 @@
+#-----------------------------------------------------------
+# xsim v2024.2.2 (64-bit)
+# SW Build 6060944 on Thu Mar 06 19:10:01 MST 2025
+# IP Build 6050500 on Thu Mar  6 23:33:39 MST 2025
+# SharedData Build 6060542 on Thu Mar 06 10:31:07 MST 2025
+# Start of session at: Thu Oct  8 14:45:50 2026
+# Process ID         : 38804
+# Current directory  : C:/Users/hzy72/Documents/ChatGPT/fpga创新设计大赛/data/connectome/male_cns_v1_0/malecns_inference_v1/rtl_sim
+# Command line       : xsim.exe -mode tcl -source {xsim.dir/malecns_sim/xsim_script.tcl}
+# Log file           : C:/Users/hzy72/Documents/ChatGPT/fpga创新设计大赛/data/connectome/male_cns_v1_0/malecns_inference_v1/rtl_sim/xsim.log
+# Journal file       : C:/Users/hzy72/Documents/ChatGPT/fpga创新设计大赛/data/connectome/male_cns_v1_0/malecns_inference_v1/rtl_sim\xsim.jou
+# Running On         : hope
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26300
+# Processor Detail   : AMD Ryzen 9 8940HX with Radeon Graphics        
+# CPU Frequency      : 2395 MHz
+# CPU Physical cores : 16
+# CPU Logical cores  : 32
+# Host memory        : 16962 MB
+# Swap memory        : 13958 MB
+# Total Virtual      : 30920 MB
+# Available Virtual  : 12847 MB
+#-----------------------------------------------------------
+source xsim.dir/malecns_sim/xsim_script.tcl
+# xsim {malecns_sim} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+PASS directed single_edge_input
+PASS directed single_edge_delayed_target
+PASS directed single_edge_decay
+PASS directed simultaneous_inputs
+PASS directed simultaneous_sum_crosses_threshold
+PASS directed recurrent_seed
+PASS directed recurrent_step_1
+PASS directed recurrent_step_2
+PASS directed fanout_seed
+PASS directed fanout_137_targets
+PASS directed fanout_decay
+MALECNS_RTL_DIRECTED_PASS: 11/11 directed timestep checks
+RUN positive_A
+PASS positive_A: 200 timestep vectors exact
+RUN positive_B
+PASS positive_B: 200 timestep vectors exact
+RUN positive_C
+PASS positive_C: 200 timestep vectors exact
+RUN negative_A
+PASS negative_A: 200 timestep vectors exact
+RUN negative_B
+PASS negative_B: 200 timestep vectors exact
+RUN negative_C
+PASS negative_C: 200 timestep vectors exact
+MALECNS_RTL_GOLDEN_PASS: 1200/ 1200 timestep spike vectors bit-exact
+$finish called at time : 190122461 ns : File "C:/Users/hzy72/Documents/ChatGPT/fpga创新设计大赛/data/connectome/male_cns_v1_0/malecns_inference_v1/rtl/tb_malecns_edge_scan_engine.sv" Line 273
+run: Time (s): cpu = 00:00:00 ; elapsed = 00:00:09 . Memory (MB): peak = 193.766 ; gain = 0.000
+exit
+INFO: [Common 17-206] Exiting xsim at Thu Oct  8 14:46:00 2026...

@@ -1,0 +1,437 @@
+{
+  "schema": "line11.extended_projection_health/v1",
+  "viewport": {
+    "width": 640,
+    "height": 600,
+    "pixel_ratio": 1
+  },
+  "expected_binding": {
+    "types": [
+      "L1",
+      "L2",
+      "Mi1",
+      "Tm3",
+      "Tm1",
+      "Tm2",
+      "T4a",
+      "T4b",
+      "T4c",
+      "T4d",
+      "T5a",
+      "T5b",
+      "T5c",
+      "T5d"
+    ],
+    "observer_map_sha256": "3c8b887e1bcb867f75ed064f5c7f81603d10246e1fe51b2d03922ee5c544ab4f"
+  },
+  "fixed_cpu_projection": {
+    "schema": "line11.extended_fixed_anatomy/v1",
+    "width": 640,
+    "height": 600,
+    "types": [
+      {
+        "type": "L1",
+        "body_id": "18251",
+        "selection": "First official v1.1 type entry, representative anatomy only, not a FlyVis computational-cell match",
+        "swc_sha256": "ac53afe57f3425a0867b78576db31a384df684df51a9f1e5b26b8dc4f277d383",
+        "nodes": 185,
+        "edges": 184,
+        "mask_sha256": "b2b55c1ec460445a545a6c5d5b64c9ba349ed3ca05b2d4d17322781a54339440",
+        "bounds_px": [
+          [
+            264.9139002754297,
+            143.60963433141882
+          ],
+          [
+            416.9766698573234,
+            184.32070495651664
+          ]
+        ],
+        "clipped_nodes": 0
+      },
+      {
+        "type": "L2",
+        "body_id": "17529",
+        "selection": "First official v1.1 type entry, representative anatomy only, not a FlyVis computational-cell match",
+        "swc_sha256": "6a7dab7a23de9745d8f63d4ac1008611b429ba1e153723e9abbe80ea425aeeae",
+        "nodes": 91,
+        "edges": 90,
+        "mask_sha256": "f0011e706cd77be8004cc1a443399ca0575c65b68be08c967d8644367297c5f3",
+        "bounds_px": [
+          [
+            264.0760888727747,
+            103.14551127510433
+          ],
+          [
+            407.76074442811773,
+            132.69383520227905
+          ]
+        ],
+        "clipped_nodes": 0
+      },
+      {
+        "type": "Mi1",
+        "body_id": "17871",
+        "selection": "First official v1.1 type entry, representative anatomy only, not a FlyVis computational-cell match",
+        "swc_sha256": "3fd72f5df7dec351bc278aa15f17be279f40ce40bf0d6419d678f6293d78f410",
+        "nodes": 329,
+        "edges": 328,
+        "mask_sha256": "ef6885e89b38a1e9685608961794075acaaa7758bc8e7d8dab3eb456c8512548",
+        "bounds_px": [
+          [
+            150.97154951434132,
+            201.92453878833965
+          ],
+          [
+            210.45615910285065,
+            245.74009313528177
+          ]
+        ],
+        "clipped_nodes": 0
+      },
+      {
+        "type": "Tm3",
+        "body_id": "32977",
+        "selection": "First official v1.1 type entry, representative anatomy only, not a FlyVis computational-cell match",
+        "swc_sha256": "65b9edecc27c27cb181b11710085632395c8e6e9f626a6f48f37092316bd0e65",
+        "nodes": 488,
+        "edges": 487,
+        "mask_sha256": "00af756429b1a241e4e92578b880753ae83b37fe370aa2827de4697fc6651d9f",
+        "bounds_px": [
+          [
+            325.23632126659413,
+            412.18275449508315
+          ],
+          [
+            410.274178636083,
+            527.1544868756667
+          ]
+        ],
+        "clipped_nodes": 0
+      },
+      {
+        "type": "Tm1",
+        "body_id": "24579",
+        "selection": "First official v1.1 type entry, representative anatomy only, not a FlyVis computational-cell match",
+        "swc_sha256": "a9e94a5fa9899231cb7d758fcd58a83f38b5beff89ea0fb7729998e256780aed",
+        "nodes": 435,
+        "edges": 434,
+        "mask_sha256": "573140f82f5b7c6b979451984527f2b4f16637dd941d52984336d00e3afc5b0f",
+        "bounds_px": [
+          [
+            272.03529719799775,
+            240.90697643195557
+          ],
+          [
+            489.0284504856587,
+            290.0848208439021
+          ]
+        ],
+        "clipped_nodes": 0
+      },
+      {
+        "type": "Tm2",
+        "body_id": "25995",
+        "selection": "First official v1.1 type entry, representative anatomy only, not a FlyVis computational-cell match",
+        "swc_sha256": "c481068855d637539bfccedc60d271974f71a8005804246a6297d10f027e56eb",
+        "nodes": 380,
+        "edges": 379,
+        "mask_sha256": "81b7b5cf5648ef306a040285cd042059dc200cdf833e8c5c0f26a400ce47a839",
+        "bounds_px": [
+          [
+            250.25220072896616,
+            260.6275037104908
+          ],
+          [
+            309.31790461614787,
+            293.5773650309772
+          ]
+        ],
+        "clipped_nodes": 0
+      },
+      {
+        "type": "T4a",
+        "body_id": "65399",
+        "selection": "Previously accepted representative body",
+        "swc_sha256": "6884992ef3a75842b9e9858d83342c54962ce109793b86e104528782e40ab2f0",
+        "nodes": 521,
+        "edges": 520,
+        "mask_sha256": "7fbf54bb4553208293c4d56690cb79c9663d16006d1eb830cacea141ccd1bd07",
+        "bounds_px": [
+          [
+            235.59050118250252,
+            417.05114942252123
+          ],
+          [
+            288.791525251099,
+            464.8531430941048
+          ]
+        ],
+        "clipped_nodes": 0
+      },
+      {
+        "type": "T4b",
+        "body_id": "39894",
+        "selection": "Previously accepted representative body",
+        "swc_sha256": "3bfa570d04160fc34fc41d70f63451dfccfa28c98235e9f3c9475b7e0ca1bdeb",
+        "nodes": 573,
+        "edges": 572,
+        "mask_sha256": "0229c10de08f63dccb9e5aeecc111dc3c9c6be60f92d908b742b3d13ded4e480",
+        "bounds_px": [
+          [
+            194.11883675107694,
+            335.45261705176665
+          ],
+          [
+            265.7517116780848,
+            389.14607415003223
+          ]
+        ],
+        "clipped_nodes": 0
+      },
+      {
+        "type": "T4c",
+        "body_id": "71447",
+        "selection": "Previously accepted representative body",
+        "swc_sha256": "af4f7263541eb7f67084aad9be641310942bed0897859a7948ff0635f5b2dd32",
+        "nodes": 588,
+        "edges": 587,
+        "mask_sha256": "c6f4757501d70d43e24776f588ac299eab7920611327bb4de7cbf6da90562546",
+        "bounds_px": [
+          [
+            187.41634552983643,
+            340.25045553098084
+          ],
+          [
+            267.4273344833949,
+            384.5246267913774
+          ]
+        ],
+        "clipped_nodes": 0
+      },
+      {
+        "type": "T4d",
+        "body_id": "77484",
+        "selection": "Previously accepted representative body",
+        "swc_sha256": "bf7b08e856d7065ac2dc02d69401b7db2a19e2eb48fc538806161dd24d9a7273",
+        "nodes": 495,
+        "edges": 494,
+        "mask_sha256": "09c03d4e647d275009a8430b5460999c10709ca4493709cb00e52e1766d66fec",
+        "bounds_px": [
+          [
+            189.92977973780162,
+            303.7022153510838
+          ],
+          [
+            251.0900121316212,
+            358.84207963793625
+          ]
+        ],
+        "clipped_nodes": 0
+      },
+      {
+        "type": "T5a",
+        "body_id": "71174",
+        "selection": "Previously accepted representative body",
+        "swc_sha256": "dc8c965d81271f97bdf4a7f1995c2c3f32182824779a56142a0eac30d34f9de8",
+        "nodes": 326,
+        "edges": 325,
+        "mask_sha256": "76879c8b4048ab2d3aae4ed228a1e892bfac040afddf7a8f9e54d32ee705ca4e",
+        "bounds_px": [
+          [
+            306.38556470685523,
+            461.536990027589
+          ],
+          [
+            383.4642137511209,
+            504.85864923696494
+          ]
+        ],
+        "clipped_nodes": 0
+      },
+      {
+        "type": "T5b",
+        "body_id": "80374",
+        "selection": "Previously accepted representative body",
+        "swc_sha256": "d6fcd140fe03a259caa32cd9a0ca31838f52797cde51f1424d6d781cbe94e808",
+        "nodes": 3086,
+        "edges": 3085,
+        "mask_sha256": "9da65e5a7bed46ece13a0dc1e1795f7a1ccc1daadc69e7bb3f0dc4a5697ccbc4",
+        "bounds_px": [
+          [
+            189.9821429504676,
+            336.2088939811648
+          ],
+          [
+            334.85806159396077,
+            377.2925908484441
+          ]
+        ],
+        "clipped_nodes": 0
+      },
+      {
+        "type": "T5c",
+        "body_id": "38220",
+        "selection": "Previously accepted representative body",
+        "swc_sha256": "3e7e7902043a0b83a352d5ad2cac944f31ca88f6a039dadb1741d0bfa4ceb549",
+        "nodes": 533,
+        "edges": 532,
+        "mask_sha256": "9ffa320246c43dd557e2d63b3a5f92778050dd8fa0c7c4300d79c3a87cca42e5",
+        "bounds_px": [
+          [
+            186.5785341271814,
+            260.5216690381552
+          ],
+          [
+            327.33084977323176,
+            321.6941096481373
+          ]
+        ],
+        "clipped_nodes": 0
+      },
+      {
+        "type": "T5d",
+        "body_id": "82072",
+        "selection": "Previously accepted representative body",
+        "swc_sha256": "65fcfa882e97ed198b5c060ac1b77e1ef0358dfef32f29abe1eebcb3e5bd14e3",
+        "nodes": 447,
+        "edges": 446,
+        "mask_sha256": "4dfbb9b3fad13837ef80e092636c4a40edb026df5766c20c219f5f824d3c4bbd",
+        "bounds_px": [
+          [
+            195.37555385505956,
+            297.03463099394037
+          ],
+          [
+            344.08707782633303,
+            353.162285555925
+          ]
+        ],
+        "clipped_nodes": 0
+      }
+    ],
+    "camera_matrix": [
+      [
+        0.0028797550975196476,
+        1.7198931752068053e-19,
+        -0.005759510195039296,
+        1.2090364794506097
+      ],
+      [
+        -0.003880306060123635,
+        -0.012125956437886358,
+        -0.0019401530300618174,
+        4.966295387622058
+      ],
+      [
+        1.7440763181553997e-05,
+        -6.9763052726215994e-06,
+        8.720381590776995e-06,
+        0.4964067003939637
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "view_scale": 0.5919016043311818,
+    "view_offset": [
+      0.908575645524138,
+      240.633818112756
+    ],
+    "original_background_sha256": "ff1edaa880f4e5130eda9a101245bbd8bdd2e1efa6a87579f70c9ed1f4963de1",
+    "background_sha256": "35b3fef95ac0a697f0d598295b767463cbdd13b5462e1961f0442c404785fc53",
+    "units": "um; SWC coordinate multiplied by0.008",
+    "attribution": "Janelia FlyEM Optic Lobe v1.1 / CC-BY; representative morphology, NOT FlyVis node-to-body identity",
+    "source": "https://www.janelia.org/project-team/flyem/optic-lobe",
+    "neural_values_generated": false,
+    "occlusion_policy": "fixed per-type mean-depth painter order; display projection, not full per-pixel3D depth",
+    "painter_order": [
+      10,
+      11,
+      12,
+      13,
+      6,
+      8,
+      7,
+      9,
+      3,
+      4,
+      1,
+      5,
+      2,
+      0
+    ],
+    "background_meshes": [
+      {
+        "name": "ME(R)",
+        "path": "C:\\Users\\hzy72\\Documents\\ChatGPT\\fly\\flyvis-3d-studio\\anatomy_trial_20261013\\data\\roi\\ME(R).ngmesh",
+        "sha256": "f9d5ce9c89d8e94d7b0a2dc5672d607c3392de2f1502ed8a41eb0401950ce614",
+        "vertices": 208884,
+        "faces": 417774
+      },
+      {
+        "name": "LO(R)",
+        "path": "C:\\Users\\hzy72\\Documents\\ChatGPT\\fly\\flyvis-3d-studio\\anatomy_trial_20261013\\data\\roi\\LO(R).ngmesh",
+        "sha256": "52b9ce49e3175ca153b93c06d253ca9bd66b1ecb5b5238787dc87bfb2e072112",
+        "vertices": 97673,
+        "faces": 195358
+      },
+      {
+        "name": "LOP(R)",
+        "path": "C:\\Users\\hzy72\\Documents\\ChatGPT\\fly\\flyvis-3d-studio\\anatomy_trial_20261013\\data\\roi\\LOP(R).ngmesh",
+        "sha256": "f65f78a27f5ca51eeb19c26fad84d042a567e1aa5a23ee2fe453622d06c99078",
+        "vertices": 49261,
+        "faces": 98522
+      }
+    ],
+    "background_semantics": "Complete right ME/LO/LOP source meshes, not whole brain",
+    "full_anatomy_bounds_px": [
+      [
+        150.97154951434132,
+        28.00000000000003
+      ],
+      [
+        489.0284504856587,
+        572.0
+      ]
+    ],
+    "background_renderer": "CPU Agg complete triangle projection"
+  },
+  "fixed_cpu_projection_sha256": "9d52048417a7b85ce0983371b35de454aa82d561a2d41297d11ea556a7de3399",
+  "projection_cache": {
+    "url": "/api/competition-live/cache",
+    "sha256": "f394651042b18e2611a03c404efcb8863ac69f5272a7a766eb081016948673d0",
+    "bytes": 5355200
+  },
+  "color_encoding": {
+    "palette": {
+      "L1": "#e4c071",
+      "L2": "#71c9ed",
+      "Mi1": "#76ddba",
+      "Tm3": "#a8e0b4",
+      "Tm1": "#e1a4be",
+      "Tm2": "#c8a8e2",
+      "T4a": "#FFC857",
+      "T4b": "#56D6E9",
+      "T4c": "#61D99C",
+      "T4d": "#B699FF",
+      "T5a": "#FF82BC",
+      "T5b": "#F4ED74",
+      "T5c": "#5C9DFF",
+      "T5d": "#E3EAF3"
+    },
+    "intensity_domain": [
+      0,
+      2
+    ],
+    "brightness_floor": 0.18,
+    "brightness_exponent": 0.35,
+    "formula": ".18+.82*min(abs(selected_signed_mean)/2,1)^.35",
+    "sign_semantics": "brightness encodes absolute magnitude; signed values shown in label and curves"
+  },
+  "geometry_rebuilt_per_frame": false,
+  "renderer_computes_neurons": false
+}

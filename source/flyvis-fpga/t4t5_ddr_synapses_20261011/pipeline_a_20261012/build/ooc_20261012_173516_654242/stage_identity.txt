@@ -1,0 +1,11 @@
+tool=2026.1.1
+part=xc7z020clg400-2
+design=design_1
+stage=OOC_SYNTHESIS_ONLY
+flatten_hierarchy=none
+general.maxThreads=1
+synthesis_elapsed_ms=52913
+H_COUNT=5768 SOURCE_COUNT=16402 EDGE_COUNT=433880 WEIGHT_COUNT=645 FIFO_DEPTH=128 AXI_TIMEOUT=64 STEP_TIMEOUT=8000000
+clock_period_ns=10.000
+HD.CLK_SRC=
+black_box_count=0

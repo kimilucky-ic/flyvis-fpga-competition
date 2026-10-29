@@ -1,0 +1,29 @@
+{
+  "kind": "retrospective_engineering_summary_not_chat_transcript",
+  "contains_original_messages": false,
+  "contains_local_paths": false,
+  "contains_session_identifiers": false,
+  "items": [
+    {
+      "topic": "startup preparation",
+      "summary": "Reviewed static model structure caching and parallel preparation while keeping model and precision fixed."
+    },
+    {
+      "topic": "computation path",
+      "summary": "Separated computation,logging and rendering where safe; retained result identities and failure-stop behavior."
+    },
+    {
+      "topic": "initialization correction",
+      "summary": "Restored overlay-loading before memory allocation and distinguished software checks from board evidence."
+    },
+    {
+      "topic": "visual explanation",
+      "summary": "Revised T4/T5 readout labels and presentation to distinguish values,display transformations and direction preference."
+    },
+    {
+      "topic": "repeat experiments",
+      "summary": "Reviewed normal-close and next-experiment admission; unknown/error states must not automatically retry."
+    }
+  ],
+  "evidence_note": "This is a curated summary only. Original prompts and answers are not distributed. Do not claim it satisfies any requirement for verbatim collaboration records."
+}

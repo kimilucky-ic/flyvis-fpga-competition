@@ -1,0 +1,75 @@
+FrozenCNN actual MP4 input pilot, 2026-10-16.
+Evidence scope: CPU software, controlled synthetic MP4 scenes, fixed video format.
+No natural-camera, physical optical-flow accuracy, GPU or hardware claim.
+
+Environment inherited: Python3.14.5, NumPy2.4.6, PyTorch2.12.0+cpu,
+OpenCV4.13.0; matplotlib for saved figures. Threads1. No new dependencies.
+
+READ-ONLY prerequisites:
+../cnn_t4t5_frozen_generalization_20261016/core.py,run.py,audit.py and identity;
+../cnn_t4t5_cpu_refinement_20261016/shared.py,training/ridge.pt and identity;
+../cnn_t4t5_replacement_20261016/ accepted architecture, exact Full oracle,
+production coordinator, R-only binding, original DecoderGAVP loader and mapping;
+pinned original parameter bundle, full a0, original checkpoint, official source
+and331-position ROI. Exact paths/hashes in PREREGISTRATION.json.
+
+To reproduce under separate authorization, create a NEW sibling directory and
+copy only core.py,video_io.py,prepare.py,run.py,analyze.py,audit.py,plots.py.
+Keep prerequisite sources and accepted results untouched. Run in this order:
+python -B prepare.py
+python -B run.py
+python -B analyze.py
+python -B audit.py
+python -B plots.py
+Do not run over this result directory. Do not retry neural runs or modify gates
+after viewing results. Newly generated and now-seen movies are NOT future
+independent holdout after further model tuning. This file authorizes no run.
+
+Preparation freezes code, model, cases, metrics and all windows before writing
+MP4 files. It then actually encodes10 movies and decodes all5000 frames.
+PREPARATION_REJECTION.md and RESOURCE_GATE_OBSERVATION.json preserve a first
+preflight RAM rejection before any registration/video/neural step; after one
+resource recovery the full gate is rechecked. No lowering of resource bounds.
+
+Video format:224x224,100fps,500frames/5s,mp4v. Full721-point retinal sampling:
+original axial coordinates projected at6pixels nearest-neighbor spacing,
+3x3 decoded grayscale mean/255. Input1000steps at5ms uses source frame floor
+(k*.005*100), i.e. each decoded frame twice. No future interpolation, padding,
+direct generator-to-network values, resizing or crop adjustment on test movies.
+
+Temporal schedule:0-1s gray,1-1.1s contrast ramp,1-4s motion,4-5s held image.
+Static texture appears with the same ramp then remains still. Moving background
+is controlled low-contrast texture, not natural footage. Local target window is
+stationary radius4.5; target edge moves inside. Cases vary direction/speed and
+background, so the batch is not a factorial causal isolation of each factor.
+
+Model interfaces unchanged: external brightness[721], ownoldstate[45669];
+CNN predicts nextH[5768] from ownoldH/liveoldR fields, R-only computes nextR
+[39901] from sameoldstate. Validate both, then full commit. Common fixed a0,
+no warmup or resets within video, no teacher correction or FullR playback.
+run.py compiles the exact accepted runner main() function body with explicit
+current path bindings; it does not edit or import-run the prior campaign.
+Native OriginalTargets.step is guarded to reject during CNN production.
+
+Primary comparison: allH responseL2 and frozen331ROI official flow for active,
+stopped andallpost windows. Local cases additionally require active fixedradius3
+foreground ROI. Same .20 E/.20 H/[.8,1.2] M/15deg fieldangle gates.
+Static controls use prior absolute .002 bounds for H,R,flow; low-response
+references never count as PASS. No direction classification accuracy is defined.
+
+Outputs:
+videos/*.mp4 actual encoded movies; INPUTS.json records both MP4 and NPY hashes;
+inputs/*.npy contain actual decoded common retinal input;
+inputs/*_time.json contains real frame indices and input/output times;
+SAMPLER.npz records721 coordinates;
+runs/<case>/<Full|CNN|Sham>/states_raw.npy,VALIDITY.json,chain.jsonl,final.npy,
+flow.npy,RESULT.json. Only[:valid_rows] are committed; uncommitted tail invalid.
+runs/<case>/STEP_ERRORS.npy records allH/allR errors every step;
+SUMMARY.json,METRICS.csv contain every preregistered window including failures;
+VIDEO_INPUT_AUDIT.json independently re-decodes ALL movies and checks common
+input exact equality; FINAL_AUDIT.json rehashes all fullstate/input/time chains
+without neural recomputation. Old fault suites are not rerun.
+
+REPORT.md states actual outcomes and limits. Preserve failures and identity
+records. Never present model-to-Full field angle as stimulus direction error,
+or substitute real-time camera/GPU-FPGA claims for this CPU result.

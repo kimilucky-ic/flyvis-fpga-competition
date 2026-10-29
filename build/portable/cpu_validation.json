@@ -1,0 +1,8 @@
+{
+  "status": "PASS_CPU_PREPARATION_POSITIVE_EXISTING_OUTPUT_MISSING_VENDOR",
+  "rtl_images_checked": 58,
+  "vendor_files": 56,
+  "eda_started": false,
+  "board_operations": 0,
+  "scope": "file preparation and path-string relocation only, no Tcl/Vivado execution"
+}

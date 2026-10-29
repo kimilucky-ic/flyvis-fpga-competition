@@ -1,0 +1,29 @@
+{
+  "revision": "LINE11_OFFICIAL_LIVE_V261_60S",
+  "source_routed_dcp_sha256": "47a822e7a2ee755b7b1d22c50d0c3c2bdd5965df1dae5d8cfa11439273ca6931",
+  "bit_sha256": "b88cd46383b4884e74384a2f418c251e8d4bb20a86fd3ea6a487be1f58409044",
+  "hwh_sha256": "00eb04c23bd2c6666aaec6a9e7809829bedca8591471d7160bb813ae86e6851f",
+  "nodes": 45669,
+  "edges": 1513231,
+  "clock_hz": 100000000,
+  "numeric": "UNCHANGED_STRICT_FP32",
+  "board_operations": 0,
+  "execution_authority": "NONE",
+  "external_signoff_complete": false,
+  "tool": "Vivado2026.1 SW6511674",
+  "source_candidate": "vivado2026_1_20261026",
+  "software_revision": "LINE11_OFFICIAL_LIVE_V261_60S",
+  "cycle_counter_expected": 2199975,
+  "fix": "Vivado2026.1 rebuilt paired firmware; passed center-square mapping and runtime unchanged",
+  "control_ABI": "0x00110005",
+  "ring_slots": 64,
+  "ring_bytes": 12058624,
+  "mapping": "direct-grey-center-square-area/v2",
+  "crop": {
+    "left": 16,
+    "top": 0,
+    "width": 48,
+    "height": 48
+  },
+  "physical_acceptance": "PENDING_NEW_BITSTREAM_OPERATOR_RUN"
+}

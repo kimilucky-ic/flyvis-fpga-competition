@@ -1,0 +1,12 @@
+{
+  "status": "PASS_SAVED_SAME_SIZE_CPU_REFINEMENT_EVIDENCE",
+  "formal_commits_checked": 21000,
+  "model_frozen_before_test_generation": true,
+  "training_validation_rows_disjoint": true,
+  "all_formal_state_and_input_time_chains_checked": true,
+  "native_H_production_updates": 0,
+  "teacher_corrections": 0,
+  "new_neural_steps_in_audit": 0,
+  "GPU": 0,
+  "board": 0
+}

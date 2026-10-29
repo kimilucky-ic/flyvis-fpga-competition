@@ -1,0 +1,8 @@
+Vivado v2026.1.1 (64-bit)
+SW Build 6605303 on Fri Sep 04 12:46:29 BST 2026
+IP Build 6603865 on Fri Sep 04 05:05:05 MDT 2026
+Tool Version Limit: 2026.06
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+SharedData Build 6605217 on Fri Sep 04 02:50:14 MDT 2026
+

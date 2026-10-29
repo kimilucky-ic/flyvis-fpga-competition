@@ -1,0 +1,1 @@
+"work.tb_pipeline_full" -s "pipeline_sim" -debug "typical" --mt "off" -log "xelab.log" 

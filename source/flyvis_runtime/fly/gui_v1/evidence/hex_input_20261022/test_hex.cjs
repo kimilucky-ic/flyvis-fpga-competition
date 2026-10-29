@@ -1,0 +1,12 @@
+const fs=require('fs'),vm=require('vm'),assert=require('assert');
+const base='C:/Users/hzy72/Documents/ChatGPT/fly',source=fs.readFileSync(base+'/viewer/competition_full_pl.js','utf8');
+const fixture=JSON.parse(fs.readFileSync(base+'/gui_v1/evidence/saved_replay_20261021/frames.json'));
+let fills=[],paths=[],style='';const c={fillRect(){},beginPath(){paths.push([])},moveTo(x,y){paths.at(-1).push([x,y])},lineTo(x,y){paths.at(-1).push([x,y])},closePath(){},fill(){fills.push(style)},stroke(){},set fillStyle(x){style=x}};
+const ctx={document:{createElement(){return{getContext(){return c}}}},health:fixture.health,inputMode:{value:'binary'},Math,fail(ok,msg){if(!ok)throw Error(msg)}};
+vm.createContext(ctx);vm.runInContext(source.slice(source.indexOf('  function inputCanvas('),source.indexOf('  function flowCanvas(')),ctx);
+const packet=fixture.frames['313'].frame,before=JSON.stringify(packet);ctx.p=packet;
+vm.runInContext('inputCanvas(p)',ctx);assert.equal(fills.length,721);assert(paths.every(p=>p.length===6));assert(fills.every((s,i)=>s===(packet.input_hex[i]>=.5?'rgb(255,255,255)':'rgb(0,0,0)')));
+assert(paths.flat().every(([x,y])=>x>=0&&x<=400&&y>=0&&y<=340));
+ctx.inputMode.value='gray';fills=[];vm.runInContext('inputCanvas(p)',ctx);assert(fills.every((s,i)=>{const g=Math.round(Math.min(1,Math.max(0,packet.input_hex[i]))*255);return s===`rgb(${g},${g},${g})`}));assert.equal(JSON.stringify(packet),before);
+ctx.health={coordinates_uv:[]};assert.throws(()=>vm.runInContext('inputCanvas(p)',ctx),/COORDINATES/);
+const out={status:'PASS_REAL_SAVED_INPUT_HEX_DISPLAY',cells:721,vertices_per_cell:6,within_canvas:true,threshold:.5,binary_matches_actual_input:true,gray_matches_actual_input:true,source_packet_unchanged:true,bad_mapping_rejected:true};fs.writeFileSync(base+'/gui_v1/evidence/hex_input_20261022/RESULT.json',JSON.stringify(out,null,2));console.log(out);

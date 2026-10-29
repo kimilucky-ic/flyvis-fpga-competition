@@ -1,0 +1,716 @@
+{
+  "evidence_level": "original-model software simulation on local GPU",
+  "cpu_baseline_manifest_verified": true,
+  "cpu_baseline_files_checked": 36,
+  "manifest_checks": [
+    {
+      "path": "checkpoint_network_parameters.npz",
+      "matches": true
+    },
+    {
+      "path": "environment.json",
+      "matches": true
+    },
+    {
+      "path": "flash\\activity_central.csv",
+      "matches": true
+    },
+    {
+      "path": "flash\\activity_central.npy",
+      "matches": true
+    },
+    {
+      "path": "flash\\activity_traces.png",
+      "matches": true
+    },
+    {
+      "path": "flash\\cell_types.npy",
+      "matches": true
+    },
+    {
+      "path": "flash\\input_hex_coordinates.csv",
+      "matches": true
+    },
+    {
+      "path": "flash\\metadata.json",
+      "matches": true
+    },
+    {
+      "path": "flash\\metrics.json",
+      "matches": true
+    },
+    {
+      "path": "flash\\neurons.csv",
+      "matches": true
+    },
+    {
+      "path": "flash\\reproducibility.json",
+      "matches": true
+    },
+    {
+      "path": "flash\\samples.csv",
+      "matches": true
+    },
+    {
+      "path": "flash\\stimulus.npy",
+      "matches": true
+    },
+    {
+      "path": "flash\\stimulus_frames.png",
+      "matches": true
+    },
+    {
+      "path": "flash\\time.npy",
+      "matches": true
+    },
+    {
+      "path": "milestone.json",
+      "matches": true
+    },
+    {
+      "path": "network.json",
+      "matches": true
+    },
+    {
+      "path": "requirements-lock.txt",
+      "matches": true
+    },
+    {
+      "path": "structure\\candidate_circuits.json",
+      "matches": true
+    },
+    {
+      "path": "structure\\cell_type_connections.csv",
+      "matches": true
+    },
+    {
+      "path": "structure\\nodes.csv",
+      "matches": true
+    },
+    {
+      "path": "structure\\T4_patch_radius1_one_hop_boundary_inputs.csv",
+      "matches": true
+    },
+    {
+      "path": "structure\\T4_patch_radius1_one_hop_nodes.csv",
+      "matches": true
+    },
+    {
+      "path": "structure\\T4_T5_input_connections.csv",
+      "matches": true
+    },
+    {
+      "path": "structure\\T4_T5_patch_radius1_one_hop_boundary_inputs.csv",
+      "matches": true
+    },
+    {
+      "path": "structure\\T4_T5_patch_radius1_one_hop_nodes.csv",
+      "matches": true
+    },
+    {
+      "path": "structure\\T4c_center_one_hop_boundary_inputs.csv",
+      "matches": true
+    },
+    {
+      "path": "structure\\T4c_center_one_hop_nodes.csv",
+      "matches": true
+    },
+    {
+      "path": "structure\\T4c_center_two_hop_boundary_inputs.csv",
+      "matches": true
+    },
+    {
+      "path": "structure\\T4c_center_two_hop_nodes.csv",
+      "matches": true
+    },
+    {
+      "path": "structure\\T5_patch_radius1_one_hop_boundary_inputs.csv",
+      "matches": true
+    },
+    {
+      "path": "structure\\T5_patch_radius1_one_hop_nodes.csv",
+      "matches": true
+    },
+    {
+      "path": "structure\\T5c_center_one_hop_boundary_inputs.csv",
+      "matches": true
+    },
+    {
+      "path": "structure\\T5c_center_one_hop_nodes.csv",
+      "matches": true
+    },
+    {
+      "path": "structure\\T5c_center_two_hop_boundary_inputs.csv",
+      "matches": true
+    },
+    {
+      "path": "structure\\T5c_center_two_hop_nodes.csv",
+      "matches": true
+    }
+  ],
+  "measured_speedups": {
+    "flash": 1.2848539563665082,
+    "hexeye_three_offsets": 105.6692434013394,
+    "hexeye_construction": 6.9721011740028604
+  },
+  "results": {
+    "hexeye_cuda_t1_r1": {
+      "stage": "hexeye",
+      "device": "cuda",
+      "cpu_threads": 1,
+      "repeat": 1,
+      "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+      "os": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+      "torch": "2.7.1+cu128",
+      "cuda_runtime": "12.8",
+      "deterministic_algorithms": true,
+      "tf32": false,
+      "flyvis_version": "1.2.0",
+      "source_commit": "92b3845cc426dd309a1a0e1b3890156c42e14021",
+      "command": [
+        "/opt/flyvis-gpu-venv/bin/python",
+        "/mnt/c/Users/hzy72/Documents/ChatGPT/fpga/flyvis-gpu-validation/scripts/benchmark.py",
+        "--device",
+        "cuda",
+        "--stage",
+        "hexeye",
+        "--threads",
+        "1",
+        "--repeat",
+        "1"
+      ],
+      "cache_bypassed_for_inference": true,
+      "gpu": "NVIDIA GeForce RTX 5060 Laptop GPU",
+      "gpu_capability": [
+        12,
+        0
+      ],
+      "gpu_total_MiB": 8150.5625,
+      "construction": {
+        "elapsed_s": 4.489060937999966,
+        "peak_allocated_MiB": 3762.04150390625,
+        "peak_reserved_MiB": 7490.0
+      },
+      "render_three_offsets": {
+        "elapsed_s": 0.2313073519999307,
+        "peak_allocated_MiB": 3766.6220703125,
+        "peak_reserved_MiB": 3772.0
+      },
+      "render_parameters": {
+        "bar_width_rad": 3.141592653589793,
+        "bar_height_rad": 3.141592653589793,
+        "n_bars": 1,
+        "offsets": [
+          -0.39269908169872414,
+          0.0,
+          0.39269908169872414
+        ],
+        "bar_intensity": 1,
+        "bg_intensity": 0.5,
+        "moving_angle": 0,
+        "bar_loc_horizontal": 0.0
+      },
+      "output_shape": [
+        3,
+        721
+      ],
+      "all_finite": true,
+      "status": "PASS"
+    },
+    "hexeye_cpu_t1_r1": {
+      "stage": "hexeye",
+      "device": "cpu",
+      "cpu_threads": 1,
+      "repeat": 1,
+      "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+      "os": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+      "torch": "2.7.1+cu128",
+      "cuda_runtime": "12.8",
+      "deterministic_algorithms": true,
+      "tf32": false,
+      "flyvis_version": "1.2.0",
+      "source_commit": "92b3845cc426dd309a1a0e1b3890156c42e14021",
+      "command": [
+        "/opt/flyvis-gpu-venv/bin/python",
+        "/mnt/c/Users/hzy72/Documents/ChatGPT/fpga/flyvis-gpu-validation/scripts/benchmark.py",
+        "--device",
+        "cpu",
+        "--stage",
+        "hexeye",
+        "--threads",
+        "1",
+        "--repeat",
+        "1"
+      ],
+      "cache_bypassed_for_inference": true,
+      "construction": {
+        "elapsed_s": 31.298187035999945
+      },
+      "render_three_offsets": {
+        "elapsed_s": 24.442072878999966
+      },
+      "render_parameters": {
+        "bar_width_rad": 3.141592653589793,
+        "bar_height_rad": 3.141592653589793,
+        "n_bars": 1,
+        "offsets": [
+          -0.39269908169872414,
+          0.0,
+          0.39269908169872414
+        ],
+        "bar_intensity": 1,
+        "bg_intensity": 0.5,
+        "moving_angle": 0,
+        "bar_loc_horizontal": 0.0
+      },
+      "output_shape": [
+        3,
+        721
+      ],
+      "all_finite": true,
+      "comparison_to_cuda": {
+        "shape_match": true,
+        "bitwise_equal": true,
+        "max_abs_error": 0.0,
+        "mean_abs_error": 0.0,
+        "rmse": 0.0,
+        "allclose_atol_1e-5_rtol_1e-5": true
+      },
+      "status": "PASS"
+    },
+    "flash_cuda_t1_r1": {
+      "stage": "flash",
+      "device": "cuda",
+      "cpu_threads": 1,
+      "repeat": 1,
+      "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+      "os": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+      "torch": "2.7.1+cu128",
+      "cuda_runtime": "12.8",
+      "deterministic_algorithms": true,
+      "tf32": false,
+      "flyvis_version": "1.2.0",
+      "source_commit": "92b3845cc426dd309a1a0e1b3890156c42e14021",
+      "command": [
+        "/opt/flyvis-gpu-venv/bin/python",
+        "/mnt/c/Users/hzy72/Documents/ChatGPT/fpga/flyvis-gpu-validation/scripts/benchmark.py",
+        "--device",
+        "cuda",
+        "--stage",
+        "flash",
+        "--threads",
+        "1",
+        "--repeat",
+        "1"
+      ],
+      "cache_bypassed_for_inference": true,
+      "gpu": "NVIDIA GeForce RTX 5060 Laptop GPU",
+      "gpu_capability": [
+        12,
+        0
+      ],
+      "gpu_total_MiB": 8150.5625,
+      "checkpoint_sha256": "d0e42857e738d0315897c2d50fde9eb3fb1a3fb1f071d55dfc13d53d72bccc3f",
+      "model_initialization": {
+        "elapsed_s": 3.043234562000066,
+        "peak_allocated_MiB": 140.759765625,
+        "peak_reserved_MiB": 142.0
+      },
+      "weights_exact_before": true,
+      "n_neurons": 45669,
+      "n_connections": 1513231,
+      "inference": {
+        "elapsed_s": 11.181290078000075,
+        "peak_allocated_MiB": 1545.71923828125,
+        "peak_reserved_MiB": 3408.0
+      },
+      "activity_shape": [
+        4,
+        600,
+        65
+      ],
+      "stimulus_shape": [
+        4,
+        600,
+        1,
+        721
+      ],
+      "all_finite": true,
+      "weights_exact_after": true,
+      "activity_vs_cpu_golden": {
+        "shape_match": true,
+        "bitwise_equal": false,
+        "max_abs_error": 1.430511474609375e-06,
+        "mean_abs_error": 7.699716286133014e-08,
+        "rmse": 1.353846458740063e-07,
+        "allclose_atol_1e-5_rtol_1e-5": true
+      },
+      "stimulus_vs_cpu_golden": {
+        "shape_match": true,
+        "bitwise_equal": true,
+        "max_abs_error": 0.0,
+        "mean_abs_error": 0.0,
+        "rmse": 0.0,
+        "allclose_atol_1e-5_rtol_1e-5": true
+      },
+      "numerical_acceptance": true,
+      "status": "PASS"
+    },
+    "flash_cpu_t1_r1": {
+      "stage": "flash",
+      "device": "cpu",
+      "cpu_threads": 1,
+      "repeat": 1,
+      "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+      "os": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+      "torch": "2.7.1+cu128",
+      "cuda_runtime": "12.8",
+      "deterministic_algorithms": true,
+      "tf32": false,
+      "flyvis_version": "1.2.0",
+      "source_commit": "92b3845cc426dd309a1a0e1b3890156c42e14021",
+      "command": [
+        "/opt/flyvis-gpu-venv/bin/python",
+        "/mnt/c/Users/hzy72/Documents/ChatGPT/fpga/flyvis-gpu-validation/scripts/benchmark.py",
+        "--device",
+        "cpu",
+        "--stage",
+        "flash",
+        "--threads",
+        "1",
+        "--repeat",
+        "1"
+      ],
+      "cache_bypassed_for_inference": true,
+      "checkpoint_sha256": "d0e42857e738d0315897c2d50fde9eb3fb1a3fb1f071d55dfc13d53d72bccc3f",
+      "model_initialization": {
+        "elapsed_s": 3.23882912199997
+      },
+      "weights_exact_before": true,
+      "n_neurons": 45669,
+      "n_connections": 1513231,
+      "inference": {
+        "elapsed_s": 14.36632479399998
+      },
+      "activity_shape": [
+        4,
+        600,
+        65
+      ],
+      "stimulus_shape": [
+        4,
+        600,
+        1,
+        721
+      ],
+      "all_finite": true,
+      "weights_exact_after": true,
+      "activity_vs_cpu_golden": {
+        "shape_match": true,
+        "bitwise_equal": true,
+        "max_abs_error": 0.0,
+        "mean_abs_error": 0.0,
+        "rmse": 0.0,
+        "allclose_atol_1e-5_rtol_1e-5": true
+      },
+      "stimulus_vs_cpu_golden": {
+        "shape_match": true,
+        "bitwise_equal": true,
+        "max_abs_error": 0.0,
+        "mean_abs_error": 0.0,
+        "rmse": 0.0,
+        "allclose_atol_1e-5_rtol_1e-5": true
+      },
+      "numerical_acceptance": true,
+      "status": "PASS"
+    },
+    "flash_cuda_t1_r2": {
+      "stage": "flash",
+      "device": "cuda",
+      "cpu_threads": 1,
+      "repeat": 2,
+      "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+      "os": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+      "torch": "2.7.1+cu128",
+      "cuda_runtime": "12.8",
+      "deterministic_algorithms": true,
+      "tf32": false,
+      "flyvis_version": "1.2.0",
+      "source_commit": "92b3845cc426dd309a1a0e1b3890156c42e14021",
+      "command": [
+        "/opt/flyvis-gpu-venv/bin/python",
+        "/mnt/c/Users/hzy72/Documents/ChatGPT/fpga/flyvis-gpu-validation/scripts/benchmark.py",
+        "--device",
+        "cuda",
+        "--stage",
+        "flash",
+        "--threads",
+        "1",
+        "--repeat",
+        "2"
+      ],
+      "cache_bypassed_for_inference": true,
+      "gpu": "NVIDIA GeForce RTX 5060 Laptop GPU",
+      "gpu_capability": [
+        12,
+        0
+      ],
+      "gpu_total_MiB": 8150.5625,
+      "checkpoint_sha256": "d0e42857e738d0315897c2d50fde9eb3fb1a3fb1f071d55dfc13d53d72bccc3f",
+      "model_initialization": {
+        "elapsed_s": 3.1635708940000313,
+        "peak_allocated_MiB": 140.759765625,
+        "peak_reserved_MiB": 142.0
+      },
+      "weights_exact_before": true,
+      "n_neurons": 45669,
+      "n_connections": 1513231,
+      "inference": {
+        "elapsed_s": 10.994193658999961,
+        "peak_allocated_MiB": 1545.71923828125,
+        "peak_reserved_MiB": 3408.0
+      },
+      "activity_shape": [
+        4,
+        600,
+        65
+      ],
+      "stimulus_shape": [
+        4,
+        600,
+        1,
+        721
+      ],
+      "all_finite": true,
+      "weights_exact_after": true,
+      "activity_vs_cpu_golden": {
+        "shape_match": true,
+        "bitwise_equal": false,
+        "max_abs_error": 1.430511474609375e-06,
+        "mean_abs_error": 7.699716286133014e-08,
+        "rmse": 1.353846458740063e-07,
+        "allclose_atol_1e-5_rtol_1e-5": true
+      },
+      "stimulus_vs_cpu_golden": {
+        "shape_match": true,
+        "bitwise_equal": true,
+        "max_abs_error": 0.0,
+        "mean_abs_error": 0.0,
+        "rmse": 0.0,
+        "allclose_atol_1e-5_rtol_1e-5": true
+      },
+      "numerical_acceptance": true,
+      "activity_vs_first_device_run": {
+        "shape_match": true,
+        "bitwise_equal": true,
+        "max_abs_error": 0.0,
+        "mean_abs_error": 0.0,
+        "rmse": 0.0,
+        "allclose_atol_1e-5_rtol_1e-5": true
+      },
+      "status": "PASS"
+    },
+    "moving_edge_cuda_t1_r1": {
+      "stage": "moving_edge",
+      "device": "cuda",
+      "cpu_threads": 1,
+      "repeat": 1,
+      "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+      "os": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+      "torch": "2.7.1+cu128",
+      "cuda_runtime": "12.8",
+      "deterministic_algorithms": true,
+      "tf32": false,
+      "flyvis_version": "1.2.0",
+      "source_commit": "92b3845cc426dd309a1a0e1b3890156c42e14021",
+      "command": [
+        "/opt/flyvis-gpu-venv/bin/python",
+        "/mnt/c/Users/hzy72/Documents/ChatGPT/fpga/flyvis-gpu-validation/scripts/benchmark.py",
+        "--device",
+        "cuda",
+        "--stage",
+        "moving_edge",
+        "--threads",
+        "1",
+        "--repeat",
+        "1"
+      ],
+      "cache_bypassed_for_inference": true,
+      "gpu": "NVIDIA GeForce RTX 5060 Laptop GPU",
+      "gpu_capability": [
+        12,
+        0
+      ],
+      "gpu_total_MiB": 8150.5625,
+      "checkpoint_sha256": "d0e42857e738d0315897c2d50fde9eb3fb1a3fb1f071d55dfc13d53d72bccc3f",
+      "model_initialization": {
+        "elapsed_s": 3.4555694020000374,
+        "peak_allocated_MiB": 140.759765625,
+        "peak_reserved_MiB": 142.0
+      },
+      "weights_exact_before": true,
+      "n_neurons": 45669,
+      "n_connections": 1513231,
+      "stimulus_first_build": {
+        "elapsed_s": 2.527359810000007,
+        "peak_allocated_MiB": 3875.43994140625,
+        "peak_reserved_MiB": 7598.0
+      },
+      "stimulus_cached_build": {
+        "elapsed_s": 0.011515810999981113,
+        "peak_allocated_MiB": 148.9560546875,
+        "peak_reserved_MiB": 3880.0
+      },
+      "dataset_config": {
+        "offsets": [
+          -10,
+          11
+        ],
+        "intensities": [
+          1
+        ],
+        "speeds": [
+          19
+        ],
+        "height": 80,
+        "post_pad_mode": "continue",
+        "t_pre": 1.0,
+        "t_post": 1.0,
+        "dt": 0.005,
+        "angles": [
+          0
+        ]
+      },
+      "inference": {
+        "elapsed_s": 2.5090744160000895,
+        "peak_allocated_MiB": 1504.83251953125,
+        "peak_reserved_MiB": 3970.0
+      },
+      "activity_shape": [
+        1,
+        485,
+        65
+      ],
+      "stimulus_shape": [
+        1,
+        485,
+        1,
+        721
+      ],
+      "all_finite": true,
+      "weights_exact_after": true,
+      "status": "PASS"
+    },
+    "moving_edge_full_cuda_t1_r1": {
+      "stage": "moving_edge_full",
+      "device": "cuda",
+      "cpu_threads": 1,
+      "repeat": 1,
+      "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+      "os": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+      "torch": "2.7.1+cu128",
+      "cuda_runtime": "12.8",
+      "deterministic_algorithms": true,
+      "tf32": false,
+      "flyvis_version": "1.2.0",
+      "source_commit": "92b3845cc426dd309a1a0e1b3890156c42e14021",
+      "command": [
+        "/opt/flyvis-gpu-venv/bin/python",
+        "/mnt/c/Users/hzy72/Documents/ChatGPT/fpga/flyvis-gpu-validation/scripts/benchmark.py",
+        "--device",
+        "cuda",
+        "--stage",
+        "moving_edge_full",
+        "--threads",
+        "1",
+        "--repeat",
+        "1"
+      ],
+      "cache_bypassed_for_inference": true,
+      "gpu": "NVIDIA GeForce RTX 5060 Laptop GPU",
+      "gpu_capability": [
+        12,
+        0
+      ],
+      "gpu_total_MiB": 8150.5625,
+      "checkpoint_sha256": "d0e42857e738d0315897c2d50fde9eb3fb1a3fb1f071d55dfc13d53d72bccc3f",
+      "model_initialization": {
+        "elapsed_s": 4.577010006999899,
+        "peak_allocated_MiB": 140.759765625,
+        "peak_reserved_MiB": 142.0
+      },
+      "weights_exact_before": true,
+      "n_neurons": 45669,
+      "n_connections": 1513231,
+      "stimulus_first_build": {
+        "elapsed_s": 20.948103699000058,
+        "peak_allocated_MiB": 3878.1015625,
+        "peak_reserved_MiB": 7598.0
+      },
+      "stimulus_cached_build": {
+        "elapsed_s": 0.04846105499996156,
+        "peak_allocated_MiB": 338.4794921875,
+        "peak_reserved_MiB": 3882.0
+      },
+      "dataset_config": {
+        "offsets": [
+          -10,
+          11
+        ],
+        "intensities": [
+          0,
+          1
+        ],
+        "speeds": [
+          19
+        ],
+        "height": 80,
+        "post_pad_mode": "continue",
+        "t_pre": 1.0,
+        "t_post": 1.0,
+        "dt": 0.005,
+        "angles": [
+          0,
+          30,
+          60,
+          90,
+          120,
+          150,
+          180,
+          210,
+          240,
+          270,
+          300,
+          330
+        ]
+      },
+      "inference": {
+        "elapsed_s": 51.12222724399999,
+        "peak_allocated_MiB": 1632.74072265625,
+        "peak_reserved_MiB": 4366.0
+      },
+      "activity_shape": [
+        24,
+        485,
+        65
+      ],
+      "stimulus_shape": [
+        24,
+        485,
+        1,
+        721
+      ],
+      "all_finite": true,
+      "weights_exact_after": true,
+      "status": "PASS"
+    }
+  },
+  "not_validated": [
+    "complete DSI",
+    "all moving-edge conditions vs CPU",
+    "second clean environment installation",
+    "subcircuit boundary activity",
+    "FPGA",
+    "cloud GPU execution"
+  ]
+}

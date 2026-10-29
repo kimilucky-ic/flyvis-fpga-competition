@@ -1,0 +1,70 @@
+"""Capture the ORIGINAL Full _next_state launch sequence, never reimplement it.
+
+FullNetworkOracle.step remains the caller (including every finite/range check).
+One graph replay is exactly one model update. Outputs are cloned so an uncommitted
+candidate cannot overwrite the previous committed state. Full-only, fixed model.
+Import is CPU-only; construction requires the caller's already-owned CUDA lease.
+"""
+import time
+from live_protocol import require
+
+
+class OriginalNextStateGraph:
+    def __init__(self,oracle,torch,initial,frame,check):
+        self.oracle=oracle;self.torch=torch;self.net=oracle.net;self.original=self.net._next_state
+        self.target_sum=self.net.target_sum;self.replays=0;self.installed=False
+        require(not self.net._state_hooks,'GRAPH_STATE_HOOKS_FORBIDDEN')
+        require(torch.are_deterministic_algorithms_enabled() and not torch.backends.cuda.matmul.allow_tf32
+                and not torch.backends.cudnn.allow_tf32,'GRAPH_FROZEN_FP32_PROFILE')
+        check('graph_prepare');start=time.monotonic()
+        # Original dynamics constructs torch.tensor(dt).float() on CUDA every step.
+        # That scalar host->device copy is not capture-safe. Cache ONLY this exact
+        # immutable FP32 scalar while recording; all original arithmetic runs intact.
+        from torch.overrides import TorchFunctionMode
+        require(torch.get_default_dtype()==torch.float32,'GRAPH_DEFAULT_DTYPE_CHANGED')
+        self.dt_tensor=torch.tensor(oracle.dt,device=oracle.device,dtype=torch.float32)
+        cached_dt=self.dt_tensor
+        class FrozenDT(TorchFunctionMode):
+            def __torch_function__(self_mode,func,types,args=(),kwargs=None):
+                kwargs=kwargs or {}
+                if func is torch.tensor and len(args)==1 and type(args[0]) is float and args[0]==oracle.dt:
+                    require(set(kwargs)<= {'device'} and torch.device(kwargs.get('device',oracle.device)).type=='cuda','GRAPH_DT_FACTORY_CHANGED')
+                    return cached_dt
+                return func(*args,**kwargs)
+        with torch.no_grad():
+            self.old=initial.reshape(1,-1).clone()
+            self.net.stimulus.buffer.zero_();self.net.stimulus.add_input(frame.reshape(1,1,1,721))
+            self.x=self.net.stimulus()[:,0].clone()
+            def original_call():
+                # Recreate AutoDeref so warmup's gather cache is NOT frozen into capture.
+                state=self.net._state_api(oracle.AutoDeref(nodes=oracle.AutoDeref(activity=self.old),edges=oracle.AutoDeref()))
+                return self.original(oracle.params,state,self.x,oracle.dt)
+            stream=torch.cuda.Stream();stream.wait_stream(torch.cuda.current_stream())
+            with torch.cuda.stream(stream):
+                for _ in range(3):original_call()
+            torch.cuda.current_stream().wait_stream(stream);torch.cuda.synchronize()
+            check('graph_capture');self.graph=torch.cuda.CUDAGraph()
+            with torch.cuda.graph(self.graph,stream=stream),FrozenDT():self.output=original_call()
+            torch.cuda.synchronize();check('graph_capture_completed')
+        self.preparation_s=time.monotonic()-start
+    def install(self):
+        require(not self.installed and self.net._next_state==self.original,'GRAPH_ALREADY_INSTALLED_OR_METHOD_CHANGED')
+        self.net._next_state=self.call;self.installed=True;return self
+    def call(self,params,state,x,dt):
+        require(params is self.oracle.params and dt==self.oracle.dt and not self.net._state_hooks
+                and self.net.target_sum==self.target_sum,'GRAPH_MODEL_OR_MODE_CHANGED')
+        require(list(state.nodes)==['activity'] and not state.edges and state.nodes.activity.shape==self.old.shape
+                and x.shape==self.x.shape,'GRAPH_STATE_SHAPE_CHANGED')
+        # These copies run on the caller's CUDA stream before the captured update.
+        self.old.copy_(state.nodes.activity);self.x.copy_(x);self.graph.replay();self.replays+=1
+        # Independent candidate storage preserves the old-state/COMMIT transaction.
+        return self.net._state_api(self.oracle.AutoDeref(
+            nodes=self.oracle.AutoDeref(activity=self.output.nodes.activity.clone()),edges=self.oracle.AutoDeref()))
+    def info(self):
+        return dict(kind='ORIGINAL_NEXT_STATE_CUDA_GRAPH',replays=self.replays,preparation_s=self.preparation_s,
+                    capture_warmup_calls=3,capture_calls=1,original_Full_step_checks_retained=True,
+                    frozen_dt_scalar_factory_only=True,dt_s=self.oracle.dt,
+                    independent_candidate_storage=True,one_replay_one_model_step=True,neural_source_modified=False)
+    def close(self):
+        self.torch.cuda.synchronize()
+        if self.installed:self.net._next_state=self.original;self.installed=False

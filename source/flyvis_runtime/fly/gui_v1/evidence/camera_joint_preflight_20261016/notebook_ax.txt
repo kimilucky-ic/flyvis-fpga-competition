@@ -1,0 +1,523 @@
+Browser tab: 1488974976, Title: "PREPARE_A3R1_ee27e897 - Jupyter Notebook", URL: "http://192.168.2.99:9090/notebooks/flyvis_t5c67_v1/PREPARE_A3R1_ee27e897.ipynb".
+0 AXWebArea PREPARE_A3R1_ee27e897 - Jupyter Notebook, URL: 192.168.2.99:9090/notebooks/flyvis_t5c67_v1/PREPARE_A3R1_ee27e897.ipynb
+	1 container
+		2 container Description: Top Menu, ID: header
+			3 container header-container
+				4 link Description: Jupyter Notebook, Help: dashboard, Value: 192.168.2.99:9090/tree
+				5 container save_widget
+					6 text PREPARE_A3R1_ee27e897
+					7 text 最新检查点: 2021年11月19日
+					8 text （已自动保存）
+				9 image Description: Current Kernel Logo, Help: Python 3
+				10 button Logout, ID: logout
+			11 container menubar-container
+				12 container menus
+					13 container kernel_indicator
+						14 text Python 3
+						15 text 
+					16 text 可信
+					17 content list
+						18 link Description: File, Value: 192.168.2.99:9090/notebooks/flyvis_t5c67_v1/PREPARE_A3R1_ee27e897.ipynb#, ID: filelink
+						19 link Description: Edit, Value: 192.168.2.99:9090/notebooks/flyvis_t5c67_v1/PREPARE_A3R1_ee27e897.ipynb#, ID: editlink
+						20 link Description: View, Value: 192.168.2.99:9090/notebooks/flyvis_t5c67_v1/PREPARE_A3R1_ee27e897.ipynb#, ID: viewlink
+						21 link Description: Insert, Value: 192.168.2.99:9090/notebooks/flyvis_t5c67_v1/PREPARE_A3R1_ee27e897.ipynb#, ID: insertlink
+						22 link Description: Cell, Value: 192.168.2.99:9090/notebooks/flyvis_t5c67_v1/PREPARE_A3R1_ee27e897.ipynb#, ID: celllink
+						23 link Description: Kernel, Value: 192.168.2.99:9090/notebooks/flyvis_t5c67_v1/PREPARE_A3R1_ee27e897.ipynb#, ID: kernellink
+						24 link Description: Widgets, Value: 192.168.2.99:9090/notebooks/flyvis_t5c67_v1/PREPARE_A3R1_ee27e897.ipynb#
+						25 link Description: Help, Value: 192.168.2.99:9090/notebooks/flyvis_t5c67_v1/PREPARE_A3R1_ee27e897.ipynb#
+				26 container maintoolbar-container
+					27 button , Help: 保存并建立检查点
+						28 text 
+					29 button , Help: 在下面插入代码块
+						30 text 
+					31 container cut_copy_paste
+						32 button , Help: 剪切选择的代码块
+							33 text 
+						34 button , Help: 复制选择的代码块
+							35 text 
+						36 button , Help: 粘贴到下面
+							37 text 
+					38 container move_up_down
+						39 button , Help: 上移选中单元格
+							40 text 
+						41 button , Help: 下移选中单元格
+							42 text 
+					43 container run_int
+						44 button Description: 运行, Help: 运行代码块, 选择下面的代码块
+							45 text 
+							46 text 运行
+						47 button , Help: 中断内核
+							48 text 
+						49 button , Help: 重启内核（带确认对话框）
+							50 text 
+						51 button , Help: 重启内核, 然后重新运行整个代码（带确认对话框）
+							52 text 
+					53 pop up button (collapsed, settable) Description: combobox, select cell type, Value: 代码, ID: cell_type, Secondary Actions: Expand
+						54 menu
+							55 (selected) 代码
+							56 Markdown
+							57 原生 NBConvert
+							58 标题
+							59 (disabled) -
+					60 button , Help: 打开命令配置
+						61 text 
+					62 button Description: Voilà, ID: toggle_codecells
+						63 text 
+						64 text Voilà
+					65 button , Help: Enter/Exit RISE Slideshow, ID: RISE
+						66 text 
+					67 container btn-voila-gridstack
+						68 button (disabled) , Help: Back to notebook, ID: btn-voila-gridstack_notebook
+							69 text 
+						70 button , Help: Voila-gridstack, ID: btn-voila-gridstack_gridstack
+							71 text 
+						72 button , Help: Voila-dashboard
+							73 text 
+		74 container notebook-container
+			75 container
+				76 heading A3R1：你手动准备，电脑一键运行, Value: 1
+					77 text A3R1：你手动准备，电脑一键运行
+				78 text 本Notebook由你手动执行。完整ZIP放在同一目录。 新run：
+				79 text ee27e897a82d4df0921cb61f9fbc689c
+				80 text 。 范围：封存A3R1一次加载、一次DMA初始化复位、两次CMA分配；随后最多485 STEP/COMMIT。 将下一单元的 AUTHORIZE_THIS_EXACT_RUN 改为 True 表示你确认本次确切范围，然后运行一次。 出现错误即停，不重新执行初始化。成功后保持内核运行，再执行电脑命令。
+			81 container
+				82 text In
+				83 text  [1]:
+				84 container Edit code here
+					85 container
+						86 text entry area (settable)
+						87 container
+							88 text # 用户手动执行；不会由电脑总控执行此单元。 # 首次保持 False 仅验证解包和文件；核对下面范围后改 True，手动初始化一次。 # 范围：封存A3R1一次加载、一次DMA初始化复位、两次CMA分配；最多485 STEP/COMMIT。 AUTHORIZE_THIS_EXACT_RUN = False from pathlib import Path import hashlib ,  json ,  sys ,  zipfile root = Path . cwd () archive = root / 'A3R1_MANUAL_UPLOAD_ee27e897.zip' assert archive . is_file (),  '请将完整ZIP上传到当前Notebook所在目录' assert hashlib . sha256 ( archive . read_bytes ()). hexdigest ()  == '40baa1b9597c5719a567b991c17595ce087411952e5bdf60e87ff5acac48bc6a' ,  '上传ZIP SHA不一致，停止' destination = root / 'A3R1_MANUAL_ee27e897a82d4df0921cb61f9fbc689c' with zipfile . ZipFile ( archive )  as z : assert set ( z . namelist ())  ==  { 'board_agent2.py' ,  'control2.py' ,  'neuron_a.hwh' ,  'board_service.py' ,  'MANIFEST.json' ,  'protocol.py' ,  'neuron_a.bit' ,  'full485_driver.py' ,  'evidence.py' ,  'manual_service.py' ,  'BOARD_CONFIG.json' },  'ZIP内容不一致' assert all ( '/' not in n and '\\' not in n for n in z . namelist ()),  '非法ZIP路径' if not destination . exists (): destination . mkdir () z . extractall ( destination ) else : assert all (( destination / n ). is_file ()  and  ( destination / n ). read_bytes ()  == z . read ( n )  for n in z . namelist ()),  '已有目录不一致，禁止覆盖' assert 'manual_service' not in sys . modules or Path ( sys . modules [ 'manual_service' ]. __file__ ). resolve ()  ==  ( destination / 'manual_service.py' ). resolve (),  '请使用本线独立新Notebook内核' sys . path . insert ( 0 ,  str ( destination )) import manual_service manual_service . verify_files ( destination ) print ( 'FILES_VERIFIED: 完整包及BIT/HWH校验通过' ) print ( 'run=' + 'ee27e897a82d4df0921cb61f9fbc689c' ) print ( 'plan SHA=' + '02eda5c59121a6c05528a411c149e4cea2d2087a6bb2e95c3f7cbd983c400af4' ) print ( 'BIT b607ea58005046f09f01bc7359c673dbd5e40b4de12b4169fca79ce88e43fd16' ) print ( 'HWH 54d271dc8aff904a50ca4fb0ff433f1810b0d486cf80f1daed2c204bc88d084c' ) if AUTHORIZE_THIS_EXACT_RUN : manual_service_instance = manual_service . prepare ( destination ,  approve_exact_plan = '02eda5c59121a6c05528a411c149e4cea2d2087a6bb2e95c3f7cbd983c400af4' ) else : print ( '未加载/复位/分配。确认范围后将首行改为True，再手动执行一次。' )
+				89 text FILES_VERIFIED: 完整包及BIT/HWH校验通过
+run=ee27e897a82d4df0921cb61f9fbc689c
+plan SHA=02eda5c59121a6c05528a411c149e4cea2d2087a6bb2e95c3f7cbd983c400af4
+BIT b607ea58005046f09f01bc7359c673dbd5e40b4de12b4169fca79ce88e43fd16
+HWH 54d271dc8aff904a50ca4fb0ff433f1810b0d486cf80f1daed2c204bc88d084c
+未加载/复位/分配。确认范围后将首行改为True，再手动执行一次。
+
+			90 container
+				91 text In
+				92 text  [2]:
+				93 container Edit code here
+					94 container
+						95 text entry area (settable)
+						96 container
+							97 text # 用户手动执行；不会由电脑总控执行此单元。 # 首次保持 False 仅验证解包和文件；核对下面范围后改 True，手动初始化一次。 # 范围：封存A3R1一次加载、一次DMA初始化复位、两次CMA分配；最多485 STEP/COMMIT。 AUTHORIZE_THIS_EXACT_RUN = True from pathlib import Path import hashlib ,  json ,  sys ,  zipfile root = Path . cwd () archive = root / 'A3R1_MANUAL_UPLOAD_ee27e897.zip' assert archive . is_file (),  '请将完整ZIP上传到当前Notebook所在目录' assert hashlib . sha256 ( archive . read_bytes ()). hexdigest ()  == '40baa1b9597c5719a567b991c17595ce087411952e5bdf60e87ff5acac48bc6a' ,  '上传ZIP SHA不一致，停止' destination = root / 'A3R1_MANUAL_ee27e897a82d4df0921cb61f9fbc689c' with zipfile . ZipFile ( archive )  as z : assert set ( z . namelist ())  ==  { 'board_agent2.py' ,  'control2.py' ,  'neuron_a.hwh' ,  'board_service.py' ,  'MANIFEST.json' ,  'protocol.py' ,  'neuron_a.bit' ,  'full485_driver.py' ,  'evidence.py' ,  'manual_service.py' ,  'BOARD_CONFIG.json' },  'ZIP内容不一致' assert all ( '/' not in n and '\\' not in n for n in z . namelist ()),  '非法ZIP路径' if not destination . exists (): destination . mkdir () z . extractall ( destination ) else : assert all (( destination / n ). is_file ()  and  ( destination / n ). read_bytes ()  == z . read ( n )  for n in z . namelist ()),  '已有目录不一致，禁止覆盖' assert 'manual_service' not in sys . modules or Path ( sys . modules [ 'manual_service' ]. __file__ ). resolve ()  ==  ( destination / 'manual_service.py' ). resolve (),  '请使用本线独立新Notebook内核' sys . path . insert ( 0 ,  str ( destination )) import manual_service manual_service . verify_files ( destination ) print ( 'FILES_VERIFIED: 完整包及BIT/HWH校验通过' ) print ( 'run=' + 'ee27e897a82d4df0921cb61f9fbc689c' ) print ( 'plan SHA=' + '02eda5c59121a6c05528a411c149e4cea2d2087a6bb2e95c3f7cbd983c400af4' ) print ( 'BIT b607ea58005046f09f01bc7359c673dbd5e40b4de12b4169fca79ce88e43fd16' ) print ( 'HWH 54d271dc8aff904a50ca4fb0ff433f1810b0d486cf80f1daed2c204bc88d084c' ) if AUTHORIZE_THIS_EXACT_RUN : manual_service_instance = manual_service . prepare ( destination ,  approve_exact_plan = '02eda5c59121a6c05528a411c149e4cea2d2087a6bb2e95c3f7cbd983c400af4' ) else : print ( '未加载/复位/分配。确认范围后将首行改为True，再手动执行一次。' )
+				98 text FILES_VERIFIED: 完整包及BIT/HWH校验通过
+run=ee27e897a82d4df0921cb61f9fbc689c
+plan SHA=02eda5c59121a6c05528a411c149e4cea2d2087a6bb2e95c3f7cbd983c400af4
+BIT b607ea58005046f09f01bc7359c673dbd5e40b4de12b4169fca79ce88e43fd16
+HWH 54d271dc8aff904a50ca4fb0ff433f1810b0d486cf80f1daed2c204bc88d084c
+
+				99 text BOARD_PREPARED {"run_id": "ee27e897a82d4df0921cb61f9fbc689c", "control_port": 5771, "idle_timeout_s": 3600, "requests": 0, "commits": 0, "waiting_for": "PC_START"}
+BOARD_PREPARED: 等待电脑启动；此时 STEP=0，COMMIT=0。请保持此内核运行。
+START_ARMED {"run_id": "ee27e897a82d4df0921cb61f9fbc689c", "server_session": "ed05129661d64e8d84dd6519dde25747", "boot_id": "da3b5caa-961c-4491-80ea-5f9269190ddd", "scope_sha256": "97b7ab434a1d99d382efb5a21b31af8c535cb970f3241d0c3c9d754403d39f95", "listener_id": "d35d485c705e4d58b31a9fed03a5f4b4"}
+NEURAL_CONNECTED {"peer": "192.168.2.89"}
+
+			100 container
+				101 text In
+				102 text  [3]:
+				103 container Edit code here
+					104 container
+						105 text entry area (settable)
+						106 container
+							107 text # 用户手动执行；不会由电脑总控执行此单元。 # 首次保持 False 仅验证解包和文件；核对下面范围后改 True，手动初始化一次。 # 范围：封存A3R1一次加载、一次DMA初始化复位、两次CMA分配；最多485 STEP/COMMIT。 AUTHORIZE_THIS_EXACT_RUN = True from pathlib import Path import hashlib ,  json ,  sys ,  zipfile root = Path . cwd () archive = root / 'A3R1_MANUAL_UPLOAD_ee27e897.zip' assert archive . is_file (),  '请将完整ZIP上传到当前Notebook所在目录' assert hashlib . sha256 ( archive . read_bytes ()). hexdigest ()  == '40baa1b9597c5719a567b991c17595ce087411952e5bdf60e87ff5acac48bc6a' ,  '上传ZIP SHA不一致，停止' destination = root / 'A3R1_MANUAL_ee27e897a82d4df0921cb61f9fbc689c' with zipfile . ZipFile ( archive )  as z : assert set ( z . namelist ())  ==  { 'board_agent2.py' ,  'control2.py' ,  'neuron_a.hwh' ,  'board_service.py' ,  'MANIFEST.json' ,  'protocol.py' ,  'neuron_a.bit' ,  'full485_driver.py' ,  'evidence.py' ,  'manual_service.py' ,  'BOARD_CONFIG.json' },  'ZIP内容不一致' assert all ( '/' not in n and '\\' not in n for n in z . namelist ()),  '非法ZIP路径' if not destination . exists (): destination . mkdir () z . extractall ( destination ) else : assert all (( destination / n ). is_file ()  and  ( destination / n ). read_bytes ()  == z . read ( n )  for n in z . namelist ()),  '已有目录不一致，禁止覆盖' assert 'manual_service' not in sys . modules or Path ( sys . modules [ 'manual_service' ]. __file__ ). resolve ()  ==  ( destination / 'manual_service.py' ). resolve (),  '请使用本线独立新Notebook内核' sys . path . insert ( 0 ,  str ( destination )) import manual_service manual_service . verify_files ( destination ) print ( 'FILES_VERIFIED: 完整包及BIT/HWH校验通过' ) print ( 'run=' + 'ee27e897a82d4df0921cb61f9fbc689c' ) print ( 'plan SHA=' + '02eda5c59121a6c05528a411c149e4cea2d2087a6bb2e95c3f7cbd983c400af4' ) print ( 'BIT b607ea58005046f09f01bc7359c673dbd5e40b4de12b4169fca79ce88e43fd16' ) print ( 'HWH 54d271dc8aff904a50ca4fb0ff433f1810b0d486cf80f1daed2c204bc88d084c' ) if AUTHORIZE_THIS_EXACT_RUN : manual_service_instance = manual_service . prepare ( destination ,  approve_exact_plan = '02eda5c59121a6c05528a411c149e4cea2d2087a6bb2e95c3f7cbd983c400af4' ) else : print ( '未加载/复位/分配。确认范围后将首行改为True，再手动执行一次。' )
+				108 text FILES_VERIFIED: 完整包及BIT/HWH校验通过
+run=ee27e897a82d4df0921cb61f9fbc689c
+plan SHA=02eda5c59121a6c05528a411c149e4cea2d2087a6bb2e95c3f7cbd983c400af4
+BIT b607ea58005046f09f01bc7359c673dbd5e40b4de12b4169fca79ce88e43fd16
+HWH 54d271dc8aff904a50ca4fb0ff433f1810b0d486cf80f1daed2c204bc88d084c
+
+				109 container
+					110 text --------------------------------------------------------------------------- ValueError                                 Traceback (most recent call last)
+ <ipython-input-3-f256847182e7>  in  <module>      28  print ( 'HWH 54d271dc8aff904a50ca4fb0ff433f1810b0d486cf80f1daed2c204bc88d084c' )      29 if  AUTHORIZE_THIS_EXACT_RUN : ---> 30 manual_service_instance  =  manual_service . prepare ( destination ,  approve_exact_plan = '02eda5c59121a6c05528a411c149e4cea2d2087a6bb2e95c3f7cbd983c400af4' )      31 else :      32      print ( '未加载/复位/分配。确认范围后将首行改为True，再手动执行一次。' ) /home/xilinx/jupyter_notebooks/flyvis_t5c67_v1/A3R1_MANUAL_ee27e897a82d4df0921cb61f9fbc689c/manual_service.py  in  prepare (root, approve_exact_plan)     233      config  =  json . loads ( ( root  / 'BOARD_CONFIG.json' ) . read_text ( encoding = 'utf-8' ) )     234      require ( approve_exact_plan  ==  config [ 'plan_sha256' ] , 'USER_EXACT_PLAN_APPROVAL_REQUIRED' ) --> 235 require ( not  PINNED , 'MANUAL_INITIALIZATION_ALREADY_ATTEMPTED' )     236 # Check environment and files before /dev/mem, download, allocation or reset.     237      require ( sys . executable  == '/usr/local/share/pynq-venv/bin/python3' , 'USE_VERIFIED_PYNQ_NOTEBOOK_KERNEL' ) /home/xilinx/jupyter_notebooks/flyvis_t5c67_v1/A3R1_MANUAL_ee27e897a82d4df0921cb61f9fbc689c/control2.py  in  require (condition, message)      20 def  require ( condition ,  message ) :      21 if not  condition : ---> 22 raise  ValueError ( message )      23      24 def  canonical ( value ) : ValueError : MANUAL_INITIALIZATION_ALREADY_ATTEMPTED
+
+
+			111 container
+				112 text In
+				113 text  [4]:
+				114 container Edit code here
+					115 container
+						116 text entry area (settable)
+						117 container
+							118 text # Manual-only: exact GPU joint 485-step scope; reuse current handles, zero initialization. AUTHORIZE_THIS_EXACT_485_STEP_RUN = True from pathlib import Path import hashlib ,  json ,  sys ,  zipfile root = Path . cwd () archive = root / 'A3R1_JOINT485_UPLOAD_da4b369b.zip' assert archive . is_file (),  '请把本次ZIP上传到当前Notebook目录' assert hashlib . sha256 ( archive . read_bytes ()). hexdigest ()  == '3187e2755ffb9fb38601a1f76651f02aabed4db0fb84d2afdaaa61121b461d81' ,  'ZIP不一致，停止' destination = root / 'A3R1_JOINT485_da4b369b3efc45b1b24ffdf10f61b98c' with zipfile . ZipFile ( archive )  as z : assert set ( z . namelist ())  == set ([ 'BOARD_CONFIG.json' ,  'MANIFEST.json' ,  'PLAN.json' ,  'a3joint485/init__.py' ,  'a3joint485/board_service.py' ,  'a3joint485/capture_transfer.py' ,  'a3joint485/control2.py' ,  'a3joint485/control_client.py' ,  'a3joint485/driver.py' ,  'a3joint485/evidence.py' ,  'a3joint485/evidence_journal.py' ,  'a3joint485/manual_transport.py' ,  'a3joint485/neural_session.py' ,  'a3joint485/prepare.py' ,  'a3joint485/protocol.py' ,  'neuron_a.bit' ,  'neuron_a.hwh' ]),  'ZIP成员不一致，停止' assert all ( not Path ( n ). is_absolute ()  and '..' not in Path ( n ). parts and '\\' not in n for n in z . namelist ()),  'ZIP路径错误' if destination . exists (): assert all (( destination / n ). is_file ()  and  ( destination / n ). read_bytes () == z . read ( n )  for n in z . namelist ()),  '已有目录不同，不覆盖' else : destination . mkdir () z . extractall ( destination ) manifest = json . loads (( destination / 'MANIFEST.json' ). read_text ()) for name ,  expected in manifest [ 'files' ]. items (): assert hashlib . sha256 (( destination / name ). read_bytes ()). hexdigest ()  == expected ,  '文件改变：' + name assert hashlib . sha256 (( destination / 'PLAN.json' ). read_bytes ()). hexdigest ()  == '479ee3436911daadbf76f48bf1ef44644435524b4cc4a6ca5927fd5e38967d27' ,  '计划改变' for name ,  module in tuple ( sys . modules . items ()): if name == 'a3joint485' or name . startswith ( 'a3joint485.' ): assert Path ( module . __file__ ). resolve (). parent == destination / 'a3joint485' ,  '已有不同测试包导入，停止；不要重启内核' print ( 'FILES_VERIFIED；未做MMIO、DMA、加载或复位。' ) print ( 'run=' + 'da4b369b3efc45b1b24ffdf10f61b98c' ) print ( 'plan SHA=' + '479ee3436911daadbf76f48bf1ef44644435524b4cc4a6ca5927fd5e38967d27' ) if AUTHORIZE_THIS_EXACT_485_STEP_RUN : assert 'io3_service_instance' in globals (),  '原成功服务句柄不存在：停止，不自动初始化，也不要运行电脑命令' sys . path . insert ( 0 ,  str ( destination )) from a3joint485 . prepare import prepare joint485_service_instance = prepare ( destination ,  io3_service_instance ,  approve_exact_plan = '479ee3436911daadbf76f48bf1ef44644435524b4cc4a6ca5927fd5e38967d27' ) else : print ( '待确切授权。获准后将首行False改True；出现BOARD_PREPARED后，60分钟内执行电脑命令一次。' )
+				119 text FILES_VERIFIED；未做MMIO、DMA、加载或复位。
+run=da4b369b3efc45b1b24ffdf10f61b98c
+plan SHA=479ee3436911daadbf76f48bf1ef44644435524b4cc4a6ca5927fd5e38967d27
+BOARD_PREPARED {"run_id": "da4b369b3efc45b1b24ffdf10f61b98c", "control_port": 5773, "idle_timeout_s": 3600, "requests": 0, "commits": 0, "waiting_for": "PC_START"}
+BOARD_PREPARED：最多485步，等待电脑命令；当前 STEP=0 COMMIT=0。保留此内核。
+START_ARMED {"run_id": "da4b369b3efc45b1b24ffdf10f61b98c", "server_session": "c7228c1f98c941dd9b35234e7a92f97c", "boot_id": "da3b5caa-961c-4491-80ea-5f9269190ddd", "scope_sha256": "bad055f7f2e7f1e1484e8f2ea681b09121d1aac9842f42f1f93701e1663e7130", "listener_id": "172bd2ed2aa44261bf71668ecca368f3"}
+NEURAL_CONNECTED {"peer": "192.168.2.89"}
+BOARD_COMPLETE {"requests": 485, "commits": 485}
+
+			120 container
+				121 text In
+				122 text  [5]:
+				123 container Edit code here
+					124 container
+						125 text entry area (settable)
+						126 container
+							127 text # Manual-only: exact GPU joint 485-step scope; reuse current handles, zero initialization. AUTHORIZE_THIS_EXACT_HOST485_RUN = False from pathlib import Path import hashlib ,  json ,  sys ,  zipfile root = Path . cwd () archive = root / 'A3R1_HOST485_UPLOAD_ac4db863.zip' assert archive . is_file (),  '请把本次ZIP上传到当前Notebook目录' assert hashlib . sha256 ( archive . read_bytes ()). hexdigest ()  == '04a888298fcea781f3712e05beb04b155942703d64aa912ce82da2911c91aa43' ,  'ZIP不一致，停止' destination = root / 'A3R1_HOST485_ac4db863a9e54192824049d82b209c27' with zipfile . ZipFile ( archive )  as z : assert set ( z . namelist ())  == set ([ 'BOARD_CONFIG.json' ,  'MANIFEST.json' ,  'PLAN.json' ,  'a3host485/init__.py' ,  'a3host485/board_service.py' ,  'a3host485/capture_transfer.py' ,  'a3host485/control2.py' ,  'a3host485/control_client.py' ,  'a3host485/driver.py' ,  'a3host485/evidence.py' ,  'a3host485/evidence_journal.py' ,  'a3host485/manual_transport.py' ,  'a3host485/neural_session.py' ,  'a3host485/prepare.py' ,  'a3host485/protocol.py' ,  'neuron_a.bit' ,  'neuron_a.hwh' ]),  'ZIP成员不一致，停止' assert all ( not Path ( n ). is_absolute ()  and '..' not in Path ( n ). parts and '\\' not in n for n in z . namelist ()),  'ZIP路径错误' if destination . exists (): assert all (( destination / n ). is_file ()  and  ( destination / n ). read_bytes () == z . read ( n )  for n in z . namelist ()),  '已有目录不同，不覆盖' else : destination . mkdir () z . extractall ( destination ) manifest = json . loads (( destination / 'MANIFEST.json' ). read_text ()) for name ,  expected in manifest [ 'files' ]. items (): assert hashlib . sha256 (( destination / name ). read_bytes ()). hexdigest ()  == expected ,  '文件改变：' + name assert hashlib . sha256 (( destination / 'PLAN.json' ). read_bytes ()). hexdigest ()  == '3101e9ef9e9fc4d76bc116efef0cedfc39b5876cab10b185abfb6098e78dc628' ,  '计划改变' for name ,  module in tuple ( sys . modules . items ()): if name == 'a3host485' or name . startswith ( 'a3host485.' ): assert Path ( module . __file__ ). resolve (). parent == destination / 'a3host485' ,  '已有不同测试包导入，停止；不要重启内核' print ( 'FILES_VERIFIED；未做MMIO、DMA、加载或复位。' ) print ( 'run=' + 'ac4db863a9e54192824049d82b209c27' ) print ( 'plan SHA=' + '3101e9ef9e9fc4d76bc116efef0cedfc39b5876cab10b185abfb6098e78dc628' ) if AUTHORIZE_THIS_EXACT_HOST485_RUN : assert 'joint485_service_instance' in globals (),  '原成功服务句柄不存在：停止，不自动初始化，也不要运行电脑命令' sys . path . insert ( 0 ,  str ( destination )) from a3host485 . prepare import prepare host485_service_instance = prepare ( destination ,  joint485_service_instance ,  approve_exact_plan = '3101e9ef9e9fc4d76bc116efef0cedfc39b5876cab10b185abfb6098e78dc628' ) else : print ( '待确切授权。获准后将首行False改True；出现BOARD_PREPARED后，60分钟内执行电脑命令一次。' )
+				128 text FILES_VERIFIED；未做MMIO、DMA、加载或复位。
+run=ac4db863a9e54192824049d82b209c27
+plan SHA=3101e9ef9e9fc4d76bc116efef0cedfc39b5876cab10b185abfb6098e78dc628
+待确切授权。获准后将首行False改True；出现BOARD_PREPARED后，60分钟内执行电脑命令一次。
+
+			129 container
+				130 text In
+				131 text  [6]:
+				132 container Edit code here
+					133 container
+						134 text entry area (settable)
+						135 container
+							136 text # Manual-only: exact GPU joint 485-step scope; reuse current handles, zero initialization. AUTHORIZE_THIS_EXACT_HOST485_RUN = True from pathlib import Path import hashlib ,  json ,  sys ,  zipfile root = Path . cwd () archive = root / 'A3R1_HOST485_UPLOAD_ac4db863.zip' assert archive . is_file (),  '请把本次ZIP上传到当前Notebook目录' assert hashlib . sha256 ( archive . read_bytes ()). hexdigest ()  == '04a888298fcea781f3712e05beb04b155942703d64aa912ce82da2911c91aa43' ,  'ZIP不一致，停止' destination = root / 'A3R1_HOST485_ac4db863a9e54192824049d82b209c27' with zipfile . ZipFile ( archive )  as z : assert set ( z . namelist ())  == set ([ 'BOARD_CONFIG.json' ,  'MANIFEST.json' ,  'PLAN.json' ,  'a3host485/init__.py' ,  'a3host485/board_service.py' ,  'a3host485/capture_transfer.py' ,  'a3host485/control2.py' ,  'a3host485/control_client.py' ,  'a3host485/driver.py' ,  'a3host485/evidence.py' ,  'a3host485/evidence_journal.py' ,  'a3host485/manual_transport.py' ,  'a3host485/neural_session.py' ,  'a3host485/prepare.py' ,  'a3host485/protocol.py' ,  'neuron_a.bit' ,  'neuron_a.hwh' ]),  'ZIP成员不一致，停止' assert all ( not Path ( n ). is_absolute ()  and '..' not in Path ( n ). parts and '\\' not in n for n in z . namelist ()),  'ZIP路径错误' if destination . exists (): assert all (( destination / n ). is_file ()  and  ( destination / n ). read_bytes () == z . read ( n )  for n in z . namelist ()),  '已有目录不同，不覆盖' else : destination . mkdir () z . extractall ( destination ) manifest = json . loads (( destination / 'MANIFEST.json' ). read_text ()) for name ,  expected in manifest [ 'files' ]. items (): assert hashlib . sha256 (( destination / name ). read_bytes ()). hexdigest ()  == expected ,  '文件改变：' + name assert hashlib . sha256 (( destination / 'PLAN.json' ). read_bytes ()). hexdigest ()  == '3101e9ef9e9fc4d76bc116efef0cedfc39b5876cab10b185abfb6098e78dc628' ,  '计划改变' for name ,  module in tuple ( sys . modules . items ()): if name == 'a3host485' or name . startswith ( 'a3host485.' ): assert Path ( module . __file__ ). resolve (). parent == destination / 'a3host485' ,  '已有不同测试包导入，停止；不要重启内核' print ( 'FILES_VERIFIED；未做MMIO、DMA、加载或复位。' ) print ( 'run=' + 'ac4db863a9e54192824049d82b209c27' ) print ( 'plan SHA=' + '3101e9ef9e9fc4d76bc116efef0cedfc39b5876cab10b185abfb6098e78dc628' ) if AUTHORIZE_THIS_EXACT_HOST485_RUN : assert 'joint485_service_instance' in globals (),  '原成功服务句柄不存在：停止，不自动初始化，也不要运行电脑命令' sys . path . insert ( 0 ,  str ( destination )) from a3host485 . prepare import prepare host485_service_instance = prepare ( destination ,  joint485_service_instance ,  approve_exact_plan = '3101e9ef9e9fc4d76bc116efef0cedfc39b5876cab10b185abfb6098e78dc628' ) else : print ( '待确切授权。获准后将首行False改True；出现BOARD_PREPARED后，60分钟内执行电脑命令一次。' )
+				137 text FILES_VERIFIED；未做MMIO、DMA、加载或复位。
+run=ac4db863a9e54192824049d82b209c27
+plan SHA=3101e9ef9e9fc4d76bc116efef0cedfc39b5876cab10b185abfb6098e78dc628
+BOARD_PREPARED {"run_id": "ac4db863a9e54192824049d82b209c27", "control_port": 5774, "idle_timeout_s": 3600, "requests": 0, "commits": 0, "waiting_for": "PC_START"}
+BOARD_PREPARED：最多485步，等待电脑命令；当前 STEP=0 COMMIT=0。保留此内核。
+START_ARMED {"run_id": "ac4db863a9e54192824049d82b209c27", "server_session": "fa2453dcd1d04240ba5dce0183fbca9e", "boot_id": "da3b5caa-961c-4491-80ea-5f9269190ddd", "scope_sha256": "90ca17b7c6b31e63328abdafde1d45c36376a99895fcc64cf11252490e7a4735", "listener_id": "c417c2ebe8794ca69cc1a8f889d846a4"}
+NEURAL_CONNECTED {"peer": "192.168.2.89"}
+BOARD_COMPLETE {"requests": 485, "commits": 485}
+
+			138 container
+				139 text In
+				140 text  [7]:
+				141 container Edit code here
+					142 container
+						143 text entry area (settable)
+						144 container
+							145 text # Manual-only: exact GPU joint three-step scope; reuse current handles, zero initialization. AUTHORIZE_THIS_EXACT_SHORT3_RUN = False from pathlib import Path import hashlib ,  json ,  sys ,  zipfile root = Path . cwd () archive = root / 'A3R1_SHORT3_UPLOAD_16148717.zip' assert archive . is_file (),  '请把本次ZIP上传到当前Notebook目录' assert hashlib . sha256 ( archive . read_bytes ()). hexdigest ()  == '55c725c9822088741108540219c6af239a890e64cf07521e2e3c8562dcc49340' ,  'ZIP不一致，停止' destination = root / 'A3R1_SHORT3_161487174a2a4ad8a11ef22e68cbcb4e' with zipfile . ZipFile ( archive )  as z : assert set ( z . namelist ())  == set ([ 'BOARD_CONFIG.json' ,  'MANIFEST.json' ,  'PLAN.json' ,  'a3short3/init__.py' ,  'a3short3/board_service.py' ,  'a3short3/capture_transfer.py' ,  'a3short3/control2.py' ,  'a3short3/control_client.py' ,  'a3short3/driver.py' ,  'a3short3/evidence.py' ,  'a3short3/evidence_journal.py' ,  'a3short3/manual_transport.py' ,  'a3short3/neural_session.py' ,  'a3short3/prepare.py' ,  'a3short3/protocol.py' ,  'a3short3/ps_profile.py' ,  'neuron_a.bit' ,  'neuron_a.hwh' ]),  'ZIP成员不一致，停止' assert all ( not Path ( n ). is_absolute ()  and '..' not in Path ( n ). parts and '\\' not in n for n in z . namelist ()),  'ZIP路径错误' if destination . exists (): assert all (( destination / n ). is_file ()  and  ( destination / n ). read_bytes () == z . read ( n )  for n in z . namelist ()),  '已有目录不同，不覆盖' else : destination . mkdir () z . extractall ( destination ) manifest = json . loads (( destination / 'MANIFEST.json' ). read_text ()) for name ,  expected in manifest [ 'files' ]. items (): assert hashlib . sha256 (( destination / name ). read_bytes ()). hexdigest ()  == expected ,  '文件改变：' + name assert hashlib . sha256 (( destination / 'PLAN.json' ). read_bytes ()). hexdigest ()  == '6a34d642d359491065feadf9f31965b7ed74e7c3d9291ea542563505a3071b0e' ,  '计划改变' for name ,  module in tuple ( sys . modules . items ()): if name == 'a3short3' or name . startswith ( 'a3short3.' ): assert Path ( module . __file__ ). resolve (). parent == destination / 'a3short3' ,  '已有不同测试包导入，停止；不要重启内核' print ( 'FILES_VERIFIED；未做MMIO、DMA、加载或复位。' ) print ( 'run=' + '161487174a2a4ad8a11ef22e68cbcb4e' ) print ( 'plan SHA=' + '6a34d642d359491065feadf9f31965b7ed74e7c3d9291ea542563505a3071b0e' ) if AUTHORIZE_THIS_EXACT_SHORT3_RUN : assert 'host485_service_instance' in globals (),  '原成功服务句柄不存在：停止，不自动初始化，也不要运行电脑命令' sys . path . insert ( 0 ,  str ( destination )) from a3short3 . prepare import prepare short3_service_instance = prepare ( destination ,  host485_service_instance ,  approve_exact_plan = '6a34d642d359491065feadf9f31965b7ed74e7c3d9291ea542563505a3071b0e' ) else : print ( '待确切授权。获准后将首行False改True；出现BOARD_PREPARED后，60分钟内执行电脑命令一次。' )
+				146 text FILES_VERIFIED；未做MMIO、DMA、加载或复位。
+run=161487174a2a4ad8a11ef22e68cbcb4e
+plan SHA=6a34d642d359491065feadf9f31965b7ed74e7c3d9291ea542563505a3071b0e
+待确切授权。获准后将首行False改True；出现BOARD_PREPARED后，60分钟内执行电脑命令一次。
+
+			147 container
+				148 text In
+				149 text  [8]:
+				150 container Edit code here
+					151 container
+						152 text entry area (settable)
+						153 container
+							154 text # Manual-only: exact GPU joint three-step scope; reuse current handles, zero initialization. AUTHORIZE_THIS_EXACT_SHORT3_RUN = True from pathlib import Path import hashlib ,  json ,  sys ,  zipfile root = Path . cwd () archive = root / 'A3R1_SHORT3_UPLOAD_16148717.zip' assert archive . is_file (),  '请把本次ZIP上传到当前Notebook目录' assert hashlib . sha256 ( archive . read_bytes ()). hexdigest ()  == '55c725c9822088741108540219c6af239a890e64cf07521e2e3c8562dcc49340' ,  'ZIP不一致，停止' destination = root / 'A3R1_SHORT3_161487174a2a4ad8a11ef22e68cbcb4e' with zipfile . ZipFile ( archive )  as z : assert set ( z . namelist ())  == set ([ 'BOARD_CONFIG.json' ,  'MANIFEST.json' ,  'PLAN.json' ,  'a3short3/init__.py' ,  'a3short3/board_service.py' ,  'a3short3/capture_transfer.py' ,  'a3short3/control2.py' ,  'a3short3/control_client.py' ,  'a3short3/driver.py' ,  'a3short3/evidence.py' ,  'a3short3/evidence_journal.py' ,  'a3short3/manual_transport.py' ,  'a3short3/neural_session.py' ,  'a3short3/prepare.py' ,  'a3short3/protocol.py' ,  'a3short3/ps_profile.py' ,  'neuron_a.bit' ,  'neuron_a.hwh' ]),  'ZIP成员不一致，停止' assert all ( not Path ( n ). is_absolute ()  and '..' not in Path ( n ). parts and '\\' not in n for n in z . namelist ()),  'ZIP路径错误' if destination . exists (): assert all (( destination / n ). is_file ()  and  ( destination / n ). read_bytes () == z . read ( n )  for n in z . namelist ()),  '已有目录不同，不覆盖' else : destination . mkdir () z . extractall ( destination ) manifest = json . loads (( destination / 'MANIFEST.json' ). read_text ()) for name ,  expected in manifest [ 'files' ]. items (): assert hashlib . sha256 (( destination / name ). read_bytes ()). hexdigest ()  == expected ,  '文件改变：' + name assert hashlib . sha256 (( destination / 'PLAN.json' ). read_bytes ()). hexdigest ()  == '6a34d642d359491065feadf9f31965b7ed74e7c3d9291ea542563505a3071b0e' ,  '计划改变' for name ,  module in tuple ( sys . modules . items ()): if name == 'a3short3' or name . startswith ( 'a3short3.' ): assert Path ( module . __file__ ). resolve (). parent == destination / 'a3short3' ,  '已有不同测试包导入，停止；不要重启内核' print ( 'FILES_VERIFIED；未做MMIO、DMA、加载或复位。' ) print ( 'run=' + '161487174a2a4ad8a11ef22e68cbcb4e' ) print ( 'plan SHA=' + '6a34d642d359491065feadf9f31965b7ed74e7c3d9291ea542563505a3071b0e' ) if AUTHORIZE_THIS_EXACT_SHORT3_RUN : assert 'host485_service_instance' in globals (),  '原成功服务句柄不存在：停止，不自动初始化，也不要运行电脑命令' sys . path . insert ( 0 ,  str ( destination )) from a3short3 . prepare import prepare short3_service_instance = prepare ( destination ,  host485_service_instance ,  approve_exact_plan = '6a34d642d359491065feadf9f31965b7ed74e7c3d9291ea542563505a3071b0e' ) else : print ( '待确切授权。获准后将首行False改True；出现BOARD_PREPARED后，60分钟内执行电脑命令一次。' )
+				155 text FILES_VERIFIED；未做MMIO、DMA、加载或复位。
+run=161487174a2a4ad8a11ef22e68cbcb4e
+plan SHA=6a34d642d359491065feadf9f31965b7ed74e7c3d9291ea542563505a3071b0e
+BOARD_PREPARED {"run_id": "161487174a2a4ad8a11ef22e68cbcb4e", "control_port": 5775, "idle_timeout_s": 3600, "requests": 0, "commits": 0, "waiting_for": "PC_START"}
+BOARD_PREPARED：最多3步，等待电脑命令；当前 STEP=0 COMMIT=0。保留此内核。
+
+			156 container
+				157 text In
+				158 text  [1]:
+				159 container Edit code here
+					160 container
+						161 text entry area (settable)
+						162 container
+							163 text # Manual-only: exact prepared GUI BEGIN three-step scope; reuse current handles, zero initialization. AUTHORIZE_THIS_EXACT_READY3_RUN = True from pathlib import Path import hashlib ,  json ,  sys ,  zipfile root = Path . cwd () archive = root / 'A3R1_READY3_UPLOAD_b4a84160.zip' assert archive . is_file (),  '请把本次ZIP上传到当前Notebook目录' assert hashlib . sha256 ( archive . read_bytes ()). hexdigest ()  == 'f82b5c902e7d4410319ee5ce97da86359710162c7c323e76d91028a6ddc98cec' ,  'ZIP不一致，停止' destination = root / 'A3R1_READY3_b4a841607c434c3a8091c2c72967430b' with zipfile . ZipFile ( archive )  as z : assert set ( z . namelist ())  == set ([ 'BOARD_CONFIG.json' ,  'MANIFEST.json' ,  'PLAN.json' ,  'a3ready3/init__.py' ,  'a3ready3/board_service.py' ,  'a3ready3/capture_transfer.py' ,  'a3ready3/control2.py' ,  'a3ready3/control_client.py' ,  'a3ready3/driver.py' ,  'a3ready3/evidence.py' ,  'a3ready3/evidence_journal.py' ,  'a3ready3/fast_journal.py' ,  'a3ready3/light_evidence.py' ,  'a3ready3/manual_transport.py' ,  'a3ready3/neural_session.py' ,  'a3ready3/prepare.py' ,  'a3ready3/protocol.py' ,  'a3ready3/ps_profile.py' ,  'a3ready3/tcp_options.py' ,  'neuron_a.bit' ,  'neuron_a.hwh' ]),  'ZIP成员不一致，停止' assert all ( not Path ( n ). is_absolute ()  and '..' not in Path ( n ). parts and '\\' not in n for n in z . namelist ()),  'ZIP路径错误' if destination . exists (): assert all (( destination / n ). is_file ()  and  ( destination / n ). read_bytes () == z . read ( n )  for n in z . namelist ()),  '已有目录不同，不覆盖' else : destination . mkdir () z . extractall ( destination ) manifest = json . loads (( destination / 'MANIFEST.json' ). read_text ()) for name ,  expected in manifest [ 'files' ]. items (): assert hashlib . sha256 (( destination / name ). read_bytes ()). hexdigest ()  == expected ,  '文件改变：' + name assert hashlib . sha256 (( destination / 'PLAN.json' ). read_bytes ()). hexdigest ()  == 'b27de92a4376081877e8e5cf38bf3279e370fc5230e892fe475ff0e731df746b' ,  '计划改变' for name ,  module in tuple ( sys . modules . items ()): if name == 'a3ready3' or name . startswith ( 'a3ready3.' ): assert Path ( module . __file__ ). resolve (). parent == destination / 'a3ready3' ,  '已有不同测试包导入，停止；不要重启内核' print ( 'FILES_VERIFIED；未做MMIO、DMA、加载或复位。' ) print ( 'run=' + 'b4a841607c434c3a8091c2c72967430b' ) print ( 'plan SHA=' + 'b27de92a4376081877e8e5cf38bf3279e370fc5230e892fe475ff0e731df746b' ) if AUTHORIZE_THIS_EXACT_READY3_RUN : assert 'short3_service_instance' in globals (),  '原成功服务句柄不存在：停止，不自动初始化，也不要运行电脑命令' sys . path . insert ( 0 ,  str ( destination )) from a3ready3 . prepare import prepare ready3_service_instance = prepare ( destination ,  short3_service_instance ,  approve_exact_plan = 'b27de92a4376081877e8e5cf38bf3279e370fc5230e892fe475ff0e731df746b' ) else : print ( '待确切授权。获准后将首行False改True；出现BOARD_PREPARED后，60分钟内执行电脑命令一次。' )
+				164 text FILES_VERIFIED；未做MMIO、DMA、加载或复位。
+run=b4a841607c434c3a8091c2c72967430b
+plan SHA=b27de92a4376081877e8e5cf38bf3279e370fc5230e892fe475ff0e731df746b
+
+				165 container
+					166 text --------------------------------------------------------------------------- AssertionError                             Traceback (most recent call last)
+ <ipython-input-1-00dec0868ba8>  in  <module>      27  print ( 'plan SHA=' + 'b27de92a4376081877e8e5cf38bf3279e370fc5230e892fe475ff0e731df746b' )      28 if  AUTHORIZE_THIS_EXACT_READY3_RUN : ---> 29 assert 'short3_service_instance' in  globals ( ) , '原成功服务句柄不存在：停止，不自动初始化，也不要运行电脑命令'      30      sys . path . insert ( 0 ,  str ( destination ) )      31 from  a3ready3 . prepare  import  prepare
+
+ AssertionError : 原成功服务句柄不存在：停止，不自动初始化，也不要运行电脑命令
+
+
+			167 container
+				168 text In
+				169 text  [2]:
+				170 container Edit code here
+					171 container
+						172 text entry area (settable)
+						173 container
+							174 text import json as _a3_json from pathlib import Path as _A3Path from ipykernel . connect import get_connection_file as _a3_kernel_file print ( "当前内核：" ,  _A3Path ( _a3_kernel_file ()). name ) print ( "板端 boot_id：" , _A3Path ( "/proc/sys/kernel/random/boot_id" ). read_text (). strip ()) print ( "预期变量存在：" ,  "short3_service_instance" in globals ()) _a3_found = 0 for _a3_name ,  _a3_obj in list ( globals (). items ()): if _a3_name . startswith ( "_a3_" ): continue _a3_fields = getattr ( _a3_obj ,  "__dict__" , {}) if not isinstance ( _a3_fields ,  dict ): continue if "driver" not in _a3_fields or "config" not in _a3_fields : continue _a3_config = _a3_fields [ "config" ] if not isinstance ( _a3_config ,  dict ): continue _a3_driver = getattr ( _a3_fields [ "driver" ],  "__dict__" , {}) _a3_found += 1 print ( _a3_json . dumps ({ "变量名" :  _a3_name , "run_id" :  _a3_config . get ( "run_id" ), "状态" :  _a3_fields . get ( "state" ), "STEP" :  _a3_driver . get ( "requests" ), "COMMIT" :  _a3_driver . get ( "commits" ), "存在待提交候选" :  _a3_driver . get ( "pending" )  is not None , "失败锁定" :  _a3_driver . get ( "poisoned" ),     },  ensure_ascii = False )) print ( "找到的服务对象数：" ,  _a3_found )
+				175 text 当前内核： kernel-ebb47832-3d3c-46a1-8de5-d2b18207b96f.json
+板端 boot_id： eff793a4-cb51-40e1-835d-4527473605d5
+预期变量存在： False
+找到的服务对象数： 0
+
+			176 container
+				177 text In
+				178 text  [3]:
+				179 container Edit code here
+					180 container
+						181 text entry area (settable)
+						182 container
+							183 text # A3R1 05aa0e52: fresh read-only identity check; no PL access from pathlib import Path as _a3_check_Path from ipykernel . connect import get_connection_file as _a3_check_kernel print ( "LIVE_KERNEL" ,  _a3_check_Path ( _a3_check_kernel ()). name ) print ( "LIVE_BOOT" ,  _a3_check_Path ( "/proc/sys/kernel/random/boot_id" ). read_text (). strip ()) print ( "LIVE_CWD" ,  str ( _a3_check_Path . cwd ())) print ( "FRESH_SERVICE_EXISTS" ,  "fresh_ready3_service_instance" in globals ()) print ( "FRESH_ATTEMPT_EXISTS" , ( _a3_check_Path . cwd () / "A3R1_FRESH_READY3_05aa0e5238e14b3aad54bb695882d043" / "INITIALIZATION_ATTEMPT.json" ). exists ())
+				184 text LIVE_KERNEL kernel-ebb47832-3d3c-46a1-8de5-d2b18207b96f.json
+LIVE_BOOT eff793a4-cb51-40e1-835d-4527473605d5
+LIVE_CWD /home/xilinx/jupyter_notebooks/flyvis_t5c67_v1
+FRESH_SERVICE_EXISTS False
+FRESH_ATTEMPT_EXISTS False
+
+			185 container
+				186 text In
+				187 text  [4]:
+				188 container Edit code here
+					189 container
+						190 text entry area (settable)
+						191 container
+							192 text # Manual only: exact one-time fresh initialization, then GUI BEGIN for three steps. AUTHORIZE_THIS_EXACT_READY3_RUN = True from pathlib import Path import hashlib ,  json ,  sys ,  zipfile root = Path . cwd () archive = root / 'A3R1_FRESH_READY3_UPLOAD_05aa0e52.zip' assert archive . is_file (),  '请把本次ZIP上传到当前Notebook目录' assert hashlib . sha256 ( archive . read_bytes ()). hexdigest ()  == '7418e6996c7cf1926d0dd4ce2d34aaa3c79f3c9f489de43190685bbec0a45b2a' ,  'ZIP不一致，停止' destination = root / 'A3R1_FRESH_READY3_05aa0e5238e14b3aad54bb695882d043' with zipfile . ZipFile ( archive )  as z : assert set ( z . namelist ())  == set ([ 'BOARD_CONFIG.json' ,  'MANIFEST.json' ,  'PLAN.json' ,  'a3ready3/init__.py' ,  'a3ready3/board_service.py' ,  'a3ready3/capture_transfer.py' ,  'a3ready3/control2.py' ,  'a3ready3/control_client.py' ,  'a3ready3/driver.py' ,  'a3ready3/evidence.py' ,  'a3ready3/evidence_journal.py' ,  'a3ready3/fast_journal.py' ,  'a3ready3/light_evidence.py' ,  'a3ready3/manual_transport.py' ,  'a3ready3/neural_session.py' ,  'a3ready3/prepare.py' ,  'a3ready3/protocol.py' ,  'a3ready3/ps_profile.py' ,  'a3ready3/tcp_options.py' ,  'neuron_a.bit' ,  'neuron_a.hwh' ]),  'ZIP成员不一致，停止' assert all ( not Path ( n ). is_absolute ()  and '..' not in Path ( n ). parts and '\\' not in n for n in z . namelist ()),  'ZIP路径错误' if destination . exists (): assert all (( destination / n ). is_file ()  and  ( destination / n ). read_bytes () == z . read ( n )  for n in z . namelist ()),  '已有目录不同，不覆盖' else : destination . mkdir () z . extractall ( destination ) manifest = json . loads (( destination / 'MANIFEST.json' ). read_text ()) for name ,  expected in manifest [ 'files' ]. items (): assert hashlib . sha256 (( destination / name ). read_bytes ()). hexdigest ()  == expected ,  '文件改变：' + name assert hashlib . sha256 (( destination / 'PLAN.json' ). read_bytes ()). hexdigest ()  == '16126746b887ad03858052b711ee05c7d54f359ad6c1202eb727b9bcc34adba1' ,  '计划改变' for name ,  module in tuple ( sys . modules . items ()): if name == 'a3ready3' or name . startswith ( 'a3ready3.' ): assert Path ( module . __file__ ). resolve (). parent == destination / 'a3ready3' ,  '已有不同测试包导入，停止；不要重启内核' print ( 'FILES_VERIFIED；未做MMIO、DMA、加载或复位。' ) print ( 'run=' + '05aa0e5238e14b3aad54bb695882d043' ) print ( 'plan SHA=' + '16126746b887ad03858052b711ee05c7d54f359ad6c1202eb727b9bcc34adba1' ) if AUTHORIZE_THIS_EXACT_READY3_RUN : from ipykernel . connect import get_connection_file assert Path ( get_connection_file ()). name == 'kernel-ebb47832-3d3c-46a1-8de5-d2b18207b96f.json' ,  '内核改变：停止，不初始化' assert Path ( '/proc/sys/kernel/random/boot_id' ). read_text (). strip ()  == 'eff793a4-cb51-40e1-835d-4527473605d5' ,  '板卡重启：停止，不初始化' sys . path . insert ( 0 ,  str ( destination )) from a3ready3 . prepare import prepare fresh_ready3_service_instance = prepare ( destination ,  approve_exact_plan = '16126746b887ad03858052b711ee05c7d54f359ad6c1202eb727b9bcc34adba1' ) else : print ( '待确切授权。获准后将首行False改True；出现BOARD_PREPARED后，60分钟内执行电脑命令一次。' )
+				193 text FILES_VERIFIED；未做MMIO、DMA、加载或复位。
+run=05aa0e5238e14b3aad54bb695882d043
+plan SHA=16126746b887ad03858052b711ee05c7d54f359ad6c1202eb727b9bcc34adba1
+
+				194 container
+					195 text --------------------------------------------------------------------------- ValueError                                 Traceback (most recent call last)
+ <ipython-input-4-2ab9a9fc540b>  in  <module>      32      sys . path . insert ( 0 ,  str ( destination ) )      33 from  a3ready3 . prepare  import  prepare
+ ---> 34 fresh_ready3_service_instance  =  prepare ( destination ,  approve_exact_plan = '16126746b887ad03858052b711ee05c7d54f359ad6c1202eb727b9bcc34adba1' )      35 else :      36      print ( '待确切授权。获准后将首行False改True；出现BOARD_PREPARED后，60分钟内执行电脑命令一次。' ) /home/xilinx/jupyter_notebooks/flyvis_t5c67_v1/A3R1_FRESH_READY3_05aa0e5238e14b3aad54bb695882d043/a3ready3/prepare.py  in  prepare (root, approve_exact_plan)      71          require ( b'' . join ( core [ i ] . to_bytes ( 4 , 'big' ) for  i  in  range ( 224 , 256 , 4 ) ) ==  w . CONFIG , 'CORE_CONFIG_MISMATCH' )      72          require ( all ( dma [ i ] & 1 == 1 and  dma [ i ] & 4 == 0 for  i  in ( 0 , 48 ) ) , 'DMA_NOT_RUNNING_OR_RESET_ACTIVE' ) ---> 73 require ( all ( dma [ i ] & 2 and not  dma [ i ] & 0x771 for  i  in ( 4 , 52 ) ) , 'DMA_NOT_IDLE_OR_ERROR' )      74          save_json ( e . directory / 'MANUAL_PREPARED.json' ,  dict ( run_id = config [ 'run_id' ] , server_session = d . server_session , boot_id = boot , kernel_id = config [ 'kernel_id' ] , plan_sha256 = approve_exact_plan , prep_MMIO_reads = len ( core ) + len ( dma ) , new_loads = 1 , new_resets = 1 , new_allocations = 2 , initialization_mode = config [ 'initialization_mode' ] ) )      75          s = ManualBoardService ( d , e , config , neural_session , control_port = config [ 'control_port' ] , neural_port = config [ 'neural_port' ] , peer = config [ 'pc_host' ] , idle_s = 3600 ) /home/xilinx/jupyter_notebooks/flyvis_t5c67_v1/A3R1_FRESH_READY3_05aa0e5238e14b3aad54bb695882d043/a3ready3/control2.py  in  require (condition, message)      20 def  require ( condition ,  message ) :      21 if not  condition : ---> 22 raise  ValueError ( message )      23      24 def  canonical ( value ) : ValueError : DMA_NOT_IDLE_OR_ERROR
+
+
+			196 container
+				197 text In
+				198 text  [5]:
+				199 container Edit code here
+					200 container
+						201 text entry area (settable)
+						202 container
+							203 text # Failure evidence only: inspect retained Python values and saved journal; NO MMIO reads/writes import importlib as _a3_fail_importlib import hashlib as _a3_fail_hashlib import json as _a3_fail_json _a3_fail_module = _a3_fail_importlib . import_module ( "a3ready3.prepare" ) _a3_fail_driver = next ( o for o in _a3_fail_module . PINNED if type ( o ). __name__ == "Full485Driver" ) from a3ready3 . evidence_journal import JournalReader as _a3_fail_Reader _a3_fail_journal = _a3_fail_driver . evidence . journal . path _a3_fail_reader = _a3_fail_Reader ( _a3_fail_journal ,  allow_incomplete = True ) _a3_fail_events =  [ _a3_fail_json . loads ( line )  for line in _a3_fail_reader . read ( "events.jsonl" ). splitlines ()] _a3_fail_report = dict ( run_id = "05aa0e5238e14b3aad54bb695882d043" ,  requests = _a3_fail_driver . requests ,  commits = _a3_fail_driver . commits ,  poisoned = _a3_fail_driver . poisoned ,  pending = _a3_fail_driver . pending is not None ,  saved_last_registers = dict ( _a3_fail_driver . last_registers ),  journal_path = str ( _a3_fail_journal ),  journal_sha256 = _a3_fail_hashlib . sha256 ( _a3_fail_journal . read_bytes ()). hexdigest (),  journal_bytes = _a3_fail_journal . stat (). st_size ,  selected_saved_events = [ e for e in _a3_fail_events if e [ "event" ]  in  ( "PS_PRECHECK_COMPLETE" ,  "LOAD_ATTEMPT_CONSUMED" ,  "LOAD_RETURNED" ,  "BUFFERS_ALLOCATED" ,  "MMIO_WRITE_RETURNED" ,  "INITIALIZATION_FAILED_OR_UNKNOWN_NO_RETRY" )],  no_new_hardware_access = True ) _a3_fail_path = Path . cwd () / "A3R1_FRESH_READY3_05aa0e5238e14b3aad54bb695882d043" / "READONLY_FAILURE_SNAPSHOT.json" with _a3_fail_path . open ( "x" ,  encoding = "utf-8" )  as _a3_fail_output : _a3_fail_json . dump ( _a3_fail_report ,  _a3_fail_output ,  indent = 2 ) print ( _a3_fail_json . dumps ( _a3_fail_report ,  indent = 2 ))
+				204 text {
+  "run_id": "05aa0e5238e14b3aad54bb695882d043",
+  "requests": 0,
+  "commits": 0,
+  "poisoned": true,
+  "pending": false,
+  "saved_last_registers": {
+    "reg:00": 859919942,
+    "reg:04": 1,
+    "reg:08": 5768,
+    "reg:e0": 2802196553,
+    "reg:e4": 3701159940,
+    "reg:e8": 2021048932,
+    "reg:ec": 3584538432,
+    "reg:f0": 2147647899,
+    "reg:f4": 1103533068,
+    "reg:f8": 3732124454,
+    "reg:fc": 3429112366,
+    "reg:14": 0,
+    "reg:18": 0,
+    "dma:00": 65539,
+    "dma:04": 0,
+    "dma:30": 65539,
+    "dma:34": 0
+  },
+  "journal_path": "/home/xilinx/jupyter_notebooks/flyvis_t5c67_v1/A3R1_FRESH_READY3_05aa0e5238e14b3aad54bb695882d043/board_evidence_05aa0e5238e14b3aad54bb695882d043/evidence.fvej",
+  "journal_sha256": "d9087653eb415be23ce9631b348006f9f97cb9952f61771f2c73314fd2689cbb",
+  "journal_bytes": 53857,
+  "selected_saved_events": [
+    {
+      "event": "PS_PRECHECK_COMPLETE",
+      "monotonic_ns": 9909221383517,
+      "register_reads": 4,
+      "register_writes": 0,
+      "reset": 0,
+      "hp0_read": 0,
+      "hp0_write": 3840
+    },
+    {
+      "event": "LOAD_ATTEMPT_CONSUMED",
+      "monotonic_ns": 9909975275421,
+      "bit": "/home/xilinx/jupyter_notebooks/flyvis_t5c67_v1/A3R1_FRESH_READY3_05aa0e5238e14b3aad54bb695882d043/neuron_a.bit",
+      "bit_sha256": "b607ea58005046f09f01bc7359c673dbd5e40b4de12b4169fca79ce88e43fd16",
+      "hwh_sha256": "54d271dc8aff904a50ca4fb0ff433f1810b0d486cf80f1daed2c204bc88d084c",
+      "clock_dict": {
+        "0": {
+          "enable": 1,
+          "divisor0": 5,
+          "divisor1": 2
+        },
+        "1": {
+          "enable": 0,
+          "divisor0": 1,
+          "divisor1": 1
+        },
+        "2": {
+          "enable": 0,
+          "divisor0": 1,
+          "divisor1": 1
+        },
+        "3": {
+          "enable": 0,
+          "divisor0": 1,
+          "divisor1": 1
+        }
+      }
+    },
+    {
+      "event": "LOAD_RETURNED",
+      "monotonic_ns": 9910355229503,
+      "elapsed_ns": 318243260,
+      "timestamp": "2021/11/19 2:2:3 +472568",
+      "pynq_version": "2.7.0"
+    },
+    {
+      "event": "BUFFERS_ALLOCATED",
+      "monotonic_ns": 9911058276335,
+      "src": 939917312,
+      "dst": 939819008,
+      "input_bytes": 69216,
+      "output_bytes": 23072,
+      "src_coherent": false,
+      "dst_coherent": false
+    },
+    {
+      "event": "MMIO_WRITE_RETURNED",
+      "monotonic_ns": 9911081932029,
+      "bank": "dma",
+      "offset": 0,
+      "value": 4
+    },
+    {
+      "event": "MMIO_WRITE_RETURNED",
+      "monotonic_ns": 9911133454844,
+      "bank": "dma",
+      "offset": 0,
+      "value": 1
+    },
+    {
+      "event": "MMIO_WRITE_RETURNED",
+      "monotonic_ns": 9911153714199,
+      "bank": "dma",
+      "offset": 48,
+      "value": 1
+    },
+    {
+      "event": "INITIALIZATION_FAILED_OR_UNKNOWN_NO_RETRY",
+      "monotonic_ns": 9911585549726,
+      "error": "ValueError('DMA_NOT_IDLE_OR_ERROR')",
+      "buffers_retained": true
+    }
+  ],
+  "no_new_hardware_access": true
+}
+
+			205 container
+				206 text In
+				207 text  [6]:
+				208 container Edit code here
+					209 container
+						210 text entry area (settable)
+						211 container
+							212 text # Manual only: exact new session from unused initialization; no load/reset/allocation. AUTHORIZE_THIS_EXACT_READY3_RUN = True from pathlib import Path import hashlib ,  json ,  sys ,  zipfile root = Path . cwd () archive = root / 'A3R1_HANDOFF3_UPLOAD_46b9591f.zip' assert archive . is_file (),  '请把本次ZIP上传到当前Notebook目录' assert hashlib . sha256 ( archive . read_bytes ()). hexdigest ()  == 'af7cc766870e32a1e76ce37dc2c7dcb0a2ca45334b33e7befeab6860b649e774' ,  'ZIP不一致，停止' destination = root / 'A3R1_HANDOFF3_46b9591f18db48a193f8a63da688d08c' with zipfile . ZipFile ( archive )  as z : assert set ( z . namelist ())  == set ([ 'BOARD_CONFIG.json' ,  'MANIFEST.json' ,  'PLAN.json' ,  'a3handoff3/init__.py' ,  'a3handoff3/board_service.py' ,  'a3handoff3/capture_transfer.py' ,  'a3handoff3/control2.py' ,  'a3handoff3/control_client.py' ,  'a3handoff3/driver.py' ,  'a3handoff3/evidence.py' ,  'a3handoff3/evidence_journal.py' ,  'a3handoff3/fast_journal.py' ,  'a3handoff3/light_evidence.py' ,  'a3handoff3/manual_transport.py' ,  'a3handoff3/neural_session.py' ,  'a3handoff3/prepare.py' ,  'a3handoff3/protocol.py' ,  'a3handoff3/ps_profile.py' ,  'a3handoff3/tcp_options.py' ,  'neuron_a.bit' ,  'neuron_a.hwh' ]),  'ZIP成员不一致，停止' assert all ( not Path ( n ). is_absolute ()  and '..' not in Path ( n ). parts and '\\' not in n for n in z . namelist ()),  'ZIP路径错误' if destination . exists (): assert all (( destination / n ). is_file ()  and  ( destination / n ). read_bytes () == z . read ( n )  for n in z . namelist ()),  '已有目录不同，不覆盖' else : destination . mkdir () z . extractall ( destination ) manifest = json . loads (( destination / 'MANIFEST.json' ). read_text ()) for name ,  expected in manifest [ 'files' ]. items (): assert hashlib . sha256 (( destination / name ). read_bytes ()). hexdigest ()  == expected ,  '文件改变：' + name assert hashlib . sha256 (( destination / 'PLAN.json' ). read_bytes ()). hexdigest ()  == '49793c90ad35c33c402b969f1d2f4751819bf2178d51c5a319a3e8c5b3b4a470' ,  '计划改变' for name ,  module in tuple ( sys . modules . items ()): if name == 'a3handoff3' or name . startswith ( 'a3handoff3.' ): assert Path ( module . __file__ ). resolve (). parent == destination / 'a3handoff3' ,  '已有不同测试包导入，停止；不要重启内核' print ( 'FILES_VERIFIED；未做MMIO、DMA、加载或复位。' ) print ( 'run=' + '46b9591f18db48a193f8a63da688d08c' ) print ( 'plan SHA=' + '49793c90ad35c33c402b969f1d2f4751819bf2178d51c5a319a3e8c5b3b4a470' ) if AUTHORIZE_THIS_EXACT_READY3_RUN : from ipykernel . connect import get_connection_file assert Path ( get_connection_file ()). name == 'kernel-ebb47832-3d3c-46a1-8de5-d2b18207b96f.json' ,  '内核改变：停止，不初始化' assert Path ( '/proc/sys/kernel/random/boot_id' ). read_text (). strip ()  == 'eff793a4-cb51-40e1-835d-4527473605d5' ,  '板卡重启：停止，不初始化' sys . path . insert ( 0 ,  str ( destination )) from a3handoff3 . prepare import prepare handoff3_service_instance = prepare ( destination ,  approve_exact_plan = '49793c90ad35c33c402b969f1d2f4751819bf2178d51c5a319a3e8c5b3b4a470' ) else : print ( '待确切授权。获准后将首行False改True；出现BOARD_PREPARED后，60分钟内执行电脑命令一次。' )
+				213 text FILES_VERIFIED；未做MMIO、DMA、加载或复位。
+run=46b9591f18db48a193f8a63da688d08c
+plan SHA=49793c90ad35c33c402b969f1d2f4751819bf2178d51c5a319a3e8c5b3b4a470
+BOARD_PREPARED {"run_id": "46b9591f18db48a193f8a63da688d08c", "control_port": 5777, "idle_timeout_s": 3600, "requests": 0, "commits": 0, "waiting_for": "PC_START"}
+BOARD_PREPARED：新身份、零加载/复位/分配；最多3步，等待PC准备与GUI正式开始。STEP=0 COMMIT=0。
+START_ARMED {"run_id": "46b9591f18db48a193f8a63da688d08c", "server_session": "97c8ef39a6db4256a350c78d76df3be5", "boot_id": "eff793a4-cb51-40e1-835d-4527473605d5", "scope_sha256": "7857ba69b46011c7c984bde0245b8b82b28ebd6a5166133524e9409f0213276b", "listener_id": "621bb083ff384e338b7043698e79dc81"}
+NEURAL_CONNECTED {"peer": "192.168.2.89"}
+BOARD_COMPLETE {"requests": 3, "commits": 3}
+
+			214 container
+				215 text In
+				216 text  [7]:
+				217 container Edit code here
+					218 container
+						219 text entry area (settable)
+						220 container
+							221 text # This cell reads existing Python objects and filesystem identity only. # No MMIO, DMA, FPGA programming, reset, new kernel or listener. import json as _l4_json import hashlib as _l4_hash from pathlib import Path as _l4_Path from ipykernel . connect import get_connection_file as _l4_kernel _l4_inventory =  [] for _l4_name ,  _l4_object in list ( globals (). items ()): if _l4_name . startswith ( '_l4_' ): continue _l4_fields = getattr ( _l4_object ,  '__dict__' , {}) if not isinstance ( _l4_fields ,  dict )  or 'driver' not in _l4_fields or 'config' not in _l4_fields : continue _l4_config = _l4_fields [ 'config' ] if not isinstance ( _l4_config ,  dict ): continue _l4_driver = _l4_fields [ 'driver' ] _l4_values = getattr ( _l4_driver ,  '__dict__' , {}) _l4_image = _l4_values . get ( 'overlay' ) _l4_bit = _l4_Path ( _l4_image . bitfile_name )  if _l4_image is not None else None _l4_inventory . append ( dict ( name = _l4_name ,  run_id = _l4_config . get ( 'run_id' ), server_session = _l4_config . get ( 'server_session' ),  state = _l4_fields . get ( 'state' ), requests = _l4_values . get ( 'requests' ),  commits = _l4_values . get ( 'commits' ), pending = _l4_values . get ( 'pending' )  is not None ,  poisoned = _l4_values . get ( 'poisoned' ), service_thread_alive = bool ( _l4_fields . get ( 'thread' )  and _l4_fields [ 'thread' ]. is_alive ()), neural_thread_alive = bool ( _l4_fields . get ( 'neural_thread' )  and _l4_fields [ 'neural_thread' ]. is_alive ()), bit_path = str ( _l4_bit ),  bit_sha256 = _l4_hash . sha256 ( _l4_bit . read_bytes ()). hexdigest ()  if _l4_bit and _l4_bit . is_file ()  else None , hwh_sha256 = _l4_hash . sha256 ( _l4_bit . with_suffix ( '.hwh' ). read_bytes ()). hexdigest ()  if _l4_bit and _l4_bit . with_suffix ( '.hwh' ). is_file ()  else None )) print ( 'LINE4_FRESH_READONLY_IDENTITY ' + _l4_json . dumps ( dict ( kernel = _l4_Path ( _l4_kernel ()). name , boot = _l4_Path ( '/proc/sys/kernel/random/boot_id' ). read_text (). strip (), cwd = str ( _l4_Path . cwd ()),  services = _l4_inventory , new_MMIO_reads = 0 ,  new_MMIO_writes = 0 ,  new_DMA = 0 ,  new_loads = 0 ,  new_resets = 0 ),  ensure_ascii = False ))
+				222 text LINE4_FRESH_READONLY_IDENTITY {"kernel": "kernel-ebb47832-3d3c-46a1-8de5-d2b18207b96f.json", "boot": "eff793a4-cb51-40e1-835d-4527473605d5", "cwd": "/home/xilinx/jupyter_notebooks/flyvis_t5c67_v1", "services": [{"name": "handoff3_service_instance", "run_id": "46b9591f18db48a193f8a63da688d08c", "server_session": "97c8ef39a6db4256a350c78d76df3be5", "state": "BOARD_COMPLETE", "requests": 3, "commits": 3, "pending": false, "poisoned": false, "service_thread_alive": true, "neural_thread_alive": false, "bit_path": "/home/xilinx/jupyter_notebooks/flyvis_t5c67_v1/A3R1_FRESH_READY3_05aa0e5238e14b3aad54bb695882d043/neuron_a.bit", "bit_sha256": "b607ea58005046f09f01bc7359c673dbd5e40b4de12b4169fca79ce88e43fd16", "hwh_sha256": "54d271dc8aff904a50ca4fb0ff433f1810b0d486cf80f1daed2c204bc88d084c"}], "new_MMIO_reads": 0, "new_MMIO_writes": 0, "new_DMA": 0, "new_loads": 0, "new_resets": 0}
+
+			223 container
+				224 text In
+				225 text  [8]:
+				226 container Edit code here
+					227 container
+						228 text entry area (settable)
+						229 container
+							230 text # Exact scope approval is still required; False only verifies files. AUTHORIZE_THIS_EXACT_LATENCY3_RUN = False from pathlib import Path import hashlib , json , sys , zipfile root = Path . cwd () archive = root / 'A3R1_LATENCY3_UPLOAD_90f57cb9.zip' assert hashlib . sha256 ( archive . read_bytes ()). hexdigest () == '392835a798b4e8880f18771d7055cbee77c78114c57f006fcec640bc9e94dfaa' ,  'ZIP changed' destination = root / 'A3R1_LATENCY3_90f57cb961f2490bb516426a250bcd8a' with zipfile . ZipFile ( archive )  as z : assert set ( z . namelist ()) == set ([ 'BOARD_CONFIG.json' ,  'MANIFEST.json' ,  'PLAN.json' ,  'a3latency3/init__.py' ,  'a3latency3/board_service.py' ,  'a3latency3/capture_transfer.py' ,  'a3latency3/control2.py' ,  'a3latency3/control_client.py' ,  'a3latency3/driver.py' ,  'a3latency3/evidence.py' ,  'a3latency3/evidence_journal.py' ,  'a3latency3/fast_journal.py' ,  'a3latency3/light_evidence.py' ,  'a3latency3/manual_transport.py' ,  'a3latency3/neural_session.py' ,  'a3latency3/prepare.py' ,  'a3latency3/protocol.py' ,  'a3latency3/ps_profile.py' ,  'a3latency3/tcp_options.py' ,  'neuron_a.bit' ,  'neuron_a.hwh' ]),  'ZIP members changed' assert all ( not Path ( n ). is_absolute ()  and '..' not in Path ( n ). parts and '\\' not in n for n in z . namelist ()),  'ZIP paths' if destination . exists (): assert all (( destination / n ). is_file ()  and  ( destination / n ). read_bytes () == z . read ( n )  for n in z . namelist ()),  'Existing directory differs' else : destination . mkdir (); z . extractall ( destination ) manifest = json . loads (( destination / 'MANIFEST.json' ). read_text ()) for name , digest in manifest [ 'files' ]. items (): assert hashlib . sha256 (( destination / name ). read_bytes ()). hexdigest () == digest ,  name assert hashlib . sha256 (( destination / 'PLAN.json' ). read_bytes ()). hexdigest () == '3a3f167dd0a09ba175778e0876cc642b228b78042ac02f85e12bc0a98b4f925a' ,  'PLAN changed' print ( 'FILES_VERIFIED; no MMIO/DMA/load/reset' ) print ( 'run=' + '90f57cb961f2490bb516426a250bcd8a' ); print ( 'plan SHA=' + '3a3f167dd0a09ba175778e0876cc642b228b78042ac02f85e12bc0a98b4f925a' ) if AUTHORIZE_THIS_EXACT_LATENCY3_RUN : assert 'handoff3_service_instance' in globals (),  'Original successful service missing; stop without initialization' for name , module in tuple ( sys . modules . items ()): if name == 'a3latency3' or name . startswith ( 'a3latency3.' ): assert Path ( module . __file__ ). resolve (). parent == destination / 'a3latency3' ,  'Module collision' sys . path . insert ( 0 , str ( destination )) from a3latency3 . prepare import prepare latency3_service_instance = prepare ( destination , handoff3_service_instance , approve_exact_plan = '3a3f167dd0a09ba175778e0876cc642b228b78042ac02f85e12bc0a98b4f925a' ) else : print ( 'Pending exact approval. No initialization or service started.' )
+				231 text FILES_VERIFIED; no MMIO/DMA/load/reset
+run=90f57cb961f2490bb516426a250bcd8a
+plan SHA=3a3f167dd0a09ba175778e0876cc642b228b78042ac02f85e12bc0a98b4f925a
+Pending exact approval. No initialization or service started.
+
+			232 container
+				233 text In
+				234 text  [9]:
+				235 container Edit code here
+					236 container
+						237 text entry area (settable)
+						238 container
+							239 text # Exact scope approval is still required; False only verifies files. AUTHORIZE_THIS_EXACT_LATENCY3_RUN = True from pathlib import Path import hashlib , json , sys , zipfile root = Path . cwd () archive = root / 'A3R1_LATENCY3_UPLOAD_90f57cb9.zip' assert hashlib . sha256 ( archive . read_bytes ()). hexdigest () == '392835a798b4e8880f18771d7055cbee77c78114c57f006fcec640bc9e94dfaa' ,  'ZIP changed' destination = root / 'A3R1_LATENCY3_90f57cb961f2490bb516426a250bcd8a' with zipfile . ZipFile ( archive )  as z : assert set ( z . namelist ()) == set ([ 'BOARD_CONFIG.json' ,  'MANIFEST.json' ,  'PLAN.json' ,  'a3latency3/init__.py' ,  'a3latency3/board_service.py' ,  'a3latency3/capture_transfer.py' ,  'a3latency3/control2.py' ,  'a3latency3/control_client.py' ,  'a3latency3/driver.py' ,  'a3latency3/evidence.py' ,  'a3latency3/evidence_journal.py' ,  'a3latency3/fast_journal.py' ,  'a3latency3/light_evidence.py' ,  'a3latency3/manual_transport.py' ,  'a3latency3/neural_session.py' ,  'a3latency3/prepare.py' ,  'a3latency3/protocol.py' ,  'a3latency3/ps_profile.py' ,  'a3latency3/tcp_options.py' ,  'neuron_a.bit' ,  'neuron_a.hwh' ]),  'ZIP members changed' assert all ( not Path ( n ). is_absolute ()  and '..' not in Path ( n ). parts and '\\' not in n for n in z . namelist ()),  'ZIP paths' if destination . exists (): assert all (( destination / n ). is_file ()  and  ( destination / n ). read_bytes () == z . read ( n )  for n in z . namelist ()),  'Existing directory differs' else : destination . mkdir (); z . extractall ( destination ) manifest = json . loads (( destination / 'MANIFEST.json' ). read_text ()) for name , digest in manifest [ 'files' ]. items (): assert hashlib . sha256 (( destination / name ). read_bytes ()). hexdigest () == digest ,  name assert hashlib . sha256 (( destination / 'PLAN.json' ). read_bytes ()). hexdigest () == '3a3f167dd0a09ba175778e0876cc642b228b78042ac02f85e12bc0a98b4f925a' ,  'PLAN changed' print ( 'FILES_VERIFIED; no MMIO/DMA/load/reset' ) print ( 'run=' + '90f57cb961f2490bb516426a250bcd8a' ); print ( 'plan SHA=' + '3a3f167dd0a09ba175778e0876cc642b228b78042ac02f85e12bc0a98b4f925a' ) if AUTHORIZE_THIS_EXACT_LATENCY3_RUN : assert 'handoff3_service_instance' in globals (),  'Original successful service missing; stop without initialization' for name , module in tuple ( sys . modules . items ()): if name == 'a3latency3' or name . startswith ( 'a3latency3.' ): assert Path ( module . __file__ ). resolve (). parent == destination / 'a3latency3' ,  'Module collision' sys . path . insert ( 0 , str ( destination )) from a3latency3 . prepare import prepare latency3_service_instance = prepare ( destination , handoff3_service_instance , approve_exact_plan = '3a3f167dd0a09ba175778e0876cc642b228b78042ac02f85e12bc0a98b4f925a' ) else : print ( 'Pending exact approval. No initialization or service started.' )
+				240 text FILES_VERIFIED; no MMIO/DMA/load/reset
+run=90f57cb961f2490bb516426a250bcd8a
+plan SHA=3a3f167dd0a09ba175778e0876cc642b228b78042ac02f85e12bc0a98b4f925a
+BOARD_PREPARED {"run_id": "90f57cb961f2490bb516426a250bcd8a", "control_port": 5778, "idle_timeout_s": 3600, "requests": 0, "commits": 0, "waiting_for": "PC_START"}
+BOARD_PREPARED：20次只读、零加载/复位/分配；最多3步，等待GPU准备和GUI正式开始。
+START_ARMED {"run_id": "90f57cb961f2490bb516426a250bcd8a", "server_session": "83141fb475f544eca125fe6207e0356d", "boot_id": "eff793a4-cb51-40e1-835d-4527473605d5", "scope_sha256": "7d22648a879cc777f08afe00de875b017ecc40917158bd6f74cc94f114d4c2a2", "listener_id": "66a052238dcf4bf5974130a66cab1242"}
+NEURAL_CONNECTED {"peer": "192.168.2.89"}
+BOARD_COMPLETE {"requests": 3, "commits": 3}
+
+			241 container
+				242 text In
+				243 text  [10]:
+				244 container Edit code here
+					245 container
+						246 text entry area (settable) # Exact scope approval is still required; False only verifies files.
+AUTHORIZE_THIS_EXACT_LATENCY485_RUN = False
+from pathlib import Path
+import hashlib,json,sys,zipfile
+root=Path.cwd()
+archive=root/'A3R1_LATENCY485_UPLOAD_c708f1c9_r1.zip'
+assert hashlib.sha256(archive.read_bytes()).hexdigest()=='ddf442738538f0af0a70b85061e59383b208ada58a595a732fe119920fe6aa83', 'ZIP changed'
+destination=root/'A3R1_LATENCY485_c708f1c9bac14c07ac8f56d59678b95a'
+with zipfile.ZipFile(archive) as z:
+    assert set(z.namelist())==set(['BOARD_CONFIG.json', 'MANIFEST.json', 'PLAN.json', 'a3latency485/init__.py', 'a3latency485/board_service.py', 'a3latency485/capture_transfer.py', 'a3latency485/control2.py', 'a3latency485/control_client.py', 'a3latency485/driver.py', 'a3latency485/evidence.py', 'a3latency485/evidence_journal.py', 'a3latency485/fast_journal.py', 'a3latency485/light_evidence.py', 'a3latency485/manual_transport.py', 'a3latency485/neural_session.py', 'a3latency485/prepare.py', 'a3latency485/protocol.py', 'a3latency485/ps_profile.py', 'a3latency485/tcp_options.py', 'neuron_a.bit', 'neuron_a.hwh']), 'ZIP members changed'
+    assert all(not Path(n).is_absolute() and '..' not in Path(n).parts and '\\' not in n for n in z.namelist()), 'ZIP paths'
+    if destination.exists():
+        assert all((destination/n).is_file() and (destination/n).read_bytes()==z.read(n) for n in z.namelist()), 'Existing directory differs'
+    else:
+        destination.mkdir();z.extractall(destination)
+manifest=json.loads((destination/'MANIFEST.json').read_text())
+for name,digest in manifest['files'].items():assert hashlib.sha256((destination/name).read_bytes()).hexdigest()==digest, name
+assert hashlib.sha256((destination/'PLAN.json').read_bytes()).hexdigest()=='a7ef216d9c58d5e74fd3b63f4c899c779b6aad32b6a03a55e29bedf282883235', 'PLAN changed'
+print('FILES_VERIFIED; no MMIO/DMA/load/reset')
+print('run='+'c708f1c9bac14c07ac8f56d59678b95a');print('plan SHA='+'a7ef216d9c58d5e74fd3b63f4c899c779b6aad32b6a03a55e29bedf282883235')
+if AUTHORIZE_THIS_EXACT_LATENCY485_RUN:
+    assert 'latency3_service_instance' in globals(), 'Original successful service missing; stop without initialization'
+    for name,module in tuple(sys.modules.items()):
+        if name=='a3latency485' or name.startswith('a3latency485.'):assert Path(module.__file__).resolve().parent==destination/'a3latency485', 'Module collision'
+    sys.path.insert(0,str(destination))
+    from a3latency485.prepare import prepare
+    latency485_service_instance=prepare(destination,latency3_service_instance,approve_exact_plan='a7ef216d9c58d5e74fd3b63f4c899c779b6aad32b6a03a55e29bedf282883235')
+else:
+    print('Pending exact approval. No initialization or service started.')
+						247 container
+							248 text # Exact scope approval is still required; False only verifies files. AUTHORIZE_THIS_EXACT_LATENCY485_RUN = False from pathlib import Path import hashlib , json , sys , zipfile root = Path . cwd () archive = root / 'A3R1_LATENCY485_UPLOAD_c708f1c9_r1.zip' assert hashlib . sha256 ( archive . read_bytes ()). hexdigest () == 'ddf442738538f0af0a70b85061e59383b208ada58a595a732fe119920fe6aa83' ,  'ZIP changed' destination = root / 'A3R1_LATENCY485_c708f1c9bac14c07ac8f56d59678b95a' with zipfile . ZipFile ( archive )  as z : assert set ( z . namelist ()) == set ([ 'BOARD_CONFIG.json' ,  'MANIFEST.json' ,  'PLAN.json' ,  'a3latency485/init__.py' ,  'a3latency485/board_service.py' ,  'a3latency485/capture_transfer.py' ,  'a3latency485/control2.py' ,  'a3latency485/control_client.py' ,  'a3latency485/driver.py' ,  'a3latency485/evidence.py' ,  'a3latency485/evidence_journal.py' ,  'a3latency485/fast_journal.py' ,  'a3latency485/light_evidence.py' ,  'a3latency485/manual_transport.py' ,  'a3latency485/neural_session.py' ,  'a3latency485/prepare.py' ,  'a3latency485/protocol.py' ,  'a3latency485/ps_profile.py' ,  'a3latency485/tcp_options.py' ,  'neuron_a.bit' ,  'neuron_a.hwh' ]),  'ZIP members changed' assert all ( not Path ( n ). is_absolute ()  and '..' not in Path ( n ). parts and '\\' not in n for n in z . namelist ()),  'ZIP paths' if destination . exists (): assert all (( destination / n ). is_file ()  and  ( destination / n ). read_bytes () == z . read ( n )  for n in z . namelist ()),  'Existing directory differs' else : destination . mkdir (); z . extractall ( destination ) manifest = json . loads (( destination / 'MANIFEST.json' ). read_text ()) for name , digest in manifest [ 'files' ]. items (): assert hashlib . sha256 (( destination / name ). read_bytes ()). hexdigest () == digest ,  name assert hashlib . sha256 (( destination / 'PLAN.json' ). read_bytes ()). hexdigest () == 'a7ef216d9c58d5e74fd3b63f4c899c779b6aad32b6a03a55e29bedf282883235' ,  'PLAN changed' print ( 'FILES_VERIFIED; no MMIO/DMA/load/reset' ) print ( 'run=' + 'c708f1c9bac14c07ac8f56d59678b95a' ); print ( 'plan SHA=' + 'a7ef216d9c58d5e74fd3b63f4c899c779b6aad32b6a03a55e29bedf282883235' ) if AUTHORIZE_THIS_EXACT_LATENCY485_RUN : assert 'latency3_service_instance' in globals (),  'Original successful service missing; stop without initialization' for name , module in tuple ( sys . modules . items ()): if name == 'a3latency485' or name . startswith ( 'a3latency485.' ): assert Path ( module . __file__ ). resolve (). parent == destination / 'a3latency485' ,  'Module collision' sys . path . insert ( 0 , str ( destination )) from a3latency485 . prepare import prepare latency485_service_instance = prepare ( destination , latency3_service_instance , approve_exact_plan = 'a7ef216d9c58d5e74fd3b63f4c899c779b6aad32b6a03a55e29bedf282883235' ) else : print ( 'Pending exact approval. No initialization or service started.' )
+				249 text FILES_VERIFIED; no MMIO/DMA/load/reset
+run=c708f1c9bac14c07ac8f56d59678b95a
+plan SHA=a7ef216d9c58d5e74fd3b63f4c899c779b6aad32b6a03a55e29bedf282883235
+Pending exact approval. No initialization or service started.
+
+			250 container
+				251 text In
+				252 text  [11]:
+				253 container Edit code here
+					254 container
+						255 text entry area (settable) True
+						256 container
+							257 text # Exact scope approval is still required; False only verifies files. AUTHORIZE_THIS_EXACT_LATENCY485_RUN = True from pathlib import Path import hashlib , json , sys , zipfile root = Path . cwd () archive = root / 'A3R1_LATENCY485_UPLOAD_c708f1c9_r1.zip' assert hashlib . sha256 ( archive . read_bytes ()). hexdigest () == 'ddf442738538f0af0a70b85061e59383b208ada58a595a732fe119920fe6aa83' ,  'ZIP changed' destination = root / 'A3R1_LATENCY485_c708f1c9bac14c07ac8f56d59678b95a' with zipfile . ZipFile ( archive )  as z : assert set ( z . namelist ()) == set ([ 'BOARD_CONFIG.json' ,  'MANIFEST.json' ,  'PLAN.json' ,  'a3latency485/init__.py' ,  'a3latency485/board_service.py' ,  'a3latency485/capture_transfer.py' ,  'a3latency485/control2.py' ,  'a3latency485/control_client.py' ,  'a3latency485/driver.py' ,  'a3latency485/evidence.py' ,  'a3latency485/evidence_journal.py' ,  'a3latency485/fast_journal.py' ,  'a3latency485/light_evidence.py' ,  'a3latency485/manual_transport.py' ,  'a3latency485/neural_session.py' ,  'a3latency485/prepare.py' ,  'a3latency485/protocol.py' ,  'a3latency485/ps_profile.py' ,  'a3latency485/tcp_options.py' ,  'neuron_a.bit' ,  'neuron_a.hwh' ]),  'ZIP members changed' assert all ( not Path ( n ). is_absolute ()  and '..' not in Path ( n ). parts and '\\' not in n for n in z . namelist ()),  'ZIP paths' if destination . exists (): assert all (( destination / n ). is_file ()  and  ( destination / n ). read_bytes () == z . read ( n )  for n in z . namelist ()),  'Existing directory differs' else : destination . mkdir (); z . extractall ( destination ) manifest = json . loads (( destination / 'MANIFEST.json' ). read_text ()) for name , digest in manifest [ 'files' ]. items (): assert hashlib . sha256 (( destination / name ). read_bytes ()). hexdigest () == digest ,  name assert hashlib . sha256 (( destination / 'PLAN.json' ). read_bytes ()). hexdigest () == 'a7ef216d9c58d5e74fd3b63f4c899c779b6aad32b6a03a55e29bedf282883235' ,  'PLAN changed' print ( 'FILES_VERIFIED; no MMIO/DMA/load/reset' ) print ( 'run=' + 'c708f1c9bac14c07ac8f56d59678b95a' ); print ( 'plan SHA=' + 'a7ef216d9c58d5e74fd3b63f4c899c779b6aad32b6a03a55e29bedf282883235' ) if AUTHORIZE_THIS_EXACT_LATENCY485_RUN : assert 'latency3_service_instance' in globals (),  'Original successful service missing; stop without initialization' for name , module in tuple ( sys . modules . items ()): if name == 'a3latency485' or name . startswith ( 'a3latency485.' ): assert Path ( module . __file__ ). resolve (). parent == destination / 'a3latency485' ,  'Module collision' sys . path . insert ( 0 , str ( destination )) from a3latency485 . prepare import prepare latency485_service_instance = prepare ( destination , latency3_service_instance , approve_exact_plan = 'a7ef216d9c58d5e74fd3b63f4c899c779b6aad32b6a03a55e29bedf282883235' ) else : print ( 'Pending exact approval. No initialization or service started.' )
+				258 text FILES_VERIFIED; no MMIO/DMA/load/reset
+run=c708f1c9bac14c07ac8f56d59678b95a
+plan SHA=a7ef216d9c58d5e74fd3b63f4c899c779b6aad32b6a03a55e29bedf282883235
+BOARD_PREPARED {"run_id": "c708f1c9bac14c07ac8f56d59678b95a", "control_port": 5779, "idle_timeout_s": 3600, "requests": 0, "commits": 0, "waiting_for": "PC_START"}
+BOARD_PREPARED：20次只读、零加载/复位/分配；最多485步，等待GPU准备和GUI正式开始。
+START_ARMED {"run_id": "c708f1c9bac14c07ac8f56d59678b95a", "server_session": "199b66c8c683449bb177a6a9c3beb3ac", "boot_id": "eff793a4-cb51-40e1-835d-4527473605d5", "scope_sha256": "90ab83cf4699caef6ae083f1e2e8191012ddea11291946820d716d7a019ba819", "listener_id": "fd3388f58bd9444799b0834f9258f9f5"}
+NEURAL_CONNECTED {"peer": "192.168.2.89"}
+BOARD_COMPLETE {"requests": 485, "commits": 485}
+
+			259 container
+				260 text In
+				261 text  [12]:
+				262 container Edit code here
+					263 container
+						264 text entry area (settable)
+						265 container
+							266 text # LINE2 read-only inventory: no PYNQ import, no MMIO/DMA/reset/load. from pathlib import Path from datetime import datetime ,  timezone import json from ipykernel . connect import get_connection_file line2_inventory =  { 'tag' : 'LINE2_CAMERA_PRECHECK_20261016' , 'utc' : datetime . now ( timezone . utc ). isoformat (), 'kernel' : Path ( get_connection_file ()). name , 'boot_id' : Path ( '/proc/sys/kernel/random/boot_id' ). read_text (). strip (), 'services' :[]} for line2_name in  ( 'latency485_service_instance' , 'latency3_service_instance' , 'manual_service_instance' , 'camera_service_instance' ): line2_object = globals (). get ( line2_name ) if line2_object is None : continue line2_fields = vars ( line2_object ) line2_driver = line2_fields . get ( 'driver' ) line2_driver_fields = vars ( line2_driver )  if line2_driver is not None else  {} line2_item =  { 'name' : line2_name , 'state' : line2_fields . get ( 'state' ), 'error' : line2_fields . get ( 'error' ), 'requests' : line2_driver_fields . get ( 'requests' ), 'commits' : line2_driver_fields . get ( 'commits' ), 'pending' : line2_driver_fields . get ( 'pending' )  is not None , 'poisoned' : line2_driver_fields . get ( 'poisoned' ), 'driver_fields' : sorted ( line2_driver_fields )} for line2_thread_name in  ( 'thread' , 'neural_thread' ): line2_thread = line2_fields . get ( line2_thread_name ) line2_item [ line2_thread_name + '_alive' ]  = bool ( line2_thread and line2_thread . is_alive ()) line2_overlay = line2_driver_fields . get ( 'overlay' ) line2_item [ 'recorded_bitfile_name' ]  = getattr ( line2_overlay , 'bitfile_name' , None )  if line2_overlay is not None else None line2_inventory [ 'services' ]. append ( line2_item ) print ( json . dumps ( line2_inventory , sort_keys = True ))
+				267 text {"boot_id": "eff793a4-cb51-40e1-835d-4527473605d5", "kernel": "kernel-ebb47832-3d3c-46a1-8de5-d2b18207b96f.json", "services": [{"commits": 485, "driver_fields": ["boot_id", "bound_asid", "commits", "committed", "compute_deadline", "dma", "dst", "evidence", "last_registers", "np", "overlay", "pending", "plan", "poisoned", "reg", "requests", "server_session", "session_deadline", "src"], "error": null, "name": "latency485_service_instance", "neural_thread_alive": false, "pending": false, "poisoned": false, "recorded_bitfile_name": "/home/xilinx/jupyter_notebooks/flyvis_t5c67_v1/A3R1_FRESH_READY3_05aa0e5238e14b3aad54bb695882d043/neuron_a.bit", "requests": 485, "state": "BOARD_COMPLETE", "thread_alive": true}, {"commits": 3, "driver_fields": ["_latency485_claimed", "boot_id", "bound_asid", "commits", "committed", "compute_deadline", "dma", "dst", "evidence", "last_registers", "np", "overlay", "pending", "plan", "poisoned", "reg", "requests", "server_session", "session_deadline", "src"], "error": null, "name": "latency3_service_instance", "neural_thread_alive": false, "pending": false, "poisoned": false, "recorded_bitfile_name": "/home/xilinx/jupyter_notebooks/flyvis_t5c67_v1/A3R1_FRESH_READY3_05aa0e5238e14b3aad54bb695882d043/neuron_a.bit", "requests": 3, "state": "BOARD_COMPLETE", "thread_alive": true}], "tag": "LINE2_CAMERA_PRECHECK_20261016", "utc": "2021-11-19T06:55:02.821642+00:00"}
+
+
+The focused UI element is 0 AXWebArea PREPARE_A3R1_ee27e897 - Jupyter Notebook, URL: 192.168.2.99:9090/notebooks/flyvis_t5c67_v1/PREPARE_A3R1_ee27e897.ipynb

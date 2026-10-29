@@ -1,0 +1,103 @@
+- banner:
+  - link "FlyVis 实验台首页":
+    - /url: /
+    - generic: ⬡
+    - strong: FlyVis / VISION LAB
+  - generic: 果蝇视觉神经网络实验台 FPGA 创新设计大赛
+  - generic: OFFLINE REPLAY · 真实结果回放
+- main:
+  - heading "果蝇视觉网络，怎样感知运动？" [level=1]
+  - paragraph: 跟着一条移动边缘，看输入怎样变成神经响应。选择场景，再点击播放。
+  - navigation "实验台功能入口":
+    - button "一看就懂 · 比赛演示"
+    - button "更多离线实验" [active] [pressed]
+    - button "科研对照"
+    - button "实验与设备 · 高级"
+  - region "一键选择讲解场景":
+    - strong: 先选一个场景
+    - button "亮边缘移动 · ON 60°" [pressed]
+    - button "暗边缘移动 · OFF 90°"
+    - generic "其他刺激与全部实验条件"
+    - option "Moving Edge · 24 条件" [selected]
+    - option "Flash · Golden Reference"
+    - option "MovingBar · 8 条件"
+    - option "Moving Edge · 最小 CPU 基准"
+    - option "真实摄像头 · 录制结果"
+    - option "MovingBar · 新十条件"
+    - option "合成受控视频 · 六独立条件"
+  - paragraph: 原始 FlyVis · 45,669 节点 · 已有真实计算结果
+  - button "数据来源 ↗"
+  - region "同步回放控制":
+    - button "播放": ▶ 播放
+    - button "回到首帧": ↺ 首帧
+    - generic "速度 / 循环 / 逐帧"
+    - generic: 已暂停 · 亮刺激 · 60° · 第 240 步
+    - slider "模拟时间轴": "240"
+    - generic: "-1.000 s"
+    - generic: 0 s · 刺激起点
+    - generic: 1.420 s
+  - generic: 01 / 给它看什么
+  - heading "展示给网络的画面" [level=2]
+  - paragraph: 观察明暗边界的位置。播放时，边界会随真实输入变化。
+  - figure "运动刺激 · 采样输入重建":
+    - img "当前帧的真实视觉输入重建"
+  - paragraph: 由同一份 721 输入重建画面，便于看清边界；不是额外的相机图像。
+  - text: →
+  - generic: 02 / 网络收到什么
+  - heading "721 个亮度采样点" [level=2]
+  - paragraph: 每个六边形记录一个位置的亮度。亮点与暗点组成这一时刻的视觉输入。
+  - figure "六边形输入 · 原始坐标":
+    - img "官方721个六边形采样点的真实亮度"
+  - paragraph: 颜色表示输入亮度。这里还没有神经元活动。
+  - text: →
+  - generic: 03 / 网络内部发生什么
+  - heading "哪些神经元有响应？" [level=2]
+  - paragraph: T4a–d、T5a–d 是细胞类型名。每行展示该类型一个中心节点的真实数值。
+  - button "解释T4a的方向响应":
+    - generic: T4a
+    - strong: "+0.181"
+  - button "解释T4b的方向响应":
+    - generic: T4b
+    - strong: "+0.163"
+  - button "解释T4c的方向响应" [pressed]:
+    - generic: T4c
+    - strong: "+0.473"
+  - button "解释T4d的方向响应":
+    - generic: T4d
+    - strong: "-0.071"
+  - button "解释T5a的方向响应":
+    - generic: T5a
+    - strong: "+0.151"
+  - button "解释T5b的方向响应":
+    - generic: T5b
+    - strong: "-0.029"
+  - button "解释T5c的方向响应":
+    - generic: T5c
+    - strong: "-0.099"
+  - button "解释T5d的方向响应":
+    - generic: T5d
+    - strong: "-0.059"
+  - paragraph: 中线为 0；左蓝为负、右青为正，条长表示数值大小。不是放电次数，也不是完整空间图。
+  - paragraph: 这一帧：按原实验时间标签 0.200 s 展示。八个示例节点中，T4c 的活动数值最高（0.473）。
+  - generic: 04 / 这能说明什么
+  - heading "同一细胞，对不同方向的响应不同" [level=2]
+  - paragraph: T4c 在这组 亮刺激 ON 实验中的偏好方向为 56.2°，官方 DSI 为 0.6274。点上方其他类型，比较它们的方向偏好。
+  - paragraph: 右图比较该细胞在 12 个方向实验中的官方峰值；伸得越远，峰值越大。它表示方向偏好，不是对当前画面的识别准确率。
+  - link "再看：阻断 T4/T5 后，运动读出怎么变？ →":
+    - /url: "#scientificPilot"
+  - img "官方十二方向整流峰值响应"
+  - generic "官方方向指标的定义与适用范围"
+  - generic "查看完整响应曲线：横轴是时间，纵轴是活动值"
+  - generic "查看当前输入的来源、时间与原始定义"
+  - generic "深入比较不同方向、查看官方指标定义与运行记录"
+  - option "T4a"
+  - option "T4b"
+  - option "T4c" [selected]
+  - option "T4d"
+  - option "T5a"
+  - option "T5b"
+  - option "T5c"
+  - option "T5d"
+  - generic "Full / Python 等对照模式"
+  - generic: FlyVis 1.2.0 · 原始官方预训练网络 · 可追溯实验数据
+  - generic: 软件仿真证据 / GPU、摄像头与 FPGA 适配接口已预留

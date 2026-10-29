@@ -1,0 +1,8 @@
+Two preparation attempts rejected before algorithm freeze or new input generation.
+Initial shared2GiB preparation threshold conflated video generation with native neural inference.
+Changed preparation gate to1GiB for streaming224px encoder and a2.9MB input array.
+Native CPU inference still requires2GiB in its actual process after imports.
+WSL read-only available-RAM probe:7658729472bytes.
+All scientific coverage/error/false-detection/baseline thresholds unchanged; no other process killed.
+First rejection evidence:RESOURCE_CHECK_r1_REJECTED.json, PREPARE_r1_REJECTED.log.
+Second rejection evidence:RESOURCE_CHECK_r2_REJECTED.json, PREPARE_r2.log.

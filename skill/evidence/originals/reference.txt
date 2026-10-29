@@ -1,0 +1,68 @@
+# fly VHDL 移植到 ATK Zynq-7020：当前状态
+
+更新日期：2026-10-08
+
+## 当前发布检查点
+
+- 隔离的 step-gated fly 候选已在 Vivado Simulator 2024.2.2 完成编译、展开和两步 ORN0 行为仿真。两个外部 STEP_COMPLETE 对应两个 PQN_DONE；ORN0 写入地址 0、数据 1024；第二个 UART 响应于 6,078,435,000 ps 结束；FLY_ORN0_FULL_RESPONSE_PASS 出现后，testbench 在 7,678,435 ns 正常结束。
+- 既有摘要报告 143,679 条 BRAM 越界警告事件。对完整控制台日志最终 PASS 区段重计得到 143,660 行 A 端越界读警告与 36 行 A 端越界写警告；日志还含早期尝试，行数与事件数差异未核平。通过响应帧断言不等于 RAM 地址正确，警告仍未关闭。
+- 这是指定输入序列的仿真证据；没有完成数值等价、历史 trace 复现、新综合/布线、bitstream 生成或新版板测。
+- 本机可复查的精简工程位于 projects/fly-reference/README.md；GitHub 开发快照位于 work/fly-orn0-sim-pass 分支的 projects/fly-zynq7020/。该提交包含相同仿真候选的 HDL/IP/COE/XDC 文件和可移植相对路径 XPR。
+- GitHub 提交为开发快照（验证级别 A）；干净克隆 Vivado 重建、数值等价、新 bitstream 与新版实板验证均未完成。本文后续按日期保留的内容是历史记录，不能替代以上当前状态或作为当前待办。历史记录引用的本机 full log、缓存、波形和 bitstream 均未随本次发布包上传。
+
+## 历史记录
+## 续接检查点（2026-10-07）
+
+- 用户已明确今天先暂停；下次续接先处理 TX 输出过量：目前有效接收启动后约每 1 ms 自动重复状态帧，没有停止条件。用户要求改为收到一次输入/时间步后只输出一两帧，然后等待下一次输入。此为待实现的行为要求，下一轮应先读 TX/RX 控制 RTL，选取正确的单步完成触发边界，再在独立 fly 工程改动并验证；保留当前 BIT，不要在本轮或下轮未经单独授权就下载新 BIT。
+- 本轮目标不是重新生成 bitstream：独立 fly Vivado 工程已完成实现和 bitgen，且用户已确认该 bitstream 下载到板上并运行过多次。
+- **最新板测证据：**用户粘贴了 XCOM 接收区 HEX 字节流。解析出 12,133 个字节 token、485 个 `0A` 帧结束符；其中 484 帧完整、彼此完全相同，各含 24 个状态字节再跟 `0A`。首帧少 1 个状态字节（捕获从帧中间开始），尾部剩 9 个未到终止符的字节（粘贴片段截断）。
+- 共同完整帧为 `80`×14、`FC B0 FC B0 F8 A9 FA AB 80 80 0A`；按状态字节格式解码为 LN0/LN1/LN2/LN3 `s_sum`=0、PN `s_sum`=0、KC `s_sum`=0、APL `s_out`=0、MBON0/MBON1 `q` 原始 14-bit 码值均为 15920 (`0x3E30`)、ON `v`=15401 (`0x3C29`)、APL `v_out`=15659 (`0x3D2B`)、PN `u_sum`=0。以上是截取的 bits 15..2 码值；没有数值缩放/符号格式时不解释为生物物理量。
+- 这证明 XCOM 收到了结构正确、稳定重复的 fly 格式 UART TX 帧；帧中没有 ORN spike 地址记录。`triger_generator` 在 RX 起始标志后每约 1 ms 触发，且 RTL 没有停止分支，所以持续发帧符合该设计当前行为。用户确认启动命令为 `80 49`（PQN start）。随后用户给出 XCOM TX 记录 `[2026-10-07 23:23:31.277] TX: 804B804A0D0A`：有效刺激为 `80 4B` (ORN0) 与 `80 4A` (timestep end)，末尾 `0D 0A` 是终端附加的 CR/LF。
+- `fifo_rxd_ctrl.vhd` 的接收解析器在完整两字节后回到 READY，只接受第一字节高两位为 `10` 的帧头；因此完整刺激后的 `0D 0A` 不满足帧头条件，会被忽略，对本次刺激无害。TX 日志确认主机发出序列；是否已被 FPGA RX 采样及状态是否响应，要从该时间戳之后的 RX 帧比较确认。
+- 用户之后澄清只关闭并重开了 XCOM 串口，开发板本身未断电；因此 JTAG 配置仍应留在 FPGA，无需重新下载。重开串口后看到的 `B0` 是状态帧普通数据字节（常见帧中 MBON0/MBON1 `q` 各自编码为 `FC B0`），不是帧结束符；一帧应继续到 `0A`。这可能是串口重新打开时从帧中段开始接收，也可能是当前数据未完整显示，需看后续 HEX 字节确认。
+- 第二份用户粘贴片段解析出 6,621 个 HEX 字节 token、264 个 `0A` 帧结束符；其中 263 帧是与上一份相同的完整 24 字节状态内容，首帧短 1 字节，末尾残留 22 字节。该片段证明输出仍重复同一状态帧；由于没有提供它相对于 `23:23:31.277` TX 命令的截取时间，暂不能据此判定 ORN0 刺激是否改变状态。
+- 当前无需再收大量相同帧，也不要重发 `80 49` 或重新下载 bitstream。下一步保持串口打开，捕获到完整 `0A` 帧边界后，再比较刺激前后的状态码。
+- 串口设置为 460800、8N1、无流控；板上 PL UART 经 P5 接 CH340C，桥接位置 3–5 与 4–6。若 XCOM 界面选项不清楚，请用户发整个窗口截图，再按实屏指引。
+- 已更正先前错误的启动命令：`80 45` 是切换 LN0 inactive，不是启动；启动值为 9，对应 `80 49`。如果之后确需从初态开展受控测试，先确认此前是否发过 `80 45`，再决定是否需要重新加载；当前不要为了查看 HEX 输出而复位或重新下载。
+- 当前步骤不使用 Jupyter；Jupyter/PYNQ 对应另一个 SNN/HLS 工程。
+
+## 已确认的工程与实现
+
+- Vivado 工程：`external/fly-olfactory-network-fpga/vivado_projects/FlyOlfactoryNetwork_Zynq7020/FlyOlfactoryNetwork_Zynq7020.xpr`
+- 构建脚本：同目录 `build_zynq7020.tcl`；顶层为 `main`，复制 23 个 VHDL 源文件和 28 个 XCI IP。
+- 已将 23 个归档 VHDL 文件逐个与原 Cmod A7 工程的 pre-IP-upgrade 源码比较：网络主体一致；差异仅为 `fifo_rxd_ctrl.vhd` 文件头命令注释、UART RX 的板级位周期/起始位中心采样、UART TX 的板级位周期。网络计算 RTL（PQN/LN/KC/MBON 和突触更新模块）没有被简化或替换。独立 Tcl 工程只引入 VHDL 与原始存储/FIFO/Clock Wizard XCI，没有 HLS IP。
+- 器件：`xc7z020clg400-2`。板上 50 MHz PL 时钟输入 U18，经 Clock Wizard 产生 100 MHz；PL UART RX/TX 分别约束到 T19/J15。
+- 输出 bitstream：`outputs/fly_olfactory_zynq7020.bit`，SHA-256 `A98A916AB71D1ED74C41DA00A13115E8B660DDB51545E5B1DC7CE29F8F34F917`。本机 Desktop 副本哈希相同。
+- 已有本机行为仿真记录：`UART_LOOPBACK_PASS: 00 A5 FF at 460800 baud`。这是仿真回环，不是板上 UART 收发的完整验收。
+- 构建证据：工程 `vivado_build.log` 有 `FLY_ZYNQ7020_BUILD_COMPLETE`、`write_bitstream completed successfully`；仿真细节见 `FlyOlfactoryNetwork_Zynq7020.sim/sim_1/behav/xsim/simulate.log`，实现资源/时序/DRC 见项目 `reports/`。
+- 已有 implementation 报告：LUT 9,087（17.08%），寄存器 7,581（7.13%），BRAM Tile 47.5/140（33.93%），DSP 10/220（4.55%）；100 MHz 时序 WNS +1.377 ns、无 failing endpoints，用户时序约束满足。
+- Vivado 2024.2.2 `report_drc` 对 fully routed `main`/`xc7z020clg400-2` 有 0 Errors，但报告含 Warning（包括 `ZPS7-1` “PS7 block required” 与 `RTSTAT-10` 无可布线负载等）；因此应表述为“无 DRC 错误、存在警告”，不能写成“DRC 全部干净”。`write_bitstream` 成功。
+- Vivado 硬件日志记载用 Desktop BIT 副本对器件 `xc7z020` 执行了 `program_hw_devices`，随后 `End of startup status: HIGH`，然后 JTAG hardware target shutdown；Desktop 与输出目录 BIT 的 SHA-256 相同。用户确认 bitstream 已下载并运行；后续 XCOM HEX 粘贴捕获到重复的结构正确 TX 帧（详细解析见续接检查点）。主机实际发送的字节仍未留档，因此 UART RX 的具体命令解码仍需补证。
+
+## UART 当前协议与观测
+
+- 当前 RTL 的 UART 分频常数为 217，以 100 MHz 时钟得到约 460,829 baud。因此 XCOM 应使用 460800、8 data bits、no parity、1 stop bit、无流控。
+- 板级接线已按本地《领航者 ZYNQ 底板原理图 V3.9》和《ZYNQ7010/7020 核心板原理图 2V5》核对：核心板 `PL_GCLK` 为 FPGA 封装脚 U18，来自 50 MHz 振荡器；P5 的 PL UART 路径为 3–5（CH340C_RXD ↔ UART3_TX）和 4–6（CH340C_TXD ↔ UART3_RX）。这与当前 XDC 的 CLK U18、RX T19、TX J15 对应。若实物 PCB 版本不同，仍需按板上版本丝印复核原理图。
+- 已按 `fifo_txd_ctrl.vhd` 和 `pqn_ctrl.vhd` 解出预期输出帧：每帧前 24 字节固定为 12 个状态值、每个值两字节，依序是 LN0/LN1/LN2/LN3 的 `s_sum`、PN `s_sum`、KC `s_sum`、APL `s_out`、MBON0 `q`、MBON1 `q`、ON `v`、APL `v_out`、PN `u_sum`。状态字节为 `0x80 | txd_data[15:9]` 和 `0x80 | txd_data[8:2]`，所以只传了 18-bit 信号的 bits 15..2；HEX 合并值为 `((b0 & 0x7F) << 7) | (b1 & 0x7F)`，不能当成完整 18-bit 原值。其后每个发放的 ORN 地址也占两个带最高位标志的字节，帧以 `0x0A` 结束。当前板上实际输出字节仍未捕获。
+- `fifo_rxd_ctrl.vhd` 的 12-bit 输入信号采用两字节编码：`byte0 = 0x80 + floor(value/64)`，`byte1 = 0x40 + (value mod 64)`。输入按每个 1 ms 时间步打包，逻辑值 10 是时间步结束标记。
+- 按当前实际使用的 `pqn_ctrl.vhd`：逻辑命令 3/4 控制 homeostasis，5/6/7/8 分别切换 LN0/LN1/LN2/LN3 的 inactive 标志，9 才是启动 PQN，10 是时间步结束，11+n 表示 ORN n 发放。
+- 因此 `80 45` 表示命令 5（切换 LN0 inactive），**不是启动命令**；启动 PQN 是 `80 49`。`80 4B` 表示 ORN0，`80 4A` 表示时间步结束。此前把 `80 45` 说成启动的指引有误。用户确认本次还没有发送测试命令，目前没有证据认为 LN0 inactive 被切换。
+- `UART_TEST_GUIDE.md` 和 `fifo_rxd_ctrl.vhd` 文件头原先误标命令 5 为启动，已按当前 `pqn_ctrl.vhd` 解码修正为命令 9；只改了注释/操作文档，没有改可综合逻辑，也没有改动 bitstream。
+- 用户粘贴的接收流已被源码协议解析：常见帧由 24 个状态字节、无 ORN spike 地址记录、末尾 `0A` 构成；484 个完整帧内容完全相同，TX 正在稳定输出。RX 起始后每约 1 ms 触发且不会自动停止，持续输出是当前 RTL 的预期行为。帧字段原始码值见本节续接记录，具体主机发送命令尚未从 XCOM TX 区确认。
+- 这条 VHDL 路线的现场串口操作不需要回到 Jupyter。此前单 PN HLS/AXI-Lite 的 Jupyter 板测是另一项实验，不能替代本目标的 UART 验收。
+
+## 历史待办（已由当前检查点取代）
+
+1. 保存用户已发送的 `80 4B 80 4A` 之后少量含完整 `0A` 边界的 HEX RX 帧，并与基线比较。
+2. 如刺激后状态码仍相同，再检查 PL RXD、P5 接线、输入采样时序及 ORN0 的网络响应条件；避免重复发送或再次下载 bitstream。
+
+
+
+
+## 独立仓库交接（2026-10-08）
+
+- 已建立仅含 fly Port 的本地仓库：ly-zynq7020-port/，分支 main，提交 96eecec41414e5692198986b1c8855b4a8e01bec。
+- 78 个文件已提交；SOURCE_SHA256SUMS.txt 中 68 项全部校验通过。未混入 fly Experiment 或 MaleCNS/SNN。
+- 目标私有远端为 kimilucky-ic/fly-zynq7020-port，尚未创建：本机 GitHub CLI 登录令牌无效，现有 GitHub 集成不提供创建仓库操作。
+- 原共享仓库分支 work/fly-orn0-sim-pass 先保留作恢复快照。
+- 下一步只需重新登录 GitHub CLI、创建私有远端并推送本地 main，随后核验远端可见性和提交 SHA。此前仿真/板级状态不因本次仓库整理而改变。

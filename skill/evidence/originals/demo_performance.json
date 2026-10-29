@@ -1,0 +1,11 @@
+{
+  "same_real_data_identity": true,
+  "first_frame_reduction_percent": 83.05016524557529,
+  "first_frame_speedup": 5.899762531542982,
+  "before_s": 14.710620699999708,
+  "after_s": 2.4934259000001475,
+  "cold_first_verification_s": 5.128717899999174,
+  "service_before_s": 12.405403599999772,
+  "service_after_s": 0.47001749999981257,
+  "not_full_desktop_wall_time": true
+}

@@ -1,0 +1,27 @@
+{
+  "status": "PASS_PATH_COLLISIONS_NO_NEW_PYTHON_SYNTAX_ERROR",
+  "files": 10661,
+  "renamed": 2768,
+  "changed": 2963,
+  "preexisting_invalid": [
+    {
+      "path": "source/flyvis-lossless-study/ov5640_id_diag_20261024/notebook_extract_6lbildb6/package_59e1249c42f2/id_diag.py",
+      "error": "invalid syntax (source/flyvis-lossless-study/ov5640_id_diag_20261024/notebook_extract_6lbildb6/package_59e1249c42f2/id_diag.py, line 1)"
+    },
+    {
+      "path": "source/flyvis-lossless-study/ov5640_id_fix_r2_20261024/notebook_extract_mgc83xt4/package_206884c2e7a0/id_diag.py",
+      "error": "invalid syntax (source/flyvis-lossless-study/ov5640_id_fix_r2_20261024/notebook_extract_mgc83xt4/package_206884c2e7a0/id_diag.py, line 1)"
+    },
+    {
+      "path": "source/flyvis-lossless-study/ov5640_id_fix_r2_20261024/notebook_extract__aycn1yg/package_4f11cae6f14c/id_diag.py",
+      "error": "invalid syntax (source/flyvis-lossless-study/ov5640_id_fix_r2_20261024/notebook_extract__aycn1yg/package_4f11cae6f14c/id_diag.py, line 1)"
+    },
+    {
+      "path": "source/flyvis-lossless-study/ov5640_single_r2_20261024/notebook_extract_dw_imj9f/package_5fc33a299f6e/operator_entry.py",
+      "error": "invalid syntax (source/flyvis-lossless-study/ov5640_single_r2_20261024/notebook_extract_dw_imj9f/package_5fc33a299f6e/operator_entry.py, line 1)"
+    }
+  ],
+  "output": "C:\\Users\\hzy72\\Documents\\ChatGPT\\fpga\\deliverables\\flyvis_open_source_20261029",
+  "functional_tests": "PENDING",
+  "sealed_manifest_regeneration": "PENDING"
+}

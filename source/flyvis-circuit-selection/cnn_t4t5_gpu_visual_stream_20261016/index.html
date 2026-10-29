@@ -1,0 +1,17 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>④ GPU与视觉联动验证</title>
+<style>body{margin:0;background:#101b27;color:#edf3fa;font:16px system-ui}main{max-width:1400px;margin:auto;padding:28px}h1{font-size:27px;margin:0 0 8px}p{color:#acbdcf}.status{padding:15px;background:#1c2d3f;border-radius:12px;display:flex;gap:22px;align-items:center}button{background:#37c3a3;border:0;border-radius:8px;padding:12px 20px;font-size:16px;cursor:pointer}button:disabled{opacity:.35}.cards{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px;margin-top:22px}.card{background:#172737;padding:16px;border-radius:14px}.card h2{font-size:18px}canvas,img{width:100%;aspect-ratio:1;background:#0b1420;object-fit:contain;border-radius:8px}.metrics{margin-top:20px;color:#b8c9d9}strong{color:#62dec3}small{color:#91a6bc}#note{color:#ffd18c}</style>
+<main><h1>GPU计算与视觉输入同步运行</h1><p>同一视频 · 两条独立状态 · 原始Full GPU / CNN替代GPU · 官方光流</p>
+<div class="status"><button id="start" disabled>开始一次联动</button><span id="status">正在准备</span><strong id="progress">0 / 1000 步</strong></div>
+<div class="cards"><section class="card"><h2>当前实际视频帧</h2><img id="video" alt="等待本次输入"><p id="frame">尚未开始输入</p></section>
+<section class="card"><h2>原始 Full · GPU新计算</h2><canvas id="full" width="500" height="500"></canvas><p>原始45,669个神经元递推</p></section>
+<section class="card"><h2>CNN替代 · GPU新计算</h2><canvas id="cnn" width="500" height="500"></canvas><p>原T4/T5更新停止，CNN输出参与R反馈</p></section></div>
+<p class="metrics" id="metrics">等待实际GPU设备与数据</p><p id="note">本轮为受控MP4输入，目标100模型步/秒（约半速）。FPGA未连接。</p>
+<small>计算期间显示本次已提交状态。结束后明确标注结果回看；不把离线回放称为实时计算。</small></main>
+<script>
+let state=null,last=0,busy=false;const el=id=>document.getElementById(id);
+function draw(id,flow,uv,scale){let c=el(id),g=c.getContext('2d');g.fillStyle='#0b1420';g.fillRect(0,0,500,500);for(let i=0;i<721;i++){let x=250+Math.sqrt(3)/2*uv[1][i]*14,y=250+(uv[0][i]+uv[1][i]/2)*14,u=flow[0][i],v=flow[1][i],m=Math.hypot(u,v),q=Math.min(1,m/Math.max(scale,1e-9));g.fillStyle=`hsl(${185-135*q} 70% ${25+40*q}%)`;g.beginPath();g.arc(x,y,4.2,0,7);g.fill();if(i%3===0&&m>1e-8){let dx=u/m*8,dy=-v/m*8;g.strokeStyle='#e5efff';g.beginPath();g.moveTo(x-dx/2,y-dy/2);g.lineTo(x+dx/2,y+dy/2);g.stroke();}}}
+async function update(){if(busy)return;busy=true;try{let r=await fetch('/api/state');state=await r.json();el('status').textContent=state.stage;el('progress').textContent=`${state.steps} / 1000 步`;el('start').disabled=state.phase!=='READY';el('metrics').textContent=`设备：${state.device||'加载中'} · 模型dt 5ms · ${state.achieved_steps_s?state.achieved_steps_s.toFixed(1)+' 模型步/秒':'等待计算'} · FPGA未连接`;
+if(state.render_id>last){last=state.render_id;el('video').src='data:image/jpeg;base64,'+state.input_image_b64;el('frame').textContent=`视频帧 ${state.frame_id} · 模型时间 ${(state.steps*.005).toFixed(3)} 秒`;let scale=0;for(let f of [state.flow_Full,state.flow_CNN])for(let i=0;i<721;i++)scale=Math.max(scale,Math.hypot(f[0][i],f[1][i]));draw('full',state.flow_Full,state.uv,scale);draw('cnn',state.flow_CNN,state.uv,scale);let payload={run_id:state.run_id,render_id:last,steps:state.steps,visible:document.visibilityState==='visible'};requestAnimationFrame(()=>requestAnimationFrame(()=>fetch('/api/render_ack',{method:'POST',body:JSON.stringify(payload)})));}
+}catch(e){el('status').textContent='显示连接中断：'+e.message}finally{busy=false}}
+el('start').onclick=async()=>{el('start').disabled=true;await fetch('/api/start',{method:'POST',body:JSON.stringify({run_id:state.run_id})});update()};setInterval(update,100);update();
+</script></html>

@@ -1,0 +1,5 @@
+# CPU-only reference environment; upstream FlyVis code is not modified.
+torch==2.5.1+cpu
+torchvision==0.20.1+cpu
+numpy==1.26.4
+pandas==2.2.3

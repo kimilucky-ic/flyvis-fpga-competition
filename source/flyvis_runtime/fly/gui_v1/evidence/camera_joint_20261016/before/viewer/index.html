@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="FlyVis 果蝇视觉神经网络真实实验数据展示。离线回放、输入与活动同步、官方方向指标。">
+  <title>FlyVis · 果蝇视觉实验台</title>
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/workbench.css">
+  <link rel="stylesheet" href="/unified_flow.css">
+  <link rel="stylesheet" href="/scientific_pilot.css">
+  <link rel="stylesheet" href="/scientific_sparse.css">
+  <link rel="stylesheet" href="/live_experiment.css">
+  <link rel="stylesheet" href="/live_camera.css">
+  <link rel="stylesheet" href="/spatial_view.css">
+  <link rel="stylesheet" href="/joint_replay.css">
+  <link rel="stylesheet" href="/demo_home.css">
+  <link rel="stylesheet" href="/demo_guide.css">
+  <link rel="stylesheet" href="/competition.css">
+  <script src="/app.js" defer></script>
+  <script src="/phase3.js" defer></script>
+  <script src="/workbench.js" defer></script>
+  <script src="/unified_flow.js" defer></script>
+  <script src="/scientific_pilot.js" defer></script>
+  <script src="/scientific_sparse.js" defer></script>
+  <script src="/spatial_view.js" defer></script>
+  <script src="/live_experiment.js" defer></script>
+  <script src="/stream_wire.js" defer></script>
+  <script src="/stream_display_diagnostics.js" defer></script>
+  <script src="/live_service_status.js" defer></script>
+  <script src="/live_camera.js" defer></script>
+  <script src="/joint_replay.js" defer></script>
+  <script src="/demo_home.js" defer></script>
+  <script src="/demo_guide.js" defer></script>
+  <script src="/competition_stage.js" defer></script>
+  <script src="/competition.js" defer></script>
+  <script src="/skeleton_wire.js" defer></script>
+  <script src="/fixed_skeleton.js" defer></script>
+  <script src="/competition_live.js" defer></script>
+</head>
+<body class="workspace-pending competition-pending">
+  <header class="topbar">
+    <a class="brand" href="/" aria-label="FlyVis 实验台首页"><span class="brand-mark">⬡</span><strong>FlyVis<span> / VISION LAB</span></strong></a>
+    <div class="project-name">果蝇视觉神经网络实验台 <span>FPGA 创新设计大赛</span></div>
+    <div class="status-pill"><span class="status-dot"></span><span id="workspaceStatus">OFFLINE REPLAY · 已有真实结果</span></div>
+  </header>
+  <main>
+    <section class="intro">
+      <div><div class="eyebrow">FLYVIS / VISUAL EXPERIMENTS</div><h1 id="workspaceTitle">已验收结果演示</h1><p id="workspaceHint">选实验 → 播放 → 看神经活动</p></div>
+      <div class="intro-note"><strong>原始完整网络 · 软件回放</strong><span>固定预训练模型 / 原始活动 / 无新推理</span><a href="#scientificPilot">查看 T4/T5 科研先导对照 ↓</a><a href="#scientificSparse">查看科研 B 节点数量对照 ↓</a></div>
+    </section>
+
+    <nav class="workspace-nav" aria-label="实验台功能入口">
+      <button data-workspace="competition" aria-pressed="true">一看就懂 · 比赛演示</button>
+      <button data-workspace="demo" aria-pressed="false">更多离线实验</button>
+      <button data-workspace="research" aria-pressed="false">科研对照</button>
+      <button data-workspace="advanced" aria-pressed="false" class="workspace-advanced">实验与设备 · 高级</button>
+    </nav>
+    <p id="competitionBoot" role="status">正在整理比赛界面，摄像头尚未启动…</p>
+    <div id="competitionWorkspace">
+      <div class="cp-heading"><span class="cp-badge">ON 60° · 亮边缘运动</span><span>原始 Full 网络 · 同一次真实 GPU 计算结果</span><span class="cp-offline">离线回放 / OFFLINE REPLAY</span></div>
+      <div class="cp-player"><button id="cpPlay" class="primary-button" disabled>▶ 播放</button><button id="cpStart" disabled>回到开头</button><label>回放速度 <select id="cpSpeed"><option value="12">12 步/秒 · 约40秒</option><option value="6">6 步/秒 · 约81秒</option><option value="24">24 步/秒 · 约20秒</option></select></label><div class="cp-timeline"><input id="cpTimeline" type="range" min="0" max="484" value="0" disabled aria-label="全部画面共用的时间轴"><div><span>适应</span><span>亮边缘移动</span><span>运动后</span></div></div><span id="cpClock">正在核验来源</span></div>
+      <p id="cpStatus" class="cp-status" role="status">读取真实输入、活动和官方光流…</p>
+      <div id="cpPanels" class="cp-panels" hidden>
+        <section class="cp-card cp-visual"><span class="cp-number">01 / 视觉输入</span><h2>果蝇看到了什么？</h2><p class="cp-lead">一条亮边缘，沿 60° 方向移动。</p><canvas id="cpStimulus" width="400" height="340" aria-label="同次ON60实际721输入重建的画面"></canvas><p class="cp-caption">由本次实际 721 点输入重建；不是摄像头视频。</p><div class="cp-input-key"><i></i> 暗 <i></i> 亮</div><details id="cpRetinaDetails"><summary>展开 721 个感光采样点</summary><canvas id="cpRetina" width="400" height="350" aria-label="真实721感光输入"></canvas><p class="cp-caption">每一点记录对应位置的输入亮度。</p></details></section>
+        <section class="cp-card cp-neurons"><span class="cp-number">02 / 神经网络</span><h2>神经元怎样响应？</h2><p class="cp-lead">八类真实代表骨架，同一时间轴同步响应。拖动旋转，滚轮缩放；八类始终同屏，点击类型查看曲线。</p><div class="cp-filter"><button data-cp-filter="all" aria-pressed="true">全部八类</button><button id="cpReset">重置视角</button></div><div class="cp-anatomy"><img id="cpAnatomy" alt="⑩ NAVis/Octarine绘制的真实神经元骨架与本步活动"><div id="cpRenderWait">正在连接本机三维渲染器…</div></div><div id="cpTypes" class="cp-types"></div><p id="cpNeuronText" class="cp-explanation"></p><div class="cp-scale"><span id="cpScaleMin">负值</span><i></i><span id="cpScaleMax">正值</span></div><p id="cpColorNote" class="cp-caption">活动是模型数值，不是放电次数。骨架来自真实解剖；颜色映射该类型 721 个模型节点的平均值。</p><canvas id="cpTrace" width="680" height="140" aria-label="同次真实类型均值曲线和当前帧"></canvas></section>
+        <section class="cp-card cp-readout"><span class="cp-number">03 / 运动读出</span><h2>网络计算出了什么？</h2><p class="cp-lead">官方光流：每个位置的运动方向与强弱。</p><canvas id="cpFlow" width="400" height="340" aria-label="本步官方DecoderGAVP原光流箭头"></canvas><p id="cpFlowText" class="cp-explanation"></p><p class="cp-caption">箭头指向预测运动方向，长度表示大小。保留官方原始场，没有重新估计光流。</p><details><summary>怎样阅读这幅图？</summary><p class="cp-caption">右为 x 正向，上为 y 正向；统一 8 像素 / 原始光流单位。中央箭头仅放大中心采样点的真实向量，不是整场平均或识别准确率。</p></details></section>
+      </div>
+      <div class="cp-boundary"><span>真实骨架 + 同类型模型活动 · 非单个生物细胞测量</span><span>当前未做新推理 · FPGA NOT_CONNECTED</span></div>
+      <details id="cpSpatialDetails" class="cp-more"><summary>深入看：5,768 个 T4/T5 模型神经元的空间活动</summary><div id="cpSpatial" class="spatial-panel"></div></details>
+      <details class="cp-more"><summary>本次数据来源、时间定义与计算身份</summary><p>每步输入时间 t 对应 Euler 更新后的活动 t + 5ms。三维画面、曲线、空间图和光流均绑定同一 run 与步号。亮度画面由原始输入重建，不虚构原视频。</p><pre id="cpIdentity"></pre><p id="cpReceipt"></p></details>
+      <a class="cp-research-link" href="#scientificPilot">继续探索：阻断 T4 / T5 后，运动响应怎样改变？ →</a>
+    </div>
+    <div id="demoWorkspace" hidden>
+      <div class="demo-tools"><p>已有真实数据，可直接播放。打开本页不会启动新计算或摄像头。</p><button id="demoSource">数据来源 ↗</button></div>
+    </div>
+    <div id="researchWorkspace" hidden><div class="workspace-picker"><label>选择研究 <select id="researchPicker" aria-label="选择科研对照"></select></label><p>使用已经计算并核验的结果。原始身份和指标定义保留在各实验中。</p></div></div>
+    <div id="advancedWorkspace" hidden><div class="workspace-picker"><label>选择功能 <select id="advancedPicker" aria-label="选择高级功能"></select></label><p>这里保留新计算、采集及诊断工具。切换页面不会停止正在运行的任务，请使用任务自己的停止按钮。</p></div></div>
+
+    <section class="flow-panel" aria-label="统一输入与计算流程">
+      <div class="flow-heading"><div><span class="eyebrow">INPUT → FREEZE → COMPUTE → EVIDENCE</span><h2>本次实验</h2></div><a href="#evidenceWorkbench">查看运行证据 ↓</a></div>
+      <p>先确认输入身份，再选择计算模式。交互预览、已验收离线回放和新计算分别记录。</p>
+      <div class="flow-controls"><label>输入来源<select id="flowSource" aria-label="本次输入来源"><option value="digital_verified_p0">数字直接输入 · 已验收 P0 固定动画</option><option value="interactive_digital">数字直接输入 · ⑤交互动画预览</option><option value="phone_camera">手机显示刺激 → Windows 摄像头实际采集</option></select></label><button id="flowPresenter">打开⑤交互播放器</button><button id="flowCameraReference">查看已验收摄像头样例</button><button id="flowRefresh">刷新输入状态</button></div>
+      <ol id="flowSteps" class="flow-steps"><li>① 选择／采集输入</li><li>② 冻结输入</li><li>③ 等待真实计算</li><li>④ 查看响应与证据</li></ol>
+      <strong id="flowState" role="status">读取统一流程…</strong><p id="flowNotice"></p>
+      <div id="flowPlayerBox" class="hidden"><p>⑤原播放器 · 软件预览。参数／播放日志不等于 721 神经输入，未开启摄像头。</p><iframe id="flowPlayer" title="⑤交互刺激播放器（软件预览）" allow="fullscreen" allowfullscreen></iframe></div>
+      <div id="flowCamera" class="hidden"><strong>新手机采集：NOT_CONNECTED</strong><p>摄像头预览、实际帧／721 映射和采集完成状态等待⑤单采集器接口。当前没有新的相机画面；已验收样例在下方原展示中查看。</p></div>
+      <div class="flow-controls"><label>已验收的冻结输入<select id="flowInput" aria-label="可冻结的真实输入"></select></label><button id="flowFreeze">冻结此输入身份</button><label>本次计算模式<select id="flowMode" aria-label="本次计算模式"><option value="Full_GPU">Full GPU</option><option value="Sham_Ablation">Sham / Ablation</option><option value="Python_Replacement">Python Replacement</option><option value="FPGA_Replacement">FPGA Replacement</option></select></label><button id="flowSubmit" disabled>请求真实计算</button><button id="flowReplay" disabled>查看同输入已验收结果 · offline replay</button></div>
+      <p id="flowTask" role="status">新任务：NOT_CONNECTED · job_id / run_id：NOT_AVAILABLE · 真板：NOT_CONNECTED</p>
+      <details><summary>本次输入、模式和时间身份</summary><dl id="flowIdentity" class="wb-identity"></dl></details>
+    </section>
+
+    <nav class="modes" aria-label="网络对照模式">
+      <button class="mode active" data-mode="original" aria-pressed="true"><span class="mode-number">01</span><span>原始完整网络<small>已验证 · 离线回放</small></span><span class="mode-check">●</span></button>
+      <button class="mode" data-mode="disabled" aria-pressed="false"><span class="mode-number">02</span><span>回路关闭<small>未验证</small></span><span class="mode-lock">待接入</span></button>
+      <button class="mode" data-mode="python" aria-pressed="false"><span class="mode-number">03</span><span>Python 替换<small>未验证</small></span><span class="mode-lock">待接入</span></button>
+      <button class="mode" data-mode="fpga" aria-pressed="false"><span class="mode-number">04</span><span>FPGA 替换<small>板卡未连接 / 未验证</small></span><span class="mode-lock">待接入</span></button>
+    </nav>
+    <div id="modeNotice" class="notice hidden" role="status"></div>
+    <div id="importNotice" class="notice hidden" role="status"></div>
+    <div id="error" class="error hidden" role="alert"></div>
+    <div id="loading" class="loading" role="status">正在读取并校验真实实验数据…</div>
+
+    <section class="controls" aria-label="实验条件">
+      <label class="experiment-label">视觉刺激<select id="dataset" aria-label="视觉刺激实验"></select></label>
+      <div class="control-divider"></div>
+      <div class="direction-control"><span class="control-label">实验方向</span><div id="angles" class="angle-buttons" role="group" aria-label="实验方向选择"></div></div>
+      <div class="control-divider"></div>
+      <div class="polarity-control"><span class="control-label">亮度</span><div class="segmented"><button id="on" aria-pressed="true">ON</button><button id="off" aria-pressed="false">OFF</button></div></div>
+      <label id="radiusLabel" class="hidden">闪光范围<select id="radius" aria-label="闪光半径"><option value="-1">全视野</option><option value="6">中心 · radius=6</option></select></label>
+      <label id="conditionLabel" class="hidden">完整实验条件<select id="condition" aria-label="MovingBar完整实验条件"></select></label>
+    </section>
+
+    <div class="primary-grid">
+      <section class="panel input-panel">
+        <div class="panel-head"><div><span class="section-number">01 / INPUT</span><h2>视觉输入</h2></div><span id="conditionTag" class="tag">—</span></div>
+        <div class="input-canvases">
+          <figure><div class="canvas-frame stimulus-frame"><canvas id="stimulus" role="img" aria-label="当前帧的真实视觉输入重建"></canvas><span class="canvas-label">STIMULUS</span></div><figcaption>运动刺激 · 采样输入重建</figcaption></figure>
+          <figure><div class="canvas-frame"><canvas id="hex" role="img" aria-label="官方721个六边形采样点的真实亮度"></canvas><span class="canvas-label">721 HEX INPUTS</span></div><figcaption>六边形输入 · 原始坐标</figcaption></figure>
+        </div>
+        <p class="input-footnote">两图来自同一帧 stimulus.npy。灰度为真实亮度；左图采用相邻采样点填充，不代表原始相机图像。</p>
+        <div class="transport"><button id="play" class="primary-button" aria-label="播放">▶ 播放</button><button id="reset" aria-label="回到首帧">↺ 首帧</button><label class="speed-label"><select id="speed" aria-label="回放速度"><option value="0.25">0.25×</option><option value="0.5" selected>0.5×</option><option value="1">1×</option><option value="2">2×</option></select></label><label class="loop-label"><input type="checkbox" id="loop" checked>循环</label><button id="step" aria-label="前进一帧">+1帧</button></div>
+        <label class="timeline-label" for="timeline"><span id="timeLabel">t = — s</span><span id="frameLabel">FRAME —</span></label>
+        <input id="timeline" type="range" min="0" max="484" value="0" step="1" aria-label="模拟时间轴">
+        <div class="timeline-ticks"><span id="timeStart">−1.000 s</span><span id="timeOrigin">0 s · 刺激起点</span><span id="timeEnd">—</span></div>
+        <div id="cameraTiming" class="camera-timing hidden" aria-live="off"><div><span id="sourceClockLabel">真实采集帧 / 接收时间</span><strong id="captureTime">—</strong></div><div><span>模拟输入时间</span><strong id="inputTime">—</strong></div><div><span>Euler 更新后活动时间</span><strong id="activityTime">—</strong></div><p id="cameraMode"></p></div>
+      </section>
+
+      <section class="panel activity-panel">
+        <div class="panel-head"><div><span class="section-number">02 / NEURAL ACTIVITY</span><h2>神经元活动</h2></div><span class="tag">Euler 更新后 · 模型单位</span></div>
+        <div class="activity-toolbar"><div class="segmented"><button id="targetsPreset" aria-pressed="true">T4 / T5</button><button id="representativesPreset" aria-pressed="false">代表细胞</button></div><details id="cellPicker"><summary>选择细胞类型 <span>65</span></summary><div class="cell-popup"><input id="cellSearch" placeholder="搜索，例如 Mi1、Tm3" aria-label="搜索细胞类型"><div id="allCells" class="all-cells"></div></div></details><button id="export" class="text-button">↓ 导出当前曲线 CSV</button></div>
+        <canvas id="activity" class="chart" role="img" aria-label="多种中心细胞的活动时间序列"></canvas>
+        <div id="legend" class="legend" aria-label="已选曲线与当前值"></div>
+        <div class="chart-footnote"><span><i class="cyan-line"></i>游标与视觉输入逐帧同步</span><span>中心节点活动 · 不表示完整网络空间分布</span></div>
+      </section>
+    </div>
+
+    <div class="secondary-grid">
+      <section class="panel direction-panel">
+        <div class="panel-head"><div><span class="section-number">03 / DIRECTION RESPONSE</span><h2>方向响应与对照</h2></div><label class="cell-label">细胞<select id="directionCell" aria-label="方向比较细胞"></select></label></div>
+        <div class="direction-content"><div class="direction-traces"><div id="compareAngles" class="compare-angles" aria-label="选择需要比较的方向"></div><canvas id="directionChart" class="chart" role="img" aria-label="同一细胞在不同方向下的真实活动比较"></canvas><div id="directionLegend" class="direction-legend"></div></div><div class="tuning"><canvas id="polar" role="img" aria-label="官方十二方向整流峰值响应"></canvas><div class="metric-row"><div><span>官方 DSI</span><strong id="dsi">—</strong></div><div><span>偏好方向</span><strong id="preferred">—</strong></div></div><p id="metricNote">正在核对指标身份…</p></div></div>
+        <details class="metric-details"><summary>指标定义与验收范围</summary><p id="metricDefinition"></p></details>
+      </section>
+
+      <section class="panel runtime-panel">
+        <div class="panel-head"><div><span class="section-number">04 / RUN INFORMATION</span><h2>运行信息</h2></div><span class="tag green">源文件已校验</span></div>
+        <div class="runtime-metrics"><div><span>当前执行</span><strong id="executionKind" class="mint">软件回放</strong></div><div><span>模拟步长</span><strong>5 <small>ms</small></strong></div><div><span>本次数据加载</span><strong id="loadTime">—</strong></div></div>
+        <dl class="runtime-list"><div><dt>原始推理设备</dt><dd id="recordedDevice">—</dd></div><div><dt>历史整批推理耗时</dt><dd id="inferenceTime">—</dd></div><div><dt>本次回放墙钟时间</dt><dd id="playbackTime">0.00 s</dd></div><div><dt>模型 / 网络规模</dt><dd id="model">—</dd></div><div><dt>GPU 服务 / 摄像头</dt><dd id="adapterState">未连接 / 待接入</dd></div><div><dt>Zynq-7020</dt><dd class="muted">未连接 · 无硬件结果</dd></div></dl>
+        <p class="runtime-note">历史耗时属于原实验记录；当前页面没有执行新的神经网络推理。</p>
+        <button id="provenanceButton" class="provenance-button">查看数据来源与 SHA256 <span>↗</span></button>
+      </section>
+    </div>
+    <section class="inference-panel" aria-label="新GPU计算任务"><div><strong>新 GPU 推理任务</strong><span id="gpuStatus" role="status">未连接 · 等待正式服务接口</span></div><button id="submitInference">提交当前固定输入</button><p id="gpuDetail">提交与回放相互独立。只有新任务完成且结果身份通过校验，才能加载新活动。</p></section>
+    <section class="phase3-panel" aria-label="固定动画真实闭环交接">
+      <div class="phase3-heading"><strong>固定动画闭环对照 · 01_off_right</strong><span id="phase3Status" role="status">正在读取交接状态…</span></div>
+      <p>67 节点 T5c 子回路 · SOURCE_RAW · 800 个 5ms 模型步。已验收的六条件历史回放与本次闭环对照分别记录。</p>
+      <div id="phase3Modes" class="phase3-modes"></div>
+      <button id="phase3Open" disabled>加载本次 Full / Python 对照</button>
+      <div id="phase3ComparisonView" class="hidden"><p id="phase3Step"></p><canvas id="phase3ErrorChart" role="img" aria-label="本次Python相对Full的真实逐步最大活动误差"></canvas><p id="phase3Run"></p></div>
+      <details><summary>输入身份、证据与待交接事项</summary><dl id="phase3Identity"></dl><p id="phase3Blockers"></p></details>
+    </section>
+    <section id="evidenceWorkbench" class="workbench-panel" aria-label="第四阶段实验与运行证据工作台">
+      <div class="workbench-heading"><div><span class="eyebrow">EXPERIMENT EVIDENCE / PHASE 4</span><h2>运行证据工作台</h2></div><button id="wbRefresh">刷新真实证据状态</button></div>
+      <p id="wbStatus" role="status">正在读取已准入的运行记录…</p>
+      <div class="wb-select"><label>独立比较实验<select id="wbComparison" aria-label="工作台比较实验"></select></label><button id="wbPrimary" disabled>在主展示加载软件对照</button><span>按 comparison_id 隔离；高延迟与离线计算均可。</span></div>
+      <div id="wbModes" class="wb-modes" aria-label="工作台四模式选择"></div>
+      <p id="wbCurrent" class="wb-current"></p>
+      <label id="wbRunLabel" class="hidden">正式运行／Sham或Ablation变体 <select id="wbRun" aria-label="工作台模式运行"></select></label>
+      <dl id="wbIdentity" class="wb-identity"></dl>
+      <div class="wb-task"><strong id="wbProgress">真实执行进度：NOT_AVAILABLE</strong><span id="wbConnections">当前后端 / 真板连接：NOT_AVAILABLE</span><button id="wbSubmit">提交真实计算任务</button><span id="wbSubmitStatus"></span></div>
+      <div id="wbView" class="hidden">
+        <label class="wb-select">活动细胞类型（可多选）<select id="wbCells" multiple size="3" aria-label="工作台活动细胞类型"></select></label>
+        <label class="wb-step-label">回放／证据步选择（不代表当前执行进度）<strong id="wbTime"></strong><input id="wbStep" type="range" min="0" max="799" value="0" aria-label="工作台证据步号"></label>
+        <label class="wb-step-number">指定查看步号 <input id="wbStepNumber" type="number" min="0" max="799" step="1" value="0" aria-label="指定工作台步号"></label>
+        <div class="wb-stage-grid" id="wbStages"></div>
+        <div class="wb-charts"><figure><canvas id="wbInput" role="img" aria-label="工作台真实721点输入"></canvas><figcaption id="wbInputCaption">真实输入与源时间</figcaption></figure><figure><canvas id="wbActivity" role="img" aria-label="工作台真实T4和T5活动对照"></canvas><figcaption id="wbReadouts"></figcaption></figure><figure><canvas id="wbError" role="img" aria-label="工作台真实逐步活动误差"></canvas><figcaption id="wbErrorCaption"></figcaption></figure></div>
+        <div class="wb-actions"><button id="wbExport">导出本模式真实活动 CSV</button><a id="wbEvents" target="_blank" rel="noopener">原始逐步事件与 SHA256</a><span>方向响应与正式 DSI 保留在原展示；本动画不生成新 DSI。</span></div>
+      </div>
+      <details><summary>证据缺失、正式消融报告与待交接事项</summary><div id="wbReports"></div><p id="wbErrors"></p><p>⑥：实际板卡与 bit/hwh 身份、PL 返回候选、校验、统一 COMMIT、活动和验收清单。④：正式 Sham/Ablation 报告及对应输入、初态、回路和比较身份。⑤：官方转换后的真实摄像头输入及三时间定义。当前未连接这些新运行后端。</p></details>
+    </section>
+    <section id="scientificPilot" class="sp-panel" aria-label="T4和T5软件科研先导光流对照">
+      <div class="sp-heading"><div><span class="eyebrow">RESEARCH READOUT / ORIGINAL GPU + DECODER</span><h2>T4 / T5 释放阻断 · 光流对照</h2></div><span class="sp-badge">SOFTWARE_PILOT · offline replay</span></div>
+      <p id="spStatus" role="status">正在核验固定科研先导包…</p>
+      <p class="sp-note">原 FlyVis 连续神经网络与官方 DecoderGAVP 的一次实际 GPU 先导。阻断从 k200 开始，保留神经元状态；独立重复、静止刺激对照尚未完成。当前 FPGA：<strong>NOT_CONNECTED</strong>。</p>
+      <div id="spView" class="hidden">
+        <div class="sp-controls"><label>代表性实验<select id="spCondition" aria-label="科研先导条件"><option value="ON60">ON60 · 亮边缘 / 60°</option><option value="OFF90">OFF90 · 暗边缘 / 90°</option></select></label><label>对照模式<select id="spMode" aria-label="科研先导对照模式"><option value="Full">Full</option><option value="Sham">Sham</option><option value="BLOCK_T4_RELEASE">T4 释放阻断</option><option value="BLOCK_T5_RELEASE">T5 释放阻断</option><option value="BLOCK_T4T5_RELEASE" selected>T4+T5 联合释放阻断</option></select></label><button id="spPlay" aria-label="播放科研离线回放">▶ 播放离线回放</button><label>箭头比例（像素 / raw unit）<input id="spGain" type="number" min="1" max="40" step="1" value="8" aria-label="光流统一箭头比例"></label></div>
+        <div class="sp-time"><label>查看模型步 <input id="spStepNumber" type="number" min="0" max="484" value="240" step="1" aria-label="科研查看步号"></label><strong id="spTime"></strong><input id="spStep" type="range" min="0" max="484" value="240" aria-label="科研时间轴"></div>
+        <div class="sp-fields"><figure><canvas id="spInput" role="img" aria-label="实际冻结运动输入721点画面"></canvas><figcaption id="spInputCaption"></figcaption></figure><figure><canvas id="spFull" role="img" aria-label="Full原始光流721点矢量场"></canvas><figcaption>Full · 原始光流矢量场</figcaption></figure><figure><canvas id="spSelected" role="img" aria-label="所选模式原始光流721点矢量场"></canvas><figcaption id="spSelectedCaption"></figcaption></figure></div>
+        <p id="spVectorReadout" class="sp-readout"></p><p class="sp-note">721 个实际输出矢量；x 向右、y 向上。两个场共用箭头比例，未按模式归一化。raw unit 是官方 Sintel 目标的归一化位移单位，未标定物理速度，不能除以 5 ms 作为速度。</p>
+        <div id="spLegend" class="sp-legend"></div><div class="sp-curves"><figure><canvas id="spProjection" role="img" aria-label="五模式沿刺激方向的真实光流投影曲线"></canvas><figcaption>沿刺激方向投影 · 官方 decoder raw units · 固定 331 点 ROI</figcaption></figure><figure><canvas id="spMagnitude" role="img" aria-label="五模式真实光流幅度曲线"></canvas><figcaption>平均矢量幅度 · 官方 decoder raw units · 固定 331 点 ROI</figcaption></figure></div>
+        <p id="spCurveReadout" class="sp-readout"></p><p class="sp-note">曲线直接读取④的 flow_step_series.csv。五模式统一减去本条件 Sham 的 k160–199 基线；时间轴为 Euler 更新后活动时间。淡色区为已冻结的主统计窗口 k200–285，Full 与 Sham 重合。</p>
+        <div id="spMetrics" class="sp-metrics"></div><p class="sp-note">Q：基线相减后对 Sham 矢量场的有符号投影系数；M：场 RMS 幅度比；E：相对场差异；角度：整个时空场夹角。均来自④正式预注册分析；不代表剩余功能百分比、单细胞偏好角或 DSI。</p>
+        <details><summary>原始运行身份、文件与校验来源</summary><dl id="spIdentity" class="sp-identity"></dl><ul id="spFiles" class="sp-files"></ul></details>
+      </div>
+      <div class="sp-runner"><div class="sp-heading"><h3>⑧ AutoRunner · 已登记真实任务记录</h3><button id="spRefreshRunner">刷新只读任务记录</button></div><div id="spRunner" role="status"></div><details><summary>任务原始身份与证据路径</summary><pre id="spRunnerIdentity"></pre></details></div>
+      <p id="spSparse" class="sp-note hidden" hidden>旧先导接口的科研 B 占位；正式 B 数据由下面独立消费者准入。</p>
+      <section id="scientificSparse" class="sr-panel" aria-label="科研B实际保留节点数量与官方光流对照">
+        <div class="sp-heading"><div><span class="eyebrow">RESEARCH B / SEALED ORIGINAL GPU RESULTS</span><h2>保留多少 T4 / T5 节点，读出如何变化？</h2></div><span class="sp-badge">SOFTWARE_SPARSE_RETAIN / OFFLINE_REPLAY</span></div>
+        <p id="srStatus" role="status">正在只读核验科研 B 封存包与实际节点集合…</p>
+        <p class="sp-note">k200 后，未保留的 T4/T5 节点在旧读态和更新提交态均钳制为零；其余节点按原网络递推。这与上方的释放阻断不同。当前 FPGA：<strong>NOT_CONNECTED</strong>，PL_execution=false。</p>
+        <div id="srView" class="hidden">
+          <div class="sp-controls"><label>科研 B 条件<select id="srCondition" aria-label="科研B条件"><option value="ON60">ON60 · 亮边缘 / 60°</option><option value="OFF90">OFF90 · 暗边缘 / 90°</option></select></label><label>实际保留节点数<select id="srCount" aria-label="科研B保留节点数"><option value="0">0 · 完整失活</option><option value="488">488</option><option value="1016">1016</option><option value="1736">1736</option><option value="2648">2648</option><option value="3752" selected>3752</option><option value="5768">5768 · 全部保留</option></select></label><button id="srReload">重新读取已封存结果</button></div>
+          <div class="sr-legend"><span>━ ● ON60</span><span>┄ ◆ OFF90</span><span>点击曲线上任一实测规模切换；横轴为实际节点数。</span></div>
+          <div class="sr-charts"><figure><canvas id="srE" role="img" aria-label="实际节点数与官方光流场误差E"></canvas><figcaption>场误差 E · 越低越接近同条件 Sham</figcaption></figure><figure><canvas id="srAngle" role="img" aria-label="实际节点数与运动方向场角差"></canvas><figcaption>时空矢量场夹角 / ° · 不是单细胞偏好方向</figcaption></figure><figure><canvas id="srM" role="img" aria-label="实际节点数与光流幅度比M"></canvas><figcaption>幅度比 M · Sham = 1</figcaption></figure><figure><canvas id="srQ" role="img" aria-label="实际节点数与原有符号投影Q"></canvas><figcaption>原 Q · 有符号场投影系数，保留负值</figcaption></figure></div>
+          <p id="srChartReadout" class="sp-readout"></p><p class="sp-note">14 个实测点来自④的 sparsity_curve.csv；连接线仅连接实测规模。基线 k160–199，主窗口 k200–285，固定 331 点 ROI。E/M/Q 使用整个基线相减时空场；统计窗口固定，不随下方查看步改变。Q、M 不是剩余视觉百分比或 DSI。</p>
+          <div id="srMetrics" class="sr-metrics"></div>
+          <p id="srInterpretation" class="sp-note"></p>
+          <div class="sp-controls"><button id="srPlay" aria-label="播放科研B离线回放">▶ 播放离线回放</button><label>统一箭头比例（像素 / raw unit）<input id="srGain" type="number" min="1" max="40" value="8" step="1" aria-label="科研B统一箭头比例"></label></div>
+          <div class="sp-time"><label>查看模型步 <input id="srStepNumber" type="number" min="0" max="484" value="240" step="1" aria-label="科研B查看步号"></label><strong id="srTime"></strong><input id="srStep" type="range" min="0" max="484" value="240" aria-label="科研B时间轴"></div>
+          <div class="sr-fields"><figure><canvas id="srInput" role="img" aria-label="科研B真实721输入画面"></canvas><figcaption id="srInputCaption"></figcaption></figure><figure><canvas id="srFull" role="img" aria-label="科研B原Full光流场"></canvas><figcaption>Full · 原始参考运行</figcaption></figure><figure><canvas id="srZero" role="img" aria-label="科研B完整失活实际光流场"></canvas><figcaption>KEEP_0 · 完整失活（实际 B 运行）</figcaption></figure><figure><canvas id="srSelected" role="img" aria-label="科研B所选保留规模实际光流场"></canvas><figcaption id="srSelectedCaption"></figcaption></figure></div>
+          <p id="srVectorReadout" class="sp-readout"></p><p class="sp-note">同一步、同一输入、同一模型和初态的实际 721 点输出。三个光流场共用箭头比例，不按模式归一化；x 向右、y 向上。官方 raw unit 为归一化位移，未标定物理速度。只有冻结的 721 输入，无另外生成的源视频。</p>
+          <div class="sr-set"><h3>本规模实际节点集合</h3><p id="srSetReadout"></p><p id="srTypes" class="sp-readout"></p><p id="srIdsPreview" class="sp-readout"></p><div class="sr-links"><a id="srKeepFile" download>原 keep.npy</a><a id="srInactiveFile" download>原 inactive.npy</a><a id="srSetJSON" target="_blank" rel="noopener">全部 global IDs 与节点类型 / 坐标</a></div><p id="srSetHash" class="sp-readout"></p></div>
+          <details><summary>真实运行、输入、数值与来源身份</summary><dl id="srIdentity" class="sp-identity"></dl><p id="srFlowIdentity" class="sp-readout"></p><ul id="srFiles" class="sp-files"></ul></details>
+          <p id="srLimits" class="sp-note"></p>
+        </div>
+      </section>
+    </section>
+    <section id="jointExperiment" aria-label="实体GPU FPGA联合实验结果">
+      <div class="eyebrow">ACTUAL GPU + PHYSICAL FPGA · OFFLINE REPLAY</div><h2>ON60 · 真实联合计算结果</h2>
+      <p>原 FlyVis 45,669 节点：GPU 计算当前突触贡献和 39,901 个 R 节点，实体 PL 更新 5,768 个 T4/T5 节点。每一步核验候选及板端 ACK 后统一提交。这里只回放双方证据已通过核验的结果，当前 FPGA 为 NOT_CONNECTED。</p>
+      <p id="jointUnavailable" role="status">NOT_AVAILABLE · 等待本次完整 485 步证据，不使用旧 GPU 曲线替代。</p>
+      <button id="jointLoad">读取已验收的联合结果</button>
+      <div id="jointView" class="hidden">
+        <div class="joint-controls"><button id="jointPlay">播放离线结果</button><label>模型步 <input id="jointStep" type="range" min="0" max="484" value="240"></label><strong id="jointTime"></strong><button id="jointRecord">录制全部485步离线演示</button></div>
+        <p id="jointEvidence"></p><p id="jointTiming"></p>
+        <div class="joint-fields"><figure><canvas id="jointInput" width="720" height="440" aria-label="本次实际721输入"></canvas><figcaption>本次冻结 ON60 721 输入，按原始感受器坐标显示，无另造视频。</figcaption></figure><figure><canvas id="jointFlow" width="720" height="440" aria-label="本次已提交状态的官方光流"></canvas><figcaption>原 DecoderGAVP 读取本次完整已提交状态；x 向右、y 向上。</figcaption></figure></div>
+        <div id="jointSpatial" class="spatial-panel" aria-label="本次真实PL5768空间活动"></div>
+        <p>回放目标为 20 个实际模型步/秒，模型时间每步 5ms；实际显示速度取决于浏览器，每帧保留真实模型时间，不插补神经活动。光流箭头 8 px/raw unit。实时性能未声称通过。</p>
+        <p id="jointRecording" role="status"></p><details><summary>本次模型、输入、固件、运行和验收身份</summary><pre id="jointIdentity"></pre></details>
+        <canvas id="jointRecordCanvas" width="1600" height="1000"></canvas>
+      </div>
+    </section>
+    <section id="liveCamera" aria-label="真实摄像头持续Full计算">
+      <div class="eyebrow">LIVE INPUT · NEW GPU COMPUTATION</div><h2>让画面持续驱动神经网络</h2>
+      <p class="camera-note">先选数字画面或摄像头，再开始新计算。下方依次查看：① 本次画面 → ② 721 点视觉输入 → ③ 网络读出的运动方向。八幅空间图展示同一时刻全部 5,768 个 T4/T5 神经元，点击一类可放大，点击节点可看它的实际响应过程。</p>
+      <p class="camera-note">数字输入复用原动画网页；选择摄像头并点击开始后才打开 Windows 原采集器。原 Full 网络每会话初始化一次，以 5ms 模型步连续递推；源帧用因果保持，不使用未来帧。官方标准 A / BoxEye 将画面映射为721输入。目标200步/s、显示20FPS；当前完整数字流实测未达标，超过750ms积压会停止并撤销读数。</p>
+      <div class="camera-controls"><label>本次输入 <select id="streamSource"><option value="digital_direct">数字直接输入 · 原动画渲染器</option><option value="real_windows_camera">真实 Windows 摄像头</option></select></label><label>Windows 摄像头编号 <input id="cameraId" type="number" min="0" max="15" value="0"></label><button id="cameraStart">开始本次连续 Full GPU</button><button id="cameraStop" disabled>停止输入与本会话 GPU</button></div>
+      <div class="camera-controls" id="digitalControls"><label>极性 <select id="streamPolarity"><option>ON</option><option>OFF</option></select></label><label>方向 <select id="streamDirection"><option>0</option><option>30</option><option selected>60</option><option>90</option><option>120</option><option>150</option><option>180</option><option>210</option><option>240</option><option>270</option><option>300</option><option>330</option></select>°</label><label>速度 <input id="streamSpeed" type="number" value="240" min="1" max="640">px/s</label><span>2秒循环；参数变化记录新事件段，保留连续神经状态</span></div><iframe id="digitalRenderer" title="复用原官方输入工作线动画渲染器"></iframe>
+      <p id="cameraStatus" role="status">NOT_STARTED · 启动连续 GPU 服务后，点击开始；打开页面本身不采集或计算</p><p id="cameraMetrics" class="camera-note">无本次活动数据</p>
+      <div class="camera-fields"><figure><img id="cameraImage" alt="实际选中的源帧，非旧视频回放"><figcaption>本次活动对应的真实源帧</figcaption></figure><figure><canvas id="cameraHex" role="img" aria-label="真实官方721输入"></canvas><figcaption>同一源帧 · 官方721感受器</figcaption></figure><figure><canvas id="cameraFlow" role="img" aria-label="当前真实提交状态官方光流"></canvas><figcaption>当前提交状态 · 原 DecoderGAVP / 未连接留空</figcaption></figure></div>
+      <canvas id="cameraCurve" role="img" aria-label="连续实际T4T5活动"></canvas><p class="camera-note">源时间是主机收到帧的 monotonic 时间，不是曝光时间。活动时间=输入时间+5ms。原光流为归一化位移目标单位，不是物理速度；无实体PL。延迟/队列过界、断连或停止会撤销读数，不借旧曲线。首测建议运行约10秒后停止，10秒不是程序持续能力的硬截止。</p>
+      <div id="cameraSpatial" class="spatial-panel" aria-label="实际5768节点空间活动"></div>
+      <p id="cameraLatency" class="camera-note">接收至绘制 p50/p95/p99：NOT_MEASURED · 不跨 Windows/WSL 时钟直接相减</p>
+      <p id="cameraDisplayDiagnostics" class="camera-note">尚无本次显示测量；原生窗口测试会记录 Windows 桌面 WebView2。</p>
+      <details open><summary>本次手动测试记录（结束后保留）</summary><pre id="cameraManualSummary">等待手动开始本次计算；旧数据不会作为新测试结果。</pre></details>
+      <details><summary>当前真实 run、模型/初态、空间采样与时钟</summary><pre id="cameraIdentity">尚无本次运行身份</pre></details>
+    </section>
+    <section id="liveExperiment" aria-label="新的在线计算实验">
+      <div class="eyebrow">NEW GPU EXPERIMENT · 历史离线区保持独立</div><h2>本次输入 → 新计算 → 实际神经活动与官方光流</h2>
+      <p class="live-note">固定官方 ON60 / OFF90 的 721 点输入；每次新算 Full、Sham 与所选模式，共用同一完整初态。提交后显示真实已提交步及最多 32 步一块的输出。5ms 是模型时间单位，现场计算允许更慢。当前 LIVE_INTERACTIVE_GUI_PASS / REALTIME_STREAM_PASS 均 NOT_RUN。</p>
+      <div class="live-controls"><label>输入条件<select id="liveCondition"><option value="ON60">ON60 · 亮边缘 / 60°</option><option value="OFF90">OFF90 · 暗边缘 / 90°</option></select></label><label>本次计算模式<select id="liveMode"></select></label><button id="liveConnect">检查已启动的服务</button><button id="liveSubmit" disabled>提交新的 GPU 实验</button><button id="liveCancel" disabled>取消本次任务</button></div>
+      <p id="liveStatus" role="status">NOT_CONNECTED · 今天仅准备接口</p><progress id="liveProgress" value="0" max="1455" aria-label="实际已提交步数"></progress>
+      <div class="live-controls"><label>查看实际模型步<input id="liveStep" type="range" min="0" max="484" value="0"></label><span id="liveTime"></span><label>中心细胞类型（可多选）<select id="liveTypes" multiple size="4"></select></label></div>
+      <div class="live-grid"><figure><canvas id="liveInput" role="img" aria-label="本次冻结输入"></canvas><figcaption>真实冻结输入 · 预览不代表已计算</figcaption></figure><figure><canvas id="liveFull" role="img" aria-label="本次新Full官方光流"></canvas><figcaption>本次新 Full · 官方 raw 光流</figcaption></figure><figure><canvas id="liveSelected" role="img" aria-label="本次所选模式官方光流"></canvas><figcaption>本次所选模式 · 同比例原矢量场</figcaption></figure></div>
+      <canvas id="liveActivity" class="live-chart" role="img" aria-label="本次实际T4T5曲线"></canvas><p id="liveError" class="live-note">全网络误差：等待本次所选模式</p><p id="liveMetrics" class="live-note">正式窗口指标：PENDING</p>
+      <div id="liveSpatial" class="spatial-panel" aria-label="固定实验实际5768节点空间活动"></div>
+      <p class="live-note">光流 x 向右、y 向上，统一 8 px / raw unit；raw 为官方归一化位移目标单位，不是物理速度。固定 ROI 331 点、基线 k160–199、主窗 k200–285。未齐备或参考过弱时指标不可用。Python Replacement 为 H67/SOURCE_RAW 软件替换，与全 T4/T5 消融分开标识；FPGA NOT_CONNECTED，不运行板卡。摄像头读取接口已留，未绑定新科研计算配置。</p>
+      <details><summary>本次 job / run / 输入 / 模型 / 设备身份</summary><pre id="liveIdentity">尚无本次计算结果</pre></details>
+    </section>
+    <footer><span>FlyVis 1.2.0 · 原始官方预训练网络 · 可追溯实验数据</span><span>软件仿真证据 / GPU、摄像头与 FPGA 适配接口已预留</span></footer>
+  </main>
+
+  <dialog id="provenance"><div class="dialog-head"><div><div class="eyebrow">DATA PROVENANCE</div><h2>数据与实验身份</h2></div><button id="closeProvenance" aria-label="关闭数据来源">✕</button></div><div id="provenanceContent"></div></dialog>
+  <div id="toast" class="toast hidden" role="status"></div>
+</body>
+</html>

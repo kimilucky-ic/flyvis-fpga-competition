@@ -1,0 +1,147 @@
+{
+  "status": "REDISTRIBUTION_REVIEW_REQUIRED",
+  "held_paths": [
+    {
+      "path": "source/flyvis_runtime/fly/gui_v1/handoff/ov5640_conditional_r1_20261023/bundle/vendor_ov5640_init.c",
+      "sha256": "5b6aadbfb5f47a31264974bd63fdf726cd5dc9b64deec4fce6ce32e62552c366",
+      "reason": "ALIENTEK copyright/all-rights-reserved header; no redistribution grant verified"
+    },
+    {
+      "path": "source/flyvis_runtime/fly/gui_v1/evidence/ov5640_gui_20261023/notebook_cpu_681e929d/fd09ac2d49764b66839aa9986c121e0d/flyvis_ov5640/fd09ac2d49764b66839aa9986c121e0d/vendor_ov5640_init.c",
+      "sha256": "5b6aadbfb5f47a31264974bd63fdf726cd5dc9b64deec4fce6ce32e62552c366",
+      "reason": "ALIENTEK copyright/all-rights-reserved header; no redistribution grant verified"
+    },
+    {
+      "path": "source/flyvis-lossless-study/ov5640_soc_20261023/vendor/ov5640_init.c",
+      "sha256": "5b6aadbfb5f47a31264974bd63fdf726cd5dc9b64deec4fce6ce32e62552c366",
+      "reason": "ALIENTEK copyright/all-rights-reserved header; no redistribution grant verified"
+    },
+    {
+      "path": "source/flyvis-lossless-study/ov5640_soc_20261023/vendor/emio_sccb_cfg.c",
+      "sha256": "7672b6557b828fa083e4b0f8c505a0bad7390a72e8218d459b890081e347a3c6",
+      "reason": "ALIENTEK copyright/all-rights-reserved header; no redistribution grant verified"
+    },
+    {
+      "path": "source/flyvis-lossless-study/ov5640_soc_20261023/rtl/cmos_capture_data.v",
+      "sha256": "390abb5d38c682c41c3ba8d67e16fa3f25e15705fd2bbd74c2125da8f1ef0721",
+      "reason": "ALIENTEK copyright/all-rights-reserved header; no redistribution grant verified"
+    },
+    {
+      "path": "source/flyvis-lossless-study/ov5640_soc_20261023/cmos_capture_data.v",
+      "sha256": "390abb5d38c682c41c3ba8d67e16fa3f25e15705fd2bbd74c2125da8f1ef0721",
+      "reason": "ALIENTEK copyright/all-rights-reserved header; no redistribution grant verified"
+    },
+    {
+      "path": "source/flyvis-lossless-study/ov5640_single_r2_20261024/notebook_extract_dw_imj9f/package_5fc33a299f6e/vendor_ov5640_init.c",
+      "sha256": "5b6aadbfb5f47a31264974bd63fdf726cd5dc9b64deec4fce6ce32e62552c366",
+      "reason": "ALIENTEK copyright/all-rights-reserved header; no redistribution grant verified"
+    },
+    {
+      "path": "source/flyvis-lossless-study/ov5640_single_r2_20261024/bundle/vendor_ov5640_init.c",
+      "sha256": "5b6aadbfb5f47a31264974bd63fdf726cd5dc9b64deec4fce6ce32e62552c366",
+      "reason": "ALIENTEK copyright/all-rights-reserved header; no redistribution grant verified"
+    },
+    {
+      "path": "source/flyvis-lossless-study/ov5640_impl_20261023/build_r4/cmos_capture_data.v",
+      "sha256": "abfa63736e7436756e1e442d260ebb9845adf08de75c3601ac114f3fd02907e4",
+      "reason": "ALIENTEK copyright/all-rights-reserved header; no redistribution grant verified"
+    },
+    {
+      "path": "source/flyvis-lossless-study/ov5640_impl_20261023/build_r3/cmos_capture_data.v",
+      "sha256": "abfa63736e7436756e1e442d260ebb9845adf08de75c3601ac114f3fd02907e4",
+      "reason": "ALIENTEK copyright/all-rights-reserved header; no redistribution grant verified"
+    },
+    {
+      "path": "source/flyvis-lossless-study/ov5640_impl_20261023/build_r1/cmos_capture_data.v",
+      "sha256": "390abb5d38c682c41c3ba8d67e16fa3f25e15705fd2bbd74c2125da8f1ef0721",
+      "reason": "ALIENTEK copyright/all-rights-reserved header; no redistribution grant verified"
+    },
+    {
+      "path": "source/flyvis-lossless-study/ov5640_impl_20261023/build_r2/cmos_capture_data.v",
+      "sha256": "390abb5d38c682c41c3ba8d67e16fa3f25e15705fd2bbd74c2125da8f1ef0721",
+      "reason": "ALIENTEK copyright/all-rights-reserved header; no redistribution grant verified"
+    },
+    {
+      "path": "source/flyvis-lossless-study/ov5640_reset_20261023/build_r7/cmos_capture_data.v",
+      "sha256": "8b80874c605ba3b7c0a821cfd15b75ac9bf498f0737a561166030bf8b74f090b",
+      "reason": "ALIENTEK copyright/all-rights-reserved header; no redistribution grant verified"
+    },
+    {
+      "path": "source/flyvis-lossless-study/ov5640_reset_20261023/build_r3/cmos_capture_data.v",
+      "sha256": "8b80874c605ba3b7c0a821cfd15b75ac9bf498f0737a561166030bf8b74f090b",
+      "reason": "ALIENTEK copyright/all-rights-reserved header; no redistribution grant verified"
+    },
+    {
+      "path": "source/flyvis-lossless-study/ov5640_reset_20261023/build_r6/cmos_capture_data.v",
+      "sha256": "8b80874c605ba3b7c0a821cfd15b75ac9bf498f0737a561166030bf8b74f090b",
+      "reason": "ALIENTEK copyright/all-rights-reserved header; no redistribution grant verified"
+    },
+    {
+      "path": "source/flyvis-lossless-study/ov5640_prepare_20261023/vendor_reference/cmos_capture_data.v",
+      "sha256": "12a4ae4c42967a3a9681deeaaca5b70ac0a728633e2cc527fcc8074a2ced3dd7",
+      "reason": "ALIENTEK copyright/all-rights-reserved header; no redistribution grant verified"
+    },
+    {
+      "path": "source/flyvis-lossless-study/ov5640_reset_20261023/build_r5/cmos_capture_data.v",
+      "sha256": "8b80874c605ba3b7c0a821cfd15b75ac9bf498f0737a561166030bf8b74f090b",
+      "reason": "ALIENTEK copyright/all-rights-reserved header; no redistribution grant verified"
+    },
+    {
+      "path": "source/flyvis-lossless-study/ov5640_reset_20261023/build_r4/cmos_capture_data.v",
+      "sha256": "8b80874c605ba3b7c0a821cfd15b75ac9bf498f0737a561166030bf8b74f090b",
+      "reason": "ALIENTEK copyright/all-rights-reserved header; no redistribution grant verified"
+    },
+    {
+      "path": "source/flyvis-lossless-study/ov5640_official_2026_20261024/vendor/ip_repo/rgb2lcd/ip/rgb2lcd/src/rgb2lcd.v",
+      "sha256": "7ebaf7a14cc58cd0db6debdaaeab574d48cb380e58e7e57ba207af304adfd0fc",
+      "reason": "ALIENTEK copyright/all-rights-reserved header; no redistribution grant verified"
+    },
+    {
+      "path": "source/flyvis-lossless-study/ov5640_official_2026_20261024/vendor/ip_repo/cmos_sensor/src/cmos_capture_data.v",
+      "sha256": "12a4ae4c42967a3a9681deeaaca5b70ac0a728633e2cc527fcc8074a2ced3dd7",
+      "reason": "ALIENTEK copyright/all-rights-reserved header; no redistribution grant verified"
+    },
+    {
+      "path": "source/flyvis-lossless-study/ov5640_official_2026_20261024/cmos_capture_data_reset_r2.v",
+      "sha256": "c042b990b3598a5182c0f7bbffd067b9f617eb7c869511591329badb197d2934",
+      "reason": "ALIENTEK copyright/all-rights-reserved header; no redistribution grant verified"
+    },
+    {
+      "path": "source/flyvis-lossless-study/ov5640_reset_20261023/build_r2/cmos_capture_data.v",
+      "sha256": "8b80874c605ba3b7c0a821cfd15b75ac9bf498f0737a561166030bf8b74f090b",
+      "reason": "ALIENTEK copyright/all-rights-reserved header; no redistribution grant verified"
+    },
+    {
+      "path": "source/flyvis-lossless-study/ov5640_reset_20261023/build_r1/cmos_capture_data.v",
+      "sha256": "8b80874c605ba3b7c0a821cfd15b75ac9bf498f0737a561166030bf8b74f090b",
+      "reason": "ALIENTEK copyright/all-rights-reserved header; no redistribution grant verified"
+    },
+    {
+      "path": "source/flyvis-lossless-study/ov5640_official_flyvis_20261024/vendor/ip_repo/rgb2lcd/ip/rgb2lcd/src/rgb2lcd.v",
+      "sha256": "7ebaf7a14cc58cd0db6debdaaeab574d48cb380e58e7e57ba207af304adfd0fc",
+      "reason": "ALIENTEK copyright/all-rights-reserved header; no redistribution grant verified"
+    },
+    {
+      "path": "source/flyvis-lossless-study/ov5640_official_flyvis_20261024/vendor/ip_repo/cmos_sensor/src/cmos_capture_data.v",
+      "sha256": "12a4ae4c42967a3a9681deeaaca5b70ac0a728633e2cc527fcc8074a2ced3dd7",
+      "reason": "ALIENTEK copyright/all-rights-reserved header; no redistribution grant verified"
+    },
+    {
+      "path": "source/flyvis-lossless-study/ov5640_release_20261023/fresh_extract/vendor_ov5640_init.c",
+      "sha256": "5b6aadbfb5f47a31264974bd63fdf726cd5dc9b64deec4fce6ce32e62552c366",
+      "reason": "ALIENTEK copyright/all-rights-reserved header; no redistribution grant verified"
+    },
+    {
+      "path": "source/flyvis-lossless-study/ov5640_release_20261023/bundle/vendor_ov5640_init.c",
+      "sha256": "5b6aadbfb5f47a31264974bd63fdf726cd5dc9b64deec4fce6ce32e62552c366",
+      "reason": "ALIENTEK copyright/all-rights-reserved header; no redistribution grant verified"
+    },
+    {
+      "path": "source/flyvis-lossless-study/ov5640_release_20261023/cpu_tests_999eaf60/c3554e6bca/vendor_ov5640_init.c",
+      "sha256": "5b6aadbfb5f47a31264974bd63fdf726cd5dc9b64deec4fce6ce32e62552c366",
+      "reason": "ALIENTEK copyright/all-rights-reserved header; no redistribution grant verified"
+    }
+  ],
+  "firmware_contains_third_party_logic": true,
+  "root_mit_does_not_override_upstream": true
+}

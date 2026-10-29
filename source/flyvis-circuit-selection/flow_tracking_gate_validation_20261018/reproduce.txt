@@ -1,0 +1,44 @@
+One frozen CPU campaign. Functional result FAIL_FROZEN_GATE_NEW_VIDEOS.
+Do not rerun into this completed directory; all creation is exclusive.
+
+Windows preparation and analysis interpreter:
+C:\Users\hzy72\AppData\Local\Programs\Python\Python314\python.exe
+
+Executed once, in order:
+python.exe -B -u prepare.py
+wsl -d FlyVisCPU -- timeout 400 /opt/flyvis-gpu-venv/bin/python -B -u /mnt/c/Users/hzy72/Documents/ChatGPT/fpga/flyvis-circuit-selection/flow_tracking_gate_validation_20261018/run_cpu.py
+python.exe -B -u analyze.py
+python.exe -B -u finish.py
+
+The native runner explicitly sets CUDA_VISIBLE_DEVICES=-1 before importing torch
+and FlyVis, asserts CPU device and CUDA not initialized, uses1 CPU thread and
+300s execution budget.17,000 original neural and decoder steps completed once.
+Run execution section130.152781281s includes output writing; not real-time proof.
+Initial sandbox WSL environment probe returned E_ACCESSDENIED; the authorized
+CPU-only WSL probe/experiment then ran through the tool approval mechanism.
+No GPU or board operations, training, shared GUI changes, or fallback model.
+
+prepare.py byte-copies unchanged gate SHA89665dda... from the previous diagnosis,
+freezes full PREREGISTRATION/ALGORITHM_FREEZE, then creates14 actual newMP4 files.
+All inputs novel versus16 prior input records, including duplicated white control.
+run_cpu.py is the accepted native official worker with exactly7 literal changes
+documented in RUNNER_ADAPTATION.json, for variable duration/resource/time bound.
+analyze.py saves all ordinary predictions before reading new truth for scoring.
+finish.py checks source/freeze/input/flow/model/a0 identity, plots all conditions.
+Existing gate's11 API tests reused by exact byte identity, not rerun gratuitously.
+
+Logs: PREPARE.log, RUN.log, ANALYSIS.log, FINISH.log.
+Data: videos/, inputs/, truth/, runs/<id>/states.npy and flow.npy, predictions/.
+Results: SUMMARY.json, FAILURES.json, MOTION_METRICS.csv, CONTROL_METRICS.csv.
+Identity: ALGORITHM_FREEZE.json, INPUT_MANIFEST.json, EXECUTION.json,
+PREDICTIONS_FROZEN.json, FINAL_AUDIT.json, DELIVERY_MANIFEST.json.
+
+Reproduction requires a new empty owned sibling directory, existing original
+WSL FlyVisCPU environment and checkpoint, prior original calibration/grid/a0.
+Copy only prepare.py, run_cpu.py, analyze.py, finish.py to the new directory;
+do not copy generated frozen outputs or run against the sealed directory.
+Use the same ordered stages and CPU-only contract. No automatic retries.
+
+Original model, decoder, graph, ROI, all numeric acceptance gates unchanged.
+Failure conditions retained. This completed campaign is not a tuning/training set
+while also an unseen test: any future tuning consumes its heldout status.

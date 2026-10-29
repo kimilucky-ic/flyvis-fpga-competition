@@ -1,0 +1,1 @@
+-L "axi_iic_v2_1_12" -L "unisims_ver" -debug "typical" -mt "off" "xil_defaultlib.tb_iic" "xil_defaultlib.glbl" -s "iic_test" -log "elaborate.log" 

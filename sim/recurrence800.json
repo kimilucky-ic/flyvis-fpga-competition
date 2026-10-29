@@ -1,0 +1,36 @@
+{
+  "status": "PASS_CPU_TEMPLATE_STRUCTURE_AND_RECURRENCE",
+  "evidence_level": "software_only",
+  "steps": 800,
+  "nodes": 45669,
+  "edges_per_step": 1513231,
+  "compared_state_values": 36535200,
+  "bit_mismatches": 0,
+  "max_abs_error": 0.0,
+  "self_feedback_transitions": 799,
+  "graph_sha256": "6779065467f70cef14e8f2f1005efd4830fd29c00795c103756a6af60607f825",
+  "checkpoint_sha256": "d0e42857e738d0315897c2d50fde9eb3fb1a3fb1f071d55dfc13d53d72bccc3f",
+  "historical_central_comparison": {
+    "checked": true,
+    "archived_path": "C:\\Users\\hzy72\\Documents\\ChatGPT\\fly\\artifacts\\moving_edge_minimal_cpu_v1\\activity_central.npy",
+    "archived_sha256": "c76e3d9c0d3b8ddbec97d78be31f82cb6af11899297da3a1e6939df7b8971f24",
+    "shape": [
+      485,
+      65
+    ],
+    "bit_mismatches": 0,
+    "max_abs_error": 0.0
+  },
+  "sources_unchanged": true,
+  "cuda_initialized": false,
+  "vivado_started": false,
+  "board_operations": 0,
+  "reference_compute_s": 3.1844020000826276,
+  "template_compute_s": 2.266572799991991,
+  "total_elapsed_s": 30.02255090000108,
+  "binary_bytes": 34528,
+  "hardware_cycle_measurement": null,
+  "synthesis": null,
+  "board_validation": null,
+  "real_time_200Hz": null
+}

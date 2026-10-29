@@ -1,0 +1,62 @@
+Window: "⑩ FlyVis 真实神经元 · 活动回放 · CPU", App: python.exe.
+	0 窗口 (settable, string) ⑩ FlyVis 真实神经元 · 活动回放 · CPU Secondary Actions: Raise ID: QApplication.Player
+		1 标题栏 (settable, string) Value: ⑩ FlyVis 真实神经元 · 活动回放 · CPU
+			2 菜单栏 系统 ID: MenuBar
+				3 菜单项 系统
+			4 按钮 最小化
+			5 按钮 最大化
+			6 按钮 关闭
+		7 组 (settable, string) ID: QApplication.Player.QWidget
+			8 文本 一个视觉网络，八种神经元类型 ID: QApplication.Player.QWidget.QLabel
+			9 文本 FLYVIS / ON60 · 本地软件回放 ID: QApplication.Player.QWidget.QLabel
+			10 文本 T4a–d 与 T5a–d 同属一个 FlyVis 网络 · 真实形态：Janelia Optic Lobe v1.1 · 活动：同类型模型均值 ID: QApplication.Player.QWidget.QLabel
+			11 复选框 (settable, string) 全部 8 类 ID: QApplication.Player.QWidget.QPushButton
+			12 复选框 (settable, string) T4 群 · 4 类 ID: QApplication.Player.QWidget.QPushButton
+			13 复选框 (settable, string) T5 群 · 4 类 ID: QApplication.Player.QWidget.QPushButton
+			14 复选框 (settable, string) 只看选中类型 ID: QApplication.Player.QWidget.QCheckBox
+			15 文本 正在观察 T4d · 1 条真实重建骨架 ID: QApplication.Player.QWidget.QLabel
+			16 组 (settable, string) ID: QApplication.Player.QWidget.QRenderCanvas
+				17 组 (settable, string) ID: QApplication.Player.QWidget.QRenderCanvas.QRenderWidget
+			18 文本 活动数值共用标尺 蓝：负值 暗：零 橙：正值 ｜ 越亮 = 离零越远 ID: QApplication.Player.QWidget.QLabel
+			19 自定义 (settable, string) ID: QApplication.Player.QWidget.QFrame
+			20 文本 −0.386 ID: QApplication.Player.QWidget.QLabel
+			21 文本 0 ID: QApplication.Player.QWidget.QLabel
+			22 文本 +0.386 ID: QApplication.Player.QWidget.QLabel
+			23 文本 单位：模型内部单位。可比较本次实验的类型均值；正负不直接代表兴奋／抑制，亮度不能解释为生物神经元强弱。 ID: QApplication.Player.QWidget.QLabel
+			24 组 (settable, string) ID: QApplication.Player.QWidget.QWidget
+				25 文本 类型身份固定，活动数值随时间变化 ID: QApplication.Player.QWidget.QWidget.QLabel
+				26 文本 点击名称或真实骨架，阅读该类型的活动。 ID: QApplication.Player.QWidget.QWidget.QLabel
+				27 复选框 (settable, string) T4a ID: QApplication.Player.QWidget.QWidget.QPushButton
+				28 文本 +0.386 ID: QApplication.Player.QWidget.QWidget.QLabel
+				29 复选框 (settable, string) T4b ID: QApplication.Player.QWidget.QWidget.QPushButton
+				30 文本 +0.265 ID: QApplication.Player.QWidget.QWidget.QLabel
+				31 复选框 (settable, string) T4c ID: QApplication.Player.QWidget.QWidget.QPushButton
+				32 文本 +0.275 ID: QApplication.Player.QWidget.QWidget.QLabel
+				33 复选框 (settable, string) T4d ID: QApplication.Player.QWidget.QWidget.QPushButton
+				34 文本 -0.063 ID: QApplication.Player.QWidget.QWidget.QLabel
+				35 复选框 (settable, string) T5a ID: QApplication.Player.QWidget.QWidget.QPushButton
+				36 文本 +0.004 ID: QApplication.Player.QWidget.QWidget.QLabel
+				37 复选框 (settable, string) T5b ID: QApplication.Player.QWidget.QWidget.QPushButton
+				38 文本 -0.059 ID: QApplication.Player.QWidget.QWidget.QLabel
+				39 复选框 (settable, string) T5c ID: QApplication.Player.QWidget.QWidget.QPushButton
+				40 文本 -0.104 ID: QApplication.Player.QWidget.QWidget.QLabel
+				41 复选框 (settable, string) T5d ID: QApplication.Player.QWidget.QWidget.QPushButton
+				42 文本 -0.079 ID: QApplication.Player.QWidget.QWidget.QLabel
+				43 文本 T4d · body 77484 ID: QApplication.Player.QWidget.QWidget.QLabel
+				44 文本 -0.062897 ID: QApplication.Player.QWidget.QWidget.QLabel
+				45 文本 T4d 属于 T4 组，是同一个 FlyVis 视觉网络中的一种细胞类型。当前均值 -0.0629（负值），正在下降。 ID: QApplication.Player.QWidget.QWidget.QLabel
+				46 文本 相对上一保存步 -0.00549；一步 5 毫秒。 ID: QApplication.Player.QWidget.QWidget.QLabel
+				47 文本 这条真实骨架只代表 T4d 的形态；颜色来自 721 个同类型模型节点的均值。 单位：模型内部单位；骨架 body ID 仅标识形态。 ID: QApplication.Player.QWidget.QWidget.QLabel
+				48 组 (settable, string) ID: QApplication.Player.QWidget.QWidget.FigureCanvasQTAgg
+				49 文本 曲线：该类型的真实保存记录；虚线为数值 0。 所有类型采用相同纵轴范围和颜色标尺。 ID: QApplication.Player.QWidget.QWidget.QLabel
+				50 文本 半透明背景：ME / LO / LOP（右侧） 拖动旋转 · 滚轮缩放 · 线宽仅用于辨识 ID: QApplication.Player.QWidget.QWidget.QLabel
+			51 按钮 (settable, string) ▶ 播放 ID: QApplication.Player.QWidget.QPushButton
+			52 滑块 (settable, float) 模型时间步进度 Value: 213 ID: QApplication.Player.QWidget.QSlider
+			53 文本 第 214 / 485 步 t = +0.070 s ID: QApplication.Player.QWidget.QLabel
+			54 组合框 (settable, string) Value: 标准 ID: QApplication.Player.QWidget.QComboBox
+			55 文本 整条骨架统一着色：类型级模型映射；非个体生物测量，非 FPGA 实板结果。 ID: QApplication.Player.QWidget.QLabel
+			56 按钮 (settable, string) 骨架近景 ID: QApplication.Player.QWidget.QPushButton
+			57 按钮 (settable, string) 脑区全景 ID: QApplication.Player.QWidget.QPushButton
+			58 文本 CPU 软件绘制 · 已暂停（停止持续绘制） ID: QApplication.Player.QWidget.QLabel
+
+The focused UI element is 33 复选框 (settable, string) T4d ID: QApplication.Player.QWidget.QWidget.QPushButton.

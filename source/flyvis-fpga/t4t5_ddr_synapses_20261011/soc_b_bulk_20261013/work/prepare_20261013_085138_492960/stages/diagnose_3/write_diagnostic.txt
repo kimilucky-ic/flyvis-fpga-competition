@@ -1,0 +1,2 @@
+B_WRITE_DIAGNOSTIC_COMPLETE mismatches=2 output_beats=2884 bursts=183 responses=183
+NOT_FULL_SYSTEM_ACCEPTANCE

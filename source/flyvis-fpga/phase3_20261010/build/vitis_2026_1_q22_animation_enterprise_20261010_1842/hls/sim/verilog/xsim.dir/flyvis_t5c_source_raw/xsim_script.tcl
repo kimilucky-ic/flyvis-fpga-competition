@@ -1,0 +1,1 @@
+xsim {flyvis_t5c_source_raw} -testplusarg UVM_VERBOSITY=UVM_NONE -testplusarg UVM_TESTNAME=flyvis_t5c_source_raw_test_lib -testplusarg UVM_TIMEOUT=20000000000000 -autoloadwcfg -tclbatch {flyvis_t5c_source_raw.tcl}

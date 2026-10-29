@@ -1,0 +1,21 @@
+{
+  "status": "PASS_CURRENT_NORMALIZED_RUNTIME_FILE_ADMISSION",
+  "admission": {
+    "status": "PASS_OFFLINE_OFFICIAL_FULL_PACKAGE_ONLY",
+    "revision": "LINE11_OFFICIAL_LIVE_V261_60S",
+    "mapping": "direct-grey-center-square-area/v2",
+    "bit_sha256": "b88cd46383b4884e74384a2f418c251e8d4bb20a86fd3ea6a487be1f58409044",
+    "hwh_sha256": "00eb04c23bd2c6666aaec6a9e7809829bedca8591471d7160bb813ae86e6851f",
+    "files": 46,
+    "nodes": 45669,
+    "edges": 1513231,
+    "clock_hz": 100000000,
+    "board_result": false,
+    "execution_authority": "NONE"
+  },
+  "naming_violations": 0,
+  "scope": "existing offline_check file/firmware/interface admission only; no execution of neural/reference/device code",
+  "manifest_note": "new export manifest rehashed after explicit path relocation; historical source identities remain in export_path_map.json",
+  "board_operations": 0,
+  "eda_started": false
+}

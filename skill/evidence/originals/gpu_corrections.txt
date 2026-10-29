@@ -1,0 +1,26 @@
+# Task and verification record
+
+This file is a summary, not a verbatim conversation transcript.
+
+## Assignment excerpt
+
+The user's explicit assignment was: “你负责B”. The supplied definition of B was to configure a CUDA PyTorch environment for RTX 5060 in WSL, separately test HexEye rendering and FlyVis inference performance/memory, and then decide whether to run the complete official experiment.
+
+## Scope and implementation
+
+- Read the project vision and workstream checkpoints; FlyVis is a separate visual-network validation lane, not the fly/PQN or MaleCNS network.
+- Preserved the accepted CPU environment and reference data. Created `/opt/flyvis-gpu-venv`, `/opt/flyvis-gpu-data`, and this separate validation directory.
+- Installed pinned PyTorch 2.7.1+cu128 and torchvision 0.22.1+cu128. NumPy/pandas match the CPU reference. No system driver installation or board operation occurred.
+- Inspected upstream `NetworkView.network`: it can return an uninitialized checkpoint wrapper. The external helper explicitly calls `recover()` before asserting weights. This is an adapter implementation detail, not an upstream patch.
+- Replayed the accepted input with unchanged `compute_responses`; measured the matched-version CPU control and GPU twice in fresh Python processes.
+- Verified three original HexEye offsets against the CPU implementation, then a single original MovingEdge condition. Those checks justified a full original 24-condition GPU run with a 180-second cap.
+
+## Established results
+
+Raw logs and result JSON files are authoritative. The report and `summary.json` summarize them. The GPU flash repeat was bitwise identical to its first run; the CPU/GPU comparison passed the declared numerical tolerance but was not bitwise identical. CPU-only repeat equality and cross-device numerical agreement are separate claims.
+
+The complete GPU edge run establishes rendering and inference on all configured stimuli. It does not establish full CPU parity, a DSI validation result, subcircuit boundary completeness, or FPGA equivalence.
+
+## Reusable workflow boundary
+
+The fresh-process GPU checkpoint replay and comparison procedure was reproduced. The GPU environment installation was performed once and was not reproduced in a second clean environment. The project Skill therefore focuses on benchmarking and verification in this provisioned setup and marks installation reuse as not yet independently reproduced.

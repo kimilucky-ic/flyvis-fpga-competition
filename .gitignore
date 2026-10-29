@@ -1,0 +1,10 @@
+.venv/
+__pycache__/
+*.pyc
+records/
+rounds/
+session.json
+FIXED_ENTRY_KEY.json
+.Xil/
+*.dcp
+*.log

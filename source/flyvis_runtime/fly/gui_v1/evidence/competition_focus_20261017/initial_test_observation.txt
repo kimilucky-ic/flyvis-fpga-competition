@@ -1,0 +1,1 @@
+Initial CPU guide test used rounded literal 0.085 instead of the saved original 0.08499999999999996. Assertion correctly failed. Fixture corrected to compare exact original input/activity times; production values and scientific tolerances unchanged.

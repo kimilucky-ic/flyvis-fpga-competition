@@ -1,0 +1,16 @@
+{
+  "status": "PASS_FRESH_PREPARE_AND_PAYLOAD_SCOPE",
+  "bundle_files": 47,
+  "unique_session_directory": true,
+  "allowed_changes": [
+    "session-directory literal in live_board.py",
+    "matching manifest"
+  ],
+  "all_other_payload_bytes_equal": true,
+  "notebook_python38_syntax": true,
+  "no_checked_in_credentials": true,
+  "HTTP_started": false,
+  "board_operations": 0,
+  "GPU": false,
+  "sample_check": "721 input/45669 state words zero mismatch via independent CPU reference"
+}

@@ -1,0 +1,60 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 4,
+  "metadata": {
+    "kernelspec": {
+      "display_name": "Python 3",
+      "language": "python",
+      "name": "python3"
+    },
+    "language_info": {
+      "name": "python",
+      "version": "3.8.0"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "# Guarded Notebook template\n",
+        "Prepared by run.py using the existing accepted Notebook generator.\n"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "import base64,hashlib,io,sys,zipfile\n",
+        "from pathlib import Path\n",
+        "if globals().get('_LINE11_LIVE_USED',False):raise RuntimeError('Already attempted; do not rerun. Keep kernel and records.')\n",
+        "_raw=base64.b64decode('')\n",
+        "if hashlib.sha256(_raw).hexdigest()!='UNCONFIGURED':raise RuntimeError('Configure this template from the PC entry first')\n",
+        "_hashes={}\n",
+        "_root=Path('/home/xilinx/jupyter_notebooks/LINE11_OFFICIAL_LIVE_V261_60S')/('package_'+'unconfigured')\n",
+        "_root.mkdir(parents=True,exist_ok=True)\n",
+        "with zipfile.ZipFile(io.BytesIO(_raw)) as _z:\n",
+        " if len(_z.namelist())!=len(_hashes) or set(_z.namelist())!=set(_hashes):raise RuntimeError('Unexpected members')\n",
+        " for _name,_sha in _hashes.items():\n",
+        "  if Path(_name).name!=_name or ':' in _name or '/' in _name or chr(92) in _name:raise RuntimeError('Unsafe member')\n",
+        "  _data=_z.read(_name)\n",
+        "  if hashlib.sha256(_data).hexdigest()!=_sha:raise RuntimeError('Member mismatch')\n",
+        "  _p=_root/_name\n",
+        "  if _p.exists():\n",
+        "   if hashlib.sha256(_p.read_bytes()).hexdigest()!=_sha:raise RuntimeError('Existing file differs')\n",
+        "  else:\n",
+        "   with _p.open('xb') as _f:_f.write(_data)\n",
+        "for _name in _hashes:\n",
+        " if _name.endswith('.py') and _name[:-3] in sys.modules:raise RuntimeError('Use independent fresh kernel')\n",
+        "sys.path.insert(0,str(_root))\n",
+        "import live_board\n",
+        "if Path(live_board.__file__).resolve()!=(_root/'live_board.py').resolve():raise RuntimeError('Wrong module')\n",
+        "_config={}\n",
+        "_LINE11_LIVE_USED=True\n",
+        "live_board.run(_root,_config)\n"
+      ],
+      "outputs": [],
+      "execution_count": null
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+CNN full T4/T5 replacement pilot, 2026-10-16
+
+Sealed scientific result: FUNCTIONAL_NOT_PASS, 0/8.
+Real closed-loop interface works; this trained model is not a usable replacement.
+
+Python3.14.5 + NumPy2.4.6 + PyTorch2.12.0+cpu. Matplotlib only for saved plots.
+No CUDA, WSL launch, optional FlyVis installation, scheduler or board is needed.
+Frozen source/model/input hashes are in PREREGISTRATION.json. The original
+FlyVis source and data in sibling fly plus accepted historical training caches
+are read-only prerequisites, not files to edit or regenerate.
+
+To reproduce, copy only these Python sources into a NEW sibling directory
+under flyvis-circuit-selection (e.g. cnn_t4t5_reproduction_01): common.py,
+cnn.py, decoder_cpu.py, prepare.py, experiment.py, audit_results.py, plots.py.
+Keep accepted sibling source caches in place. Then run, strictly in order:
+
+python -B prepare.py
+python -B experiment.py train
+python -B experiment.py controls
+python -B experiment.py run
+python -B experiment.py analyze
+python -B audit_results.py
+python -B plots.py
+
+Never execute these stages over this sealed directory. Files use exclusive
+creation and attempts are preserved. If a new run fails, inspect its failure,
+do not remove guards or silently retry into the same output directory.
+
+prepare validates original identities and exact721-point maps, original R-only
+API, radius7 coverage and Conv2d/patch alignment. The official CPU decoder
+executes original class bodies from the pinned upstream source through AST
+loading, avoiding heavy optional package initialization. No forward body is
+rewritten. Checkpoint state_dict remains exact, all modules eval, inputs full
+45669 states. It is compared against7 accepted GPU frames, not called FPGA proof.
+
+train reads four historical Full trajectories ONLY for supervision. It fits
+normalized H increments from23 old activity fields with a shared hex CNN,
+learned own-H recurrence and offsets, without importing H node parameters or
+H-target edges into the CNN. Model saved to training/cnn.pt and frozen before
+test. There is no checkpoint selection using test output.
+
+The production ClosedLoop object takes only RStepService and CNNService.
+Input to each step is external brightness[721], and both services read the same
+own previous full state[45669]. H has5768 outputs in TYPES order then721 hex
+coordinate order; mapping.npz provides exact IDs. R candidates are39901.
+All candidates are checked before one complete commit. No original H update
+or teacher correction exists in this production path. a0 is the common saved
+full initial state. Time input k*.005; output (k+1)*.005.
+
+run creates new source-equation CPU Full references, a numerical Sham, a CNN
+path and H-held controls. Original R/H equation and decoder weights are frozen.
+The CNN path intentionally has a finite magnitude failure envelope of100.
+The OFF180 failed run preserves399 actual steps and stops before step399
+commit. Unwritten raw preallocation rows399:485 are invalid and never decoded.
+Use VALIDITY.json and committed_states.npy for that partial trajectory.
+
+analyze reads Full truth only AFTER closed-loop execution. It saves all H/R
+step errors, original331ROI E/M/Q/field-angle and fixed windows, and an offline
+teacher-forced one-step diagnostic. The latter is not a replacement rollout.
+audit_results checks all10099 committed states and indices/hash/time chains
+without neural recomputation, and adds declared nRMSE/opposite-direction data.
+plots reads only saved results. Training with true old H is explicitly distinct
+from this model's own-state production recursion.
+
+Data:
+inputs/<case>.npy: float32[485,721] external retinal brightness.
+runs/<case>/<mode>/states.npy: float32[485,45669] preallocated; consult VALIDITY.
+flow.npy: float32[valid_steps,2,721], original DecoderGAVP raw model units.
+steps.jsonl: valid commits only, old/input/new SHA and model times.
+STEP_ERRORS.json + NORMALIZED_STEP_ERRORS.json: every valid H/R step.
+RESULTS.json + DIRECTION_RESPONSE.json: all cases/subtypes, no selected winner.
+
+CPU source calibration32 steps max7.1525574e-7 vs accepted GPU state.
+Official decoder7-frame calibration max1.3113022e-6 vs accepted GPU output.
+Both tolerances atol=rtol=1e-5. Functional gate is much weaker than numerical
+equivalence and still fails. Full comparison is not real optical-flow accuracy,
+nor biological/FPGA recovery. No physical velocity calibration is claimed.

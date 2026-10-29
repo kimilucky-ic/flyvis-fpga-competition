@@ -1,0 +1,1 @@
+"tb_bulk_units" -s "bulk_units" -mt "off" -debug "off" -log "C:\Users\hzy72\Documents\ChatGPT\fpga\flyvis-fpga\t4t5_ddr_synapses_20261011\soc_b_bulk_20261013\work\unit_20261013_084928_642814\stages\unit_1\elaborate.log" 

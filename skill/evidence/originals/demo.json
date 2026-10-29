@@ -1,0 +1,213 @@
+{
+  "status": "PASS_BOUNDED_OFFLINE_STARTUP_OPTIMIZATION",
+  "source_identity_unchanged": true,
+  "protected_sources": [
+    {
+      "path": "viewer/competition_stage.js",
+      "before": "b6937a5252ca97b5633fc44233339e422bc607990df91ba747221516f0a1f15d",
+      "after": "b6937a5252ca97b5633fc44233339e422bc607990df91ba747221516f0a1f15d",
+      "unchanged": true
+    },
+    {
+      "path": "viewer/competition_live.js",
+      "before": "db293323bb0b2dfca219793aa423793bd75d511947fd194eb333f148d76ed2d4",
+      "after": "db293323bb0b2dfca219793aa423793bd75d511947fd194eb333f148d76ed2d4",
+      "unchanged": true
+    },
+    {
+      "path": "viewer/competition_joint.js",
+      "before": "76bbf7ba4e3948c206898f34a85d45057f9fa58cfd0bf54543f8d78915b34ddc",
+      "after": "76bbf7ba4e3948c206898f34a85d45057f9fa58cfd0bf54543f8d78915b34ddc",
+      "unchanged": true
+    },
+    {
+      "path": "gui_v1/hybrid_joint.py",
+      "before": "e59b1bb245151a3c5b8a0e03e24bef0612cd951edf1fea21c8c167de592305d5",
+      "after": "e59b1bb245151a3c5b8a0e03e24bef0612cd951edf1fea21c8c167de592305d5",
+      "unchanged": true
+    },
+    {
+      "path": "gui_v1/joint_camera_engine.py",
+      "before": "d4c7ee9e9d4333690075de6db06437abcfefe26bad73940be9fcc81ca40e0927",
+      "after": "d4c7ee9e9d4333690075de6db06437abcfefe26bad73940be9fcc81ca40e0927",
+      "unchanged": true
+    },
+    {
+      "path": "gui_v1/exports/ON60_C_40s_4ceebcfe2f22474f9f97e4e8fbe36935/ON60_40s_1080p.mp4",
+      "before": "167b9424ce03c909b9c64760d7a5cd5b96ead8aff12a198b26b2b48ec097a6d7",
+      "after": "167b9424ce03c909b9c64760d7a5cd5b96ead8aff12a198b26b2b48ec097a6d7",
+      "unchanged": true
+    }
+  ],
+  "expected_changed_sources": [
+    {
+      "path": "gui_v1/server.py",
+      "before": "84a8033f078b039c45c165abe8a2fd840c920cd91dad0df1e7d91a2caabfa6b4",
+      "after": "ffe1bd9a2b5bdcda3ab3f5eea24e40b9041d2fb0ea1b8523ba4a1edee86cb1ca",
+      "unchanged": false
+    },
+    {
+      "path": "gui_v1/data_store.py",
+      "before": "694ace7b3d03107b270a3f6a91a67a655aeba1b65f8dedec8292a1137eda01cd",
+      "after": "051a982d810acf3354f0308fcde3bbabbd5a918e3a79371575081dd6ac27e6d5",
+      "unchanged": false
+    },
+    {
+      "path": "gui_v1/desktop_runtime.py",
+      "before": "023279eb2aada7f6ee19df9faf2ccf4f56670c103cfe1c43c626d05c9adfb338",
+      "after": "0c69bc6e891ff7e1497004203a6c5145cc057c90e6dad30bb02e5339b85826a2",
+      "unchanged": false
+    },
+    {
+      "path": "gui_v1/desktop.py",
+      "before": "4e8adf37031f2f592179409df87073f1384597470b86f55845a351a8bcc26915",
+      "after": "d6c8b63e4f0c765f60992a354f13f99e1030865266083e3ce4d4750d859a9ccd",
+      "unchanged": false
+    },
+    {
+      "path": "gui_v1/camera_store.py",
+      "before": "817b273555913c5514b37f780f9d1f17e7bd561a128752af07b5bd102db46b0f",
+      "after": "61c543b34aa1cd236b1d5b8d9499baec3c01f17383a590c3c0894aebb5942253",
+      "unchanged": false
+    },
+    {
+      "path": "gui_v1/controlled_store.py",
+      "before": "2a0bf3012388829bb51129c64fcfe247bc365144ad41bb999df863b777c23e74",
+      "after": "612bd9f5a251b26a8746fdf84a08955d45b59de67a9cefb047c4e659e5059c69",
+      "unchanged": false
+    },
+    {
+      "path": "gui_v1/phase3_adapter.py",
+      "before": "8c0eba158bd5d5dfb6fd66208eebbb1395facc8dff9b04461c9637f776b52aac",
+      "after": "cd38ee19e224cd87061307463319d08f8b309311eabbab2527470c0b0727635f",
+      "unchanged": false
+    },
+    {
+      "path": "gui_v1/scientific_pilot.py",
+      "before": "0b4686be9319433be50072a26cc739efe2da1956c1505fee6c4cb6f02b898f0b",
+      "after": "022f2b8a65ecdd0e1e9fbf20a5ce47f6ea8046c47a6ad48cb8bcb6922d611bc3",
+      "unchanged": false
+    },
+    {
+      "path": "gui_v1/scientific_sparse.py",
+      "before": "d467a96fe1d0d713490d9712f764a67f289097a786567709abaa2ca4f21e8c3c",
+      "after": "12e04ddd7b37e18266364732fc692ac1521c922a079d7a81d5cd697b8c894f7d",
+      "unchanged": false
+    },
+    {
+      "path": "gui_v1/competition_frames.py",
+      "before": "b169d83d938deb4a219a2702e069cd59ab29dec7eda18a23a43d2b38f4beb9ad",
+      "after": "14c9adfa9984b56cea765f9aa341368b58a4de5d3f0d8b2440afd477ca2135c5",
+      "unchanged": false
+    },
+    {
+      "path": "gui_v1/competition_explanation.py",
+      "before": "0fc36b223415eb4874f7b0d2dd55921a94f274a05b401a2fe1f5ddc17b9a286c",
+      "after": "4c6a57ffd04a159430a80c051deda36acdcf423c43be8003ef472c798606ca04",
+      "unchanged": false
+    },
+    {
+      "path": "gui_v1/competition_response.py",
+      "before": "3e6ea5dbca9e65cf97b65304505004715f99ed3d1684a0a534df0a25d4c652c5",
+      "after": "0af73090fffadc2ea70803229727e685eb80e5b966b12ab58bf3429e73023b36",
+      "unchanged": false
+    },
+    {
+      "path": "viewer/index.html",
+      "before": "211ac7a30405f7ec2a60a77bdab06dc673ed8b9093b54a5d7bc46550822e0918",
+      "after": "ddddac118c923e51b6108f574ffa89498a82e6172f4b27c7dcc3f414f876aee0",
+      "unchanged": false
+    },
+    {
+      "path": "viewer/app.js",
+      "before": "782a7a86abd268a41bb49fe86cc943a568d42adc2e44fe4f7b37365001a572e4",
+      "after": "5918d73bde1d3bd0ba1c6809a3ef9b781a4d788bc665c990c5b3a23e9dbff0e2",
+      "unchanged": false
+    },
+    {
+      "path": "viewer/scientific_pilot.js",
+      "before": "f5e9b20b9dedc89aa7ed7490a9ed53fe54119d634be258fafa0088f653ae87a1",
+      "after": "c1fd7e6c20a3f72ad87ddaccf372b767d18d1d572e1e048d019fdaabb5681dce",
+      "unchanged": false
+    },
+    {
+      "path": "viewer/scientific_sparse.js",
+      "before": "75634ed7d7477be4aa74142026448f816ed42e037a48c868eec3e0cb413030f0",
+      "after": "4d0ba5e0fa305deb2713afc8f172ad4222c7ba68313cd93510e0e45a58088a51",
+      "unchanged": false
+    },
+    {
+      "path": "viewer/phase3.js",
+      "before": "e4fd5d43dae3a0abfde7fa874cfc44e3ec9911c05b6cc3e3c79a3d5e491f8c50",
+      "after": "b85f62cb93b22d806489b565a1b364363478c168b06aed0953aeff389176f14b",
+      "unchanged": false
+    },
+    {
+      "path": "viewer/workbench.js",
+      "before": "b556823e08ebc442e374cd0fd18c77546e78c89d737f9505d2af25e60951f189",
+      "after": "20561f0bb7d7c628d7a1ad5fca385659572bbf880f3d7371cfe92ff8248e01da",
+      "unchanged": false
+    },
+    {
+      "path": "viewer/unified_flow.js",
+      "before": "25ada3b8081b7da0d909b7f95ee1d14e439aeda045eb3420a2e4ac8476f5c3e3",
+      "after": "33747f8dc410a2e32fd03853bed7e1e1717caeb776b4bbd89c42ebcac4b5795b",
+      "unchanged": false
+    },
+    {
+      "path": "start_gui.ps1",
+      "before": "0f765208126ff7e5f2e42820955780cb50d58007c3bdd252d5d7f5facd6faa00",
+      "after": "523a0c1f04a1049660520f8a7969e7f4c433c9f627502cc021ef7ef2e4d5cdb0",
+      "unchanged": false
+    },
+    {
+      "path": "viewer/competition.js",
+      "before": "85c5ddce19603658bee906787e11a15a5bcdb172d3c6890f860ff6501e2c2031",
+      "after": "4b16590dcfc73df57bebe1a990a037f9c618daca4c0343b61811aba4c2c0e9c3",
+      "unchanged": false
+    }
+  ],
+  "tests": {
+    "new_python": 13,
+    "existing_python": 22,
+    "lazy_panel_JS": 6,
+    "existing_explanation_JS": 18,
+    "actual_HTTP": 9,
+    "desktop_lifecycle": 6,
+    "browser": "actual original UI navigation, same-run k217, screenshot; no warning/error captured"
+  },
+  "performance": {
+    "same_real_data_identity": true,
+    "first_frame_reduction_percent": 83.05016524557529,
+    "first_frame_speedup": 5.899762531542982,
+    "before_s": 14.710620699999708,
+    "after_s": 2.4934259000001475,
+    "cold_first_verification_s": 5.128717899999174,
+    "service_before_s": 12.405403599999772,
+    "service_after_s": 0.47001749999981257,
+    "not_full_desktop_wall_time": true
+  },
+  "browser": {
+    "status": "PASS_ACTUAL_BROWSER_OFFLINE_LAZY_NAVIGATION",
+    "first_frame_draw_submission_ms": 2022.6999999999537,
+    "cases": [
+      "home_same_run_verified_C_frame",
+      "home_does_not_load_full_55_or_hidden_resources",
+      "legacy_ON60_real_input_activity_and_official_DSI",
+      "research_B_89_files_7_scales_real_flow",
+      "P0_Full_Python_replay_ready_FPGA_unavailable",
+      "return_home_k217_signed_activity_and_official_direction",
+      "screenshot_saved"
+    ],
+    "warning_error_logs": []
+  },
+  "limits": [
+    "No full desktop cold-window timing",
+    "No fresh inference or real-time/PL performance claim",
+    "Daily metadata cache is not independent acceptance evidence"
+  ],
+  "neural_GPU_runs": 0,
+  "camera_captures": 0,
+  "board_operations": 0,
+  "new_video_exports": 0
+}

@@ -1,0 +1,10 @@
+const fs=require('fs'),assert=require('assert');const p='C:/Users/hzy72/Documents/ChatGPT/fly';
+const s=fs.readFileSync(p+'/viewer/competition_full_pl.js','utf8');
+const a=s.indexOf(' window.FlyVisFullPLBegin=function(){'),b=s.indexOf('\n };',a)+4;
+const dataset={run:'OLD',frame:'200',fullStateSha256:'OLD',session:'OLD'};let paused=false,cleared=false;
+const window={},heading={},status={};const ui={enterLive(){paused=true},stage:{canvas:{dataset},clearGuide(){},c:{fillRect(){cleared=true}},text(){}}};
+new Function('window','ui','root','$',s.slice(a,b))(window,ui,{querySelector(){return heading}},()=>status);
+window.FlyVisFullPLBegin();assert(paused&&cleared);assert(!dataset.run&&!dataset.fullStateSha256);assert.equal(dataset.displayKind,'WAITING_CURRENT_RUN');
+const op=fs.readFileSync(p+'/viewer/operator_selection.js','utf8');assert(op.indexOf('window.FlyVisFullPLBegin();')<op.indexOf("fetch('/api/full-pl-stream/camera-start'"));
+assert(s.includes("s.display_complete&&(!stream.camera_live||s.replay_available===true)"));
+console.log('PASS start clears old canvas/identity before request; no GPU or PL execution; explicit finished-only replay gate');

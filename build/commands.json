@@ -1,0 +1,15 @@
+{
+  "scope": "Authorized independent Vivado2026.1 validation synthesis route bitgen; no board",
+  "python": "C:/Users/hzy72/Documents/ChatGPT/fly/.venv/Scripts/python.exe",
+  "commands": [
+    "prepare.py",
+    "run_build.py migrate3 combine",
+    "run_build.py synth route",
+    "finish_route.py",
+    "run_build.py bitgen",
+    "finalize.py"
+  ],
+  "tool": "D:/2026.1/Vivado/bin/vivado.bat",
+  "build": "C:\\fpga_work\\line11_v261_20261026",
+  "threads": 1
+}

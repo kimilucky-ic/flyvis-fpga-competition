@@ -1,0 +1,19 @@
+PASS old ABI no writes; full blocks STEP; modulo descriptor; duplicate idempotent; future/stale and released read rejected
+PASS only owner thread ACKs; uncertain release is sticky and never retried
+PASS no capacity-derived pacing; virtual deadline stops while credits unavailable; memory budget independent of60s steps
+Traceback (most recent call last):
+  File "C:\Users\hzy72\Documents\ChatGPT\fpga\flyvis-lossless-study\ov5640_async_persist_20261026\tests\test_ring.py", line 119, in <module>
+    out=live_board.execute(fixture,T/'producer',config,authorized=True,boot_id='00000000-0000-0000-0000-000000000001',runtime_factory=Runtime,send=no_network,upload_wait=0,window_factory=lambda c:RunWindow(c,virtual.clock,virtual.sleep))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hzy72\Documents\ChatGPT\fpga\flyvis_runtime\fpga\flyvis-lossless-study\ov5640_async_persist_20261026\bundle\live_board.py", line 91, in execute
+    save_json(out/'RUN_CONTEXT.json',context)
+  File "C:\Users\hzy72\Documents\ChatGPT\fpga\flyvis_runtime\fpga\flyvis-lossless-study\ov5640_async_persist_20261026\bundle\capture_binding.py", line 60, in save_json
+    prof.add('json_encode',t,len(data));save_new(path,data,durable=durable)
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hzy72\Documents\ChatGPT\fpga\flyvis_runtime\fpga\flyvis-lossless-study\ov5640_async_persist_20261026\bundle\capture_binding.py", line 56, in save_new
+    t=prof.tick();os.fsync(f.fileno());prof.add('fsync:'+name,t)
+                  ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hzy72\Documents\ChatGPT\fpga\flyvis-lossless-study\ov5640_async_persist_20261026\tests\test_ring.py", line 116, in stall_once
+    real_sync(fd)
+    ^^^^^^^^^
+NameError: name 'real_sync' is not defined

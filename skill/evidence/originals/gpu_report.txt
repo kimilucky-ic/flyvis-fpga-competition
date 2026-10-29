@@ -1,0 +1,78 @@
+# FlyVis RTX 5060 GPU 验证报告
+
+日期：2026-10-09。证据级别：本地原模型软件仿真。
+
+本次为独立的 FlyVis 视觉模型 GPU 验证，未修改模型动力学、权重或连接，未训练，也未进行 FPGA 或板级操作。
+
+## 环境与身份
+
+- GPU：NVIDIA GeForce RTX 5060 Laptop GPU，约 8 GiB 显存；Windows 驱动 596.21，WSL 能识别。
+- 系统：WSL2 Ubuntu 24.04.5；独立 Python 环境 `/opt/flyvis-gpu-venv`。
+- 数据/缓存：`/opt/flyvis-gpu-data`，与原 CPU 缓存 `/opt/flyvis-data` 分开。
+- GPU 依赖：PyTorch 2.7.1+cu128、torchvision 0.22.1+cu128；完整版本见 `../artifacts/requirements-gpu-lock.txt`。
+- CPU 基准原环境 PyTorch 2.5.1+cpu 保留；本次配对 CPU 性能测试使用新环境的 PyTorch 2.7.1，禁用 CUDA、单线程。
+- CUDA 时间均在计时前后同步；显存峰值为 PyTorch allocated/reserved，不是整机显存占用。
+- 为数值比较开启确定性算法、关闭 TF32，没有使用混合精度推理。HexEye 保持上游默认 float16 几何计算。
+
+- 官方源码 commit：`92b3845cc426dd309a1a0e1b3890156c42e14021`；FlyVis 1.2.0。
+- 权重 SHA256：`d0e42857e738d0315897c2d50fde9eb3fb1a3fb1f071d55dfc13d53d72bccc3f`；加载前后张量均与官方 checkpoint 完全一致。
+- 全网络：45,669 神经元、1,513,231 条模型连接；导出 65 个中心细胞。
+
+## HexEye 小规模渲染
+
+使用原始 `HexEye(721,25)`，与移动边缘相同的 width/height=80，angle=0、intensity=1；只测 -10、0、10 三个偏移。构造与渲染分开计时，未把首次安装算入性能。
+
+- GPU：构造 4.4891 秒；3 张渲染 0.2313 秒。
+  渲染峰值 allocated=3766.6 MiB，reserved=3772.0 MiB。
+- CPU 单线程：构造 31.2982 秒；3 张渲染 24.4421 秒。
+- CPU/GPU 刺激最大绝对误差：0；逐位相同：True。
+- 此配对测试的渲染提速：105.67 倍；仅适用于测过的 3 个偏移。
+
+## 闪光推理与 Golden Reference
+
+通过原始 `compute_responses` API 重新加载官方 checkpoint，直接重放已验收的输入数组。4 组、600 帧、dt=5 ms；整网参与计算。这样把输入渲染差异与网络计算差异分开，结果缓存被绕过。
+
+数值验收条件在运行前写入脚本：`np.allclose(atol=1e-5,rtol=1e-5)`。数值接近通过不等于逐位相同；报告同时保存准确误差。
+
+- GPU 第一次：11.1813 秒；与原 CPU Golden 最大绝对误差 1.43051147e-06，RMSE=1.35384646e-07；状态 PASS。
+  峰值 allocated=1545.7 MiB，reserved=3408.0 MiB。
+- CPU 新环境：14.3663 秒；与原 CPU Golden 最大绝对误差 0，RMSE=0；状态 PASS。
+- GPU 独立进程重跑：10.9942 秒；与原 CPU Golden 最大绝对误差 1.43051147e-06，RMSE=1.35384646e-07；状态 PASS。
+  峰值 allocated=1545.7 MiB，reserved=3408.0 MiB。
+  与第一次 GPU 运行逐位相同：True，最大绝对误差 0。
+- 相同新环境配对 CPU/GPU 的闪光提速：1.28 倍。
+
+## 单条件移动边缘
+
+- 1 个方向、1 种亮度、21 个偏移；其余参数保持官方示例设置。首次刺激构建 2.5274 秒，缓存构建 0.0115 秒。
+- 原模型推理 2.5091 秒；输出 [1, 485, 65]，均为有限值。
+- 构建峰值 allocated=3875.4 MiB；推理峰值 allocated=1504.8 MiB。
+- 本条件证明 GPU 渲染与推理链路可运行；没有计算完整方向选择性指标。
+
+## 官方完整移动边缘配置 GPU 验证
+
+- 12 个方向（0..330，间隔30度）×2 种亮度×21 偏移，共504张位置图像。原始 MovingEdge API，speed=19、height=80、dt=5 ms、前后各1秒。
+- 首次刺激构建 20.9481 秒；缓存构建 0.0485 秒；整网推理 51.1222 秒。
+- 输入 [24, 485, 1, 721]，输出 [24, 485, 65]；全部有限，权重运行前后与 checkpoint 一致。
+- 构建峰值 allocated=3878.1 MiB、reserved=7598.0 MiB；推理峰值 allocated=1632.7 MiB、reserved=4366.0 MiB。
+- 活动、输入、样本条件和时间轴已另存；这证明全部配置 GPU 渲染与推理可运行。尚未做全部条件的 CPU 对照或完整 DSI 验收。
+
+![T4/T5 完整移动边缘活动](../artifacts/moving_edge_full_t4_t5.png)
+
+
+![CPU/GPU 闪光响应对照](../artifacts/flash_cpu_gpu_comparison.png)
+
+## 保留与复现边界
+
+- 原 CPU manifest 中 36 个文件逐个校验：全部保持一致。
+- 原 CPU 软件基准没有被 GPU 输出替换；GPU 文件全部保存在本验证目录。
+- 安装步骤见 `../scripts/setup_gpu.sh`，运行命令见 `../README.md`；日志在 `../logs/`，测量 JSON/NPY 在 `../artifacts/`。
+- 官方源代码没有修改；没有训练、裁剪、连接更改或板级操作。
+- 完整 DSI、全部移动条件的 CPU 对照、候选子回路边界活动及云端 GPU 尚未验证。
+- 本次 GPU 环境安装已完成一次；没有在第二个全新环境重复安装，因此不宣称干净环境安装流程已被重复验证。
+
+## 下一步
+
+在保持原 CPU Golden 的前提下，验收完整移动边缘方向响应与 CPU 对照，随后单独定义并导出候选子回路边界活动。
+
+官方依据：[PyTorch Blackwell/CUDA 12.8 支持](https://pytorch.org/blog/pytorch-2-7/)、[FlyVis 源码](https://github.com/TuragaLab/flyvis/tree/92b3845cc426dd309a1a0e1b3890156c42e14021)。

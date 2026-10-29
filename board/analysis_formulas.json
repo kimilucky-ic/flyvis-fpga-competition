@@ -1,0 +1,19 @@
+{
+  "command": [
+    "python",
+    "-X",
+    "utf8",
+    "-B",
+    "C:\\Users\\hzy72\\Documents\\ChatGPT\\fpga\\flyvis_runtime\\fpga\\flyvis-lossless-study\\ov5640_live_v261_analysis_20261026\\analyze.py"
+  ],
+  "formulas": [
+    "ms_per_step=1000*duration.elapsed_seconds/1090",
+    "steps_per_second=1090/duration.elapsed_seconds",
+    "all_state_words=1090*45669",
+    "batch_total=sum(RAM_FLUSH.batches.persist_ms);overlaps producer",
+    "foreground_enqueue_total=sum(packet_timings.packet_enqueue_ms);includes snapshot/queue wait",
+    "tail_measured=last_partial_batch.persist_ms+RAM_FLUSH.flush_ms;does not include all finalize phases"
+  ],
+  "reference": "existing saved expected chunks only;commands inspected,never executed",
+  "read_only_source": true
+}

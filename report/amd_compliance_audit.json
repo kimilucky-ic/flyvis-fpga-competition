@@ -1,0 +1,66 @@
+{
+  "status": "NAMING_AND_CURRENT_FILE_ADMISSION_CHECKED_OTHER_GAPS_PENDING",
+  "guide_pdf_pages": [
+    22,
+    23,
+    24,
+    25
+  ],
+  "guide_sha256": "c6ad82acd4f7bdcd13bd412e232ed85d05f2a87dd5e2cdd04f9d219f88b569fc",
+  "copied_evidence": [
+    {
+      "path": "build/result.json",
+      "source": "flyvis-lossless-study/vivado2026_1_20261026/RESULT.json",
+      "sha256": "cc2e63975cd91954ee421600853d6f700a57cdf7f295df13c0eba5d23363c2c0"
+    },
+    {
+      "path": "build/commands.json",
+      "source": "flyvis-lossless-study/vivado2026_1_20261026/COMMANDS.json",
+      "sha256": "6dec855550d3a473ac23c0184b94f10de46b5de35a16af824a3bbc2864c6a887"
+    },
+    {
+      "path": "build/source_manifest.json",
+      "source": "flyvis-lossless-study/vivado2026_1_20261026/FINAL_MANIFEST_SHA256.json",
+      "sha256": "df0eab3b7928f380229f4730dc695ba5bd26341e892c7c1cc1f7f7666a49f72a"
+    },
+    {
+      "path": "board/saved_run_analysis.json",
+      "source": "flyvis-lossless-study/ov5640_live_v261_analysis_20261026/RESULT.json",
+      "sha256": "eaff683d130a4c302e90d232f47d4507018c1176bcd6ad41bef07c9417ec2199"
+    },
+    {
+      "path": "board/analysis_formulas.json",
+      "source": "flyvis-lossless-study/ov5640_live_v261_analysis_20261026/COMMANDS_AND_FORMULAS.json",
+      "sha256": "c42b8074ca949c579a4b2bb5db501c71f5089ab7ec9dc5802d6c29f65c14b49f"
+    },
+    {
+      "path": "sim/fp32_operators.json",
+      "source": "flyvis-lossless-study/hole_pipeline_20261016/operators_r2/summary.json",
+      "sha256": "aa381c915290f32415bc5effcef784706d997e2a5cb78f213b53d33126d2a30e"
+    },
+    {
+      "path": "sim/pipeline_suite.json",
+      "source": "flyvis-lossless-study/hole_pipeline_20261016/FINAL_CPU_SUITE.json",
+      "sha256": "9e8800d8b49aac1e60d94eb93dea735574518f81fec92f76a6a2b04d6041d968"
+    },
+    {
+      "path": "sim/recurrence800.json",
+      "source": "flyvis-lossless-study/runs/acceptance800_20261013/acceptance.json",
+      "sha256": "a8409937221b15e0af71cc2ce4d79d17e99654dd4e340d5191359875431fab28"
+    },
+    {
+      "path": "report/ai_chat_excerpts.json",
+      "source": "deliverables/skill-guide-audit-20261021/skill/evidence/chat_excerpts.json",
+      "sha256": "c865b9b03e966b7d1cc9355140ee555f26ee711beb4c0944e90df3f0b99073d2"
+    }
+  ],
+  "naming_violations": [],
+  "pending": [
+    "Historical candidate functionality not certified after path normalization; current package admission and JS syntax checked separately",
+    "Close clean-checkout build dependency graph, including vendor IP and original build paths",
+    "Add operator raw output/reference sample after credential and camera privacy review",
+    "Select final approved design report; drafts are not automatically final",
+    "Review third-party redistribution scope, exact public inventory and new publication approval"
+  ],
+  "previous_naming_violation_count": 3380
+}

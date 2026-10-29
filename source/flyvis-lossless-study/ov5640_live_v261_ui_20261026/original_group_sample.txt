@@ -1,0 +1,10 @@
+ const centralIDs=[24399,25120,25841,26562,27283,28004,28725,29446];
+ const roiOffsets=[270,271,272,273,298,299,300,301,302,327,328,329,330,331,332,357,358,359,360,361,362,363,388,389,390,391,392,393,418,419,420,421,422,447,448,449,450];
+ const roiDefinition={kind:"CENTRAL_HEX_RADIUS3",count:37,radius:3,criterion:"max(abs(u),abs(v),abs(u+v))<=3",spatial_indices:Array.from({length:8},(_,i)=>roiOffsets.map(j=>i*721+j)),global_ids:Array.from({length:8},(_,i)=>roiOffsets.map(j=>centralIDs[i]+j-360)),aggregation:"mean_signed_then_rectify"};
+ function groupSample(p){
+  fail(p.spatial?.map_sha256==='5a2a439d3625c54762f9a83053157f6c6ae6f941403443177e52656597d8e001','FULL_PL_CENTRAL_MAP');
+  fail(p.spatial.values?.length===5768,'FULL_PL_CENTRAL_ARRAY');
+  const raw=roiDefinition.spatial_indices.map(indices=>indices.reduce((sum,i)=>{const v=p.spatial.values[i];fail(Number.isFinite(v),'FULL_PL_ROI_VALUES');return sum+v;},0)/37);
+  fail(raw.every(Number.isFinite)&&Number.isFinite(p.activity_time_s)&&Number.isSafeInteger(p.step_id),'FULL_PL_CENTRAL_VALUES');
+  return {step:p.step_id,time:p.activity_time_s,raw,values:raw.map(v=>Math.max(v,0)),roi:roiDefinition};
+ }

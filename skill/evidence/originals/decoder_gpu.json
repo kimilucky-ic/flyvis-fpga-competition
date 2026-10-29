@@ -1,0 +1,181 @@
+{
+  "stage": "decoder",
+  "device": "cuda",
+  "repeat": 3,
+  "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+  "torch": "2.7.1+cu128",
+  "cuda": "12.8",
+  "flyvis": "1.2.0",
+  "os": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "threads": 1,
+  "deterministic": true,
+  "tf32": false,
+  "environment_reinstalled": false,
+  "command": [
+    "/opt/flyvis-gpu-venv/bin/python",
+    "/mnt/c/Users/hzy72/Documents/ChatGPT/fpga/flyvis-visual-experiments/scripts/experiment.py",
+    "decoder",
+    "--device",
+    "cuda",
+    "--repeat",
+    "3"
+  ],
+  "root": "/opt/flyvis-visual-experiments-data",
+  "response_cache_bypassed": true,
+  "acceptance": {
+    "atol": 1e-05,
+    "rtol": 1e-05
+  },
+  "source_commit": "92b3845cc426dd309a1a0e1b3890156c42e14021",
+  "checkpoint_sha256": "d0e42857e738d0315897c2d50fde9eb3fb1a3fb1f071d55dfc13d53d72bccc3f",
+  "model_load": {
+    "elapsed_s": 3.2207806939999273,
+    "process_host_max_rss_MiB": 1603.6015625,
+    "peak_allocated_MiB": 140.759765625,
+    "peak_reserved_MiB": 142.0
+  },
+  "neurons": 45669,
+  "edges": 1513231,
+  "weights_exact_before": true,
+  "decoder_module_training_flags": {
+    "": false,
+    "base": false,
+    "base.0": false,
+    "base.1": false,
+    "base.2": false,
+    "base.3": false,
+    "decoder": false,
+    "decoder.0": false,
+    "head": false
+  },
+  "decoder_class": "DecoderGAVP",
+  "decoder_config": {
+    "type": "DecoderGAVP",
+    "shape": [
+      8,
+      2
+    ],
+    "kernel_size": 5,
+    "const_weight": 0.001,
+    "n_out_features": null,
+    "p_dropout": 0.5
+  },
+  "output_cell_types": [
+    "T1",
+    "T2",
+    "T2a",
+    "T3",
+    "T4a",
+    "T4b",
+    "T4c",
+    "T4d",
+    "T5a",
+    "T5b",
+    "T5c",
+    "T5d",
+    "Tm1",
+    "Tm2",
+    "Tm3",
+    "Tm4",
+    "Tm5Y",
+    "Tm5a",
+    "Tm5b",
+    "Tm5c",
+    "Tm9",
+    "Tm16",
+    "Tm20",
+    "Tm28",
+    "Tm30",
+    "TmY3",
+    "TmY4",
+    "TmY5a",
+    "TmY9",
+    "TmY10",
+    "TmY13",
+    "TmY14",
+    "TmY15",
+    "TmY18"
+  ],
+  "decoder_weights_exact_before": true,
+  "official_runtime_projection": [
+    {
+      "parameter": "base.0.weight",
+      "changed_taps": 0,
+      "max_abs_change": 0.0,
+      "cause": "Original Conv2dHexSpace.forward/filter_to_hex zeroes taps outside hexagonal support"
+    },
+    {
+      "parameter": "decoder.0.weight",
+      "changed_taps": 0,
+      "max_abs_change": 0.0,
+      "cause": "Original Conv2dHexSpace.forward/filter_to_hex zeroes taps outside hexagonal support"
+    }
+  ],
+  "inference": {
+    "elapsed_s": 8.924458989000073,
+    "process_host_max_rss_MiB": 1677.66015625,
+    "peak_allocated_MiB": 5516.33837890625,
+    "peak_reserved_MiB": 6694.0
+  },
+  "decode": {
+    "elapsed_s": 1.544397914000001,
+    "process_host_max_rss_MiB": 1927.41015625,
+    "peak_allocated_MiB": 1975.64013671875,
+    "peak_reserved_MiB": 7978.0
+  },
+  "flow_shape": [
+    4,
+    485,
+    2,
+    721
+  ],
+  "all_finite": true,
+  "flow_min": -4.167316436767578,
+  "flow_max": 2.0439584255218506,
+  "decoder_weights_exact_after": true,
+  "decoder_matches_official_runtime_projection": true,
+  "output_axes": [
+    "sample",
+    "frame",
+    "flow_component",
+    "hex_pixel"
+  ],
+  "limitations": [
+    "Synthetic edge inference only; no Sintel endpoint-error evaluation or physical velocity calibration"
+  ],
+  "flow_vs_first_eval_gpu": {
+    "shape": [
+      4,
+      485,
+      2,
+      721
+    ],
+    "bitwise_equal": true,
+    "max_abs_error": 0.0,
+    "rmse": 0.0,
+    "max_relative_error_floor_1e12": 0.0,
+    "relative_l2_error": 0.0,
+    "atol": 1e-05,
+    "rtol": 1e-05,
+    "allclose": true
+  },
+  "flow_vs_cpu": {
+    "shape": [
+      4,
+      485,
+      2,
+      721
+    ],
+    "bitwise_equal": false,
+    "max_abs_error": 9.298324584960938e-06,
+    "rmse": 7.40756129838719e-07,
+    "max_relative_error_floor_1e12": 1.899253826601267,
+    "relative_l2_error": 2.226663083227568e-06,
+    "atol": 1e-05,
+    "rtol": 1e-05,
+    "allclose": true
+  },
+  "status": "PASS",
+  "weights_exact_after": true,
+  "process_host_max_rss_MiB": 2021.78125
+}

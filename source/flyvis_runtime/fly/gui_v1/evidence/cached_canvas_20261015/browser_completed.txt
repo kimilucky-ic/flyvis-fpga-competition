@@ -1,0 +1,55 @@
+- banner:
+  - link "FlyVis 实验台首页":
+    - /url: /
+    - generic: ⬡
+    - strong: FlyVis
+  - generic: 本次 GPU 已完成 · 结果已保存
+- main:
+  - heading "从一束光，到运动感知" [level=1]
+  - navigation "实验台功能入口":
+    - button "一看就懂 · 比赛演示" [pressed]
+    - button "更多离线实验"
+    - button "科研对照"
+    - button "实验与设备 · 高级"
+  - generic: 本次摄像头画面 → 原 Full GPU → 5,768节点真实均值 → 八类骨架 / 官方光流
+  - generic "新计算 · GPU实时数据驱动骨架亮度"
+  - status: 本次 GPU 计算与保存已完成，摄像头已停止。
+  - text: 视觉来源
+  - combobox "视觉来源" [disabled]:
+    - option "数字运动刺激"
+    - option "真实摄像头" [selected]
+  - text: 摄像头编号
+  - spinbutton "摄像头编号" [disabled]: "0"
+  - text: 模型推进
+  - combobox "模型推进" [disabled]:
+    - option "100步/秒 · 半速（默认）" [selected]
+    - option "50步/秒 · 四分之一速"
+    - option "200步/秒 · 原速"
+  - button "启动摄像头与 GPU 实验" [disabled]
+  - text: 骨架绘图
+  - combobox "骨架绘图" [disabled]:
+    - option "GPU · 原始像素（需无其它计算任务）"
+    - option "CPU · 稳定绘图，神经计算仍用GPU（默认）" [selected]
+  - button "停止本次计算" [disabled]
+  - button "返回原离线演示"
+  - paragraph: 本次计算与保存已完成。最后画面为本次真实结果；点击“返回原离线演示”可恢复历史播放器。
+  - paragraph: 最终汇总：计算 6000 步 / 保存 6000 步 · 100.00 步/s · 显示 14.25 FPS · 接收→绘制 p95 上界 247.6 ms
+  - button "▶ 播放" [disabled]
+  - button "回到开头" [disabled]
+  - slider "全部画面共用的时间轴" [disabled]: "0"
+  - generic: 适应
+  - generic: 亮边缘移动
+  - generic: 运动后
+  - generic: 实际 59.90 s / 模型 29.950 s
+  - button "录屏视图" [active]
+  - button "生成40秒演示视频" [disabled]
+  - status: 本次已完成 · 实际 60.00 s / 模型 30.000 s · 6000 步已可靠保存
+  - paragraph
+  - generic "同步比赛演示：视觉输入、八类真实骨架、带符号活动概览及官方光流"
+  - generic: 真实骨架 + 本次同类型721节点均值 · 固定对比度增强，不改变活动数值 · 原Full GPU / FPGA NOT_CONNECTED
+  - generic "本次数据来源、时间定义与计算身份"
+  - link "继续探索：阻断 T4 / T5 后，运动响应怎样改变？ →":
+    - /url: "#scientificPilot"
+  - generic: FlyVis 1.2.0 · 原始官方预训练网络 · 可追溯实验数据
+  - generic: 软件仿真证据 / GPU、摄像头与 FPGA 适配接口已预留
+- button "返回操作界面 · Esc"

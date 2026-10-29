@@ -1,0 +1,39 @@
+# V3 real-board800request replay acceptance
+
+Date:2026-10-12, Asia/Shanghai. PASS: independently inspected raw physical-board evidence.800/800requests completed;53,600/53,600signed Q22 codes match the separately sealed local integer oracle. This is engineering integer equivalence for request replay.
+
+## Identity and preservation
+
+- Received ZIP `V3_800_REQUEST_EVIDENCE_7c53b766f037.zip`, locally computed SHA256 `aba7b8a54b61dc421eca48045b77d040d5c8e0fc9b9e67187b05dc77045d6c79`.
+-4,812inventoried entries verified;4,813total ZIP entries including FINAL_SEAL.json. Original ZIP and extracted contents are preserved beside this report.
+- Boot `894292a3-1b60-4abf-aba3-e7b18b9e75c8`; session `replay800_prepared_5c4f1d3336cb`; approved plan SHA256 `fc94b39e0a7f1820505c49e1ffb613a3cbdf7fc52ffe805c7f1a1f3c08998209`.
+- BIT SHA256 `23cf5da15db221f399b54cae95e341e6a90a699c88d321d0a883aecca15f7569`; HWH SHA256 `3ea3f1e27c7b214e0f7a965455799875cbae94fb87bee6455a58ecbed4813f7d`.
+-800raw requests SHA256 `dd996561a574a01e607fb727385fae2fa812530331024f149243ed68105f166c`; actual combined output SHA256 `1a1dd93416a310d292c2294a999d4c8d965b1887a8eb67d08b3a6b1249829665`.
+
+## Independent verification
+
+All800rows0..799 map to accepted fixed animation01_off_right; the801st perturbation case is excluded. Full raw input prefix matches the separately held release vectors. The800x67candidate output matrix matches the separately held local oracle, not only the oracle included in the submitted archive.
+
+Every row's raw request/output, report, comparison, intent and trace bind to their hashes and to the combined arrays. Each request has exactly four pointer writes and one returned START write.800STARTs verified in total. Every trace records subsequent DONE0x0E, finalIDLE0x04, ap_return0, successful completion and safe buffer release. All allocations are aligned, non-overlapping and within reviewed HP0DDR range; pointer readbacks are exact. The original execution manifest and800console PASS lines also verify.
+
+Sealed model:67candidate neuron updates and970HH+5567RH=6537synaptic edges per request.800requests therefore exercised5,229,600edge evaluations and53,600candidate outputs. This statement counts the sealed per-request algorithm; it is not a measured hardware cycle count.
+
+All requests contain1364raw source boundary words+67old_H+67x_H. No precomputedchemical ornew_H is supplied as the PL request. The program records no Pythonfallback, COMMIT, reload or automatic retry.
+
+Physical run was operated by the user. The evidence is archived PYNQ/MMIO/raw-output provenance, not cryptographic silicon readback attestation. The independent local verifier performed0hardware operations.
+
+## Timing
+
+- Campaign482.59099932s (8min2.591s).
+- Per-request host START/DONE completion: min18.351773ms, mean29.161467ms, max492.335688ms.
+- All values include evidence I/O. No pure PL cycle latency, real-time video throughput, or GPU/FPGA feedback latency is claimed. The maximum's cause has not been separately diagnosed.
+
+Detailed timing: [timing_800.csv](timing_800.csv). Every code: [results_53600.csv](results_53600.csv). Machine-readable verification: [ARCHIVE_VERIFICATION.json](ARCHIVE_VERIFICATION.json).
+
+## Evidence boundary
+
+Each request uses recorded referenceold_H; the preceding PL output was not fed into the next request. This is800request replay, not800step true feedback. Q22scientific numerical acceptance remains NOT_GRANTED. No unedited live board recording was supplied. Any presentation video using these results must state it is archival playback.
+
+## Next operation
+
+V1/V2/V3request replay evidence is sealed. Prepare GPU-R/PL-Hbridge with current raw boundary generation, explicit old_H, stateless candidate STEP and coordinated COMMIT. Start with one real coupled step under new scoped user authorization. No further board request, reconfiguration, reset or GPU run is authorized by these completed replay tests.

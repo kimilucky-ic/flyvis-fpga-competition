@@ -1,0 +1,1 @@
+Conditional internal100MHz and camera-budget route passed; external timing remains conditional; SCCB pad-path budget added. No bitstream/board.

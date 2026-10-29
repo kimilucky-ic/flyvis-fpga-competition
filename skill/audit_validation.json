@@ -1,0 +1,15 @@
+{
+  "status": "PASS_OFFLINE_DOCUMENT_AND_SNAPSHOT_INTEGRITY_ONLY",
+  "skills_checked": 14,
+  "candidate_not_counted": "fpga-uart-link-validation",
+  "source_records_checked": 24,
+  "local_markdown_links_checked": 182,
+  "offline_checker_requires_original_workspace": false,
+  "new_board_gpu_eda_operations": 0,
+  "independent_behavioral_reuse": "NOT_RUN",
+  "missing_evidence_list": "validation_gaps.md",
+  "errors": [],
+  "codex_frontmatter_normalized_exports_passed": 14,
+  "working_sources_frontmatter_passed": 14,
+  "original_source_hashes_rechecked": 24
+}

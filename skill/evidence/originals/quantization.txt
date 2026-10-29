@@ -1,0 +1,52 @@
+# MaleCNS inference v1: four-seed fixed-point robustness
+
+## Scope
+
+Software-only comparison on the frozen 321-neuron / 7,590-edge MaleCNS subnetwork. No connectome edge was removed; no old SNN, fly project, Vivado build, bitstream, or board state was changed.
+Each seed uses the same 432-trial synthetic DA1 / VA1d / VA1v protocol and stratified 324/108 train/test split as the established baseline. This is stimulus-channel decoding, not biological odor recognition or validated fly behavior.
+
+`Own decoder` is fitted independently on each model's training features. `Float decoder transfer` applies the scaler and nearest-centroid prototypes fitted only on the float training split directly to the quantized test outputs; this is the more relevant software test for later reusing one PC decoder on the board.
+
+## Four-seed results
+
+| Weight bits | Glutamate sign | Float accuracy mean (range) | Quantized own-decoder mean (range) | Float-decoder transfer mean (range) | Spike bits equal to float | Exact full 321-neuron steps | MBON feature MAE |
+|---:|---|---:|---:|---:|---:|---:|---:|
+| 8 | glutamate_positive | 80.1% (78.7%–81.5%) | 81.9% (80.6%–85.2%) | 64.4% (63.0%–64.8%) | 93.191% | 11.552% | 3.5346 |
+| 10 | glutamate_positive | 80.1% (78.7%–81.5%) | 78.0% (76.9%–80.6%) | 75.2% (63.9%–80.6%) | 93.670% | 18.001% | 2.5322 |
+| 12 | glutamate_positive | 80.1% (78.7%–81.5%) | 80.6% (78.7%–81.5%) | 80.8% (78.7%–82.4%) | 94.540% | 32.039% | 1.9430 |
+| 8 | glutamate_negative | 100.0% (100.0%–100.0%) | 100.0% (100.0%–100.0%) | 100.0% (100.0%–100.0%) | 99.173% | 64.617% | 0.2585 |
+| 10 | glutamate_negative | 100.0% (100.0%–100.0%) | 100.0% (100.0%–100.0%) | 100.0% (100.0%–100.0%) | 99.441% | 72.373% | 0.1817 |
+| 12 | glutamate_negative | 100.0% (100.0%–100.0%) | 100.0% (100.0%–100.0%) | 100.0% (100.0%–100.0%) | 99.655% | 81.878% | 0.1027 |
+
+Each confusion matrix below pools the 4 held-out splits (144 examples per class; 432 total). Rows are true A/B/C, columns are predicted A/B/C.
+
+### Positive-glutamate hypothesis, float-trained decoder
+
+| Model | True A → A/B/C | True B → A/B/C | True C → A/B/C |
+|---|---|---|---|
+| Float reference | 140/1/3 | 3/134/7 | 72/0/72 |
+| 8-bit | 70/73/1 | 6/136/2 | 72/0/72 |
+| 10-bit | 123/19/2 | 5/130/9 | 72/0/72 |
+| 12-bit | 142/0/2 | 2/135/7 | 72/0/72 |
+
+## Weight and state-width checks
+
+| Weight bits | Fraction bits | Quantized-to-zero edges | Saturated edges | Weight RMSE | Worst-case current bound | Conservative membrane bound |
+|---:|---:|---:|---:|---:|---:|---:|
+| 8 | 6 | 10 | 0 | 0.004510 | 4.1875 | 41.873 |
+| 10 | 8 | 0 | 0 | 0.001152 | 4.0820 | 40.818 |
+| 12 | 10 | 0 | 0 | 0.000286 | 4.0088 | 40.086 |
+
+The conservative membrane bound assumes any subset of all 7,590 edges may be active, bounds each target current by the sum of absolute incoming quantized weights, and includes one Q16.16 LSB of signed leak-rounding allowance per recurrence. The largest bound is compared with the signed 32-bit Q16.16 range of about ±32,768; no weight saturates. Eight-bit weights round 10 of the 7,590 nonzero edge values to zero; 10- and 12-bit round none to zero.
+
+## Engineering conclusion
+
+- All tested precisions preserve the held-out score under the negative-glutamate assumption, but that sign is not biologically established in this model.
+- Under the positive-glutamate assumption, 8-bit and 10-bit show a material drop when the original float-trained decoder is reused. Twelve-bit is the first tested width whose four-seed transfer accuracy (80.8% mean, 78.7–82.4% range) tracks the float baseline (80.1% mean, 78.7–81.5% range).
+- Twelve-bit is therefore the conservative candidate for the first RTL mapping, not a final biological or bit-exact signoff. Its full internal spike vector still exactly matches float on only about 32% of timesteps for the positive-sign case; per-timestep spike traces must remain a hardware acceptance check.
+- Eight-bit would save edge storage but is not a safe default while polarity is unresolved and the float-trained decoder is part of the contract.
+
+## Evidence boundary and artifacts
+
+This four-seed sweep is software evidence only and did not itself produce RTL. A separate BRAM inference candidate has since passed RTL simulation and OOC routing; it is documented in the neighboring malecns_inference_v1_bram directory. No bitstream or board run has been produced. Detailed per-seed trial and MBON-pattern files are excluded from this compact publication snapshot. The exact model and contract are in fixed_point_model.py and run_quantization_sweep.py.
+

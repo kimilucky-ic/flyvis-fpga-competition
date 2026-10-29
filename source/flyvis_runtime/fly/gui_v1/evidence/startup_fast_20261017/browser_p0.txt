@@ -1,0 +1,35 @@
+- banner:
+  - link "FlyVis 实验台首页":
+    - /url: /
+    - generic: ⬡
+    - strong: FlyVis / VISION LAB
+  - generic: 果蝇视觉神经网络实验台 FPGA 创新设计大赛
+  - generic: OFFLINE REPLAY · 按来源核验
+- main:
+  - generic: FLYVIS / VISUAL EXPERIMENTS
+  - heading "科研对照" [level=1]
+  - paragraph: 选择一项已完成的研究，查看真实差异
+  - navigation "实验台功能入口":
+    - button "一看就懂 · 比赛演示"
+    - button "更多离线实验"
+    - button "科研对照" [active] [pressed]
+    - button "实验与设备 · 高级"
+  - text: → →
+  - text: 选择研究
+  - combobox "选择科研对照":
+    - option "保留节点数量 · 科研 B"
+    - option "T4 / T5 阻断 · 科研先导"
+    - option "固定动画 · Full / Python 对照" [selected]
+    - option "GPU–FPGA 联合结果 · 需完整验收包"
+  - paragraph: 使用已经计算并核验的结果。原始身份和指标定义保留在各实验中。
+  - region "固定动画真实闭环交接":
+    - strong: 固定动画闭环对照 · 01_off_right
+    - status: 已验证软件计算结果 · 当前离线回放
+    - paragraph: 67 节点 T5c 子回路 · SOURCE_RAW · 800 个 5ms 模型步。已验收的六条件历史回放与本次闭环对照分别记录。
+    - generic: Full GPU · 本次对照：已验证结果包 · 回放
+    - generic: Python Replacement · SOURCE_RAW：已验证结果包 · 回放
+    - generic: FPGA Replacement：unavailable · 无已验收板级结果
+    - button "加载本次 Full / Python 对照"
+    - generic "输入身份、证据与待交接事项"
+  - generic: FlyVis 1.2.0 · 原始官方预训练网络 · 可追溯实验数据
+  - generic: 软件仿真证据 / GPU、摄像头与 FPGA 适配接口已预留

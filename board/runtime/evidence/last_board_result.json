@@ -1,0 +1,12 @@
+{
+  "status": "PASS_RECOVERED_SAVED_RECORD_AUDIT",
+  "session": "4414325288fb539daafa85ebb6cb4568",
+  "steps": 1024,
+  "state_words": 46765056,
+  "mismatch_words": 0,
+  "duration_s": 60.0739310150002,
+  "mean_step_ms": 58.66594825683613,
+  "steps_per_second": 17.045663280205712,
+  "camera_closed": true,
+  "audit_result_sha256": "53da8841ed624e315212a21943ec7c3d46769916a1d60b06206d7d18e229e092"
+}

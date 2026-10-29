@@ -1,0 +1,350 @@
+[
+  {
+    "path": "neural/banked_state_mem.sv",
+    "original_sha256": "ba5c9e8c9165277881a3b2cbbd2588b45cba923fda84a533e01b4f0bfeb7f5b9",
+    "sha256": "ae12466afa7bdbbdbd5fed74e4cf304662a003209f2fe73a66c4974de05856f4",
+    "change": "path_literal_only"
+  },
+  {
+    "path": "neural/compact_edge_gen.sv",
+    "original_sha256": "6f7685bb1c053c7c84c86922c13b2fb4233c72b65f3a092d8d48507198fc61d2",
+    "sha256": "6f7685bb1c053c7c84c86922c13b2fb4233c72b65f3a092d8d48507198fc61d2",
+    "change": "none"
+  },
+  {
+    "path": "neural/flyvis_ddr_snapshot_top.sv",
+    "original_sha256": "35be2069301b4d18e0227a5154d792a828c860c9883430aee9619877afa5a76c",
+    "sha256": "35be2069301b4d18e0227a5154d792a828c860c9883430aee9619877afa5a76c",
+    "change": "none"
+  },
+  {
+    "path": "neural/flyvis_ddr_soc_ip.sv",
+    "original_sha256": "9b11717c94daec0ff19d3ede085240da2aad19ad68245baa8c73a6a9e9ca1cec",
+    "sha256": "8a4c3b2574740fbe0fb605cbaf85f4cf4a9995557ab303a230456ceb50d37d5c",
+    "change": "path_literal_only"
+  },
+  {
+    "path": "neural/flyvis_lane.sv",
+    "original_sha256": "937a8bb6f7c6817f5a8165bfeff63858d557c88593149339c17da08452fa1ec3",
+    "sha256": "937a8bb6f7c6817f5a8165bfeff63858d557c88593149339c17da08452fa1ec3",
+    "change": "none"
+  },
+  {
+    "path": "neural/fp32_rne.sv",
+    "original_sha256": "bac6fc2843798221d9486f42622028ad40b0ffd00d62fb357ff5904494de50c8",
+    "sha256": "bac6fc2843798221d9486f42622028ad40b0ffd00d62fb357ff5904494de50c8",
+    "change": "none"
+  },
+  {
+    "path": "neural/initial.hex",
+    "original_sha256": "1cedcdb1adbe1cdaf70a92f7d76eeaf3a23becdebc8a762a3e17473b64df8db2",
+    "sha256": "1cedcdb1adbe1cdaf70a92f7d76eeaf3a23becdebc8a762a3e17473b64df8db2",
+    "change": "none"
+  },
+  {
+    "path": "neural/map.hex",
+    "original_sha256": "c1ee5bc44d29a2c1a6204596306835138a51659f432194dc46cb2974e4b6858f",
+    "sha256": "c1ee5bc44d29a2c1a6204596306835138a51659f432194dc46cb2974e4b6858f",
+    "change": "none"
+  },
+  {
+    "path": "neural/meta.hex",
+    "original_sha256": "25a1393de9d90350b6197623231900dd6699bd528bb928640cb42cc6d4b07b98",
+    "sha256": "25a1393de9d90350b6197623231900dd6699bd528bb928640cb42cc6d4b07b98",
+    "change": "none"
+  },
+  {
+    "path": "neural/rows.hex",
+    "original_sha256": "c76aebfc491902f291487f5bd24586dffa352cd357d1281ff81cc5190da936ac",
+    "sha256": "c76aebfc491902f291487f5bd24586dffa352cd357d1281ff81cc5190da936ac",
+    "change": "none"
+  },
+  {
+    "path": "neural/snapshot_axi_writer.sv",
+    "original_sha256": "fd835765d26f13f297c51b09baef4cf4006a2dd4aa9f7472228e2abf1fc58d6f",
+    "sha256": "fd835765d26f13f297c51b09baef4cf4006a2dd4aa9f7472228e2abf1fc58d6f",
+    "change": "none"
+  },
+  {
+    "path": "neural/state_bank_00.hex",
+    "original_sha256": "adacadf1fd8a14b7b2632d84df0cf763bf15f4031508cd3ed266368fbfa83b1a",
+    "sha256": "adacadf1fd8a14b7b2632d84df0cf763bf15f4031508cd3ed266368fbfa83b1a",
+    "change": "none"
+  },
+  {
+    "path": "neural/state_bank_01.hex",
+    "original_sha256": "f66e2b116f5fd290f8d042fbeae1b82c37d55b541246195596f4e7d810e2e72d",
+    "sha256": "f66e2b116f5fd290f8d042fbeae1b82c37d55b541246195596f4e7d810e2e72d",
+    "change": "none"
+  },
+  {
+    "path": "neural/state_bank_02.hex",
+    "original_sha256": "18a3e2f118973d84d959187708ac6cc6bcf473dd05aae2df9e97ddb7df1f2081",
+    "sha256": "18a3e2f118973d84d959187708ac6cc6bcf473dd05aae2df9e97ddb7df1f2081",
+    "change": "none"
+  },
+  {
+    "path": "neural/state_bank_03.hex",
+    "original_sha256": "f079d5067b06c649cc102671af15e24cd9524b1ee4d20018a88d6b186df504d7",
+    "sha256": "f079d5067b06c649cc102671af15e24cd9524b1ee4d20018a88d6b186df504d7",
+    "change": "none"
+  },
+  {
+    "path": "neural/state_bank_04.hex",
+    "original_sha256": "dff20fda497cb6eb09c20d1449273c4c8a9388ab286eb2a6d7da342c3778f19a",
+    "sha256": "dff20fda497cb6eb09c20d1449273c4c8a9388ab286eb2a6d7da342c3778f19a",
+    "change": "none"
+  },
+  {
+    "path": "neural/state_bank_05.hex",
+    "original_sha256": "ebb5813a1c6fc5cca9387f1c141241c7ba7ae2a3ad17d5f6166ad36a474c4f80",
+    "sha256": "ebb5813a1c6fc5cca9387f1c141241c7ba7ae2a3ad17d5f6166ad36a474c4f80",
+    "change": "none"
+  },
+  {
+    "path": "neural/state_bank_06.hex",
+    "original_sha256": "3c3e2ff7411544205f17e6707b83959573a61f3e0abe030d50185011fa135f40",
+    "sha256": "3c3e2ff7411544205f17e6707b83959573a61f3e0abe030d50185011fa135f40",
+    "change": "none"
+  },
+  {
+    "path": "neural/state_bank_07.hex",
+    "original_sha256": "1a25fa732160d39931d53ad5f183f04aa08a4636fba92dfe5f717ce65041dd68",
+    "sha256": "1a25fa732160d39931d53ad5f183f04aa08a4636fba92dfe5f717ce65041dd68",
+    "change": "none"
+  },
+  {
+    "path": "neural/state_bank_08.hex",
+    "original_sha256": "31380d6be775850d2f39850cebf7f30fb7c0a245d7dfdcaa03ee928cc72ad5b0",
+    "sha256": "31380d6be775850d2f39850cebf7f30fb7c0a245d7dfdcaa03ee928cc72ad5b0",
+    "change": "none"
+  },
+  {
+    "path": "neural/state_bank_09.hex",
+    "original_sha256": "4e1a23869b84bc0eb1edccc89c19be2b7962f9837bf7c918b13c58895790076c",
+    "sha256": "4e1a23869b84bc0eb1edccc89c19be2b7962f9837bf7c918b13c58895790076c",
+    "change": "none"
+  },
+  {
+    "path": "neural/state_bank_10.hex",
+    "original_sha256": "744612ed011048c7472bcd221fc58a370ce1cecdb2873b423a13ada90fe2150d",
+    "sha256": "744612ed011048c7472bcd221fc58a370ce1cecdb2873b423a13ada90fe2150d",
+    "change": "none"
+  },
+  {
+    "path": "neural/state_bank_11.hex",
+    "original_sha256": "6e8fc6a63ff14080921ebcfd81f768611e8cfca2a06c5dbde5be28b940906292",
+    "sha256": "6e8fc6a63ff14080921ebcfd81f768611e8cfca2a06c5dbde5be28b940906292",
+    "change": "none"
+  },
+  {
+    "path": "neural/state_bank_12.hex",
+    "original_sha256": "1f8dd49f6ecd1754e3976217327dcf29a91b40e823b6f2272bb3e3104fca150c",
+    "sha256": "1f8dd49f6ecd1754e3976217327dcf29a91b40e823b6f2272bb3e3104fca150c",
+    "change": "none"
+  },
+  {
+    "path": "neural/state_bank_13.hex",
+    "original_sha256": "fa86a9f545ad96528c2157bf8f1060ac876afdcbf3e059c5936f79a4b90c799d",
+    "sha256": "fa86a9f545ad96528c2157bf8f1060ac876afdcbf3e059c5936f79a4b90c799d",
+    "change": "none"
+  },
+  {
+    "path": "neural/state_bank_14.hex",
+    "original_sha256": "6d5037ec6f3f9997b2540f3ef2061b5ede92ac55e2ef1aa3ea7aee6ad103b6fb",
+    "sha256": "6d5037ec6f3f9997b2540f3ef2061b5ede92ac55e2ef1aa3ea7aee6ad103b6fb",
+    "change": "none"
+  },
+  {
+    "path": "neural/state_bank_15.hex",
+    "original_sha256": "c1ac2b17b1521cbf907f14acbd425d7ec9757cba9716f99d49a56cecc81820dd",
+    "sha256": "c1ac2b17b1521cbf907f14acbd425d7ec9757cba9716f99d49a56cecc81820dd",
+    "change": "none"
+  },
+  {
+    "path": "neural/state_bank_16.hex",
+    "original_sha256": "644a43e72a5f38205498c0b38b3aaa63915e93e7f49420c7687139e6e86d2e6d",
+    "sha256": "644a43e72a5f38205498c0b38b3aaa63915e93e7f49420c7687139e6e86d2e6d",
+    "change": "none"
+  },
+  {
+    "path": "neural/state_bank_17.hex",
+    "original_sha256": "a76a3a6a657f99e397b19aaf257e6327ae8e666c3021c2ce36c952bc4c6bc726",
+    "sha256": "a76a3a6a657f99e397b19aaf257e6327ae8e666c3021c2ce36c952bc4c6bc726",
+    "change": "none"
+  },
+  {
+    "path": "neural/state_bank_18.hex",
+    "original_sha256": "a33ec33065e7fd5ff8574724957ce62e342aefcd0234b970ffa3afd2442c16c7",
+    "sha256": "a33ec33065e7fd5ff8574724957ce62e342aefcd0234b970ffa3afd2442c16c7",
+    "change": "none"
+  },
+  {
+    "path": "neural/state_bank_19.hex",
+    "original_sha256": "433abc576459634ccfced84a50b3ec31bc4759fc739b181028463ec5f4c262b9",
+    "sha256": "433abc576459634ccfced84a50b3ec31bc4759fc739b181028463ec5f4c262b9",
+    "change": "none"
+  },
+  {
+    "path": "neural/state_bank_20.hex",
+    "original_sha256": "73ca367ab3b31a62ec9f367d7e5d443c18256e8bfbb8ac0d4d6fe126307566a7",
+    "sha256": "73ca367ab3b31a62ec9f367d7e5d443c18256e8bfbb8ac0d4d6fe126307566a7",
+    "change": "none"
+  },
+  {
+    "path": "neural/state_bank_21.hex",
+    "original_sha256": "43bd561dab3f76cdcd77943600f10b5da2aa5108f75f5b3dec17a62dc1a0d27e",
+    "sha256": "43bd561dab3f76cdcd77943600f10b5da2aa5108f75f5b3dec17a62dc1a0d27e",
+    "change": "none"
+  },
+  {
+    "path": "neural/state_bank_22.hex",
+    "original_sha256": "ce1d421dae04d5a1cab19ea97c6d7bb584d04aa9dced1770b41ed6f09a9cea1e",
+    "sha256": "ce1d421dae04d5a1cab19ea97c6d7bb584d04aa9dced1770b41ed6f09a9cea1e",
+    "change": "none"
+  },
+  {
+    "path": "neural/state_bank_23.hex",
+    "original_sha256": "0395ddc63de53a175d2597aabce2d2b29fba2757598aa08ba9555b09e16f1fc7",
+    "sha256": "0395ddc63de53a175d2597aabce2d2b29fba2757598aa08ba9555b09e16f1fc7",
+    "change": "none"
+  },
+  {
+    "path": "neural/state_bank_24.hex",
+    "original_sha256": "50ebb35ac177fe366debc630bef02046d386f3839132a1f186a1f14f40e97477",
+    "sha256": "50ebb35ac177fe366debc630bef02046d386f3839132a1f186a1f14f40e97477",
+    "change": "none"
+  },
+  {
+    "path": "neural/state_bank_25.hex",
+    "original_sha256": "adf336cb188ce97a9f6f177cb0fdca0f72cc4ac04d6de4f2c57bb811c4a8becc",
+    "sha256": "adf336cb188ce97a9f6f177cb0fdca0f72cc4ac04d6de4f2c57bb811c4a8becc",
+    "change": "none"
+  },
+  {
+    "path": "neural/state_bank_26.hex",
+    "original_sha256": "17fcb1c45378945902220b61c87bfb8a03159f8f11322b1e253f2476727c8b5f",
+    "sha256": "17fcb1c45378945902220b61c87bfb8a03159f8f11322b1e253f2476727c8b5f",
+    "change": "none"
+  },
+  {
+    "path": "neural/state_bank_27.hex",
+    "original_sha256": "5311d8d1fc918267310a6ebfdef8e0a621008cb081712eab1c48f69ccc3f56c9",
+    "sha256": "5311d8d1fc918267310a6ebfdef8e0a621008cb081712eab1c48f69ccc3f56c9",
+    "change": "none"
+  },
+  {
+    "path": "neural/state_bank_28.hex",
+    "original_sha256": "66dd3b8b955bd48b3282243703660c37ee7966546ea57b975d7dacf8b2202760",
+    "sha256": "66dd3b8b955bd48b3282243703660c37ee7966546ea57b975d7dacf8b2202760",
+    "change": "none"
+  },
+  {
+    "path": "neural/state_bank_29.hex",
+    "original_sha256": "bdc31524d3f10825505871d347fdfdfe0e1a9827e3dd008a0ff60cf4d51e62c7",
+    "sha256": "bdc31524d3f10825505871d347fdfdfe0e1a9827e3dd008a0ff60cf4d51e62c7",
+    "change": "none"
+  },
+  {
+    "path": "neural/state_bank_30.hex",
+    "original_sha256": "60bd1cef0683350fc91de4717fcf3a997580f89ce80fbd8b91cc778a4b621614",
+    "sha256": "60bd1cef0683350fc91de4717fcf3a997580f89ce80fbd8b91cc778a4b621614",
+    "change": "none"
+  },
+  {
+    "path": "neural/state_bank_31.hex",
+    "original_sha256": "3c5fbbaa4421b6582e2571b835245018e0c77b5fb7ca29d6bfa417ef28f54080",
+    "sha256": "3c5fbbaa4421b6582e2571b835245018e0c77b5fb7ca29d6bfa417ef28f54080",
+    "change": "none"
+  },
+  {
+    "path": "neural/state_bank_32.hex",
+    "original_sha256": "f2e37495bdff50941ae8cda5876fbd23978491392c6d9d7b765134f218718e9d",
+    "sha256": "f2e37495bdff50941ae8cda5876fbd23978491392c6d9d7b765134f218718e9d",
+    "change": "none"
+  },
+  {
+    "path": "neural/state_bank_33.hex",
+    "original_sha256": "1f67207655ef9e8bd92869172ed97745856064e2904c6f4fe73411ae1e3ef28c",
+    "sha256": "1f67207655ef9e8bd92869172ed97745856064e2904c6f4fe73411ae1e3ef28c",
+    "change": "none"
+  },
+  {
+    "path": "neural/state_bank_34.hex",
+    "original_sha256": "1484017264cdf1cbaa8d7bcba8e7a31dd97da788150bcf514d91155b2d618031",
+    "sha256": "1484017264cdf1cbaa8d7bcba8e7a31dd97da788150bcf514d91155b2d618031",
+    "change": "none"
+  },
+  {
+    "path": "neural/state_bank_35.hex",
+    "original_sha256": "72daecd67cdfbba44406d581353cb6b2b4d084bb81cc180aaec8ef08031539a1",
+    "sha256": "72daecd67cdfbba44406d581353cb6b2b4d084bb81cc180aaec8ef08031539a1",
+    "change": "none"
+  },
+  {
+    "path": "neural/state_bank_36.hex",
+    "original_sha256": "689cf3b1528436355c55849c1030cf75e91a6d059a68c4cb9c617d7949eb9b8c",
+    "sha256": "689cf3b1528436355c55849c1030cf75e91a6d059a68c4cb9c617d7949eb9b8c",
+    "change": "none"
+  },
+  {
+    "path": "neural/state_bank_37.hex",
+    "original_sha256": "b758194e617f3de870f72002c360842d868316f8cb2fae2ebab924ee0c34dd85",
+    "sha256": "b758194e617f3de870f72002c360842d868316f8cb2fae2ebab924ee0c34dd85",
+    "change": "none"
+  },
+  {
+    "path": "neural/state_bank_38.hex",
+    "original_sha256": "864de4f272754cbd48153408d59b916b472145ebd277658d02335948d2bdb35b",
+    "sha256": "864de4f272754cbd48153408d59b916b472145ebd277658d02335948d2bdb35b",
+    "change": "none"
+  },
+  {
+    "path": "neural/state_bank_39.hex",
+    "original_sha256": "ba8b381c28d0d0ddd105d19aa1c7890a6a592fed41fec0ea9efe5ee7b0e4fd1c",
+    "sha256": "ba8b381c28d0d0ddd105d19aa1c7890a6a592fed41fec0ea9efe5ee7b0e4fd1c",
+    "change": "none"
+  },
+  {
+    "path": "neural/state_bank_40.hex",
+    "original_sha256": "dd16eab82ea314df34cb6cde7020ea395ea3309781aaa9d47389e7ce93326304",
+    "sha256": "dd16eab82ea314df34cb6cde7020ea395ea3309781aaa9d47389e7ce93326304",
+    "change": "none"
+  },
+  {
+    "path": "neural/state_bank_41.hex",
+    "original_sha256": "cbd7747f8983992ce3c90c8b840f75361c0d9f5cd0b932a9dda18fda924ff077",
+    "sha256": "cbd7747f8983992ce3c90c8b840f75361c0d9f5cd0b932a9dda18fda924ff077",
+    "change": "none"
+  },
+  {
+    "path": "neural/state_bank_42.hex",
+    "original_sha256": "24b43fa5b14c93ee2d48757c156465747579ed3c67908ef35c7d45c6f21040fc",
+    "sha256": "24b43fa5b14c93ee2d48757c156465747579ed3c67908ef35c7d45c6f21040fc",
+    "change": "none"
+  },
+  {
+    "path": "neural/state_bank_43.hex",
+    "original_sha256": "6c649594d39b9abef8e75908387a753534a6528eb3619877700144bf90907c93",
+    "sha256": "6c649594d39b9abef8e75908387a753534a6528eb3619877700144bf90907c93",
+    "change": "none"
+  },
+  {
+    "path": "neural/state_bank_44.hex",
+    "original_sha256": "e97cfa83561a539e2924c3100e8cfb99e5a8c3bb46c3c1fc050f45ceae5ed99c",
+    "sha256": "e97cfa83561a539e2924c3100e8cfb99e5a8c3bb46c3c1fc050f45ceae5ed99c",
+    "change": "none"
+  },
+  {
+    "path": "neural/stimulus.hex",
+    "original_sha256": "e7ff13a6e7add089a4ea6bc2fd035e67bb6b804b75bc5836d8a20631cfb64eb7",
+    "sha256": "e7ff13a6e7add089a4ea6bc2fd035e67bb6b804b75bc5836d8a20631cfb64eb7",
+    "change": "none"
+  },
+  {
+    "path": "neural/sync_mem.sv",
+    "original_sha256": "08089f6a6ffd9fd9cb1df6ac0d7379b96cac4e3d5d87d1d9b46c75f6078783fa",
+    "sha256": "08089f6a6ffd9fd9cb1df6ac0d7379b96cac4e3d5d87d1d9b46c75f6078783fa",
+    "change": "none"
+  }
+]

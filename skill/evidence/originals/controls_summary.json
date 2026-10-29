@@ -1,0 +1,786 @@
+{
+  "status": "PASS_ALL_NEW_PREREGISTERED_GATES",
+  "records": [
+    {
+      "case": "TEST_ON135_FULL",
+      "group": "motion",
+      "pass_gate": true,
+      "windows": {
+        "allpost": {
+          "H_response_relative_L2": 7.960071094540102e-07,
+          "H_reference_response_rms": 0.12957750639151155,
+          "flow": {
+            "reference_response_rms": 1.0687363793900602,
+            "reference_pre_window_rms": 6.233355940835994e-05,
+            "reference_eligible": true,
+            "pre_step_range": [
+              160,
+              199
+            ],
+            "active_step_range": [
+              200,
+              999
+            ],
+            "n_hexals": 331,
+            "Q": 0.9999986579724987,
+            "magnitude_ratio": 0.9999986579731137,
+            "field_error_E": 1.7410255185713682e-06,
+            "angle_deg": 6.354737675346909e-05,
+            "pass_gate": true
+          },
+          "pass_gate": true
+        },
+        "active": {
+          "H_response_relative_L2": 6.666081600439639e-07,
+          "H_reference_response_rms": 0.14657036754871924,
+          "flow": {
+            "reference_response_rms": 1.2452091755193702,
+            "reference_pre_window_rms": 6.233355940835994e-05,
+            "reference_eligible": true,
+            "pre_step_range": [
+              160,
+              199
+            ],
+            "active_step_range": [
+              320,
+              719
+            ],
+            "n_hexals": 331,
+            "Q": 0.9999990354653739,
+            "magnitude_ratio": 0.999999035465744,
+            "field_error_E": 1.2924238314518904e-06,
+            "angle_deg": 4.929017975519678e-05,
+            "pass_gate": true
+          },
+          "pass_gate": true
+        },
+        "stopped": {
+          "H_response_relative_L2": 1.563465704436133e-06,
+          "H_reference_response_rms": 0.07487041627275177,
+          "flow": {
+            "reference_response_rms": 0.07637300496610448,
+            "reference_pre_window_rms": 6.233355940835994e-05,
+            "reference_eligible": true,
+            "pre_step_range": [
+              160,
+              199
+            ],
+            "active_step_range": [
+              840,
+              999
+            ],
+            "n_hexals": 331,
+            "Q": 0.9999997816659145,
+            "magnitude_ratio": 0.9999997816780751,
+            "field_error_E": 4.936455839062472e-06,
+            "angle_deg": 0.0002825629633300243,
+            "pass_gate": true
+          },
+          "pass_gate": true
+        }
+      },
+      "status": "PASS_ORIGINAL_GATE"
+    },
+    {
+      "case": "TEST_OFF315_FULL",
+      "group": "motion",
+      "pass_gate": true,
+      "windows": {
+        "allpost": {
+          "H_response_relative_L2": 8.976806243796374e-07,
+          "H_reference_response_rms": 0.11713302919394548,
+          "flow": {
+            "reference_response_rms": 1.160973980561964,
+            "reference_pre_window_rms": 6.233355940835994e-05,
+            "reference_eligible": true,
+            "pre_step_range": [
+              160,
+              199
+            ],
+            "active_step_range": [
+              200,
+              999
+            ],
+            "n_hexals": 331,
+            "Q": 0.9999996479706632,
+            "magnitude_ratio": 0.9999996479715931,
+            "field_error_E": 1.4084926275527233e-06,
+            "angle_deg": 7.813778203498976e-05,
+            "pass_gate": true
+          },
+          "pass_gate": true
+        },
+        "active": {
+          "H_response_relative_L2": 6.812950047152171e-07,
+          "H_reference_response_rms": 0.14363648501788487,
+          "flow": {
+            "reference_response_rms": 1.6081555281527928,
+            "reference_pre_window_rms": 6.233355940835994e-05,
+            "reference_eligible": true,
+            "pre_step_range": [
+              160,
+              199
+            ],
+            "active_step_range": [
+              320,
+              719
+            ],
+            "n_hexals": 331,
+            "Q": 0.9999995469454128,
+            "magnitude_ratio": 0.9999995469458752,
+            "field_error_E": 1.0632144890903763e-06,
+            "angle_deg": 5.509982861657347e-05,
+            "pass_gate": true
+          },
+          "pass_gate": true
+        },
+        "stopped": {
+          "H_response_relative_L2": 1.8348438510485375e-06,
+          "H_reference_response_rms": 0.07024787287831673,
+          "flow": {
+            "reference_response_rms": 0.24313927396765617,
+            "reference_pre_window_rms": 6.233355940835994e-05,
+            "reference_eligible": true,
+            "pre_step_range": [
+              160,
+              199
+            ],
+            "active_step_range": [
+              840,
+              999
+            ],
+            "n_hexals": 331,
+            "Q": 1.000004703307043,
+            "magnitude_ratio": 1.000004703322232,
+            "field_error_E": 7.245647211286411e-06,
+            "angle_deg": 0.00031579124057677665,
+            "pass_gate": true
+          },
+          "pass_gate": true
+        }
+      },
+      "status": "PASS_ORIGINAL_GATE"
+    },
+    {
+      "case": "TEST_ON135_LOCAL_GRAY",
+      "group": "motion",
+      "pass_gate": true,
+      "windows": {
+        "allpost": {
+          "H_response_relative_L2": 1.835755421987052e-06,
+          "H_reference_response_rms": 0.06122724214630868,
+          "flow": {
+            "reference_response_rms": 0.2101090631869563,
+            "reference_pre_window_rms": 6.233355940835994e-05,
+            "reference_eligible": true,
+            "pre_step_range": [
+              160,
+              199
+            ],
+            "active_step_range": [
+              200,
+              999
+            ],
+            "n_hexals": 331,
+            "Q": 0.9999993914052823,
+            "magnitude_ratio": 0.9999993914068248,
+            "field_error_E": 1.858818617684751e-06,
+            "angle_deg": 0.00010063670118767513,
+            "pass_gate": true
+          },
+          "pass_gate": true
+        },
+        "active": {
+          "H_response_relative_L2": 1.4844153998399954e-06,
+          "H_reference_response_rms": 0.06777133724185351,
+          "flow": {
+            "reference_response_rms": 0.2707711574887278,
+            "reference_pre_window_rms": 6.233355940835994e-05,
+            "reference_eligible": true,
+            "pre_step_range": [
+              160,
+              199
+            ],
+            "active_step_range": [
+              320,
+              719
+            ],
+            "n_hexals": 331,
+            "Q": 0.9999993227583185,
+            "magnitude_ratio": 0.9999993227594207,
+            "field_error_E": 1.6318858279059762e-06,
+            "angle_deg": 8.50694508665027e-05,
+            "pass_gate": true
+          },
+          "pass_gate": true,
+          "foreground_flow": {
+            "reference_response_rms": 0.6464954851149781,
+            "reference_pre_window_rms": 8.96683996441213e-05,
+            "reference_eligible": true,
+            "pre_step_range": [
+              160,
+              199
+            ],
+            "active_step_range": [
+              320,
+              719
+            ],
+            "n_hexals": 33,
+            "Q": 0.9999990865838578,
+            "magnitude_ratio": 0.9999990865845145,
+            "field_error_E": 1.4654100401046782e-06,
+            "angle_deg": 6.566290910312347e-05,
+            "pass_gate": true
+          },
+          "foreground_hex_ids": [
+            420,
+            421,
+            447,
+            448,
+            449,
+            450,
+            451,
+            474,
+            475,
+            476,
+            477,
+            478,
+            479,
+            500,
+            501,
+            502,
+            503,
+            504,
+            505,
+            526,
+            527,
+            528,
+            529,
+            530,
+            531,
+            551,
+            552,
+            553,
+            554,
+            555,
+            575,
+            576,
+            577
+          ]
+        },
+        "stopped": {
+          "H_response_relative_L2": 2.8272752267295797e-06,
+          "H_reference_response_rms": 0.05035728349496424,
+          "flow": {
+            "reference_response_rms": 0.07129004879398575,
+            "reference_pre_window_rms": 6.233355940835994e-05,
+            "reference_eligible": true,
+            "pre_step_range": [
+              160,
+              199
+            ],
+            "active_step_range": [
+              840,
+              999
+            ],
+            "n_hexals": 331,
+            "Q": 1.0000002148423017,
+            "magnitude_ratio": 1.0000002148519227,
+            "field_error_E": 4.391816926563051e-06,
+            "angle_deg": 0.0002513315884004382,
+            "pass_gate": true
+          },
+          "pass_gate": true
+        }
+      },
+      "status": "PASS_ORIGINAL_GATE"
+    },
+    {
+      "case": "TEST_OFF315_LOCAL_GRAY",
+      "group": "motion",
+      "pass_gate": true,
+      "windows": {
+        "allpost": {
+          "H_response_relative_L2": 1.8684562374164907e-06,
+          "H_reference_response_rms": 0.061640989583419584,
+          "flow": {
+            "reference_response_rms": 0.34674017502321697,
+            "reference_pre_window_rms": 6.233355940835994e-05,
+            "reference_eligible": true,
+            "pre_step_range": [
+              160,
+              199
+            ],
+            "active_step_range": [
+              200,
+              999
+            ],
+            "n_hexals": 331,
+            "Q": 0.9999998576141189,
+            "magnitude_ratio": 0.9999998576148831,
+            "field_error_E": 1.2443628925043056e-06,
+            "angle_deg": 7.083234662828759e-05,
+            "pass_gate": true
+          },
+          "pass_gate": true
+        },
+        "active": {
+          "H_response_relative_L2": 1.55745517928288e-06,
+          "H_reference_response_rms": 0.06658884913240343,
+          "flow": {
+            "reference_response_rms": 0.4630515978102731,
+            "reference_pre_window_rms": 6.233355940835994e-05,
+            "reference_eligible": true,
+            "pre_step_range": [
+              160,
+              199
+            ],
+            "active_step_range": [
+              320,
+              719
+            ],
+            "n_hexals": 331,
+            "Q": 0.9999997754027864,
+            "magnitude_ratio": 0.9999997754031463,
+            "field_error_E": 8.77790073366065e-07,
+            "angle_deg": 4.861264487093387e-05,
+            "pass_gate": true
+          },
+          "pass_gate": true,
+          "foreground_flow": {
+            "reference_response_rms": 1.2159285469481103,
+            "reference_pre_window_rms": 5.309321264479819e-05,
+            "reference_eligible": true,
+            "pre_step_range": [
+              160,
+              199
+            ],
+            "active_step_range": [
+              320,
+              719
+            ],
+            "n_hexals": 33,
+            "Q": 0.9999996856588396,
+            "magnitude_ratio": 0.9999996856590081,
+            "field_error_E": 6.603895364687129e-07,
+            "angle_deg": 3.3264318547856216e-05,
+            "pass_gate": true
+          },
+          "foreground_hex_ids": [
+            143,
+            144,
+            145,
+            165,
+            166,
+            167,
+            168,
+            169,
+            189,
+            190,
+            191,
+            192,
+            193,
+            194,
+            215,
+            216,
+            217,
+            218,
+            219,
+            220,
+            241,
+            242,
+            243,
+            244,
+            245,
+            246,
+            269,
+            270,
+            271,
+            272,
+            273,
+            299,
+            300
+          ]
+        },
+        "stopped": {
+          "H_response_relative_L2": 2.617079656968158e-06,
+          "H_reference_response_rms": 0.055837952406104216,
+          "flow": {
+            "reference_response_rms": 0.13001557100017555,
+            "reference_pre_window_rms": 6.233355940835994e-05,
+            "reference_eligible": true,
+            "pre_step_range": [
+              160,
+              199
+            ],
+            "active_step_range": [
+              840,
+              999
+            ],
+            "n_hexals": 331,
+            "Q": 1.0000004107926976,
+            "magnitude_ratio": 1.0000004108000633,
+            "field_error_E": 3.860079461604804e-06,
+            "angle_deg": 0.0002199092874421495,
+            "pass_gate": true
+          },
+          "pass_gate": true
+        }
+      },
+      "status": "PASS_ORIGINAL_GATE"
+    },
+    {
+      "case": "TEST_ON315_LOCAL_MOVING",
+      "group": "motion",
+      "pass_gate": true,
+      "windows": {
+        "allpost": {
+          "H_response_relative_L2": 1.098403893476505e-06,
+          "H_reference_response_rms": 0.07907231363370014,
+          "flow": {
+            "reference_response_rms": 0.3953417218154345,
+            "reference_pre_window_rms": 6.233355940835994e-05,
+            "reference_eligible": true,
+            "pre_step_range": [
+              160,
+              199
+            ],
+            "active_step_range": [
+              200,
+              999
+            ],
+            "n_hexals": 331,
+            "Q": 1.000000078750104,
+            "magnitude_ratio": 1.000000078750564,
+            "field_error_E": 9.621440267853422e-07,
+            "angle_deg": 5.496074594977817e-05,
+            "pass_gate": true
+          },
+          "pass_gate": true
+        },
+        "active": {
+          "H_response_relative_L2": 1.0216709466011663e-06,
+          "H_reference_response_rms": 0.08450786731757329,
+          "flow": {
+            "reference_response_rms": 0.5357230067056551,
+            "reference_pre_window_rms": 6.233355940835994e-05,
+            "reference_eligible": true,
+            "pre_step_range": [
+              160,
+              199
+            ],
+            "active_step_range": [
+              320,
+              719
+            ],
+            "n_hexals": 331,
+            "Q": 1.000000124209249,
+            "magnitude_ratio": 1.0000001242095284,
+            "field_error_E": 7.574530868829179e-07,
+            "angle_deg": 4.2825068226553704e-05,
+            "pass_gate": true
+          },
+          "pass_gate": true,
+          "foreground_flow": {
+            "reference_response_rms": 1.3858778477063862,
+            "reference_pre_window_rms": 7.965542967987302e-05,
+            "reference_eligible": true,
+            "pre_step_range": [
+              160,
+              199
+            ],
+            "active_step_range": [
+              320,
+              719
+            ],
+            "n_hexals": 30,
+            "Q": 1.0000001254099298,
+            "magnitude_ratio": 1.000000125410087,
+            "field_error_E": 5.744797114421949e-07,
+            "angle_deg": 3.212731058884023e-05,
+            "pass_gate": true
+          },
+          "foreground_hex_ids": [
+            388,
+            416,
+            417,
+            418,
+            419,
+            444,
+            445,
+            446,
+            447,
+            448,
+            471,
+            472,
+            473,
+            474,
+            475,
+            476,
+            498,
+            499,
+            500,
+            501,
+            502,
+            523,
+            524,
+            525,
+            526,
+            527,
+            528,
+            549,
+            550,
+            551
+          ]
+        },
+        "stopped": {
+          "H_response_relative_L2": 1.2714618610363816e-06,
+          "H_reference_response_rms": 0.0699123975693163,
+          "flow": {
+            "reference_response_rms": 0.09186220650615336,
+            "reference_pre_window_rms": 6.233355940835994e-05,
+            "reference_eligible": true,
+            "pre_step_range": [
+              160,
+              199
+            ],
+            "active_step_range": [
+              840,
+              999
+            ],
+            "n_hexals": 331,
+            "Q": 1.000001254900752,
+            "magnitude_ratio": 1.0000012549063255,
+            "field_error_E": 3.566828079262571e-06,
+            "angle_deg": 0.00019129483970668394,
+            "pass_gate": true
+          },
+          "pass_gate": true
+        }
+      },
+      "status": "PASS_ORIGINAL_GATE"
+    },
+    {
+      "case": "TEST_OFF135_LOCAL_STATIC",
+      "group": "motion",
+      "pass_gate": true,
+      "windows": {
+        "allpost": {
+          "H_response_relative_L2": 1.1331833785718055e-06,
+          "H_reference_response_rms": 0.09691929506677022,
+          "flow": {
+            "reference_response_rms": 0.25800379647370353,
+            "reference_pre_window_rms": 6.233355940835994e-05,
+            "reference_eligible": true,
+            "pre_step_range": [
+              160,
+              199
+            ],
+            "active_step_range": [
+              200,
+              999
+            ],
+            "n_hexals": 331,
+            "Q": 1.0000001985848062,
+            "magnitude_ratio": 1.0000001985858566,
+            "field_error_E": 1.4630334959387305e-06,
+            "angle_deg": 8.30489635825666e-05,
+            "pass_gate": true
+          },
+          "pass_gate": true
+        },
+        "active": {
+          "H_response_relative_L2": 9.555652505698113e-07,
+          "H_reference_response_rms": 0.10133759312983279,
+          "flow": {
+            "reference_response_rms": 0.31610275535236887,
+            "reference_pre_window_rms": 6.233355940835994e-05,
+            "reference_eligible": true,
+            "pre_step_range": [
+              160,
+              199
+            ],
+            "active_step_range": [
+              320,
+              719
+            ],
+            "n_hexals": 331,
+            "Q": 1.0000001480607466,
+            "magnitude_ratio": 1.00000014806128,
+            "field_error_E": 1.0432815753124287e-06,
+            "angle_deg": 5.917581452855893e-05,
+            "pass_gate": true
+          },
+          "pass_gate": true,
+          "foreground_flow": {
+            "reference_response_rms": 0.691547051283576,
+            "reference_pre_window_rms": 6.0092664758731534e-05,
+            "reference_eligible": true,
+            "pre_step_range": [
+              160,
+              199
+            ],
+            "active_step_range": [
+              320,
+              719
+            ],
+            "n_hexals": 30,
+            "Q": 1.000000198162332,
+            "magnitude_ratio": 1.0000001981625728,
+            "field_error_E": 7.216843448151348e-07,
+            "angle_deg": 3.975322658382858e-05,
+            "pass_gate": true
+          },
+          "foreground_hex_ids": [
+            169,
+            170,
+            171,
+            192,
+            193,
+            194,
+            195,
+            196,
+            197,
+            218,
+            219,
+            220,
+            221,
+            222,
+            244,
+            245,
+            246,
+            247,
+            248,
+            249,
+            272,
+            273,
+            274,
+            275,
+            276,
+            301,
+            302,
+            303,
+            304,
+            332
+          ]
+        },
+        "stopped": {
+          "H_response_relative_L2": 1.5723444178536708e-06,
+          "H_reference_response_rms": 0.09117697492027727,
+          "flow": {
+            "reference_response_rms": 0.14756969232769845,
+            "reference_pre_window_rms": 6.233355940835994e-05,
+            "reference_eligible": true,
+            "pre_step_range": [
+              160,
+              199
+            ],
+            "active_step_range": [
+              840,
+              999
+            ],
+            "n_hexals": 331,
+            "Q": 1.000000368277672,
+            "magnitude_ratio": 1.0000003682832723,
+            "field_error_E": 3.366921374591697e-06,
+            "angle_deg": 0.0001917553561772197,
+            "pass_gate": true
+          },
+          "pass_gate": true
+        }
+      },
+      "status": "PASS_ORIGINAL_GATE"
+    },
+    {
+      "case": "TEST_TEXTURE_LOW",
+      "group": "static",
+      "pass_gate": true,
+      "windows": {
+        "adapted": {
+          "H_RMSE": 1.404937452302223e-07,
+          "R_RMSE": 5.697714848533871e-08,
+          "flow_RMSE": 1.7368525442938885e-07,
+          "pass_gate": true
+        },
+        "late": {
+          "H_RMSE": 1.5159058271601616e-07,
+          "R_RMSE": 6.149851131066171e-08,
+          "flow_RMSE": 1.7561002536400535e-07,
+          "pass_gate": true
+        }
+      },
+      "status": "PASS_ORIGINAL_GATE"
+    },
+    {
+      "case": "TEST_TEXTURE_MEDIUM",
+      "group": "static",
+      "pass_gate": true,
+      "windows": {
+        "adapted": {
+          "H_RMSE": 1.3462776169550282e-07,
+          "R_RMSE": 5.6291970913767155e-08,
+          "flow_RMSE": 2.057942563963795e-07,
+          "pass_gate": true
+        },
+        "late": {
+          "H_RMSE": 1.459993976995294e-07,
+          "R_RMSE": 6.175698153257316e-08,
+          "flow_RMSE": 2.1893477767854217e-07,
+          "pass_gate": true
+        }
+      },
+      "status": "PASS_ORIGINAL_GATE"
+    },
+    {
+      "case": "TEST_TEXTURE_HIGH",
+      "group": "static",
+      "pass_gate": true,
+      "windows": {
+        "adapted": {
+          "H_RMSE": 9.5168209591085e-08,
+          "R_RMSE": 4.311522694425857e-08,
+          "flow_RMSE": 3.080284748751275e-07,
+          "pass_gate": true
+        },
+        "late": {
+          "H_RMSE": 9.534842765506761e-08,
+          "R_RMSE": 4.310132568795222e-08,
+          "flow_RMSE": 3.1048602231941686e-07,
+          "pass_gate": true
+        }
+      },
+      "status": "PASS_ORIGINAL_GATE"
+    },
+    {
+      "case": "TEST_GRAY",
+      "group": "static",
+      "pass_gate": true,
+      "windows": {
+        "adapted": {
+          "H_RMSE": 1.580478713338154e-07,
+          "R_RMSE": 7.373692268316701e-08,
+          "flow_RMSE": 4.031749005903158e-07,
+          "pass_gate": true
+        },
+        "late": {
+          "H_RMSE": 1.581018219933401e-07,
+          "R_RMSE": 7.371506027160032e-08,
+          "flow_RMSE": 4.0362879423400904e-07,
+          "pass_gate": true
+        }
+      },
+      "status": "PASS_ORIGINAL_GATE"
+    }
+  ],
+  "passed": 10,
+  "total": 10,
+  "Sham_all_states_bitwise_equal": true,
+  "model_SHA": "13531661f9a3f5784c2d6af92c1c15c4709b027de1f0085aaca57c5161d67769",
+  "parameters": 31168,
+  "training_updates_during_test": 0,
+  "GPU": 0,
+  "board": 0,
+  "function_claim": "controlled stimuli equivalence-to-Full gates; not neuronal-function percentage, direction accuracy, biological recovery, or natural optical flow truth",
+  "actual_commits": 21000,
+  "actual_neural_wall_s": 181.64645960000053
+}

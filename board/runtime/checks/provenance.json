@@ -1,0 +1,41 @@
+{
+  "source_archive": "FlyVis_Reproduce_20261027.zip",
+  "source_archive_sha256": "d18350fd741cf59adc584c13dd1b443d79220a8e2ea4daeb101c77aba699e996",
+  "purpose": "Saved operator input/full-state vector and independent CPU reference comparison; no raw camera frame redistributed",
+  "dt_s": 0.005,
+  "initial_state": "app/bundle/initial_state.bin",
+  "hashes": {
+    "checks/input.bin": {
+      "bytes": 2884,
+      "sha256": "29bbfb919536efebcb8289247d63cb9349b16eb47c1597e526b0b5460897dcc5"
+    },
+    "checks/state.bin": {
+      "bytes": 182676,
+      "sha256": "ae0c4135d17d8bd9be09637a0b506cb214638f3e82b528808da0f63b8d4c0998"
+    },
+    "checks/identity.json": {
+      "bytes": 244,
+      "sha256": "0fbc195e22c12587ab5811acd776ace4f76d4229efa98db5a60a48a779db6fa6"
+    },
+    "app/bundle/initial_state.bin": {
+      "bytes": 182676,
+      "sha256": "d276601573420bf787a81ffa8c81f2da3499a20df2bb858f6082c2e449ff564f"
+    },
+    "app/bundle/edges.bin": {
+      "bytes": 12105848,
+      "sha256": "762f67a39ef5446f4938081aa9114ff0f905425887b58188a707bc15f8b8654a"
+    },
+    "app/bundle/reference.exe": {
+      "bytes": 2606725,
+      "sha256": "3bec24937060b6b0093912bbf64d70f6897a9cc9d6a685caa57590e7b182dd7f"
+    },
+    "app/bundle/reference.cpp": {
+      "bytes": 2391,
+      "sha256": "a340e3dfffd795af61a1d2b56d0841f11131d8d47fde8ad8aeb3d588aac7bb82"
+    },
+    "app/bundle/host_reference.cpp": {
+      "bytes": 835,
+      "sha256": "cdcf122f006c830d4e144d6a04f906fbd0de54e154956529d602b6ddf22056a2"
+    }
+  }
+}

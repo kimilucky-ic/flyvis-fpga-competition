@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "pairs": 174040,
+  "add_checks": 174040,
+  "mul_checks": 174040,
+  "host_cross_checks": 344516,
+  "cycles": 232485,
+  "ce_stalls": 41028,
+  "input_bubbles": 17417,
+  "midflight_reset_with_ce_zero": true,
+  "reset_test_extra_cycles": 20
+}

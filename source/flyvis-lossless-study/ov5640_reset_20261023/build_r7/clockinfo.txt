@@ -1,0 +1,10 @@
+-------------------------------------
+| Tool Version : Vivado v.2026.1.1
+| Date         : Fri Oct 23 14:29:32 2026
+| Host         : hope
+| Design       : checkpoint_ddr_soc_synth
+| Device       : xc7z020-clg400-2--
+-------------------------------------
+
+For more information on clockinfo.txt clock routing debug file see https://support.xilinx.com/s/article/000035660?language=en_US
+

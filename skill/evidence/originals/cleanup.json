@@ -1,0 +1,18 @@
+{
+  "time": "2026-10-16T17:32:32.285359+08:00",
+  "checks": {
+    "exact_five_targets_absent": true,
+    "all_8164_retained_files_present": true,
+    "retained_file_metadata_unchanged": true,
+    "historical_manifest_sha_unchanged": true,
+    "all_84_old_test_arrays_present_same_size": true
+  },
+  "all_checks_pass": true,
+  "retained_files_checked": 8164,
+  "missing_retained_files": [],
+  "changed_retained_files": [],
+  "old_test_arrays_files": 84,
+  "old_test_arrays_bytes": 10027827096,
+  "recovery_fragment_bytes": 2953216,
+  "disk_free_bytes_C": 26823217152
+}

@@ -1,0 +1,43 @@
+{
+  "all_exact": true,
+  "numpy": "2.4.6",
+  "results": [
+    {
+      "path": "C:\\Users\\hzy72\\Documents\\ChatGPT\\fpga\\flyvis-circuit-selection\\phase3_ablation_screen_20261010\\artifacts\\signed_all_node_differences_r1\\A_T4c_A_minus_S_float64.npy",
+      "bytes": 708783008,
+      "sha256": "ef5ba5308cd765e7ffd38c4c151002931553326fe863dc056bede43fd0f498f9",
+      "exact": true,
+      "mode": "STREAM_HASH_ONLY"
+    },
+    {
+      "path": "C:\\Users\\hzy72\\Documents\\ChatGPT\\fpga\\flyvis-circuit-selection\\phase3_ablation_screen_20261010\\artifacts\\signed_all_node_differences_r1\\B_T5c_A_minus_S_float64.npy",
+      "bytes": 708783008,
+      "sha256": "d1ad3b3b0bc39670745311690f207bafd419d8c38bc21ce44bc74d3bbca3c70a",
+      "exact": true,
+      "mode": "STREAM_HASH_ONLY"
+    },
+    {
+      "path": "C:\\Users\\hzy72\\Documents\\ChatGPT\\fpga\\flyvis-circuit-selection\\phase3_ablation_screen_20261010\\artifacts\\signed_all_node_differences_r1\\C_T4T5_all_centers_A_minus_S_float64.npy",
+      "bytes": 708783008,
+      "sha256": "6f0522f999d95be1242ff5afe8b7b7373cc401cc7d0e3ceb683be7a229cc15e9",
+      "exact": true,
+      "mode": "STREAM_HASH_ONLY"
+    },
+    {
+      "path": "C:\\Users\\hzy72\\Documents\\ChatGPT\\fpga\\flyvis-circuit-selection\\cnn_cpu_texture_local_refinement_20261016\\training\\fields.npy",
+      "bytes": 535908960,
+      "sha256": "ef83c271a4388a6455e2b54172a72a8d66d1217c4a52a465749d03d3a88f219e",
+      "exact": true,
+      "mode": "STREAM_HASH_ONLY"
+    },
+    {
+      "path": "C:\\Users\\hzy72\\Documents\\ChatGPT\\fpga\\flyvis-circuit-selection\\cnn_cpu_texture_local_refinement_20261016\\training\\delta.npy",
+      "bytes": 186145024,
+      "sha256": "51c200ee7db6fe18b4d9f3b6467e4e5b0b286e2c0c4d0d870d8dfe339fba0d2b",
+      "exact": true,
+      "mode": "STREAM_HASH_ONLY"
+    }
+  ],
+  "neural_inference": false,
+  "large_output_files_created": false
+}

@@ -1,0 +1,89 @@
+{
+  "status": "READ_ONLY_CURRENT_BOOT_HP0_64BIT_OBSERVED",
+  "boot_id": "2c7cec1e-d7ba-4b07-8283-ebb6f3a6b010",
+  "registers": {
+    "0xF8000240": "0x00000000",
+    "0xF8008000": "0x00000000",
+    "0xF8008014": "0x00000F00"
+  },
+  "register_reads": 4,
+  "register_writes": 0,
+  "pl_axi_reads": 0,
+  "pl_downloads": 0,
+  "pl_requests": 0,
+  "hp0_read_width_bits": 64,
+  "hp0_write_width_bits": 64,
+  "fpga_manager_name": "Xilinx Zynq FPGA Manager",
+  "fpga_manager_state": "unknown",
+  "fpga_manager_status": "UNREADABLE: [Errno 2] No such file or directory",
+  "manager_state_is_not_bit_identity_attestation": true
+}
+
+READ_ONLY_LOG: dmesg
+[    2.305835] FPGA manager framework
+[    2.483103] zynq-pinctrl 700.pinctrl: zynq pinctrl initialized
+[    3.373684] cdns-wdt f8005000.watchdog: Xilinx Watchdog Timer with timeout 10s
+[    3.389742] Xilinx Zynq CpuIdle Driver started
+[    3.440212] mmc0: SDHCI controller on e0100000.mmc [e0100000.mmc] using ADMA
+[    3.470605] mmc1: SDHCI controller on e0101000.mmc [e0101000.mmc] using ADMA
+[    3.510617] fpga_manager fpga0: Xilinx Zynq FPGA Manager registered
+[    3.514362] mmc0: new high speed SDHC card at address 0001
+[    3.530532] mmcblk0: mmc0:0001 SD16G 29.1 GiB 
+[    3.545922]  mmcblk0: p1 p2
+[    3.608704] of-fpga-region fpga-full: FPGA Region probed
+[    3.635233] platform regulatory.0: Direct firmware load for regulatory.db failed with error -2
+[    3.656428] mmc1: new high speed MMC card at address 0001
+[    3.661167] mmcblk1: mmc1:0001 TWSC   7.13 GiB 
+[    3.664888] mmcblk1boot0: mmc1:0001 TWSC   partition 1 4.00 MiB
+[    3.669892] mmcblk1boot1: mmc1:0001 TWSC   partition 2 4.00 MiB
+[    3.674842] mmcblk1rpmb: mmc1:0001 TWSC   partition 3 4.00 MiB, chardev (244:0)
+[    3.686025]  mmcblk1: p1
+[    5.057006] EXT4-fs (mmcblk0p2): recovery complete
+[    5.065625] EXT4-fs (mmcblk0p2): mounted filesystem with ordered data mode. Opts: (null)
+[    5.072481] VFS: Mounted root (ext4 filesystem) on device 179:2.
+[   11.222360] [drm] Probing for xlnx,zocl
+[   41.702761] FAT-fs (mmcblk0p1): Volume was not properly unmounted. Some data may be corrupt. Please run fsck.
+RETURN_CODE: 0
+
+READ_ONLY_LOG: journalctl -b -1 -k --no-pager -n 35
+-- Logs begin at Wed 2021-11-17 19:59:58 UTC, end at Thu 2021-11-18 03:30:48 UTC. --
+Nov 18 02:57:23 pynq systemd[1]: Starting Restore / save the current clock...
+Nov 18 02:57:23 pynq systemd[1]: Condition check resulted in Create list of static device nodes for the current kernel being skipped.
+Nov 18 02:57:23 pynq systemd[1]: Condition check resulted in Load Kernel Module drm being skipped.
+Nov 18 02:57:23 pynq systemd[1]: Started Nameserver information manager.
+Nov 18 02:57:23 pynq systemd[1]: Reached target Network (Pre).
+Nov 18 02:57:23 pynq systemd[1]: Condition check resulted in Set Up Additional Binary Formats being skipped.
+Nov 18 02:57:23 pynq systemd[1]: Starting Load Kernel Modules...
+Nov 18 02:57:23 pynq systemd[1]: Starting Remount Root and Kernel File Systems...
+Nov 18 02:57:23 pynq systemd[1]: Starting udev Coldplug all Devices...
+Nov 18 02:57:23 pynq systemd[1]: Mounted POSIX Message Queue File System.
+Nov 18 02:57:23 pynq systemd[1]: Mounted Kernel Debug File System.
+Nov 18 02:57:23 pynq systemd[1]: Started Journal Service.
+Nov 18 02:57:24 pynq kernel: Adding 524284k swap on /var/swap.  Priority:-2 extents:1 across:524284k SS
+Nov 18 02:57:26 pynq kernel: zocl: loading out-of-tree module taints kernel.
+Nov 18 02:57:26 pynq kernel: [drm] Probing for xlnx,zocl
+Nov 18 02:57:26 pynq kernel: zocl-drm amba:zyxclmm_drm: IRQ index 0 not found
+Nov 18 02:57:26 pynq kernel: [drm] PR Isolation addr 0x0
+Nov 18 02:57:26 pynq kernel: [drm] Initialized zocl 2018.2.1 20180313 for amba:zyxclmm_drm on minor 0
+Nov 18 02:57:27 pynq kernel: random: crng init done
+Nov 18 02:57:27 pynq kernel: random: 7 urandom warning(s) missed due to ratelimiting
+Nov 18 02:57:30 pynq kernel: macb e000b000.ethernet eth0: link up (1000/Full)
+Nov 18 02:57:30 pynq kernel: IPv6: ADDRCONF(NETDEV_CHANGE): eth0: link becomes ready
+Nov 18 02:57:36 pynq kernel: [drm] Pid 413 opened device
+Nov 18 02:57:36 pynq kernel: [drm] Pid 413 closed device
+Nov 18 02:57:36 pynq kernel: [drm] Pid 413 opened device
+Nov 18 02:57:36 pynq kernel: [drm] Pid 413 closed device
+Nov 18 02:57:41 pynq kernel: [drm] Pid 276 opened device
+Nov 18 02:57:41 pynq kernel: [drm] Pid 276 closed device
+Nov 18 02:57:41 pynq kernel: [drm] Pid 276 opened device
+Nov 18 02:57:41 pynq kernel: [drm] Pid 276 opened device
+Nov 18 02:57:41 pynq kernel: [drm] Pid 276 closed device
+Nov 18 02:57:41 pynq kernel: [drm] Pid 276 opened device
+Nov 18 02:57:41 pynq kernel: [drm] Pid 276 closed device
+Nov 18 02:57:41 pynq kernel: [drm] Pid 276 opened device
+Nov 18 02:57:58 pynq kernel: FAT-fs (mmcblk0p1): Volume was not properly unmounted. Some data may be corrupt. Please run fsck.
+RETURN_CODE: 0
+
+STOP_HERE: READ_ONLY; NO BIT LOAD, HLS START OR RETRY.
+
+​

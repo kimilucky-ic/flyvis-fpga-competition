@@ -1,0 +1,169 @@
+[
+  {
+    "name": "zynq-7000-board-operations",
+    "entrypoint": "zynq-7000-board-operations/skill.md",
+    "evidence_ids": [
+      "board"
+    ],
+    "evidence_class": "historical_case_record",
+    "fresh_independent_reuse": "NOT_RUN",
+    "gap": "缺独立陌生使用者复用记录；原Notebook完整输出未随包保存。跨题/跨板通用性未验证。",
+    "source_export": "Codex SKILL.md retained; lowercase export plus usage/validation appendices and portable source references"
+  },
+  {
+    "name": "vivado-vitis-toolchain-debugging",
+    "entrypoint": "vivado-vitis-toolchain-debugging/skill.md",
+    "evidence_ids": [
+      "reset",
+      "build",
+      "replay"
+    ],
+    "evidence_class": "historical_case_record",
+    "fresh_independent_reuse": "NOT_RUN",
+    "gap": "缺另一工程独立套用该流程的记录；未覆盖全部Vivado/Vitis版本。2024.2.2案例须在总报告说明版本与重建脚本。",
+    "source_export": "Codex SKILL.md retained; lowercase export plus usage/validation appendices and portable source references"
+  },
+  {
+    "name": "fpga-board-reference-research",
+    "entrypoint": "fpga-board-reference-research/skill.md",
+    "evidence_ids": [
+      "reference"
+    ],
+    "evidence_class": "historical_case_record",
+    "fresh_independent_reuse": "NOT_RUN",
+    "gap": "包内有历史核对报告，但缺原厂手册/原理图对应页与版本的可分发摘录或精确公开获取定位；缺第二硬件修订复核。",
+    "source_export": "Codex SKILL.md retained; lowercase export plus usage/validation appendices and portable source references"
+  },
+  {
+    "name": "fpga-model-equivalence",
+    "entrypoint": "fpga-model-equivalence/skill.md",
+    "evidence_ids": [
+      "model_report",
+      "quant_xsim"
+    ],
+    "evidence_class": "historical_case_record",
+    "fresh_independent_reuse": "NOT_RUN",
+    "gap": "包内未包含整个fly数值比较程序、原始长输入和全状态轨迹；不构成fly原网络或所有IEEE输入等价证明。独立套用未做。",
+    "source_export": "Codex SKILL.md retained; lowercase export plus usage/validation appendices and portable source references"
+  },
+  {
+    "name": "fpga-fixed-point-quantization",
+    "entrypoint": "fpga-fixed-point-quantization/skill.md",
+    "evidence_ids": [
+      "quantization",
+      "quant_vectors",
+      "quant_xsim"
+    ],
+    "evidence_class": "historical_case_record",
+    "fresh_independent_reuse": "NOT_RUN",
+    "gap": "缺量化候选的综合/实板证据；递质极性未定。完整图/生成器/向量未打入轻量Skill包，须在具体工程取得合法输入。",
+    "source_export": "Codex SKILL.md retained; lowercase export plus usage/validation appendices and portable source references"
+  },
+  {
+    "name": "windows-fpga-path-diagnostics",
+    "entrypoint": "windows-fpga-path-diagnostics/skill.md",
+    "evidence_ids": [
+      "quant_xsim"
+    ],
+    "evidence_class": "user_observation_only",
+    "fresh_independent_reuse": "NOT_RUN",
+    "gap": "关键缺口：原失败命令/版本/错误日志、保持输入不变的路径对照、可重复成功。按待验证诊断观察列入，不能充当已验证稳定工作流。",
+    "source_export": "Codex SKILL.md retained; lowercase export plus usage/validation appendices and portable source references"
+  },
+  {
+    "name": "pynq-bounded-replay-evidence",
+    "entrypoint": "pynq-bounded-replay-evidence/skill.md",
+    "evidence_ids": [
+      "replay"
+    ],
+    "evidence_class": "historical_case_record",
+    "fresh_independent_reuse": "NOT_RUN",
+    "gap": "包内附验收报告，不含原数千项ZIP、全部输入oracle或未剪辑现场视频。陌生任务/第二板卡复用及通用PYNQ加分未证明。",
+    "source_export": "Codex SKILL.md retained; lowercase export plus usage/validation appendices and portable source references"
+  },
+  {
+    "name": "gpu-fpga-feedback-transactions",
+    "entrypoint": "gpu-fpga-feedback-transactions/skill.md",
+    "evidence_ids": [
+      "feedback"
+    ],
+    "evidence_class": "historical_case_record",
+    "fresh_independent_reuse": "NOT_RUN",
+    "gap": "附大型FINAL_RESULT的来源绑定摘要，不含完整1.37MB原报告及逐步原始事务/故障注入证据。另一后端/独立部署及全部负向路径未在本次复验。",
+    "source_export": "Codex SKILL.md retained; lowercase export plus usage/validation appendices and portable source references"
+  },
+  {
+    "name": "flyvis-demo-data-integration",
+    "entrypoint": "flyvis-demo-data-integration/skill.md",
+    "evidence_ids": [
+      "demo",
+      "demo_performance"
+    ],
+    "evidence_class": "historical_case_record",
+    "fresh_independent_reuse": "NOT_RUN",
+    "gap": "包内没有完整GUI和真实模型数据，也未重新启动GUI或接相机；陌生GUI适配和完整负向场景复用未完成。",
+    "source_export": "Codex SKILL.md retained; lowercase export plus usage/validation appendices and portable source references"
+  },
+  {
+    "name": "flyvis-controlled-replacement",
+    "entrypoint": "flyvis-controlled-replacement/skill.md",
+    "evidence_ids": [
+      "controls",
+      "controls_summary"
+    ],
+    "evidence_class": "historical_case_record",
+    "fresh_independent_reuse": "NOT_RUN",
+    "gap": "完整训练/测试数据和逐步轨迹未随包；不构成生物恢复、自然视频真值或CNN上FPGA证据。独立任务复用未完成。",
+    "source_export": "Codex SKILL.md retained; lowercase export plus usage/validation appendices and portable source references"
+  },
+  {
+    "name": "fpga-performance-power-accounting",
+    "entrypoint": "fpga-performance-power-accounting/skill.md",
+    "evidence_ids": [
+      "power_gpu",
+      "power_fpga"
+    ],
+    "evidence_class": "historical_case_record",
+    "fresh_independent_reuse": "NOT_RUN",
+    "gap": "缺同任务同边界的板级能耗/时延测量及外部校准；因此比较性节能结论未验证。现有GPU遥测原CSV未随包。",
+    "source_export": "Codex SKILL.md retained; lowercase export plus usage/validation appendices and portable source references"
+  },
+  {
+    "name": "fpga-evidence-preserving-cleanup",
+    "entrypoint": "fpga-evidence-preserving-cleanup/skill.md",
+    "evidence_ids": [
+      "cleanup",
+      "cleanup_recovery"
+    ],
+    "evidence_class": "historical_case_record",
+    "fresh_independent_reuse": "NOT_RUN",
+    "gap": "包内附最终/恢复结果，未附完整恢复源片段与逐文件前后hash清单；不可据此删除陌生项目。独立恢复演练未做。",
+    "source_export": "Codex SKILL.md retained; lowercase export plus usage/validation appendices and portable source references"
+  },
+  {
+    "name": "flyvis-gpu-reference",
+    "entrypoint": "flyvis-gpu-reference/skill.md",
+    "evidence_ids": [
+      "gpu",
+      "gpu_report",
+      "gpu_corrections"
+    ],
+    "evidence_class": "historical_case_record",
+    "fresh_independent_reuse": "NOT_RUN",
+    "gap": "缺干净安装复现及不同GPU/所有刺激覆盖；checkpoint、输入和大数组不随包。不能把特定算子快照作为完整端到端速度。",
+    "source_export": "Codex SKILL.md retained; lowercase export plus usage/validation appendices and portable source references"
+  },
+  {
+    "name": "flyvis-decoder-inference",
+    "entrypoint": "flyvis-decoder-inference/skill.md",
+    "evidence_ids": [
+      "decoder_cpu",
+      "decoder_gpu",
+      "decoder_report"
+    ],
+    "evidence_class": "historical_case_record",
+    "fresh_independent_reuse": "NOT_RUN",
+    "gap": "缺陌生checkpoint/decoder独立复用及自然视频校准；原脚本/模型权重/输出数组不随包，绝对速度单位和生物行为未验证。",
+    "source_export": "Codex SKILL.md retained; lowercase export plus usage/validation appendices and portable source references"
+  }
+]

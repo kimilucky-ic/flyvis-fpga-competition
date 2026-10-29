@@ -1,0 +1,19 @@
+{
+  "status": "PASS_FULL_SOC_CORE_RTL_CPU_ONLY",
+  "completed_steps": 5,
+  "aborted_partial_update_steps": 1,
+  "feedback_transitions": 3,
+  "full_state_stream_steps": 4,
+  "hash_and_observed_state_only_steps": 1,
+  "axi_full_state_words_checked": 45669,
+  "pl_restores": 2,
+  "ordered_edges_checked_including_abort": 9079386,
+  "state_words_checked": 182676,
+  "stream_stall_cycles": 73071,
+  "axi_transactions_checked": 92841,
+  "simulated_cycles": 13423105,
+  "last_stalled_step_cycles": 2219687,
+  "no_consumer_step_cycles": 2201418,
+  "faults": 0,
+  "oracle_frame0_matches_frozen_original": true
+}

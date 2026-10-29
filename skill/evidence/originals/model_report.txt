@@ -1,0 +1,141 @@
+# fly-olf → Zynq-7020 移植进度报告
+
+日期：2026-10-06  
+用途：供其他模型/队友快速接手；区分已验证事实、现有资产、差距与下一步。  
+当前目标：把 fly-olf 的真实神经元计算移植到现有 Zynq-7020 板卡。不是再次证明 SNN 可运行，也不是只做 Python 演示。
+
+## 2026-10-07 路线更新（优先于下方 10-06 计划）
+
+用户随后明确选择：把**完整 fly 网络原始 VHDL**直接移植到 ATK Zynq-7020 PL，使用独立 Vivado 工程，不使用 HLS；这取代了下方 10-06 提出的“单 PN HLS + Jupyter”下一步。不得再把 Jupyter/PYNQ 的 SNN/HLS 测试流程套用到当前 fly 路线。最新续接状态和 UART 指令见 `docs/fly-Zynq7020-current-status.md`。
+
+- 独立工程：`external/fly-olfactory-network-fpga/vivado_projects/FlyOlfactoryNetwork_Zynq7020/`；器件 `xc7z020clg400-2`，23 个 VHDL、28 个 XCI，无 HLS IP。
+- 相对于原 fly 工程源码的核对：网络计算源保持一致；板级 UART 接收/发送模块为 460800 附近分频和起始位中心采样所需改动。UART 说明中的旧命令 `80 45` 曾误标为启动，实际是切换 LN0 inactive；PQN 启动值是 9，即 `80 49`。指南已修正。
+- Vivado 2024.2.2 implementation 与 bitgen 已成功。BIT SHA-256：`A98A916AB71D1ED74C41DA00A13115E8B660DDB51545E5B1DC7CE29F8F34F917`；Desktop 副本与工程输出相同。实现资源/时序报告在独立工程 `reports/`。
+- Vivado 硬件日志显示同一 Desktop BIT 被送入 `xc7z020`，`End of startup status: HIGH`；用户进一步确认该 bitstream 已下载到板上并运行多次，XCOM 连续收到输出但显示问号。当前续接动作是切 XCOM **接收显示**为 HEX 来辨认已有 TX payload；不要重新下载或盲发控制命令。HEX payload 和 UART RX 受控响应仍待留档。
+- 已有 `UART_LOOPBACK_PASS` 是 VHDL UART TX→RX 仿真结果，不是完整 fly 网络的板测，也不能替代上述待完成的串口验收。
+
+## 一句话状态
+
+板上已有一个能工作的事件驱动 SNN/LIF 加速器；fly-olf 完整网络仍未迁移，但真实 PN 方程已按完整网络的 `PQN_PN.vhd` 做成独立单神经元 HLS/PS 测试 bitstream，并在本机完成 Vivado implementation/bitgen；尚无该新 bitstream 上板运行的证据。当前关键缺口是用相同向量完成 PL 实机逐 bit 对照，然后才扩展到小型 fly PN 网络。
+
+## 已有资产与验证状态
+
+### 1. 当前可用的 Zynq SNN 板上链路
+
+- 板卡：用户确认是 Zynq-7020；PYNQ/Jupyter 通过 `http://192.168.2.99:9090` 使用。
+- 板端当前加载文件：`/home/xilinx/jupyter_notebooks/snn_integrated_v2.bit` 与同名 `.hwh`。
+- Notebook 中读到的 IP：`axi_dma_0`、`axi_dma_1`、`snn_top_hls_0`、`snn_config_regs_0`、`processing_system7_0`。
+- HLS AXI-Lite 地址 `0x43C00000`，配置模块 `0x43C10000`；DDR 可访问范围在 Linux `/proc/iomem` 中读到 `00000000-3fffffff`。Notebook 曾成功用位于 `0x38046000` 一带的缓冲区完成 DMA。
+- 已有板测记录不止 Overlay 加载：单次输入曾出现 MM2S/S2MM `0x1002`、无错误位；两级级联记录中收到两个输出包，路由/神经元计数各增加 2，之后连接表恢复为空。最近只读快照显示 Overlay 匹配、HLS 空闲、DMA 空闲。
+- 现有板上验证对象是 SNN/LIF 和其事件路由，不是 fly PN。
+- 本机候选板卡 bitstream：`external/snn-accelerator/outputs/atk7020_snn_ascii/snn_integrated_v2.bit`，SHA-256 `fa604faef094634590ed093b828f9a0218b9171d29e4ab4d49b0dad929b7bbaf`；本机 `.hwh` SHA-256 `381a06be1ad8f3078e3d96646a27dbf7f73245391337a2340f73287efa97cff`。Notebook 里之前读到的板端 BIT/HWH 哈希与这两个值相同，因而当前运行的 SNN bitstream 有本地可对应的归档副本。
+
+### 2. fly-olf 仓库与 Python 模型
+
+- 仓库：`external/fly-olfactory-network-fpga/`。README 描述原工程目标为 Digilent Cmod A7-35T / Artix-7，不是 Zynq-7020；原工作流通过 UART 驱动实验。
+- 完整网络源：`vivado_projects/FlyOlfactoryNetwork/FlyOlfactoryNetwork.srcs/sources_1/new/`。`pqn_ctrl.vhd` 实例化 `PQN_PN`（例如该文件约第 943 行），并连接其他类别的 PQN、突触累加器和网络控制逻辑。
+- 现有 Python 文件：
+  - `models/fly_olfactory/pn_reference.py`：`DSSN_PN.vhd` 单步方程的 18 位有符号 Q8.10 方程级参考，6 项测试通过。
+  - `models/fly_olfactory/mini_network.py`：两路 PN 的演示网络；Food/Danger/Neutral 到 approach/avoid/neutral 的刺激编码和决策规则是人为简化假设，不是仓库 connectome 或完整 fly 行为回路。
+  - `tests/test_fly_pn_reference.py`、`tests/test_fly_mini_network.py`：合计 11 项本机测试通过。
+- **不可混淆：** `DSSN_PN.vhd` 是 `PQNtest` 目录中的单元测试核；完整网络使用 `PQN_PN.vhd`。初步比对已发现关键差异：完整网络 PN 把 `0.75*Iin` 加入膜电位更新，而测试核把 `0.0234375*Iin` 加入 q 更新；完整网络还有输入电流限幅、非正 u 输出置零等逻辑。`PQN_PN.vhd` 的 `utf` 位串与旁注“1.0”看起来也需按位宽/仿真确认。故当前 Python 参考**不能直接作为完整网络 PN 的逐点移植验收基准**，下一步必须先对照 `PQN_PN.vhd` 修正/新增 `pqn_pn_reference` 并测试边界和初值。
+
+### 3. 本机工具和工程文件
+
+- Vivado：`D:\Vivado\2024.2\bin\vivado.bat`。
+- Vitis HLS：`D:\Vitis_HLS\2024.2\bin\vitis_hls.bat`。工具已用于构建独立单 PN fly HLS IP；完整网络 IP 尚未构建。
+- SNN HLS 源：`external/snn-accelerator/hardware/hls/src/snn_top_hls.cpp`、`include/snn_top_hls.h`；综合 IP 为 AXI-Lite 控制 + AXI-Stream spike/weight 输入输出，并含大量 LIF 网络权重/trace 存储逻辑。
+- 独立 ATK7020 重建脚本：`external/snn-accelerator/hardware/scripts/rebuild_integrated_atk7020_ascii.tcl`，器件配置目标 `xc7z020clg400-2`，DDR 上限配置 `0x3FFFFFFF`。不要把这一脚本生成的工程/器件配置与旧资源报告默认视作完全相同。
+
+## 资源约束（证据边界）
+
+现有 `snn_integrated_v2_utilization.rpt` / `snn_integrated_v2_timing.rpt` 的时间为 2026-09-24，报告器件是 `xc7z020clg400-1`：
+
+- LUT：14,444 / 53,200（27.15%）
+- FF：9,685 / 106,400（9.10%）
+- BRAM：RAMB36 139 / 140，另有 RAMB18 2 个；Block RAM tile 汇总 140 / 140（100%）
+- DSP：16 / 220（7.27%）
+- 时钟 100 MHz，WNS 0.031 ns，满足该份报告中的约束但时序余量很小
+
+**重要：**这份 9/24 报告是现存最佳资源参考，但当前板上匹配的 ascii 路径 bitstream 时间为 10/4、目标脚本为 `xc7z020clg400-2`；尚未找到与该 BIT 哈希绑定的新版 utilization/timing 报告。因此 139/140 BRAM 是强烈的容量预警，不应不加说明地当作 10/4 板上文件的精确实现报告。新 fly 核需要单独综合并取得对应报告。
+
+## 为什么不是把 fly 直接“塞进”现有 SNN
+
+现有 SNN HLS 以事件包驱动 LIF：32 位 spike 包大致为 `[31:21] timestamp / [20:13] weight / [12:0] neuron_id`，PL 路由和 DMA 围绕该接口构建。fly PN 则每个神经元有多个 18 位 Q8.10 状态 `v,n,q,s,u` 与 10 位 `fc`，还需输入电流和 PN 特有的分段更新、限幅及发放规则。接口、状态和计算语义均不同，不能只换个参数或只替换权重表。
+
+另外，现有 SNN 的 BRAM 已接近用尽；把完整权重型 SNN 与完整 fly 网络并排塞入当前设计没有可用的 BRAM 余量。须选择“替换/裁剪现有计算核”或“另做最小独立 fly bitstream”之一，不能默认叠加。
+
+## 推荐的真正移植路线
+
+1. **先校准真实方程。** 以完整网络正在实例化的 `PQN_PN.vhd` 为准，新增 Python `pqn_pn_reference`；用原始 VHDL 定点切片、限幅、状态更新和 spike crossing 建立固定向量。不要用当前 `DSSN_PN` 测试模型冒充生产 PN。
+2. **做单 PN HLS 硬件核。** 用 `ap_int<18>`/`ap_uint<10>` 实现一次 PN 状态更新；HLS 顶层提供 AXI-Lite 输入/输出寄存器与 `ap_start/ap_done`。单步请求输入 I/v/n/q/s/u/fc，读回 v/n/q/s/u/fc 与 spike。先只做一个 PN，不放网络连接表或大数组。
+3. **C 仿真和综合。** 用同一固定向量逐项对照 Python reference；要求所有状态位、fc、spike 精确一致。Vitis HLS 综合后检查 LUT/FF/BRAM/DSP、延迟、时钟估算；目标单 PN 状态应优先放寄存器，避免额外 BRAM。
+4. **单独做最小 Zynq PS + PN AXI-Lite 设计。** 输出到新的 build/output 目录，保留现有 SNN BIT/HWH 不变；先用 PS/Jupyter 写寄存器、启动、读回，证明真正的 PL PN 核被调用。这个版本用于板上硬件证据，不等于完整 fly 网络。
+5. **扩成小网络后再决定合并。** 先 2–N 个 PN、明确状态 RAM 与突触/连接格式，估算 BRAM；根据资源结果选择替换当前 SNN 计算核或使用单独 fly bitstream。最后再把气味传感器数据编码和行为输出映射进网络。
+
+## 当前未完成清单
+
+- [ ] 逐项比较完整 `PQN_PN.vhd` 与 `DSSN_PN.vhd`，确认 `utf` 位串、输入限幅边界、`fc` 更新和四级 pipeline 对单步模型的影响。
+- [ ] 为完整网络版本新增/修正 Python PN 参考，并用固定向量和测试验收。
+- [ ] 编写单 PN HLS top、testbench、独立 Vitis HLS Tcl 工程；完成 C-sim、csynth 和资源报告。
+- [ ] 做独立 PS + AXI-Lite PN Vivado block design，生成独立 BIT/HWH；不覆盖 SNN 文件。
+- [ ] 在 PYNQ Notebook 运行单 PN 固定向量，对比 ARM reference 与 PL 输出；保存 bit/HWH 哈希和测试结果。
+- [ ] 之后才扩网络/决定是否替换现有 SNN HLS/路由结构。
+
+## 给接手模型的工作提示
+
+请从“完整 fly 网络实际使用的 `PQN_PN.vhd`”开始，不要从 `DSSN_PN.vhd` 的旧 Python 模型直接生成 HLS。第一阶段只修正真实单 PN 参考方程并建立 C/RTL 一致性向量，然后做独立单 PN AXI-Lite HLS IP 和小型 PS block design。保护 `outputs/atk7020_snn_ascii/snn_integrated_v2.bit/.hwh` 及板端当前可运行 SNN；禁止覆盖它们。当前 SNN 资源报告显示 BRAM tile 100%，且与 10/4 bitstream 的严格配对尚未确认；因此先单独实现/综合，不要并排集成完整 fly 网络。
+
+## 2026-10-06 晚间推进记录（实际构建证据）
+
+以下为本机 Vivado/Vitis HLS 2024.2.2 的新结果；现有 SNN bit/HWH 未覆盖、未重建、未下载。
+
+### 已完成并可复核
+
+1. **PQN 方程 Python 参考**：`models/fly_olfactory/pqn_pn_reference.py` 对完整网络实际使用的 `PQN_PN.vhd` 做逐位宽、切片和二补数建模。相关三个测试文件共 `16 passed`。
+2. **HLS 单 PN 核**：`hardware/hls_pqn_pn/pqn_pn_hls.cpp` 提供 AXI-Lite 状态输入/下一状态输出。HLS C-sim 固定向量 `6 vectors, 0 failures`；HLS csynth 目标 `xc7z020clg400-2`，2 cycles，估算 LUT 1520、FF 726、DSP 2、BRAM 0，目标周期 10 ns，估算延迟 7.299 ns。
+3. **原始 VHDL 对照**：原始 `PQN_PN.vhd` 的独立 xsim testbench 对 3 组向量通过（含负向 crossing 和限幅）。尚未用 RTL 仿真覆盖全部 6 组。
+4. **独立 PS7 + AXI-Lite + PQN block design**：`hardware/hls_pqn_pn/build_pynq_pqn_pn.tcl` 成功生成 BD、HWH 和 XSA；HWH 证实控制地址 `0x43C00000–0x43C00FFF`、DDR 上限 `0x3FFFFFFF`、器件 `MT41J256M16 RE-125`。PS 保留与工作 SNN 设计相同的 EMIO Ethernet/UART 配置。
+5. **整机综合-only**（还不是 place/route）：Vivado utilization 为 LUT 1263、FF 1205、DSP 2、BRAM tile 0。100 MHz 合成时序报告 WNS +4.226 ns、TNS 0，报告显示用户时序约束满足；另有 20 个内部端点未约束，因此这不是 implementation/Fmax 或板级 I/O 时序结论。
+
+归档位置：`external/fly-olfactory-network-fpga/hardware/hls_pqn_pn/outputs/2026-10-06/`，含 HLS IP、C-sim/CSynth 报告、`pqn_pn_test.hwh`、`pqn_pn_platform.xsa` 和 Vivado synthesis reports。Vivado 临时工程使用 ASCII 短路径 `%TEMP%\pqnpn_v`，规避 Windows 260 字符路径问题。
+
+### 仍未完成（不能宣称 Milestone 1 通过）
+
+- 尚无实现阶段 `.bit`，也没有下载到 Zynq；板端寄存器读写未验证。
+- 当前 PS 将 Ethernet GMII 与 UART 配为 EMIO，HWH 暴露了对应顶层信号；尚未找到并核实领航者 ATK7020 的 package pin/IOSTANDARD 约束。因此在补齐板级 XDC 前不生成/下载 bitstream，避免失去网络访问。
+- `hardware/hls_pqn_pn/pynq_pqn_pn_test.py` 已写好 3 个固定点 golden 测例，待 bit/HWH 配对并上板运行。
+- 证据链目前为：Python ↔ HLS C-sim（6 向量）；Python/HLS 与原始 VHDL（3 个重叠向量）；Vivado 整机 synthesis。还缺 PL 实机逐 bit 对照。
+
+### 下一步唯一阻塞项
+
+取得并核实领航者 Zynq-7020 的 Ethernet GMII/UART0 EMIO 板级 XDC。随后独立工程做 implementation、配对核对 bit/HWH，再以新文件名上板运行 3 向量测试。现有 SNN bitstream 保持为恢复方案；不合并完整 fly 网络，不改 SNN，不开展 PQN/LIF 简化实验。
+
+> **状态更正（2026-10-06 晚间，以下新结果优先于上文当时的阻塞描述）：**已在本机完成独立工程 implementation 与 bitgen；不再等待上述 XDC。工程 PS/EMIO 配置已按现有 SNN 参考设计处理，最终 implementation DRC 为 0 errors。
+
+## 最终 implementation 更新
+
+- 工具/器件：Vivado/Vitis HLS 2024.2.2，`xc7z020clg400-2`。
+- 最终 routed 资源：1124/53200 LUT（2.11%），1012/106400 FF（0.95%），2/220 DSP（0.91%），0/140 BRAM Tile。
+- 100 MHz implementation 时序：WNS +3.948 ns、TNS 0、WHS +0.083 ns；无 failing endpoints。Bitgen 成功。此为实现报告，不等于板上正确性。
+- 独立输出目录：`external/fly-olfactory-network-fpga/hardware/hls_pqn_pn/outputs/2026-10-06/`。
+- 新独立测试 `.bit` SHA-256：`2101A5D25CC2DB95909C07C0BB18D961677ECD8F21411501BF0DE2ABCFF7EE61`。
+- 配套 `.hwh` SHA-256：`6108CFA66815DF61320CA91584E8FFA4CA1F379C6AE04153BA24D8240008715E`。HWH 控制基址 `0x43C00000`，DDR 上限 `0x3FFFFFFF`，器件 DDR part `MT41J256M16 RE-125`。已核对 XSA 内 `pqn_pn_platform.bit` 与独立 `.bit` 长度及 SHA-256 完全一致（4045678 bytes，`2101A5D25CC2DB95909C07C0BB18D961677ECD8F21411501BF0DE2ABCFF7EE61`）。
+- 之前的 HLS/Python/VHDL 验证事实仍有效：Python 16 tests passed；HLS C-sim 6/6；原始 VHDL xsim 3 个重叠向量通过；HLS csynth latency 2 cycles、估算 LUT 1520/FF 726/DSP 2/BRAM 0。
+
+**已完成 Milestone 1：**2026-10-07 的用户回传实机结果见本文件末尾更新。以下 2026-10-06 的“尚未上板”描述为历史状态，已被后续结果取代。
+
+## 2026-10-07 单 PN 板端验收完成
+
+以下是用户在新建的 Jupyter Notebook 中手动运行 `pynq_pqn_pn_test.py` 后回传的板端输出。本轮没有通过自动化工具操作板卡。
+
+- Overlay 加载成功：`Overlay loaded: True`；HLS IP 为 `pqn_pn_step_0`，基址 `0x43c00000`。
+- 三组固定点向量全部通过，`PQN_PN_BOARD_VECTORS_PASS: 3/3`：
+  - `zero`: `(-1344, -840, -24, 256, 1032, 0, 0, 0)`
+  - `negative-crossing`: `(3340, -3091, 469, -957, 1384, 32, 1, 3000)`
+  - `negative-current-clamp`: `(-1408, 272, -906, 1981, 1036, 255, 0, -1024)`
+- 元组顺序为 `(v, n, q, s, u, fc, spike, effective_current)`；板端实际值逐项等于预期值。相同三组向量包含在 HLS C-sim testbench 和原始 `PQN_PN.vhd` 的 RTL testbench 中；留存 HLS C-sim 日志为 `6 vectors, 0 failures`，原始 VHDL xsim 记录为三个向量通过。
+- 本机全套 Python 测试复跑为 `17 passed`，其中包含板测脚本 golden 与 Python reference 的一致性回归测试。
+- 新独立测试 BIT/HWH 的本机 SHA-256 分别为 `2101A5D25CC2DB95909C07C0BB18D961677ECD8F21411501BF0DE2ABCFF7EE61` 和 `6108CFA66815DF61320CA91584E8FFA4CA1F379C6AE04153BA24D8240008715E`。现有 SNN BIT/HWH 未被覆盖；本机归档哈希仍为 `FA604FAEF094634590ED093B828F9A0218B9171D29E4AB4D49B0DAD929B7BBAF` 和 `381A06BE1AD8F3078E3D96646A27DBF7F73245391337A2340F73287EFA97CFF`。
+
+**结论：**真实 fly `PQN_PN.vhd` 的单 PN 状态更新已通过 Python 定点参考、HLS C-sim/综合、独立 Zynq-7020 PL 实现和三组板端逐位比对。该里程碑只证明单 PN 内核，不表示完整 fly 网络、突触连接、网络调度或行为模型已迁移到 FPGA。

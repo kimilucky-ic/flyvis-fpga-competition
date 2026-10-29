@@ -1,0 +1,32 @@
+
+
+set RtlHierarchyInfo {[
+	{"ID" : "0", "Level" : "0", "Path" : "`AUTOTB_DUT_INST"},
+	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.boundary_U"},
+	{"ID" : "2", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_flyvis_t5c_source_raw_Pipeline_VITIS_LOOP_67_1_fu_2569"},
+	{"ID" : "3", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_flyvis_t5c_source_raw_Pipeline_VITIS_LOOP_67_1_fu_2569.flow_control_loop_pipe_sequential_init_U"},
+	{"ID" : "4", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_flyvis_t5c_source_raw_Pipeline_VITIS_LOOP_85_2_fu_2712"},
+	{"ID" : "5", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_flyvis_t5c_source_raw_Pipeline_VITIS_LOOP_85_2_fu_2712.flow_control_loop_pipe_sequential_init_U"},
+	{"ID" : "6", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_flyvis_t5c_source_raw_Pipeline_VITIS_LOOP_93_3_fu_2850"},
+	{"ID" : "7", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_flyvis_t5c_source_raw_Pipeline_VITIS_LOOP_93_3_fu_2850.FLYVIS_EDGE_SRC_U"},
+	{"ID" : "8", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_flyvis_t5c_source_raw_Pipeline_VITIS_LOOP_93_3_fu_2850.FLYVIS_EDGE_WEIGHT_Q20_U"},
+	{"ID" : "9", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_flyvis_t5c_source_raw_Pipeline_VITIS_LOOP_93_3_fu_2850.FLYVIS_EDGE_DST_U"},
+	{"ID" : "10", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_flyvis_t5c_source_raw_Pipeline_VITIS_LOOP_93_3_fu_2850.mul_28ns_22s_50_1_1_U273"},
+	{"ID" : "11", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_flyvis_t5c_source_raw_Pipeline_VITIS_LOOP_93_3_fu_2850.sparsemux_135_7_29_1_1_U274"},
+	{"ID" : "12", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_flyvis_t5c_source_raw_Pipeline_VITIS_LOOP_93_3_fu_2850.sparsemux_135_7_48_1_1_U275"},
+	{"ID" : "13", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_flyvis_t5c_source_raw_Pipeline_VITIS_LOOP_93_3_fu_2850.flow_control_loop_pipe_sequential_init_U"},
+	{"ID" : "14", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_flyvis_t5c_source_raw_Pipeline_VITIS_LOOP_124_4_fu_3063"},
+	{"ID" : "15", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_flyvis_t5c_source_raw_Pipeline_VITIS_LOOP_124_4_fu_3063.FLYVIS_BIAS_Q22_U"},
+	{"ID" : "16", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_flyvis_t5c_source_raw_Pipeline_VITIS_LOOP_124_4_fu_3063.FLYVIS_INVTau_Q22_U"},
+	{"ID" : "17", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_flyvis_t5c_source_raw_Pipeline_VITIS_LOOP_124_4_fu_3063.mul_29s_16ns_45_1_1_U485"},
+	{"ID" : "18", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_flyvis_t5c_source_raw_Pipeline_VITIS_LOOP_124_4_fu_3063.mul_31s_28ns_59_1_1_U486"},
+	{"ID" : "19", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_flyvis_t5c_source_raw_Pipeline_VITIS_LOOP_124_4_fu_3063.sparsemux_135_7_48_1_1_U487"},
+	{"ID" : "20", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_flyvis_t5c_source_raw_Pipeline_VITIS_LOOP_124_4_fu_3063.sparsemux_135_7_29_1_1_U488"},
+	{"ID" : "21", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_flyvis_t5c_source_raw_Pipeline_VITIS_LOOP_124_4_fu_3063.sparsemux_135_7_29_1_1_U489"},
+	{"ID" : "22", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_flyvis_t5c_source_raw_Pipeline_VITIS_LOOP_124_4_fu_3063.flow_control_loop_pipe_sequential_init_U"},
+	{"ID" : "23", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_flyvis_t5c_source_raw_Pipeline_VITIS_LOOP_161_5_fu_3407"},
+	{"ID" : "24", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_flyvis_t5c_source_raw_Pipeline_VITIS_LOOP_161_5_fu_3407.sparsemux_135_7_29_1_1_U830"},
+	{"ID" : "25", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_flyvis_t5c_source_raw_Pipeline_VITIS_LOOP_161_5_fu_3407.flow_control_loop_pipe_sequential_init_U"},
+	{"ID" : "26", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.control_s_axi_U"},
+	{"ID" : "27", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.gmem0_m_axi_U"}]}
+set DependenceCheckSize 0

@@ -1,0 +1,186 @@
+"""Independent pixel, spatial-mean and receipt-time audit of the frozen real input.
+
+Read-only for all source/calibration/input packages; no camera or neural network.
+"""
+from pathlib import Path
+import csv
+import json
+import sys
+import numpy as np
+from PIL import Image
+
+HERE = Path(__file__).resolve().parent
+PACKAGE = HERE.parent
+sys.path.insert(0, str(HERE.parents[2]))
+from camera_pipeline.common import sha256, utc_now, write_json, cv2_module
+from camera_pipeline.phone_screen_rectification_20261011_r1.screen_import import load_input, verify_seal
+from camera_pipeline.phase4_phone_camera_20261010_r1.geometry import native_geometry
+from camera_pipeline.phase4_phone_camera_20261010_r1.validate_delivery import prior_seals, verify_new_seal
+
+cv2 = cv2_module()
+
+
+def read(path):
+    return json.loads(Path(path).read_text(encoding='utf-8'))
+
+
+def rows(path):
+    with Path(path).open(encoding='utf-8', newline='') as handle:
+        return list(csv.DictReader(handle))
+
+
+def main():
+    checks = []
+    def check(name, condition, **details):
+        checks.append({'name': name, 'status': 'PASS' if bool(condition) else 'FAIL', **details})
+        if not condition:
+            write_json(HERE/('audit_failure_'+name+'.json'),{'checks':checks,'created_utc':utc_now()})
+            print(json.dumps(checks[-1],indent=2),flush=True)
+            raise AssertionError(name)
+
+    result = read(HERE/'selection_result.json')
+    folder = Path(result['input'])
+    identity, stimulus, grid, activity_time = load_input(folder)
+    check('sealed_read_only_input', not stimulus.flags.writeable, shape=list(stimulus.shape))
+    identity2, x2, t2, a2 = load_input(folder)
+    check('repeated_read_is_bitwise_equal', identity == identity2 and
+          np.array_equal(stimulus, x2) and np.array_equal(grid,t2) and np.array_equal(activity_time,a2))
+    selected = Path(identity['source_bundle_path'])
+    source = read(selected/'SOURCE.json')
+    parent_source = read(HERE/'source'/'SOURCE.json')
+    recording = Path(parent_source['source_path'])
+    parent_frames = np.load(parent_source['frames_path'], mmap_mode='r', allow_pickle=False)
+    selected_frames = np.load(source['frames_path'], mmap_mode='r', allow_pickle=False)
+    originals = np.load(selected/'original_source_frame_indices.npy', allow_pickle=False)
+    parent_times = np.load(recording/'frame_times.npy', allow_pickle=False)
+    times = np.load(folder/'source_time.npy', allow_pickle=False)
+    selected_original_times = np.load(selected/'source_times_original.npy', allow_pickle=False)
+    check('exact_lossless_original_frame_slice', np.array_equal(originals, np.arange(100,191)) and
+          np.array_equal(selected_frames, parent_frames[100:191]), frames=91)
+    check('exact_original_times_preserved', np.array_equal(selected_original_times, parent_times[100:191]))
+    check('source_time_origin_only_translation', np.array_equal(times, parent_times[100:191]-parent_times[100]))
+    source_rows = rows(selected/'source_times.csv')
+    parent_rows = rows(recording/'frame_timestamps.csv')
+    ns = np.array([int(r['source_received_monotonic_ns']) for r in source_rows], dtype=np.int64)
+    time_error = float(np.max(np.abs(times-(ns-ns[0])/1e9)))
+    check('receipt_nanoseconds_define_source_times', time_error < 1e-12, max_error_s=time_error)
+    check('utc_receipts_and_original_frame_ids_preserved', all(
+        int(r['original_source_frame']) == 100+i and
+        r['source_received_utc'] == parent_rows[100+i]['received_utc'] and
+        int(r['source_received_monotonic_ns']) == int(parent_rows[100+i]['received_monotonic_ns'])
+        for i,r in enumerate(source_rows)))
+
+    cal = read(folder/'calibration.json')
+    initial_cal = read(HERE/'calibration_proposal'/'calibration.json')
+    check('one_initial_frame0_matrix_preserved', cal['transform'] == initial_cal['transform'])
+    matrix = np.array(cal['transform']['raw_to_render_homography'], dtype=np.float64)
+    rectified = np.load(identity['rectified_frames_path'], mmap_mode='r', allow_pickle=False)
+    check('all_91_rectified_frames_reproduce_with_one_matrix', all(np.array_equal(rectified[i],
+        cv2.warpPerspective(np.asarray(frame), matrix, (640,640), flags=cv2.INTER_LINEAR,
+                           borderMode=cv2.BORDER_CONSTANT, borderValue=0))
+        for i,frame in enumerate(selected_frames)), matrix_updates=0)
+    centers,mask,geometry = native_geometry(640,640)
+    coord_rows = rows(folder/'input_hex_coordinates.csv')
+    recorded_centers = np.array([[int(r['render_column']),int(r['render_row'])] for r in coord_rows])
+    check('official_721_coordinate_order_and_kernel_positions', np.array_equal(centers,recorded_centers))
+    valid = cv2.warpPerspective(np.ones((480,640),np.float32),matrix,(640,640),
+        flags=cv2.INTER_LINEAR,borderMode=cv2.BORDER_CONSTANT,borderValue=0)
+    check('no_outside_frame_border_in_official_footprints', bool((valid[mask]>=.99999).all()),
+          footprint_union_pixels=int(mask.sum()))
+
+    # Independent integer-integral luminance sums; no BoxEye call used in this audit.
+    means = np.empty((91,721), dtype=np.float64)
+    xs,ys = centers.T
+    for i,frame in enumerate(rectified):
+        gray = np.asarray(Image.fromarray(np.asarray(frame)[:,:,::-1]).convert('L'),dtype=np.int64)
+        integral = np.pad(gray.cumsum(0).cumsum(1), ((1,0),(1,0)))
+        sums = integral[ys+7,xs+7]-integral[ys-6,xs+7]-integral[ys+7,xs-6]+integral[ys-6,xs-6]
+        means[i] = sums/(169*255)
+    source_hex = np.load(folder/'source_hex.npy', allow_pickle=False)
+    mean_error = float(np.max(np.abs(means-source_hex)))
+    # Reuse the previously declared camera-lane bound for 169 nonnegative float32
+    # terms plus /255 normalization and /169 division. Binary synthetic stimuli
+    # can have much smaller errors; that observed error is not an arithmetic bound.
+    unit_roundoff = np.finfo(np.float32).eps/2
+    arithmetic_bound = 169*unit_roundoff/(1-169*unit_roundoff)+3*unit_roundoff
+    check('all_65611_official_means_match_independent_pixel_sums', mean_error <= arithmetic_bound,
+          receptor_means_checked=int(means.size), max_error=mean_error,
+          declared_nonnegative_float32_sum_bound=float(arithmetic_bound),
+          bound_source='camera_pipeline/controlled_video_20261010_r1/analyze.py')
+    check('required_float32_shape_and_unit_range', stimulus.shape == (1,609,1,721) and
+          stimulus.dtype==np.float32 and np.isfinite(stimulus).all() and
+          float(stimulus.min())>=0 and float(stimulus.max())<=1,
+          actual_min=float(stimulus.min()),actual_max=float(stimulus.max()))
+    expected_grid = np.arange(int(np.floor(times[-1]/.005))+1,dtype=np.float64)*.005
+    check('609_actual_grid_steps_without_800_padding', np.array_equal(grid,expected_grid) and len(grid)==609,
+          source_span_s=float(times[-1]), last_input_time_s=float(grid[-1]))
+    indices = np.searchsorted(times,grid,side='right')-1
+    check('causal_zoh_values_for_every_step', np.array_equal(stimulus[0,:,0],source_hex[indices]))
+    check('no_future_source_frame', bool((times[indices]<=grid).all()),
+          max_source_frame_age_s=float(np.max(grid-times[indices])))
+    check('activity_after_update_is_input_plus_dt', np.array_equal(activity_time,grid+.005),
+          first_activity_time_s=float(activity_time[0]),last_activity_time_s=float(activity_time[-1]))
+    aligned = rows(Path(result['handoff'])/'original_frame_alignment.csv')
+    for i,r in enumerate(aligned):
+        s = int(indices[i]); p = int(originals[s])
+        if not (int(r['model_step'])==i and int(r['source_local_frame'])==s and
+                int(r['source_original_frame'])==p and int(r['source_frame'])==s and
+                float(r['input_time_s'])==grid[i] and
+                float(r['activity_after_update_time_s'])==activity_time[i] and
+                float(r['original_recording_relative_time_s'])==parent_times[p] and
+                float(r['original_recording_grid_time_s'])==parent_times[100]+grid[i] and
+                float(r['original_recording_activity_grid_time_s'])==parent_times[100]+activity_time[i] and
+                int(r['source_received_monotonic_ns'])==int(parent_rows[p]['received_monotonic_ns']) and
+                r['source_received_utc']==parent_rows[p]['received_utc'] and r['uses_future_frame']=='False'):
+            raise AssertionError('alignment row '+str(i))
+    check('all_step_original_frame_and_three_clock_correspondences',len(aligned)==609,rows=609)
+
+    qc = read(HERE/'frame_quality.json')[100:191]
+    check('diagnostic_screen_coverage_over_selected_window',all(r['outside_fraction']==0 for r in qc),
+          exact_optical_calibration=False,min_tracking_inliers=min(r['ransac_inliers'] for r in qc),
+          estimated_dx_range_px=[min(r['tracked_screen_dx_px'] for r in qc),max(r['tracked_screen_dx_px'] for r in qc)])
+    # Descriptive direction evidence from the INPUT only, not neural response or physical speed.
+    crossings = np.array([times[np.flatnonzero(source_hex[:,j]<.5)[0]]
+                         if np.any(source_hex[:,j]<.5) else np.nan for j in range(721)])
+    correlation = float(np.corrcoef(centers[:,0],crossings)[0,1])
+    check('observed_off_passage_preserves_rightward_order',np.isfinite(crossings).all() and correlation>.9,
+          crossing_time_vs_render_x_pearson_r=correlation,
+          earliest_local_crossing_s=float(crossings.min()),latest_local_crossing_s=float(crossings.max()),
+          neural_direction_selectivity_test=False)
+
+    preserve = prior_seals()
+    preserve['phase4_original_preparation']=verify_new_seal()
+    delivery = read(PACKAGE/'delivery_manifest.json')
+    check('scheme_B_preparation_delivery_unchanged',all(sha256(PACKAGE/name)==digest
+          for name,digest in delivery['files'].items()),files=len(delivery['files']))
+    check('original_and_selected_source_and_frozen_seals',all(verify_seal(path) is not None for path in
+          (HERE/'source',selected,HERE/'selected_calibration',folder.parent,folder,Path(result['handoff']))))
+    preserve['scheme_B_files_verified']=len(delivery['files'])
+    write_json(HERE/'preservation_after_selected.json',preserve)
+    acceptance={'schema':'real-camera-selected-input-acceptance-v1','created_utc':utc_now(),
+        'status':'PASS_INPUT_PIPELINE_WITH_CAPTURE_QUALITY_LIMITATIONS','comparison_id':identity['comparison_id'],
+        'input_directory':str(folder),'checks':checks,'checks_passed':len(checks),
+        'authoritative_source':'actual computer-camera PNG/frames.npy and host receipt timestamps',
+        'input_manifest_sha256':sha256(folder/'manifest.json'),
+        'stimulus_npy_sha256':sha256(folder/'stimulus.npy'),
+        'selected_original_frames':[100,190],'parent_capture_frames':351,
+        'parent_capture_span_s':float(parent_times[-1]-parent_times[0]),
+        'selected_source_frames':91,'selected_source_span_s':float(times[-1]),
+        'parent_delivery_fps':float(350/(parent_times[-1]-parent_times[0])),
+        'selected_delivery_fps':float(90/times[-1]),'simulation_steps_per_second':200,
+        'actual_neural_compute_throughput':None,'neural_inference_executed':False,'board_used':False,
+        'quality_limitations':['handheld phone motion remains in input',
+            'sensor exposure/ISP mode and optical screen-to-sensor alignment unverified',
+            'selected window is not the complete 4s phone playback',
+            'scheme B rectification is explicitly distinct from native standard A',
+            'not a clean controlled direction or physical-speed benchmark'],
+        'preservation_report':str(HERE/'preservation_after_selected.json'),
+        'tools':{'python':sys.version,'numpy':np.__version__,'opencv':cv2.__version__},
+        'auditor_source_sha256':sha256(__file__)}
+    write_json(HERE/'acceptance.json',acceptance)
+    print(json.dumps({'status':acceptance['status'],'checks_passed':len(checks),
+        'mean_error':mean_error,'crossing_r':correlation,'comparison_id':identity['comparison_id']},indent=2),flush=True)
+
+
+if __name__=='__main__':
+    main()

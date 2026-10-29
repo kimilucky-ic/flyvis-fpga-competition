@@ -1,0 +1,161 @@
+{
+  "status": "PASS_VIVADO2026_1_FULL_SOC_100MHZ_BIT_HWH_OFFLINE_ONLY",
+  "evidence": "VIVADO_FULL_SOC_IMPLEMENTATION_NOT_BOARD",
+  "tool": "Vivado2026.1 SW6511674",
+  "part": "xc7z020clg400-2",
+  "top": "base_wrapper",
+  "build": "C:\\fpga_work\\line11_v261_20261026",
+  "network": {
+    "nodes": 45669,
+    "edges": 1513231,
+    "input_words": 721,
+    "numeric": "unchanged strict FP32",
+    "clock_target_hz": 100000000,
+    "ring_ABI": "0x00110005",
+    "neural_state_not_reset_on_wrap": true
+  },
+  "resources": {
+    "LUT": 15784.0,
+    "FF": 21124.0,
+    "BRAM36_equivalent": 112.0,
+    "DSP": 4.0
+  },
+  "baseline_resources": {
+    "LUT": 15784.0,
+    "FF": 21124.0,
+    "BRAM36_equivalent": 112.0,
+    "DSP": 4.0
+  },
+  "resource_delta": {
+    "LUT": 0.0,
+    "FF": 0.0,
+    "BRAM36_equivalent": 0.0,
+    "DSP": 0.0
+  },
+  "timing": {
+    "WNS_ns": 0.153,
+    "WHS_ns": 0.045,
+    "WPWS_ns": 0.53,
+    "setup_failing": 0,
+    "hold_failing": 0,
+    "pulse_failing": 0,
+    "setup_endpoints": 56647,
+    "hold_endpoints": 56493,
+    "unconstrained_internal_endpoints": 0,
+    "neural_setup_ns": 0.153,
+    "neural_hold_ns": 0.069,
+    "release_ACK_setup_ns": 1.568,
+    "release_ACK_hold_ns": 0.215
+  },
+  "drc_summary": [
+    [
+      "BUFC-1",
+      "Warning",
+      "21"
+    ],
+    [
+      "DPIP-1",
+      "Warning",
+      "2"
+    ],
+    [
+      "DPOP-1",
+      "Warning",
+      "3"
+    ],
+    [
+      "DPOP-2",
+      "Warning",
+      "4"
+    ],
+    [
+      "PDCN-1569",
+      "Warning",
+      "5"
+    ],
+    [
+      "PLCK-12",
+      "Warning",
+      "1"
+    ],
+    [
+      "RTSTAT-10",
+      "Warning",
+      "1"
+    ],
+    [
+      "REQP-165",
+      "Advisory",
+      "1"
+    ],
+    [
+      "REQP-181",
+      "Advisory",
+      "1"
+    ]
+  ],
+  "cdc_summary": [
+    [
+      "CDC-3",
+      "Info",
+      "65"
+    ],
+    [
+      "CDC-6",
+      "Warning",
+      "2"
+    ],
+    [
+      "CDC-9",
+      "Info",
+      "6"
+    ],
+    [
+      "CDC-15",
+      "Warning",
+      "3"
+    ]
+  ],
+  "bus_skew_met": 11,
+  "interfaces": {
+    "camera": "official HP0 64bit",
+    "neural_records": "HP1 64bit",
+    "register_base": "0x43c40000",
+    "PL_clock_period_ns": 10,
+    "clock_physical_measurement": false
+  },
+  "preservation": {
+    "C:\\Users\\hzy72\\Documents\\ChatGPT\\fpga\\flyvis_runtime\\fpga\\flyvis-lossless-study\\vivado2026_1_20261026\\evidence\\BASELINE_BUILD_SHA256.json": 138,
+    "C:\\Users\\hzy72\\Documents\\ChatGPT\\fpga\\flyvis_runtime\\fpga\\flyvis-lossless-study\\ddr_ring_20261026\\evidence\\BASELINE_R3_SHA256.json": 73,
+    "C:\\Users\\hzy72\\Documents\\ChatGPT\\fpga\\flyvis_runtime\\fpga\\flyvis-lossless-study\\ov5640_live_60s_r3_analysis_20261026\\SOURCE_SHA256.json": 828
+  },
+  "earlier_numerical_evidence": "C:\\Users\\hzy72\\Documents\\ChatGPT\\fpga\\flyvis_runtime\\fpga\\flyvis-lossless-study\\ddr_ring_20261026\\RESULT.json",
+  "numerical_RTL_rerun_this_turn": false,
+  "limits": [
+    "Routed timing passes specified constraints, not physical camera timing signoff",
+    "Camera72MHz external timing budget is conditional; official non-CCIO CLOCK_DEDICATED_ROUTE FALSE retained",
+    "Existing IIC/LCD missing external delays remain; see check_timing.rpt",
+    "DRC/CDC warnings retained and must be distinguished from zero-error timing acceptance",
+    "No physical board operation or new real-world performance/numerical claim; old physical PASS does not certify new bitstream",
+    "Current crop Notebook pins old BIT/HWH hashes; do not overwrite its firmware in place",
+    "No physical board operation or new real-world performance/numerical claim; old physical PASS does not certify new bitstream",
+    "Current crop Notebook pins old BIT/HWH hashes; do not overwrite its firmware in place"
+  ],
+  "routed_dcp_sha256": "47a822e7a2ee755b7b1d22c50d0c3c2bdd5965df1dae5d8cfa11439273ca6931",
+  "hwh_sha256": "00eb04c23bd2c6666aaec6a9e7809829bedca8591471d7160bb813ae86e6851f",
+  "board_operations": 0,
+  "GPU_operations": 0,
+  "bit_generated": true,
+  "next": "Prepare separate crop software release with new paired firmware hashes and CPU package validation, then user-controlled board acceptance; old passing package unchanged",
+  "bit_sha256": "b88cd46383b4884e74384a2f418c251e8d4bb20a86fd3ea6a487be1f58409044",
+  "bit_header": {
+    "design": "base_wrapper;UserID=0XFFFFFFFF;Version=2026.1;SW_CRC=9eab8e8e;SW_HDR_SHA256=01595c4ddf9c8f679fcc8417da159cb01c5a975a5b6b6133d51ec82ea30ff558",
+    "part": "7z020clg400",
+    "date": "2026/10/26",
+    "time": "14:41:36",
+    "payload_bytes": 4045564
+  },
+  "PS_parameter_differences": {},
+  "interfaces_equal_to_passed_ring": true,
+  "crop_release_files_preserved": 79
+}

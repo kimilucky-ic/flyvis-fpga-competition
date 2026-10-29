@@ -1,0 +1,16 @@
+{
+  "upstream": "https://github.com/TuragaLab/flyvis",
+  "commit": "92b3845cc426dd309a1a0e1b3890156c42e14021",
+  "graph": "fib25-fib19_v2.2.json",
+  "graph_sha256": "6779065467f70cef14e8f2f1005efd4830fd29c00795c103756a6af60607f825",
+  "model": "flow/0000/000/chkpts/chkpt_00000",
+  "checkpoint_sha256": "d0e42857e738d0315897c2d50fde9eb3fb1a3fb1f071d55dfc13d53d72bccc3f",
+  "neurons": 45669,
+  "synapses": 1513231,
+  "cell_types": 65,
+  "rules": 605,
+  "dt_seconds": 0.005,
+  "numeric_format": "FP32 continuous ReLU/Euler",
+  "scope": "Neural network inference only; image rendering, optical-flow decoder and training are outside this workstream.",
+  "delivery": "Local private engineering bundle; no external publication performed. Upstream license retained."
+}

@@ -1,0 +1,1 @@
+Conditional internal100MHz and camera-budget route passed; external IIC timing remains incomplete. No bitstream/board.

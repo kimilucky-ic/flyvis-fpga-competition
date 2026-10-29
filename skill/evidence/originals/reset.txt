@@ -1,0 +1,17 @@
+# R2 first AXI read stall — 2026-10-12
+
+Evidence source: operator-pasted serial file reader after an explicitly authorized manual power cycle. Original board files have not been independently retrieved. Previous boot: `2c7cec1e-d7ba-4b07-8283-ebb6f3a6b010`; recovery boot: `894292a3-1b60-4abf-aba3-e7b18b9e75c8`.
+
+- load_result.json: 803 bytes, SHA256 `0b52d9b84f79cc7d5c7ef8cd2e521be3db73de8ffee0d92a3ca65a70a8481df2`; programming returned, runtime identity only.
+- ROW0_ATTEMPT_CONSUMED.json: 187 bytes, SHA256 `285d4d1a12ad0cb5e6da64ff6e8e6f8631135064dff7be417c7429d3d58d07ff`.
+- step0/register_trace.jsonl: 79 bytes, SHA256 `c726bf5620738dc5b7c7ddf4b2c4553a199f53a1d2f1a6d66d792a8ff1bc72d8`; sole line: `{"action": "mmio_read_intent", "elapsed_s": 0.022383732999969652, "offset": 0}`.
+- step_report.json and board_run.json missing. No returned first CTRL read, START write, buffer allocation or PL output established. Driver source places the before snapshot ahead of allocation and START.
+- User observed Jupyter disconnected, ping failed, serial Enter gave no output. Whole-system failure mechanism is not independently established by these observations.
+
+## Fresh local source/HWH finding
+
+Sealed `build/v1_bankfix_20261011_153525/flyvis_t5c_source_raw_v1.hwh` has `reset/C_AUX_RESET_HIGH=0`, `aux_reset_in` polarity ACTIVE_LOW, connected to `zero/dout`. This statically asserts auxiliary reset continuously. The reset outputs drive both AXI interconnects and HLS `ap_rst_n`. Source `scripts/build_v1_soc_bankfix.tcl` ties aux reset to zero without explicitly choosing its polarity. External reset polarity is high and its inverter is consistent; auxiliary reset is the definite configuration defect.
+
+This is a strong explanation for the absent first AXI read response, not a verified recovery or sole cause of all system symptoms. Actual corrected implementation and live board functionality remain pending. No neural computation was demonstrated; no integer/scientific/closed-loop PASS.
+
+Prepared separate `scripts/build_v1_soc_resetfix.tcl`: explicitly sets C_EXT_RESET_HIGH=1 and C_AUX_RESET_HIGH=1 and uses a new V1_resetfix timestamped release directory. Old source/BIT/HWH preserved. Script has not been built or tested. Next: independently verify corrected generated HWH and reset wiring, generate isolated full implementation and fresh release identities; obtain specific operation authorization before any new load.

@@ -1,0 +1,317 @@
+{
+  "schema": "flyvis.public.runtime.files/v1",
+  "files": {
+    "README.md": {
+      "bytes": 1894,
+      "sha256": "4688e37cfaefb54e3bf30c95a91775f3044e5a6d032c13e3e2586b396fd10c05"
+    },
+    "requirements.txt": {
+      "bytes": 46,
+      "sha256": "7d5b07ce570905bab3cd59452bf37258573a8d71986d5b73f06ade80b1472932"
+    },
+    "run.py": {
+      "bytes": 5013,
+      "sha256": "8d5bdbcc5b207fc7ab354aa32201ab58a8e1d49bae9fddaedc4fca0b6c3ea0bb"
+    },
+    "selfcheck.py": {
+      "bytes": 1507,
+      "sha256": "1102fda4a5fb94bf0749e5844db87829738c1f272dbff90154e88b345f763022"
+    },
+    "start.cmd": {
+      "bytes": 88,
+      "sha256": "d8331432945c47055a3be8bc43914138a9508271f18ae7cfdc069a0dce1c2010"
+    },
+    "app/notebook_template.json": {
+      "bytes": 2476,
+      "sha256": "a55e42729aa1e9776ccd88e427b2c23e680fe03f65b0d73eff1ba21cb77854df"
+    },
+    "checks/identity.json": {
+      "bytes": 244,
+      "sha256": "0fbc195e22c12587ab5811acd776ace4f76d4229efa98db5a60a48a779db6fa6"
+    },
+    "checks/input.bin": {
+      "bytes": 2884,
+      "sha256": "29bbfb919536efebcb8289247d63cb9349b16eb47c1597e526b0b5460897dcc5"
+    },
+    "checks/state.bin": {
+      "bytes": 182676,
+      "sha256": "ae0c4135d17d8bd9be09637a0b506cb214638f3e82b528808da0f63b8d4c0998"
+    },
+    "evidence/last_board_result.json": {
+      "bytes": 409,
+      "sha256": "dc4371a3ac0312dfbad0cc0d64115e40f21fc84e4db03eee046d7e31c0e4fa88"
+    },
+    "app/assets/fixed_skeleton.js": {
+      "bytes": 6203,
+      "sha256": "8a844bc99312bac06fb21e38b045eb6534c08a30163a68f01755a7f98cd12db4"
+    },
+    "app/assets/flow.js": {
+      "bytes": 3242,
+      "sha256": "76f56576dc64a194ca656cd19e1256e4875dc72ede17eefe7a3fbb1de9d4b43a"
+    },
+    "app/assets/heatmap.js": {
+      "bytes": 10378,
+      "sha256": "dd56900e76917d47e0702a0b2ce2ee4ff48d308cdfb6095f4c1a238954ffead9"
+    },
+    "app/assets/index.html": {
+      "bytes": 24022,
+      "sha256": "686302e7b0b2480a6dd43237b736bc4d8ddd91168b8798c9dbad1f9b9bfb0da2"
+    },
+    "app/assets/monitor.js": {
+      "bytes": 10619,
+      "sha256": "d3db8f0c89b15be4bd1fd2126ef7bb1769d3acdd352b7fa8cf1065f2ec9ac518"
+    },
+    "app/assets/monitor.json": {
+      "bytes": 66156,
+      "sha256": "3c8b887e1bcb867f75ed064f5c7f81603d10246e1fe51b2d03922ee5c544ab4f"
+    },
+    "app/assets/official_flow_manifest.json": {
+      "bytes": 717,
+      "sha256": "6030cb64222d2980de91cc908290c5f67b6ca6d6b9fd58e57b012f4d087dde32"
+    },
+    "app/assets/projection.json": {
+      "bytes": 13331,
+      "sha256": "186e0a39394b9f095e51e685447186605ed16774b951e5644b55352d8985c24b"
+    },
+    "app/assets/spatial.json": {
+      "bytes": 40914,
+      "sha256": "ca8ade77b3d5cb0b606be85ddb8e6b45a163cfb9efcfdc2e35c4a1c50dcea0da"
+    },
+    "app/assets/ui.js": {
+      "bytes": 14705,
+      "sha256": "77673854560b30327fcb7c76861736c53d166044054ccc1ee4a8e54255d4a9c4"
+    },
+    "app/bundle/arm_barrier.c": {
+      "bytes": 274,
+      "sha256": "70b2561c3bf36c582da2961b03710268acbca04ebc294036c8b4c1aec6d6650a"
+    },
+    "app/bundle/audit_bridge.py": {
+      "bytes": 4118,
+      "sha256": "f9f01d75a0e9f4cfc6c4e5128d5538c480f51476d3bdc46cd9e98f72747de833"
+    },
+    "app/bundle/batch_records.py": {
+      "bytes": 7771,
+      "sha256": "5054d2fac8bbe0d5252613834331c5f8ffc6050edbcc6a0abf5e04d99bba9736"
+    },
+    "app/bundle/bit_container.py": {
+      "bytes": 1254,
+      "sha256": "eb005366345ddbb72c661f7bebc12901cadcb8c20c57e2e2dca3b101f34871cf"
+    },
+    "app/bundle/board_run.py": {
+      "bytes": 208,
+      "sha256": "9f22259a8b01ca0a9f3dc27a5d4bf83d5462ab3d7b54607466fd8a3218e2db32"
+    },
+    "app/bundle/board_runtime.py": {
+      "bytes": 8131,
+      "sha256": "d844f4cca1225c85977a30640001db77c4ca4ebf41164354db60c04969453ccf"
+    },
+    "app/bundle/camera_config.py": {
+      "bytes": 66,
+      "sha256": "474077a328d175a94c86530be0e363380d213ce0818608b4e18f2d69a28fe149"
+    },
+    "app/bundle/camera_diagnostic.py": {
+      "bytes": 2819,
+      "sha256": "e30ef830e7c9e30c75e9f3545a0016238d51b1d8f2c15ae8c6f251a44d39c6ee"
+    },
+    "app/bundle/camera_memory.py": {
+      "bytes": 2624,
+      "sha256": "79d346dd8d51803e35633563d38818f7ff2f8b8d18c45732d283436df73e6ca7"
+    },
+    "app/bundle/capture_binding.py": {
+      "bytes": 9213,
+      "sha256": "be94988febb31f78d8029dd3875cf4a8fafa8de03d822910c2c2e6475f48bf1b"
+    },
+    "app/bundle/cycle_contract.py": {
+      "bytes": 778,
+      "sha256": "76a7f85ef8bf9cc82841ab9526f16f51aac33c1380a6a538f4ef161857d15360"
+    },
+    "app/bundle/ddr_acceptance.py": {
+      "bytes": 8027,
+      "sha256": "32603eed5eb443c8bd00f9ef44f0a124d35faacaf1f3150939d0551ab5572c3f"
+    },
+    "app/bundle/ddr_control.py": {
+      "bytes": 8480,
+      "sha256": "bb61021f9c43122093eec75eb49c10662392cd41869270c054df36491f62c9bf"
+    },
+    "app/bundle/ddr_memory.py": {
+      "bytes": 5073,
+      "sha256": "5eecb217aaf2b3b6b41d62f46783bae45cebc83724659dc8b19ec5f4219c937a"
+    },
+    "app/bundle/direct_input.py": {
+      "bytes": 6487,
+      "sha256": "8960c9585478b9a508eba0716190e30510c5a8d224c39f4c5ec1cb53b06545d8"
+    },
+    "app/bundle/duration_run.py": {
+      "bytes": 5232,
+      "sha256": "1eb298a3b98539f868d3538f13616f216db2ecc2e188196f4feb2ded5c2f829e"
+    },
+    "app/bundle/edges.bin": {
+      "bytes": 12105848,
+      "sha256": "762f67a39ef5446f4938081aa9114ff0f905425887b58188a707bc15f8b8654a"
+    },
+    "app/bundle/flyvis_official.bit": {
+      "bytes": 4045767,
+      "sha256": "b88cd46383b4884e74384a2f418c251e8d4bb20a86fd3ea6a487be1f58409044"
+    },
+    "app/bundle/flyvis_official.hwh": {
+      "bytes": 751182,
+      "sha256": "00eb04c23bd2c6666aaec6a9e7809829bedca8591471d7160bb813ae86e6851f"
+    },
+    "app/bundle/gc_events.py": {
+      "bytes": 2060,
+      "sha256": "2aea3e68eaabbfcaf061b4f47410893f48dc98cdc988e825ced2d2633b4b4ab4"
+    },
+    "app/bundle/host_reference.cpp": {
+      "bytes": 835,
+      "sha256": "cdcf122f006c830d4e144d6a04f906fbd0de54e154956529d602b6ddf22056a2"
+    },
+    "app/bundle/initial_state.bin": {
+      "bytes": 182676,
+      "sha256": "d276601573420bf787a81ffa8c81f2da3499a20df2bb858f6082c2e449ff564f"
+    },
+    "app/bundle/live_board.py": {
+      "bytes": 21919,
+      "sha256": "cba0ea669d9826ff45b571be78163fb33b442f6a471ffbfc1c41e67bf7e57c94"
+    },
+    "app/bundle/live_protocol.py": {
+      "bytes": 16548,
+      "sha256": "61995d289db0b1a7bf8b878b4fcf575268a32ed4a413c0702ab90aee38be4865"
+    },
+    "app/bundle/live_transport.py": {
+      "bytes": 4144,
+      "sha256": "89c3060e09b2abfc81489d11fc5c328ece7e02fa8f91b15a2cb29dcc07bcda0a"
+    },
+    "app/bundle/meta.hex": {
+      "bytes": 76630,
+      "sha256": "25a1393de9d90350b6197623231900dd6699bd528bb928640cb42cc6d4b07b98"
+    },
+    "app/bundle/motion_trial.py": {
+      "bytes": 3020,
+      "sha256": "9a4befabea9b368d55071f50fac8a8ea463340e17669d7a4a3ff33512467ab28"
+    },
+    "app/bundle/native_payload.py": {
+      "bytes": 3127,
+      "sha256": "5fcd4176a9ecee9c6a7c4610df683f89b71ad7edda1acd432dab0b367c380c28"
+    },
+    "app/bundle/official_bridge.py": {
+      "bytes": 6017,
+      "sha256": "31b302e257a728761f3c0b070339b4214e5a99a8bdba02621fec76557a535e51"
+    },
+    "app/bundle/official_iic21.py": {
+      "bytes": 521,
+      "sha256": "09c7fdae8f27740698e3834b087897e2971aa6edcf47fb9a4091adeb11bdfd48"
+    },
+    "app/bundle/offline_check.py": {
+      "bytes": 4574,
+      "sha256": "ff7d7c88af753da59d27c2035a3b0d1d5781f29cd72fd0de7c5f8a31f20fec37"
+    },
+    "app/bundle/operator_entry.py": {
+      "bytes": 204,
+      "sha256": "6caa9534d5e1614addcda8fa76c23d9dbd8984e6e6f9ca269ffdb20224e54950"
+    },
+    "app/bundle/original_model_provenance.json": {
+      "bytes": 778,
+      "sha256": "b772e8fe0181a572b9c6e20bf0b15def55744199db1306685aa41b5d127ebf96"
+    },
+    "app/bundle/payload_check.c": {
+      "bytes": 963,
+      "sha256": "0a0d3ad86044737c32632f6f0a893e2207772671f13541db1dced5dd8e2a554f"
+    },
+    "app/bundle/ps_input.py": {
+      "bytes": 5299,
+      "sha256": "ab25b7c6cd5d512b6b17d9164166b2f6603063b081cd5856f0e8d3b908f59ec7"
+    },
+    "app/bundle/ps_preflight.py": {
+      "bytes": 2711,
+      "sha256": "49082ab07d8201e20815ec7c1fe8d06d1d2b7d9371f15c176264126c01ccd170"
+    },
+    "app/bundle/ram_records.py": {
+      "bytes": 5292,
+      "sha256": "7081e42168fbf7184c4ffdbf0d0ccf8cc2d585fa7bdb31f4ac48724158125a51"
+    },
+    "app/bundle/README.md": {
+      "bytes": 2773,
+      "sha256": "0bfed0faa392b7a388f45a35813cf6be6bd9fdd4c5e63bcb208d4f647ea1b254"
+    },
+    "app/bundle/record_worker.py": {
+      "bytes": 4742,
+      "sha256": "7a1e3e6a2ba615da48ae1bbcca5f8f16b32f50c3524ad6891648e323b50af8c6"
+    },
+    "app/bundle/reference.cpp": {
+      "bytes": 2391,
+      "sha256": "a340e3dfffd795af61a1d2b56d0841f11131d8d47fde8ad8aeb3d588aac7bb82"
+    },
+    "app/bundle/reference.exe": {
+      "bytes": 2606725,
+      "sha256": "3bec24937060b6b0093912bbf64d70f6897a9cc9d6a685caa57590e7b182dd7f"
+    },
+    "app/bundle/release_info.json": {
+      "bytes": 1090,
+      "sha256": "9a4939bc6e455a1f360b25e01c4af6021004277d305d105d265089f961d8bd6a"
+    },
+    "app/bundle/release_manifest.json": {
+      "bytes": 6118,
+      "sha256": "853246836eeca5cc65514bec0e542dc6c4a90b330de13f57d4e52a4e644c8c1d"
+    },
+    "app/bundle/snapshot_records.py": {
+      "bytes": 5943,
+      "sha256": "e991ce00cc67daddee18151d5da342fe1be9a436952ad6aa2922737dca80367e"
+    },
+    "app/bundle/step_profile.py": {
+      "bytes": 1158,
+      "sha256": "c7bcfa8974cfd09a03c9cafe5a4105a939f2b838bd073b919a8d80f3f15fb448"
+    },
+    "app/bundle/upstream_flyvis_license.txt": {
+      "bytes": 1155,
+      "sha256": "ffdd9afb62e09f906d762ec1ea37ffe80fec7de415964e249e46cf20999d0ab2"
+    },
+    "app/bundle/verify_result.py": {
+      "bytes": 207,
+      "sha256": "ebabf20c08182d1f1fb947cd30a60e68f90715df1917fe0d37010f24eddd76cd"
+    },
+    "app/pc/audit_saved_run.py": {
+      "bytes": 2078,
+      "sha256": "96f1578c57b03a5f33f0fca26e23e99ad3750d3aaee57c2a1fb2172e133b0901"
+    },
+    "app/pc/export_motion.py": {
+      "bytes": 4923,
+      "sha256": "0a1a6feb991296fbc3596415a28cbef460531471d88a62b92c4b3e7e71ac85d8"
+    },
+    "app/pc/fixed_entry.py": {
+      "bytes": 4558,
+      "sha256": "febe4c9a4a1c27a5fc2305e1dbe6e2d2706358a1a2770a3a58d59a1811844a14"
+    },
+    "app/pc/flow_reader.py": {
+      "bytes": 1995,
+      "sha256": "3f8865307205629af91ff9726a1b999097915034559a99a5167486054c2a228b"
+    },
+    "app/pc/full_audit.py": {
+      "bytes": 3689,
+      "sha256": "0de74a0a15b30ea76becb274b196568fe04fe7a00213a8bc5acf068acddb3446"
+    },
+    "app/pc/launch.py": {
+      "bytes": 880,
+      "sha256": "6461d834ce58861d423003f216c62e57a7764128cc7f232329776f562dd70ffe"
+    },
+    "app/pc/live_server.py": {
+      "bytes": 17263,
+      "sha256": "82e2a6adac63c20d5e8c256e9a9424b3856c88f577aa37d8380a3275daaf40df"
+    },
+    "app/pc/neuron_observer.py": {
+      "bytes": 1970,
+      "sha256": "94de23a0abf5ff60a5120e93c9dc4a71c1db421044733d0a76eb2e7ed171d144"
+    },
+    "app/pc/round_sessions.py": {
+      "bytes": 8629,
+      "sha256": "10bed2ae4ac4273066f5cb8381c4e2c6442eb187b0b44202eeba355f6de5845c"
+    },
+    "app/pc/stream_audit.py": {
+      "bytes": 7878,
+      "sha256": "d16820f5a1a4291823efe396569f69acb4f92f2bdacdee991c113ed7ed08eb93"
+    },
+    "checks/provenance.json": {
+      "bytes": 1561,
+      "sha256": "8a9dd8c047924e5dffb7796fd3f5140641cb9e13cdcd78cd44c94357f8850b0e"
+    }
+  }
+}

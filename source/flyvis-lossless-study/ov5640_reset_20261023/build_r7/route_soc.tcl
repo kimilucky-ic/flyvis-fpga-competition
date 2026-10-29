@@ -1,0 +1,70 @@
+# Full SoC, all resolved IPs and constraints loaded from the accepted synthesis
+# checkpoint. One Vivado process avoids keeping a parent project process resident.
+set_param general.maxThreads 1
+set here [file dirname [file normalize [info script]]]
+cd $here
+set release [file join $here release]
+set f [open tool_version.txt w];puts $f [version];close $f
+open_checkpoint [file join $release ddr_soc_synth.dcp]
+if {[current_design] eq ""} {error "No checkpoint design opened"}
+puts "Opened checkpoint design handle: [current_design]"
+report_property -all -file design_properties.txt [current_design]
+if {[llength [get_cells -quiet flyvis_ddr_i]]!=1} {error "Missing full SoC root cell"}
+if {[get_property PART [current_design]] ne "xc7z020clg400-2"} {error "Unexpected checkpoint part"}
+set blackboxes [get_cells -quiet -hier -filter {IS_BLACKBOX == 1}]
+if {[llength $blackboxes]} {error "Unresolved black boxes in synthesized SoC: $blackboxes"}
+# Apply vendor PCLK placement exception after actual IBUF net exists.
+set camera_net [get_nets -quiet cam_pclk_IBUF]
+if {[llength $camera_net]!=1} {error "Expected one post-synthesis camera IBUF net"}
+puts "Camera non-dedicated clock network: $camera_net"
+set_property CLOCK_DEDICATED_ROUTE FALSE $camera_net
+# Two-stage async assert / PCLK-synchronous release, verified RTL sim_r2.
+# Exempt ONLY asynchronous CLR arrivals, never synchronizer data or downstream reset.
+set reset_sync [get_cells {flyvis_ddr_i/capture/inst/rst_n_d0_reg flyvis_ddr_i/capture/inst/rst_n_syn_reg}]
+if {[llength $reset_sync]!=2} {error "Reset synchronizer identity mismatch"}
+set_property ASYNC_REG TRUE $reset_sync
+set sync_clear [get_pins {flyvis_ddr_i/capture/inst/rst_n_d0_reg/CLR flyvis_ddr_i/capture/inst/rst_n_syn_reg/CLR}]
+if {[llength $sync_clear]!=2} {error "Reset CLR identity mismatch"}
+set_false_path -to $sync_clear
+set guard_clears [get_pins -hier -filter {NAME =~ *camera_guard/inst/ar_reg*/CLR || NAME =~ *camera_guard/inst/pr_reg*/CLR || NAME =~ *camera_guard/inst/global_pr_reg*/CLR}]
+if {[llength $guard_clears]!=6} {error "Guard reset synchronizer identity mismatch: $guard_clears"}
+set_false_path -to $guard_clears
+set status_first [get_pins {flyvis_ddr_i/camera_guard/inst/fault_sync_reg[0]/D flyvis_ddr_i/camera_guard/inst/ready_sync_reg[0]/D}]
+if {[llength $status_first]!=2} {error "Status synchronizer identity mismatch"}
+set_false_path -from [get_clocks camera_pclk] -to $status_first
+source [file join $here external_timing.tcl]
+opt_design
+place_design
+phys_opt_design
+route_design
+report_utilization -file [file join $release utilization_routed.rpt]
+report_utilization -hierarchical -file [file join $release utilization_routed_hier.rpt]
+report_timing_summary -delay_type min_max -report_unconstrained -file [file join $release timing_routed.rpt]
+report_timing -delay_type max -max_paths 10 -path_type full_clock_expanded -file [file join $release paths_setup.rpt]
+report_timing -delay_type min -max_paths 10 -path_type full_clock_expanded -file [file join $release paths_hold.rpt]
+check_timing -verbose -file [file join $release check_timing.rpt]
+report_route_status -file [file join $release route_status.rpt]
+report_drc -file [file join $release drc.rpt]
+report_bus_skew -file [file join $release bus_skew.rpt]
+report_cdc -details -file [file join $release cdc.rpt]
+report_io -file [file join $release io.rpt]
+report_clock_utilization -file [file join $release clocks.rpt]
+report_timing -from [get_ports {cam_data[*] cam_href cam_vsync}] -max_paths 20 -delay_type min_max -path_type full_clock_expanded -file [file join $release camera_external_paths.rpt]
+report_timing -from [get_ports {cam_iic_scl_io cam_iic_sda_io}] -max_paths 20 -file [file join $release iic_input_paths.rpt]
+report_timing -to [get_ports {cam_iic_scl_io cam_iic_sda_io}] -max_paths 20 -file [file join $release iic_output_paths.rpt]
+write_xdc [file join $release effective_constraints.xdc]
+write_checkpoint [file join $release ddr_soc_routed.dcp]
+set core_paths [get_timing_paths -quiet -from [get_clocks clk_fpga_0] -to [get_cells -hier -filter {IS_SEQUENTIAL == 1 && NAME =~ */network/*}] -max_paths 1]
+if {[llength $core_paths]!=1} {error "Neural clock paths missing from timing analysis"}
+report_timing -from [get_clocks clk_fpga_0] -to [get_cells -hier -filter {IS_SEQUENTIAL == 1 && NAME =~ */network/*}] -max_paths 10 -file [file join $release neural_paths.rpt]
+if {[llength [get_drc_violations -quiet -filter {NAME =~ REQP-1839*}]]} {error "Video RAM async control still present"}
+set setup_bad [get_timing_paths -quiet -delay_type max -slack_lesser_than 0 -max_paths 1]
+set hold_bad [get_timing_paths -quiet -delay_type min -slack_lesser_than 0 -max_paths 1]
+if {[llength $setup_bad]||[llength $hold_bad]} {error "Full SoC timing fails; no bitstream"}
+foreach item [get_drc_violations -quiet] {
+    if {[get_property SEVERITY $item] in {Error {Critical Warning}}} {error "DRC error; no bitstream"}
+}
+set f [open completed.txt w]
+puts $f "Conditional internal100MHz and camera-budget route passed; external timing remains conditional; SCCB pad-path budget added. No bitstream/board."
+close $f
+exit 0

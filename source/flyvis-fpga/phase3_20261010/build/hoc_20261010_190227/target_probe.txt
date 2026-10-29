@@ -1,0 +1,1 @@
+Vivado=2026.1.1 tier=ENTERPRISE target=xc7z020clg400-2 generated_RTL_source=C:/Users/hzy72/Documents/ChatGPT/fpga/flyvis-fpga/phase3_20261010/build/vitis_2026_1_q22_animation_enterprise_20261010_1842/hls/syn/verilog

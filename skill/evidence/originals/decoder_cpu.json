@@ -1,0 +1,143 @@
+{
+  "stage": "decoder",
+  "device": "cpu",
+  "repeat": 2,
+  "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+  "torch": "2.5.1+cpu",
+  "cuda": null,
+  "flyvis": "1.2.0",
+  "os": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "threads": 1,
+  "deterministic": true,
+  "tf32": false,
+  "environment_reinstalled": false,
+  "command": [
+    "/opt/flyvis-venv/bin/python",
+    "/mnt/c/Users/hzy72/Documents/ChatGPT/fpga/flyvis-visual-experiments/scripts/experiment.py",
+    "decoder",
+    "--device",
+    "cpu",
+    "--repeat",
+    "2"
+  ],
+  "root": "/opt/flyvis-visual-experiments-data",
+  "response_cache_bypassed": true,
+  "acceptance": {
+    "atol": 1e-05,
+    "rtol": 1e-05
+  },
+  "source_commit": "92b3845cc426dd309a1a0e1b3890156c42e14021",
+  "checkpoint_sha256": "d0e42857e738d0315897c2d50fde9eb3fb1a3fb1f071d55dfc13d53d72bccc3f",
+  "model_load": {
+    "elapsed_s": 3.2170534599999883,
+    "process_host_max_rss_MiB": 833.58984375
+  },
+  "neurons": 45669,
+  "edges": 1513231,
+  "weights_exact_before": true,
+  "decoder_module_training_flags": {
+    "": false,
+    "base": false,
+    "base.0": false,
+    "base.1": false,
+    "base.2": false,
+    "base.3": false,
+    "decoder": false,
+    "decoder.0": false,
+    "head": false
+  },
+  "decoder_class": "DecoderGAVP",
+  "decoder_config": {
+    "type": "DecoderGAVP",
+    "shape": [
+      8,
+      2
+    ],
+    "kernel_size": 5,
+    "const_weight": 0.001,
+    "n_out_features": null,
+    "p_dropout": 0.5
+  },
+  "output_cell_types": [
+    "T1",
+    "T2",
+    "T2a",
+    "T3",
+    "T4a",
+    "T4b",
+    "T4c",
+    "T4d",
+    "T5a",
+    "T5b",
+    "T5c",
+    "T5d",
+    "Tm1",
+    "Tm2",
+    "Tm3",
+    "Tm4",
+    "Tm5Y",
+    "Tm5a",
+    "Tm5b",
+    "Tm5c",
+    "Tm9",
+    "Tm16",
+    "Tm20",
+    "Tm28",
+    "Tm30",
+    "TmY3",
+    "TmY4",
+    "TmY5a",
+    "TmY9",
+    "TmY10",
+    "TmY13",
+    "TmY14",
+    "TmY15",
+    "TmY18"
+  ],
+  "decoder_weights_exact_before": true,
+  "official_runtime_projection": [
+    {
+      "parameter": "base.0.weight",
+      "changed_taps": 0,
+      "max_abs_change": 0.0,
+      "cause": "Original Conv2dHexSpace.forward/filter_to_hex zeroes taps outside hexagonal support"
+    },
+    {
+      "parameter": "decoder.0.weight",
+      "changed_taps": 0,
+      "max_abs_change": 0.0,
+      "cause": "Original Conv2dHexSpace.forward/filter_to_hex zeroes taps outside hexagonal support"
+    }
+  ],
+  "inference": {
+    "elapsed_s": 35.28009100899999,
+    "process_host_max_rss_MiB": 5632.86328125
+  },
+  "decode": {
+    "elapsed_s": 5.302629522000075,
+    "process_host_max_rss_MiB": 5632.86328125
+  },
+  "flow_shape": [
+    4,
+    485,
+    2,
+    721
+  ],
+  "all_finite": true,
+  "flow_min": -4.167312145233154,
+  "flow_max": 2.043958902359009,
+  "decoder_weights_exact_after": true,
+  "decoder_matches_official_runtime_projection": true,
+  "output_axes": [
+    "sample",
+    "frame",
+    "flow_component",
+    "hex_pixel"
+  ],
+  "limitations": [
+    "Synthetic edge inference only; no Sintel endpoint-error evaluation or physical velocity calibration"
+  ],
+  "status": "PASS",
+  "weights_exact_after": true,
+  "process_host_max_rss_MiB": 5632.86328125
+}

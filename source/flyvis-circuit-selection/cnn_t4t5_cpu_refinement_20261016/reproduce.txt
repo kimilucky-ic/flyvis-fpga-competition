@@ -1,0 +1,70 @@
+Same-architecture CNN CPU refinement, 2026-10-16
+Evidence: actual CPU; 12/12 new cases pass the fixed approximate functional gate.
+No GPU, board, GUI, RTL or independent retraining replication is claimed.
+
+Environment inherited from pilot: Python3.14.5, NumPy2.4.6,
+PyTorch2.12.0+cpu. Matplotlib for figures. One CPU thread in inherited common.py.
+Do not install dependencies or run any command over this sealed result folder.
+
+Prerequisites kept READ ONLY:
+- sibling cnn_t4t5_replacement_20261016, including architecture, production
+  coordinator, source-equation CPU Full, R-only loader, decoder, mapping,
+  training fields/deltas/scales and PREREGISTRATION.json;
+- the pinned full a0, expanded parameters, node mapping and identity bundle;
+- accepted original Full training caches for ON60, ON240, OFF90, OFF270;
+- official721-point stimulus_float32.npy and original FlyVis decoder checkpoint.
+Exact absolute paths, bytes, timestamps and SHA256: PREREGISTRATION.json.
+This directory is not a self-contained portable model/data package.
+
+Actual scientific commands used in this result, strictly in order:
+python -B prepare.py
+python -B train.py
+python -B evaluate.py
+python -B audit.py
+python -B report_data.py
+python -B plots.py
+
+Both gates passed in train.py immediately after the bounded CG fit and live
+short validation. Its optional BPTT prototype was NOT triggered, zero updates.
+That unused prototype is NOT accepted for reuse: its auxiliary/rollout sampling
+would require validation-point isolation fixes before validation claims.
+
+For a separately authorized reproduction, create a NEW sibling result folder,
+copy only shared.py, prepare.py, train.py, accepted_fit.py, evaluate.py, audit.py,
+report_data.py and plots.py there. Keep the read-only prerequisites in place.
+Run prepare.py, then accepted_fit.py (instead of train.py), then evaluate.py,
+audit.py, report_data.py, plots.py. accepted_fit.py reuses exactly the CG and
+short-validation functions actually executed; it never invokes BPTT. It is
+syntax-checked only, not an independently executed replication of training.
+If a gate fails, STOP; do not open new tests, remove guards, retry in place,
+increase architecture size, or tune on the twelve already seen test cases.
+prepare.py makes a fresh registration with the new source/output paths;
+do not copy frozen manifests from this accepted result into the new run.
+Serialized checkpoint hashes include serialization details; compare exact
+parameter tensors and registered numerical results for scientific replication.
+
+Model I/O:
+- external input per step: brightness[721],float32; dt=.005;
+- common canonical old state[45669],float32;
+- CNN uses23 old spatial activity fields, own8 H included; see mapping.npz;
+- output nextH[5768] in T4a,b,c,d,T5a,b,c,d then721-position order;
+- original R-only computes nextR[39901] from the SAME own old canonical state;
+- validate both candidates and identities, then commit one full next state;
+- input step k means old a[k], output a[k+1], no future-state dependencies;
+- original H is used ONLY for supervised labels/reference/explicit Sham,
+  never in the formal CNN production path.
+
+training/ridge.pt is the actual accepted unchanged31168-parameter state_dict.
+MODEL_FREEZE.json links its SHA to TRAINING_GATE.json before TEST_INPUTS.json.
+TRAINING_GATE.json records single-step delta nRMSE and13 real short windows.
+Formal test_runs/<case>/<mode>/ stores full485x45669 committed states, final,
+flow and input/state chain. Per-case errors cover all H/R nodes each step.
+short_checks/ridge/ has H trajectories, full final state, full-state digest
+chains and errors; it does NOT contain all intermediate R vectors.
+RESULTS.json has original fixed-window metrics; COMPARISON.csv is allpost view.
+SUMMARY.json and FINAL_AUDIT.json are concise machine-readable delivery records.
+Q and field angle compare CNN flow with original Full, not physical truth.
+
+The old eight pilot test cases were not reused as fresh holdouts. The current
+twelve cases are now seen data: they cannot become a new independent test set
+after any further model updates. No more computation is authorized by this file.

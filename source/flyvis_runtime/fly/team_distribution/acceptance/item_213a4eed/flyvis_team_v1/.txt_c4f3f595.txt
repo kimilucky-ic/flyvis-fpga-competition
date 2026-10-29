@@ -1,0 +1,29 @@
+FlyVis 队友运行包
+
+你不需要 ChatGPT 或 Codex。
+先解压整个压缩包；不要在压缩包窗口里直接启动。
+
+只想先看效果：打开 examples 文件夹里的 PNG 图片。
+展示组可以先使用 examples/flash_demo_payload.json。
+
+想自己运行实验：
+1. 电脑需要 WSL2 Ubuntu 24.04，里面有 Python 3.12 和 python3-venv。
+   没装过的话，按 README.md 的“第一次使用”说明安装一次。
+2. 双击 setup.bat，等待安装完成。第一次需要联网。
+3. 双击 check_environment.bat，确认 ENVIRONMENT PASS。
+4. 双击 run_flash.bat 或 run_moving_edge.bat。
+5. 在 outputs 中找最新文件夹，打开 T4_T5_traces.png 看结果。
+
+其他功能：
+run_motion_directions.bat：12 个方向 × ON/OFF。
+run_moving_bar.bat：四个方向的移动条纹。
+
+默认 CPU 就能运行。有 NVIDIA GPU 才需要 setup_gpu.bat。
+安装完成后，上面的固定实验可以离线运行。
+每次都是重新计算整个原始网络，没有训练、剪枝或 FPGA 改造。
+
+交给展示组：demo_payload.json、T4_T5_traces.png、stimulus_frames.png。
+保存科研证据：活动和刺激的 NPY、samples.csv、metadata.json。
+出错时：把 logs 里最新日志发给负责软件的队友。
+
+详细依赖、数据含义、许可与验收结果：README.md、ACCEPTANCE.md。

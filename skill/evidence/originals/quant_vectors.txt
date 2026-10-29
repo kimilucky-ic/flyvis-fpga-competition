@@ -1,0 +1,6 @@
+# RTL test vectors
+
+Generated only from the frozen MaleCNS graph and 12-bit fixed-point model; the source CSVs and float baseline are read-only.
+The graph words are 30-bit records stored in 8 hex digits: bits [29:21]=src local ID, [20:12]=dst local ID, [11:0]=signed Q2.10 weight.
+Each input/expected line is a 321-bit vector stored in 81 hex digits; bit N is local neuron N. There are 200 timesteps per trial.
+The three trials are the first fixed stimulus of classes A/DA1, B/VA1d, and C/VA1v at seed 20261007. Both glutamate sign hypotheses get separate signed edge tables and golden outputs.

@@ -1,0 +1,5 @@
+# Independent Blackwell-compatible GPU environment. CPU baseline is unchanged.
+torch==2.7.1+cu128
+torchvision==0.22.1+cu128
+numpy==1.26.4
+pandas==2.2.3

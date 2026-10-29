@@ -1,0 +1,1 @@
+"work.tb_scalable" -s "scalable_sim" -debug "typical" --mt "off" -log "xelab.log" 

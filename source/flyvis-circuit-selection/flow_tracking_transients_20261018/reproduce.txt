@@ -1,0 +1,35 @@
+Saved-data CPU diagnosis only. No new neural model or decoder invocation.
+Source: ../flow_tracking_refinement_20261018 (sealed, read only)
+Regression source: ../flow_tracking_pilot_20261018 (sealed, read only)
+
+Actual interpreter:
+C:\Users\hzy72\AppData\Local\Programs\Python\Python314\python.exe
+
+Executed once in this initially new directory:
+python.exe -B -u analyze.py
+python.exe -B -u evaluate.py
+python.exe -B -u finish.py
+
+Outputs/logs: ANALYSIS.log, EVALUATE.log, FINISH.log.
+All files are exclusive-create; do not rerun into this completed directory.
+To reproduce, copy only the four .py scripts into a new empty sibling directory
+under flyvis-circuit-selection, then execute those three entrypoints in order.
+Keep the original relative source directories and existing NumPy/Matplotlib available.
+No dependency installation, GPU or FlyVis import is needed.
+
+analyze.py reads10 old inputs, original full states and flow, and reproduces frozen
+old tracker outputs. evaluate.py fixes one100ms input-stillness veto and compares
+it against existing flow/labels; all clips are explicitly now seen.
+finish.py hashes used source data, retains all13 original primary failures,
+checks invariance/identities and plots the diagnostic figure.
+
+FOCUSED_TESTS.json:11 targeted checks, no hardware or new neural compute.
+FINAL_AUDIT.json: saved-data/source identity checks; not fresh-video generalization.
+No outputs were written into source experiments or another workstream.
+Original ROI, numeric acceptance gates, model and decoder remain unchanged.
+Candidate API adds synchronized current721-point visual samples for a validity veto.
+Positions still come solely from the original flow-only tracker.
+Do not call this candidate a purely flow-only algorithm or production GUI result.
+
+Initial read-only WSL interpreter probe returned Wsl/E_ACCESSDENIED.
+No neural run started there; existing Windows Python CPU was used instead.
