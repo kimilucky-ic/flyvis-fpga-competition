@@ -4,7 +4,7 @@ Original 2026 AMD guide, sections3.3.3–3.3.5, PDF pages22–25, SHA256 `c6ad82
 
 ## Materials in this repository
 
-- Source and current GUI: [source](../source/); current deployable PC entry [board/runtime](../board/runtime/README.md).
+- Source and current GUI: [source](../src/); current deployable PC entry [board/runtime](../board/runtime/README.md).
 - Verification: [sim](../sim/), [saved operator-run analysis](../board/saved_run_analysis.json), actual saved input/initial state/full state/reference and identities in `board/runtime/checks/`.
 - Synthesis/implementation and build: [build](../build/), [portable steps](../build/portable/README.md), [official vendor acquisition](../build/vendor_dependency_review.md).
 - Skill: [index](../skill/README.md), scope, usage, failure conditions, historical effects and limitations. Generic cross-board bonus is not claimed.

@@ -4,9 +4,9 @@ Competition source delivery, 2026-10-29. Repository remains private; no restorat
 
 ## Current implementation
 
-- [Current camera/PC runtime](source/flyvis-lossless-study/ov5640_live_v261_20261026/): bundle,pc,assets and tests. Includes the current chart/axis/web layout snapshot from2026-10-28 and bounded audit-monitor read fix.
-- [Final Vivado2026.1 SoC](source/flyvis-lossless-study/vivado2026_1_20261026/): build scripts and release hardware metadata.
-- [Original GUI and GPU integration](source/flyvis_runtime/fly/): viewer and gui_v1. Older scientific/hybrid paths are retained as historical implementations, not the current full-PL camera entry.
+- [Current camera/PC runtime](src/flyvis-lossless-study/ov5640_live_v261_20261026/): bundle,pc,assets and tests. Includes the current chart/axis/web layout snapshot from2026-10-28 and bounded audit-monitor read fix.
+- [Final Vivado2026.1 SoC](src/flyvis-lossless-study/vivado2026_1_20261026/): build scripts and release hardware metadata.
+- [Original GUI and GPU integration](src/flyvis_runtime/fly/): viewer and gui_v1. Older scientific/hybrid paths are retained as historical implementations, not the current full-PL camera entry.
 - [Competition skill package](skill/README.md): usage, limitations and historical verification.
 - [Licensing/attribution](third_party_notices.md).
 
@@ -43,6 +43,8 @@ Use [board/runtime](board/runtime/README.md), which assembles the current PC/web
 
 [主要研发协作案例（脱敏）](report/ai_engineering_cases.md) · [离线阅读版](report/ai_engineering_cases.html)
 
-## AMD directory mapping
+## Competition directory structure
 
-Recommended `src/` maps to `source/`; `sim/`, `build/`, `board/`, `skill/`, `report/` retain their names. Recommended `data/` maps to the actual saved input/initial-state/reference sample in `board/runtime/checks/`. No accepted source directory was moved for this map.
+The repository follows the AMD recommended top-level layout: `src/` design sources, `sim/` verification, `build/` build scripts/reports, `board/` operation and measured outputs, `data/` saved inputs/references, `skill/` reusable workflows, and `report/` design/AI records. See [data](data/README.md) for sample scope. The existing runtime retains identical sample copies under board/runtime/checks to preserve its accepted entry.
+
+Historical export_path_map.json and archived source manifests retain their original path labels as provenance. For a former top-level source/ path, use src/ in this layout. Directory relocation is not new acceptance of every historical implementation.

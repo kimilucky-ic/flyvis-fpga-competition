@@ -21,7 +21,7 @@
       "problem": "空间均值可能掩盖局部响应；带符号的模型活动、整流后的展示曲线和方向偏好容易被混淆。",
       "correction": "在该历史版本显示中央节点的max(activity,0)曲线，同时保留带符号原始值；不做逐帧归一化，不把历史GPU方向分析标成当前运行新算的指标。",
       "result": "这是历史GUI修改的对话证据；原回答提到970步既有ON/OFF数据核对，本次未重新执行该核对，不将对话中的数值单独提升为新验证结果。后续区域均值版本有独立定义，不能与本案例混称。",
-      "evidence": "../source/flyvis_runtime/fly/viewer/competition_full_pl.js"
+      "evidence": "../src/flyvis_runtime/fly/viewer/competition_full_pl.js"
     },
     {
       "id": "pipeline",
