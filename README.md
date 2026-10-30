@@ -39,3 +39,10 @@ Use [board/runtime](board/runtime/README.md), which assembles the current PC/web
 ## Detailed engineering and publication hold
 
 [Detailed seven-part technical report](report/technical_report.md), [AI evidence guide](report/ai_workflow.md), [vendor dependency review](build/vendor_dependency_review.md). ALIENTEK copyrighted-source instances are identified in report/third_party_holds.json; redistributability has not been established. Publication of this reviewed inventory has been authorized by the project owner; unresolved third-party and rebuild limitations are disclosed below. The current directory is a local review candidate, not an assertion of all-license clearance or clean-machine Vivado success.
+
+
+[主要研发协作案例（脱敏）](report/ai_engineering_cases.md) · [离线阅读版](report/ai_engineering_cases.html)
+
+## AMD directory mapping
+
+Recommended `src/` maps to `source/`; `sim/`, `build/`, `board/`, `skill/`, `report/` retain their names. Recommended `data/` maps to the actual saved input/initial-state/reference sample in `board/runtime/checks/`. No accepted source directory was moved for this map.

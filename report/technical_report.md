@@ -61,3 +61,6 @@ flowchart LR
 运行程序会生成新的本地会话和固定Notebook；操作者准备板端，按提示执行一次。当前公开候选仅验证了prepare-only生成和载荷身份，没有启动HTTP、浏览器或新实板验收。固件重建见[build/portable/README.md](../build/portable/README.md)，文件准备已通过CPU正反例检查，尚无新的异机Vivado复建。
 
 七页设计报告见[design_report.pdf](design_report.pdf)。厂家官方获取入口及逐项校验步骤已补充于[依赖说明](../build/vendor_dependency_review.md)。待解决：厂商再分发许可；当前官方资料下载到完整BIT的独立复建验证；完整历史功能在规范路径下的迁移验证；团队最终签字及公开发布确认。原已验收工程和RAR不被覆盖。当前目录是可审查候选，不能以文档完整替代这些未完成条件。
+
+
+[补充：实际研发脱敏案例](ai_engineering_cases.md)（短原文与工程摘要分列；既有设计PDF为前一交付版本。）

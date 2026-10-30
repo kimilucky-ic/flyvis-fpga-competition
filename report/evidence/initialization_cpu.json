@@ -1,0 +1,11 @@
+{
+  "evidence": "CPU_MOCK_AND_STATIC_PACKAGE_ONLY",
+  "admission_tests": 6,
+  "input_label_cases": 3,
+  "python38_syntax": true,
+  "package_pins_verified": true,
+  "pairing_preserved": true,
+  "sealed_driver_verified": true,
+  "board_gpu_camera_operations": 0,
+  "actual_allocation": "NOT_RUN"
+}

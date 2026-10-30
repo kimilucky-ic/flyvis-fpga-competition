@@ -6,8 +6,8 @@
   },
   {
     "path": "README.md",
-    "bytes": 5245,
-    "sha256": "33ab47a165e7cc950c42ed414b6cf6abc5b6884563d611d7763812a633fd8e31"
+    "bytes": 5676,
+    "sha256": "0e623f1bafe7d38df93b618f80313646adb2a2b6e309d72cb1a6ebc3694de1ec"
   },
   {
     "path": "board/analysis_formulas.json",
@@ -920,9 +920,24 @@
     "sha256": "3cc7d3b84aff00b905d01d6347bf5bacb1c5c09c1cab497cd7832ca6dfc09994"
   },
   {
+    "path": "report/ai_engineering_cases.html",
+    "bytes": 5880,
+    "sha256": "004cc51d49598bcab36350ec5617b0ad840769d547a11f5adc8ad9156ec057bb"
+  },
+  {
+    "path": "report/ai_engineering_cases.json",
+    "bytes": 4577,
+    "sha256": "5374d33f1b9fe0fc0d31f1c51a6179200bfd67704c5f3a08f4fc5179e003aebc"
+  },
+  {
+    "path": "report/ai_engineering_cases.md",
+    "bytes": 5332,
+    "sha256": "3746f2fe17c70324d69adfd7cb1174fa96793e56b0e9fc51b3423314589628ee"
+  },
+  {
     "path": "report/ai_workflow.md",
-    "bytes": 1166,
-    "sha256": "bdb7bc564ec646bce2bf8c0c80adea5ebbf2f2edc97f0a44fd9ab3ad94e57819"
+    "bytes": 576,
+    "sha256": "f281f0d69442d869353b87c690589fc30239be944fcd0a0af2a36bb679307518"
   },
   {
     "path": "report/amd_compliance_audit.json",
@@ -931,13 +946,28 @@
   },
   {
     "path": "report/amd_requirements.md",
-    "bytes": 2721,
-    "sha256": "30e8b7d0b5d1b43a46b96b5c1682ffc1f9f95c40ca0e9b0d7de870e4f4a18bd0"
+    "bytes": 2865,
+    "sha256": "d65176285a85f35f3be6a1c0ca7992a238345be96304415d352e87082c8bf570"
   },
   {
     "path": "report/design_report.pdf",
     "bytes": 733172,
     "sha256": "dea329d731897b9c894432d2de1beaad1398d70922b1d311b1a6b57a60e7f653"
+  },
+  {
+    "path": "report/evidence/ddr_ring_summary.json",
+    "bytes": 2009,
+    "sha256": "ddc195f3beb1a7540fbc6dc1281e4c673db36688bd2a76451414cecfe2d5014e"
+  },
+  {
+    "path": "report/evidence/fp32_pipeline_comparison.json",
+    "bytes": 748,
+    "sha256": "7f3ef74c1caf617f805ce2bc21a3fc1cdaa5a1f728738f67e2a0eae8c58fe4ba"
+  },
+  {
+    "path": "report/evidence/initialization_cpu.json",
+    "bytes": 307,
+    "sha256": "670ac807af316f2ae5c3ccc1c4ba6a4acbf7a37c7a9108986429fa0485819811"
   },
   {
     "path": "report/normalization_check.json",
@@ -956,8 +986,8 @@
   },
   {
     "path": "report/technical_report.md",
-    "bytes": 7556,
-    "sha256": "89a4d7d22775ec7982c18ad049de87d59840b8d14fa70508b59cf160bc4fe971"
+    "bytes": 7700,
+    "sha256": "a1c6555a8fd3b652b8ed15f96e45a3d5b6ee64d056c35fbc035b994eae15de8d"
   },
   {
     "path": "report/third_party_holds.json",

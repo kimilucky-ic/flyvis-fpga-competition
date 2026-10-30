@@ -19,3 +19,6 @@ Repository remains PRIVATE under the user's withdrawal instruction. AMD strongly
 Official manufacturer download locators have been verified, but today's full vendor archive was not downloaded and its derived build files were not proved byte-identical. The 56-file hash list and fail-stop preparation are available. Third-party redistribution permission and a clean-machine source-to-BIT build remain unverified. Existing historical source variants were not all reaccepted after path normalization. The included PDF is the current engineering submission copy; team signoff and contest-site upload are outside this repository check.
 
 Tool/device and performance evidence must retain the original version and scope. No new board/GPU/camera/EDA experiment was run to fill documentation gaps.
+
+
+[补充：实际研发脱敏案例](ai_engineering_cases.md)（短原文与工程摘要分列；既有设计PDF为前一交付版本。）

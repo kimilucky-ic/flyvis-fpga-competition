@@ -1,7 +1,7 @@
-# AI collaboration: scoped engineering records
+# AI工程协作材料
 
-Only the short project-delivery exchanges selected in [ai_collaboration_record.md](ai_collaboration_record.md) are included as verbatim excerpts. They are from the current repository-completion task; they are not evidence that every historical development conversation is available. Earlier private conversations remain withdrawn. No full chat export, personal remark, internal conversation identifier or memory reference is included.
+主要研发案例见[脱敏工程案例](ai_engineering_cases.md)，[离线阅读版](ai_engineering_cases.html)可直接本机打开。[结构化记录](ai_engineering_cases.json)与正文一致。
 
-The existing ai_chat_excerpts.json and project_ai_excerpts.json remain labelled retrospective summaries, not transcripts. Original engineering evidence supports its own historical scope; these short new exchanges do not establish new board, GPU, EDA, biological or performance validation.
+两个案例有短提示/回答原文节选，两个为明确标记的工程档案摘要；不编造缺失回答，不恢复完整私人聊天。[既有仓库交付记录](ai_collaboration_record.md)单独保留。早先JSON均仍为回顾摘要。
 
-The scoped record contains the exact selected user instruction and assistant response, actual verification feedback, and the correction made when a repository-access method could not read the private repository. Selection and omitted material are explicitly identified. This provides an auditable current prompt/answer/correction example without restoring the withdrawn conversations.
+本页不改变已有报告的原证据级别；没有运行任何设备或新科学实验。

@@ -1,0 +1,30 @@
+{
+  "status": "PASS_CPU_RTL_LOSSLESS_IN_RANGE_HOLE_SKIP",
+  "nodes": 45669,
+  "ordered_edges": 1513231,
+  "baseline_cycles": 2284304,
+  "candidate_cycles": 2201418,
+  "cycles_saved": 82886,
+  "reduction_percent": 3.6285012852930256,
+  "hardware_time_measured": false,
+  "board_operations": 0,
+  "routed_timing": {
+    "wns_ns": 0.139,
+    "tns_ns": 0.0,
+    "setup_failing": 0,
+    "setup_total": 20129,
+    "whs_ns": 0.039,
+    "ths_ns": 0.0,
+    "hold_failing": 0,
+    "hold_total": 20129,
+    "wpws_ns": 3.87,
+    "tpws_ns": 0.0,
+    "pulse_failing": 0,
+    "pulse_total": 6662
+  },
+  "initial_timing_failure": {
+    "source_kind": "engineering_README_summary",
+    "wns_ns": -1.171,
+    "setup_failures": 80
+  }
+}
