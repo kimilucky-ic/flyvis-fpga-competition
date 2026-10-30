@@ -2,7 +2,7 @@
 
 ## Scope
 
-Software-only comparison on the frozen 321-neuron / 7,590-edge MaleCNS subnetwork. No connectome edge was removed; no old SNN, fly project, Vivado build, bitstream, or board state was changed.
+Software-only comparison on the frozen 321-neuron / 7,590-edge MaleCNS subnetwork. No connectome edge was removed; no old SNN, Fly project, Vivado build, bitstream, or board state was changed.
 Each seed uses the same 432-trial synthetic DA1 / VA1d / VA1v protocol and stratified 324/108 train/test split as the established baseline. This is stimulus-channel decoding, not biological odor recognition or validated fly behavior.
 
 `Own decoder` is fitted independently on each model's training features. `Float decoder transfer` applies the scaler and nearest-centroid prototypes fitted only on the float training split directly to the quantized test outputs; this is the more relevant software test for later reusing one PC decoder on the board.

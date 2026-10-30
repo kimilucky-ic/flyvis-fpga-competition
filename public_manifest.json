@@ -1046,8 +1046,8 @@
   },
   {
     "path": "skill/audit_validation.json",
-    "bytes": 576,
-    "sha256": "b28d2a45557c8b8b4930149cefeda534c258330a773f84f8e19c6bb4f357175b"
+    "bytes": 600,
+    "sha256": "7de502d7086a15b6b5f22306d71f82a95bb9084c5dda9df0f5caaa04fce93064"
   },
   {
     "path": "skill/candidates/fpga-uart-link-validation/skill.md",
@@ -1072,7 +1072,7 @@
   {
     "path": "skill/evidence/originals/build.txt",
     "bytes": 3533,
-    "sha256": "d8aa187d6a33dae660e979a7f50abd51293a742449b81a773c5fafe53b23af3a"
+    "sha256": "5ca4d69fb24fb9e3aedb25aeaf234b80bc2db72bbc2e803317b3744dd4e70a9d"
   },
   {
     "path": "skill/evidence/originals/cleanup.json",
@@ -1132,7 +1132,7 @@
   {
     "path": "skill/evidence/originals/gpu_corrections.txt",
     "bytes": 2435,
-    "sha256": "16f9073d7b97dc347ec57246cfa9aa3d6c057aafd7d3ff50eb4e280371c1e34a"
+    "sha256": "29664b0ccacf0a388be0665b7c8a127f2db9c2cff32c54b5b97018f949a7bf97"
   },
   {
     "path": "skill/evidence/originals/gpu_report.txt",
@@ -1142,7 +1142,7 @@
   {
     "path": "skill/evidence/originals/model_report.txt",
     "bytes": 16601,
-    "sha256": "5a04bc48fc7ca6e3963c81b64df0a156dad4ea61493bad9f339b136f7cf60624"
+    "sha256": "5157ee003f4dba12506fd6226f73e261e0229708fad1f63625e38405644c54dc"
   },
   {
     "path": "skill/evidence/originals/power_fpga.json",
@@ -1167,12 +1167,12 @@
   {
     "path": "skill/evidence/originals/quantization.txt",
     "bytes": 4661,
-    "sha256": "9618c2010f2cb96f80fdbf7736fab02f1640e09f900f2ee9be2531ab8e040935"
+    "sha256": "1a5064a35e84e7db5187858872c5ee28a93b7e064c3c7b38ebd350551815c2ba"
   },
   {
     "path": "skill/evidence/originals/reference.txt",
     "bytes": 11732,
-    "sha256": "67361faeeba6a97993cbf826a507ac1a201711cc5d6102269dcdf27bddcd75f2"
+    "sha256": "03ba6bb3778ea1303cc1ce2817681878ed1cef89702fba2d5d3977dccab0758e"
   },
   {
     "path": "skill/evidence/originals/replay.txt",
@@ -1182,7 +1182,7 @@
   {
     "path": "skill/evidence/originals/reset.txt",
     "bytes": 2436,
-    "sha256": "a5f2bb2d7d2bc214cb8afa8fd32163589a1e0772dcec417004a86b271ffa047a"
+    "sha256": "0005281bc341118a7b720e888dc644068d8fbdbbde6070042e9990a3ce35d38e"
   },
   {
     "path": "skill/evidence/source_manifest.json",

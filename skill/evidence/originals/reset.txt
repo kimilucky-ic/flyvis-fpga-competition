@@ -10,7 +10,7 @@ Evidence source: operator-pasted serial file reader after an explicitly authoriz
 
 ## Fresh local source/HWH finding
 
-Sealed `build/v1_bankfix_20261011_153525/flyvis_t5c_source_raw_v1.hwh` has `reset/C_AUX_RESET_HIGH=0`, `aux_reset_in` polarity ACTIVE_LOW, connected to `zero/dout`. This statically asserts auxiliary reset continuously. The reset outputs drive both AXI interconnects and HLS `ap_rst_n`. Source `scripts/build_v1_soc_bankfix.tcl` ties aux reset to zero without explicitly choosing its polarity. External reset polarity is high and its inverter is consistent; auxiliary reset is the definite configuration defect.
+Sealed `build/V1_bankfix_20261011_153525/flyvis_t5c_source_raw_v1.hwh` has `reset/C_AUX_RESET_HIGH=0`, `aux_reset_in` polarity ACTIVE_LOW, connected to `zero/dout`. This statically asserts auxiliary reset continuously. The reset outputs drive both AXI interconnects and HLS `ap_rst_n`. Source `scripts/build_v1_soc_bankfix.tcl` ties aux reset to zero without explicitly choosing its polarity. External reset polarity is high and its inverter is consistent; auxiliary reset is the definite configuration defect.
 
 This is a strong explanation for the absent first AXI read response, not a verified recovery or sole cause of all system symptoms. Actual corrected implementation and live board functionality remain pending. No neural computation was demonstrated; no integer/scientific/closed-loop PASS.
 

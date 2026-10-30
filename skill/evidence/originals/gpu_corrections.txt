@@ -8,7 +8,7 @@ The user's explicit assignment was: “你负责B”. The supplied definition of
 
 ## Scope and implementation
 
-- Read the project vision and workstream checkpoints; FlyVis is a separate visual-network validation lane, not the fly/PQN or MaleCNS network.
+- Read the project vision and workstream checkpoints; FlyVis is a separate visual-network validation lane, not the Fly/PQN or MaleCNS network.
 - Preserved the accepted CPU environment and reference data. Created `/opt/flyvis-gpu-venv`, `/opt/flyvis-gpu-data`, and this separate validation directory.
 - Installed pinned PyTorch 2.7.1+cu128 and torchvision 0.22.1+cu128. NumPy/pandas match the CPU reference. No system driver installation or board operation occurred.
 - Inspected upstream `NetworkView.network`: it can return an uninitialized checkpoint wrapper. The external helper explicitly calls `recover()` before asserting weights. This is an adapter implementation detail, not an upstream patch.
