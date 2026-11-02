@@ -1,6 +1,14 @@
 # FlyVis visual neural network on Zynq-7020
 
-Competition source delivery, 2026-10-29. Repository remains private; no restoration of previously withdrawn conversations. Full configured FlyVis network:45,669 nodes,1,513,231 connections,721 visual inputs,strict FP32/Euler,5ms model step. PL executes the neural updates; PS handles OV5640 capture/mapping/DDR records; PC displays results and independently audits states.
+Competition source delivery, updated 2026-11-02. Public repository access was verified on 2026-11-02. Only selected sanitized engineering exchanges are included; full private conversations remain withdrawn. Full configured FlyVis network:45,669 nodes,1,513,231 connections,721 visual inputs,strict FP32/Euler,5ms model step. PL executes the neural updates; PS handles OV5640 capture/mapping/DDR records; PC displays results and independently audits states.
+
+## Start here
+
+1. Read the [current seven-page design report](report/design_report.pdf), based on the 2026-11-01 revision with repository status and reproduction links corrected on 2026-11-02.
+2. For the current full-FPGA camera experiment, use [board/runtime](board/runtime/README.md). On Windows x64/Python3.12 install its requirements, then run `python run.py --check-only`. For an operator-authorized board experiment use `python run.py --ip YOUR_PC_IPV4` and the newly generated fixed Notebook. This is the recommended PC entry; archived GPU/hybrid variants below are historical.
+3. Review [sanitized engineering collaboration cases](report/ai_engineering_cases.md), [Skill](skill/README.md) and [build/vendor acquisition instructions](build/vendor_dependency_review.md).
+
+The poster is still under revision and is not included as a final poster. The desktop submission archive is separately versioned; changing this repository does not update that RAR automatically.
 
 ## Current implementation
 
@@ -38,7 +46,7 @@ Use [board/runtime](board/runtime/README.md), which assembles the current PC/web
 
 ## Detailed engineering and publication hold
 
-[Detailed seven-part technical report](report/technical_report.md), [AI evidence guide](report/ai_workflow.md), [vendor dependency review](build/vendor_dependency_review.md). ALIENTEK copyrighted-source instances are identified in report/third_party_holds.json; redistributability has not been established. Publication of this reviewed inventory has been authorized by the project owner; unresolved third-party and rebuild limitations are disclosed below. The current directory is a local review candidate, not an assertion of all-license clearance or clean-machine Vivado success.
+[Detailed seven-part technical report](report/technical_report.md), [AI evidence guide](report/ai_workflow.md), [vendor dependency review](build/vendor_dependency_review.md). ALIENTEK copyrighted-source instances are identified in report/third_party_holds.json; redistributability has not been established. Publication of this reviewed inventory has been authorized by the project owner; unresolved third-party and rebuild limitations are disclosed below. The repository is public; public availability is not proof of third-party license clearance or clean-machine Vivado success.
 
 
 [主要研发协作案例（脱敏）](report/ai_engineering_cases.md) · [离线阅读版](report/ai_engineering_cases.html)

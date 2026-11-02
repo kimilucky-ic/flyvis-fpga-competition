@@ -46,7 +46,7 @@ flowchart LR
 
 ## 5. AI协作与纠错
 
-工作方式是用户确定范围和实际操作权限，AI阅读源码/报告、实现隔离候选并做软件检查，用户执行实板操作，再审核真实记录。大型模型没有替代原神经计算。历史工程协作摘要见[project_ai_excerpts.json](project_ai_excerpts.json)。本次交付任务的少量真实提示、回答与纠错记录见[ai_collaboration_record.md](ai_collaboration_record.md)，明确区分原文节选和编辑摘要；不恢复此前撤回的私人对话，不冒充完整历史记录。导航与范围见[ai_workflow.md](ai_workflow.md)。
+工作方式是用户确定范围和实际操作权限，AI阅读源码/报告、实现隔离候选并做软件检查，用户执行实板操作，再审核真实记录。大型模型没有替代原神经计算。历史工程协作摘要见[project_ai_excerpts.json](project_ai_excerpts.json)。研发过程的脱敏短提示、回答与纠错案例见[ai_engineering_cases.md](ai_engineering_cases.md)，明确区分原文节选和编辑摘要；不恢复此前撤回的私人对话，不冒充完整历史记录。导航与范围见[ai_workflow.md](ai_workflow.md)。
 
 本次开源导出也发生实际纠错：第一次把合法的新会话目录重定位误判为载荷不一致；检查现有生成器后，验证改为只允许live_board.py中的精确会话目录替换及相应manifest变化，其余载荷逐字节比对。不能为了通过检查而接受任意源码差异。来源为[sim/public_runtime_prepare.json](../sim/public_runtime_prepare.json)。
 

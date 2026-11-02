@@ -56,18 +56,18 @@
   ],
   "naming_violations": [],
   "pending": [
-    "Repository remains private; public restoration not authorized",
     "ALIENTEK redistribution permission unresolved",
     "Current official-download-to-BIT / clean-machine Vivado build not executed",
     "Historical variants not fully reaccepted after path normalization",
-    "AI record is selected current engineering exchanges, not complete historical transcripts"
+    "AI evidence comprises two historical source-matched short prompt/answer pairs and two labelled engineering summaries; not complete historical transcripts"
   ],
   "previous_naming_violation_count": 3380,
-  "updated": "2026-10-29",
+  "updated": "2026-11-02",
   "delivery_additions": [
     "report/design_report.pdf",
     "report/ai_collaboration_record.md",
     "build/vendor_dependency_review.md",
     "board/reproduce.md"
-  ]
+  ],
+  "repository_visibility": "PUBLIC"
 }

@@ -14,7 +14,7 @@ Original 2026 AMD guide, sections3.3.3–3.3.5, PDF pages22–25, SHA256 `c6ad82
 
 ## Honest remaining boundaries
 
-Repository remains PRIVATE under the user's withdrawal instruction. AMD strongly requests GitHub/Gitee open source under a redistributable license; being on private GitHub does not fulfill public access. Publication requires a separate user decision and resolution of the third-party scope.
+Repository is PUBLIC and anonymous HTTP access was verified on 2026-11-02. AMD strongly requests GitHub/Gitee open source under a redistributable license. Public access is now available; third-party redistribution scope remains unresolved and is not cleared merely by the visibility setting.
 
 Official manufacturer download locators have been verified, but today's full vendor archive was not downloaded and its derived build files were not proved byte-identical. The 56-file hash list and fail-stop preparation are available. Third-party redistribution permission and a clean-machine source-to-BIT build remain unverified. Existing historical source variants were not all reaccepted after path normalization. The included PDF is the current engineering submission copy; team signoff and contest-site upload are outside this repository check.
 
