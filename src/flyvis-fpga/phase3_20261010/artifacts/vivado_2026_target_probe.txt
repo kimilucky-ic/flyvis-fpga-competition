@@ -1,1 +1,0 @@
-version 2026.1.1 part_count 0 ooc_code 1 ooc_error {FLYVIS_TARGET_UNAVAILABLE: xc7z020clg400-2; evidence=C:/Users/hzy72/Documents/ChatGPT/fpga/flyvis-fpga/phase3_20261010/build/rtl_ooc_2026_1_20261010_171209}

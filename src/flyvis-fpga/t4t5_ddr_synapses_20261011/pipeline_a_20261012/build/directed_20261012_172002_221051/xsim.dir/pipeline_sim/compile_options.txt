@@ -1,1 +1,0 @@
-"work.tb_directed" -s "pipeline_sim" -debug "typical" --mt "off" -log "xelab.log" 

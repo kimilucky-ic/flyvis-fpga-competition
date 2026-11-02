@@ -1,7 +1,0 @@
-const fs=require('fs'),vm=require('vm'),path=require('path'),assert=require('assert'),crypto=require('crypto');const O=__dirname,R=path.join(O,'../ov5640_live_v261_20261026');
-const e={module:{exports:{}},crypto:crypto.webcrypto,ArrayBuffer,DataView,Uint8Array};vm.runInNewContext(fs.readFileSync(path.join(R,'assets/flow.js'),'utf8'),e);const a=e.module.exports;
-(async()=>{const p=JSON.parse(fs.readFileSync(path.join(O,'TEST_PACKET.json')));const x=await a.decode(p);assert(x.ready);assert.equal(x.step,p.step_id);assert.equal(x.state,p.state_token);
-for(const mutate of [q=>q.flow.step_id++,q=>q.flow.state_sha256='bad',q=>q.flow.decoder_sha256='bad',q=>q.flow.values[0].pop(),q=>q.flow.values[1][0]=NaN,q=>q.flow.values[0][0]+=1,q=>q.flow.axes.reverse()]){const q=structuredClone(p);mutate(q);await assert.rejects(()=>a.decode(q));}
-assert(!(await a.decode({...p,flow:{status:'UNAVAILABLE'}})).ready);
-const tests=[[1,0,3,0],[-1,0,-3,0],[0,1,0,-3],[0,-1,0,3]];for(const [x,y,dx,dy] of tests){const v=a.vector(x,y,1);assert.equal(v[0],dx);assert.equal(v[1],dy);}assert(Math.hypot(...a.vector(100,100,1))<=24.000001);
-fs.writeFileSync(path.join(O,'UI_RESULT.json'),JSON.stringify({status:'PASS_CPU_FLOW_UI',actual_packet_binding:true,wrong_step_state_model_axes_size_hash_nan_rejected:true,unavailable_without_fake_arrows:true,screen_xy_signs_correct:true,fixed_scale_and_max_length:true,hardware_actions:0},null,2));console.log('PASS_CPU_FLOW_UI');})().catch(e=>{console.error(e);process.exit(1)});

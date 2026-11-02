@@ -1,1 +1,0 @@
-"work.tb_flyvis_source_raw" -s "flyvis_source_raw_q22" -debug "typical" -log "xelab.log" 

@@ -1,72 +1,31 @@
-# Biological visual circuit simulation on Zynq-7020
+# 果蝇生物视觉神经回路的 FPGA 硬件模拟
 
-Competition source delivery, updated 2026-11-02. Public repository access was verified on 2026-11-02. Only selected sanitized engineering exchanges are included; full private conversations remain withdrawn. Full configured FlyVis network:45,669 nodes,1,513,231 connections,721 visual inputs,strict FP32/Euler,5ms model step. PL executes the neural updates; PS handles OV5640 capture/mapping/DDR records; PC displays results and independently audits states.
+本仓库主分支只保留最新完整系统：45,669个模型神经元、1,513,231条连接、721项视觉输入，FP32/Euler状态递推。PL执行完整神经计算，PS负责摄像头输入与DDR记录，电脑展示神经活动与官方光流读出。
 
-## Start here
+## 从这里开始
 
-1. Read the [approved seven-page design report](report/design_report.pdf) and [English competition poster](report/poster_en_a4.pdf). The [editable poster](report/poster_en.pptx) is also included. The poster highlights hardware simulation of a biological visual circuit, with model neuron types, connectivity and recurrent state updates.
-2. For the current full-FPGA camera experiment, use [board/runtime](board/runtime/README.md). On Windows x64/Python3.12 install its requirements, then run `python run.py --check-only`. For an operator-authorized board experiment use `python run.py --ip YOUR_PC_IPV4` and the newly generated fixed Notebook. This is the recommended PC entry; archived GPU/hybrid variants below are historical.
-3. Review [sanitized engineering collaboration cases](report/ai_engineering_cases.md), [Skill](skill/README.md) and [build/vendor acquisition instructions](build/vendor_dependency_review.md).
+- **运行实验：**[board/runtime](board/runtime/README.md)。Windows x64、Python3.12、原有Zynq-7020/PYNQ2.7板端环境。先安装requirements，再运行 `python run.py --check-only`；实际实验按说明生成并运行固定Notebook。
+- **查看硬件：**[src/neural](src/neural/README.md) 是最终8个神经计算RTL模块及50个初始化/映射数据文件。[src/vendor](src/vendor/README.md) 保留匹配构建要求的56项摄像头与平台依赖，原版权声明保留。
+- **构建固件：**[build/portable](build/portable/README.md)，使用Vivado2026.1。已有BIT/HWH直接随运行包提供。
+- **报告和海报：**[设计报告](report/design_report.pdf)、[海报PDF](report/poster_en_a4.pdf)、[可编辑海报](report/poster_en.pptx)、[技术说明](report/technical_report.md)。
+- **研发过程：**[协作案例](report/ai_engineering_cases.md)包含两组真实短原文与两组明确标记的工程摘要；[14个Skill](skill/README.md)连同经验和验证依据保留。
 
-The approved design-report PDF and latest English poster are synchronized with the current local materials. The report content is preserved as approved. The desktop submission archive is separately versioned; changing this repository does not update that RAR automatically.
+![Competition poster](report/poster_preview.png)
 
-## Current implementation
+## 目录
 
-- [Current camera/PC runtime](src/flyvis-lossless-study/ov5640_live_v261_20261026/): bundle,pc,assets and tests. Includes the current chart/axis/web layout snapshot from2026-10-28 and bounded audit-monitor read fix.
-- [Final Vivado2026.1 SoC](src/flyvis-lossless-study/vivado2026_1_20261026/): build scripts and release hardware metadata.
-- [Original GUI and GPU integration](src/flyvis_runtime/fly/): viewer and gui_v1. Older scientific/hybrid paths are retained as historical implementations, not the current full-PL camera entry.
-- [Competition skill package](skill/README.md): usage, limitations and historical verification.
-- [Licensing/attribution](third_party_notices.md).
+`src/` 最新RTL、参数与必需平台源文件；`board/` 当前运行程序、固件、软件参考和保存样例；`build/` 构建脚本与资源时序报告；`sim/` 验证记录；`data/` 参考样例；`report/` 报告、海报与协作材料；`skill/` 全部14项技能及案例。
 
-## Build and run
+当前运行代码、固件和参考样例在精简中保持原字节。神经RTL仅从build/portable/neural集中到src/neural，构建准备脚本相应调整查找路径。摄像头平台依赖逐项匹配vendor_requirements.json。清单见public_manifest.json；整理映射见[保留范围](report/current_delivery_inventory.json)。
 
-For the current PC entry use [board/runtime/README.md](board/runtime/README.md): Windows x64/Python3.12, install its requirements, then `python run.py --check-only`. For an operator-requested live experiment use `python run.py --ip YOUR_PC_IPV4` and the generated fixed Notebook. Board operations remain manual and require exclusive ownership; failed/unknown states are not retried automatically.
+## 验证范围
 
-For firmware use Vivado2026.1 and [build/portable/README.md](build/portable/README.md). [Official vendor acquisition](build/vendor_dependency_review.md) documents the required reference and 56-file identity check. Fresh official-download-to-BIT reproduction and third-party redistribution permission remain unverified. Do not treat old source variants or archived scripts as the current entry.
+保留的1090步操作者实验记录对应49,779,210个保存状态值、零失配；它是既有实板证据。软件自检重新计算保存的721项输入与45,669个状态值。模型5ms时间步与实测运行速度分别说明。FPGA功耗为Vivado估算，GPU为设备域遥测，原获取方法与范围保留。
 
-## Evidence
+本次目录精简不启动GPU、摄像头、Vivado或板卡。构建文件准备与软件参考检查可独立验证；新机器从源文件到BIT的完整Vivado重建仍需实际执行。
 
-Historical software/RTL/implementation reports remain in their source directories and retain their own scope. Latest full-PL camera basis:1090 steps,49,779,210 saved state words,zero mismatches in that bounded operator run. This does not establish biological equivalence,unlimited duration or200Hz realtime. Replaying saved results is offline replay. No new device experiment was run for publication.
+## 完整研发历史
 
-## Export
+[完整研发归档分支](https://github.com/kimilucky-ic/flyvis-fpga-competition/tree/archive/full-development-before-slim)保留精简前全部文件，包括67节点、A/B路线、旧GUI和实验版本。历史证据中的旧路径从归档分支查看。主分支不再混入这些旧实现、工具缓存或重复网表。旧提交与本地实验未删除，Git历史未重写。需要只下载当前内容可用GitHub的Code → Download ZIP。
 
-All published paths and hashes are in public_manifest.json. Personal running notes,credentials,virtual environments,EDA caches,bulk recordings and unrelated MaleCNS/PQN projects are excluded. Original source variants are retained to preserve the engineering process; start with the current implementation above. The original competition RAR remains a separate immutable upload artifact.
-
-## AMD guide audit
-
-[Requirement-to-file map](report/amd_requirements.md), [seven-page design report](report/design_report.pdf), [actual implementation reports](build/), [verification summaries](sim/), [operation steps](board/reproduce.md), and [engineering AI collaboration cases](report/ai_engineering_cases.md). Repository delivery is distinct from public-release permission and fresh source-to-BIT validation; remaining boundaries are in report/amd_compliance_audit.json.
-
-## Normalized export verification
-
-All exported paths pass the naming check. export_path_map.json records the initial path/content transformation, while public_manifest.json records final deliverable bytes after deliberate bundle-manifest regeneration. The current46-file bundle admission and two corrupt-firmware rejection cases passed; three current JS files pass syntax checks. Four pre-existing intentionally invalid historical fixtures are recorded, not promoted to runnable Python. Historical acceptance manifests retain original candidate scope; they are not newly passed tests. Full historical functionality, browser execution and clean Vivado rebuilding remain unverified. See sim/normalized_runtime_check.json and sim/normalized_export_checks.json.
-
-## Current deployable PC entry
-
-Use [board/runtime](board/runtime/README.md), which assembles the current PC/web files with the existing fresh-session generator. Run `python run.py --check-only` there for the actual saved721input/full45669state CPU comparison. Then use `python run.py --ip YOUR_PC_IPV4` only when the user wants to start the receiver. Device operations remain operator-controlled. Fresh prepare-only generation was checked offline; no HTTP/browser/board experiment was run. Raw camera pixels are not public; this sample does not retest frame mapping.
-
-## Detailed engineering and publication hold
-
-[Detailed seven-part technical report](report/technical_report.md), [AI evidence guide](report/ai_workflow.md), [vendor dependency review](build/vendor_dependency_review.md). ALIENTEK copyrighted-source instances are identified in report/third_party_holds.json; redistributability has not been established. Publication of this reviewed inventory has been authorized by the project owner; unresolved third-party and rebuild limitations are disclosed below. The repository is public; public availability is not proof of third-party license clearance or clean-machine Vivado success.
-
-
-[主要研发协作案例（脱敏）](report/ai_engineering_cases.md) · [离线阅读版](report/ai_engineering_cases.html)
-
-## Competition directory structure
-
-The repository follows the AMD recommended top-level layout: `src/` design sources, `sim/` verification, `build/` build scripts/reports, `board/` operation and measured outputs, `data/` saved inputs/references, `skill/` reusable workflows, and `report/` design/AI records. See [data](data/README.md) for sample scope. The existing runtime retains identical sample copies under board/runtime/checks to preserve its accepted entry.
-
-Historical export_path_map.json and archived source manifests retain their original path labels as provenance. For a former top-level source/ path, use src/ in this layout. Directory relocation is not new acceptance of every historical implementation.
-
-## Runtime repair — 2026-11-02
-
-The earlier normalized export broke Python constructors despite passing syntax/reference checks. The current recommended runtime and its current source mirrors are repaired, with new display changes retained. [Actual checks](sim/runtime_repair_20261102.json) now include object construction, saved-state CPU comparison, actual isolated PC HTTP startup and official CPU flow warmup. This is not a new physical board test. Other archived versions are not current entries.
-
-## Historical archive navigation
-
-[Missing historical dependencies and four corrupt negative-test samples](report/archive_dependencies.md) are explicitly indexed. These are not the recommended experiment entry. Use board/runtime above; no unavailable historical attachment has been described as bundled or newly validated.
-
-## Competition poster
-
-![Biological visual circuit simulation on FPGA](report/poster_preview.png)
-
-[Print-ready A4 PDF](report/poster_en_a4.pdf) · [Editable PowerPoint](report/poster_en.pptx)
+许可与第三方范围见[声明](third_party_notices.md)及[平台依赖说明](build/vendor_dependency_review.md)。保留原声明不等于将第三方代码改为本项目许可证。

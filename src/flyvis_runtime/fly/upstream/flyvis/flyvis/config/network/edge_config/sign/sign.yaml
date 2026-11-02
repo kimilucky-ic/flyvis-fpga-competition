@@ -1,7 +1,0 @@
-type: SynapseSign
-form: value
-requires_grad: false
-initial_dist: Value
-groupby:
-  - source_type
-  - target_type

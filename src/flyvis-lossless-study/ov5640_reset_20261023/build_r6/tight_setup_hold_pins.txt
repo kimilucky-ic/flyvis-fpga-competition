@@ -1,6 +1,0 @@
-+====================+===================+====================================================+
-| Launch Setup Clock | Launch Hold Clock | Pin                                                |
-+====================+===================+====================================================+
-| camera_pclk        | camera_pclk       | flyvis_ddr_i/camera_guard/inst/ready_sync_reg[0]/D |
-| camera_pclk        | camera_pclk       | flyvis_ddr_i/camera_guard/inst/fault_sync_reg[0]/D |
-+--------------------+-------------------+----------------------------------------------------+

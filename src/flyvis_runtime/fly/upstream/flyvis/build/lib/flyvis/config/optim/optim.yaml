@@ -1,5 +1,0 @@
-type: Adam
-optim_dec:
-  lr: ${scheduler.lr_dec.start}
-optim_net:
-  lr: ${scheduler.lr_net.start}

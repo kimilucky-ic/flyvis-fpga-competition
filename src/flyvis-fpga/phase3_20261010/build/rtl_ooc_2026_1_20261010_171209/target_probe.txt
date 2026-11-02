@@ -1,2 +1,0 @@
-Vivado=2026.1.1 target=xc7z020clg400-2 parts_count=0
-BLOCKED: exact target not available. No synthesis/resource PASS.

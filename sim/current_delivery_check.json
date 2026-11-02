@@ -1,0 +1,43 @@
+{
+  "status": "PASS_CURRENT_FILES_AND_OFFLINE_PREPARATION",
+  "runtime_files_byte_identical": 80,
+  "reference_check": {
+    "input_words": 721,
+    "state_words": 45669,
+    "mismatches": 0,
+    "actual": "Saved vector recomputed on CPU with existing reference.exe"
+  },
+  "skill_check": {
+    "status": "PASS_OFFLINE_DOCUMENT_AND_SNAPSHOT_INTEGRITY_ONLY",
+    "skills_checked": 14,
+    "candidate_not_counted": "fpga-uart-link-validation",
+    "source_records_checked": 24,
+    "local_markdown_links_checked": 182,
+    "offline_checker_requires_original_workspace": false,
+    "new_board_gpu_eda_operations": 0,
+    "independent_behavioral_reuse": "NOT_RUN",
+    "missing_evidence_list": "validation_gaps.md",
+    "errors": []
+  },
+  "neural_sources": 8,
+  "neural_images": 50,
+  "vendor_dependency_files": 56,
+  "offline_preparation": {
+    "status": "PREPARED_FILES_ONLY_NOT_SYNTHESIZED",
+    "vendor_files": 56,
+    "stages": [
+      "migrate3",
+      "combine",
+      "synth",
+      "route",
+      "bitgen"
+    ],
+    "device_operations": 0,
+    "eda_started": false
+  },
+  "missing_vendor_rejected": true,
+  "local_markdown_missing_links": [],
+  "generated_cache_files": [],
+  "fresh_vivado_build": false,
+  "new_board_camera_gpu_operations": 0
+}

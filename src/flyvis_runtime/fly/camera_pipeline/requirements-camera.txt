@@ -1,2 +1,0 @@
-# Install only into camera_pipeline/_vendor; retain shared NumPy 1.26.4.
-opencv-python==4.10.0.84

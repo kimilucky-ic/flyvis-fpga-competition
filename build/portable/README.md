@@ -4,14 +4,14 @@ This export closes the hidden dependency on the author's original work directory
 
 ## Prerequisites
 
-Vivado2026.1, xc7z020clg400-2 support, and the original ALIENTEK official camera reference dependencies. vendor_requirements.json lists56 exact files and hashes needed from the vendor reference working directory (base.xdc, vendor IP component metadata/RTL and associated files). The existing known-good environment has that directory at C:/fpga_work/line11_v261_20261026/vendor. This local path is an acquisition example, not a runtime requirement in the new export. Redistribution of these third-party inputs remains pending license review; hashes alone do not deliver those sources. The official retrieval route and exact validation instructions are now documented in [vendor dependency review](../vendor_dependency_review.md). The current official archive was not downloaded or independently rebuilt; redistribution permission and fresh source-to-BIT validation remain pending. This is not a certified self-contained public clean-build deliverable.
+Vivado2026.1 with xc7z020clg400-2 support. The complete 56-file platform dependency snapshot is included at [src/vendor](../../src/vendor/README.md), and its bytes match vendor_requirements.json. Neural RTL and images are included once at [src/neural](../../src/neural/README.md). Original notices and the third-party scope in [vendor dependency review](../vendor_dependency_review.md) apply. The source snapshot is the known-good local platform input set; an independent clean-machine Vivado source-to-BIT build has not been run in this reorganization.
 
 ## Prepare without running Vivado
 
 From this directory:
 
 ```text
-python prepare.py --vendor-dir D:/vendor_camera --output D:/flyvis_build
+python prepare.py --vendor-dir ../../src/vendor --output D:/flyvis_build
 ```
 
 The command verifies every dependency and RTL/image hash before creating a fresh output directory. It never starts EDA, camera or hardware. An existing output or bad input stops before copying. Do not reuse output from a failed heavy build without diagnosis.
@@ -31,3 +31,7 @@ Only when a heavy build has been authorized, run from the newly prepared output:
 Stop on any error. Inspect utilization, timing, DRC/CDC and bitgen logs; do not infer board correctness from implementation. This export has CPU file preparation validation only. No fresh Vivado build was run to prove clean-machine equivalence, and generated BIT need not be byte-identical to the archived accepted BIT.
 
 No stage connects to a board. Physical loading remains a separate operator action. The camera external timing budget and non-dedicated PCLK exception remain conditional; portable packaging does not establish electrical signoff.
+
+## Consolidated current source
+
+Neural RTL/images are stored once at [src/neural](../../src/neural/README.md). The matching 56 platform dependencies are at [src/vendor](../../src/vendor/README.md). This command validates those exact bytes before preparing the build. Original notices and license scope remain applicable. Fresh source-to-BIT execution is not claimed by this file consolidation.

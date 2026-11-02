@@ -1,1 +1,0 @@
-"work.tb_ddr_synapses" -s "b_stream_sim" -debug "typical" --mt "off" -log "xelab.log" 

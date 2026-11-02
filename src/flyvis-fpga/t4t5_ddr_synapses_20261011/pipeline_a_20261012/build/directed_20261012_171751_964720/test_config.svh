@@ -1,1 +1,0 @@
-`define TEST_SIG 64'h202e36dad01f1198

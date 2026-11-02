@@ -1,1 +1,0 @@
--L "v_vid_in_axi4s_v5_0_8" -L "xpm" -L "unisims_ver" -debug "typical" -mt "off" "xil_defaultlib.tb_video" "xil_defaultlib.glbl" -s "video_test" -log "elaborate.log" 

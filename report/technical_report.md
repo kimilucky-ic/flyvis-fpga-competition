@@ -63,4 +63,8 @@ flowchart LR
 七页设计报告见[design_report.pdf](design_report.pdf)。厂家官方获取入口及逐项校验步骤已补充于[依赖说明](../build/vendor_dependency_review.md)。待解决：厂商再分发许可；当前官方资料下载到完整BIT的独立复建验证；完整历史功能在规范路径下的迁移验证；团队最终签字及公开发布确认。原已验收工程和RAR不被覆盖。当前目录是可审查候选，不能以文档完整替代这些未完成条件。
 
 
-[补充：实际研发脱敏案例](ai_engineering_cases.md)（短原文与工程摘要分列；既有设计PDF为前一交付版本。）
+[补充：实际研发脱敏案例](ai_engineering_cases.md)（短原文与工程摘要分列；设计PDF为用户确认稿。）
+
+## 当前完整交付目录
+
+最终神经RTL及初始化数据集中在[src/neural](../src/neural/README.md)，56项匹配的平台依赖在[src/vendor](../src/vendor/README.md)。当前PC/板端程序和BIT/HWH统一从[board/runtime](../board/runtime/README.md)进入。旧工程与历史路径由[完整归档分支](https://github.com/kimilucky-ic/flyvis-fpga-competition/tree/archive/full-development-before-slim)保留。软件保存样例核对与无EDA构建文件准备见[本次检查](../sim/current_delivery_check.json)，不新增实板或Vivado构建结论。

@@ -1,1 +1,0 @@
-Vivado=2026.1.1 tier=ENTERPRISE target=xc7z020clg400-2 parts_count=165

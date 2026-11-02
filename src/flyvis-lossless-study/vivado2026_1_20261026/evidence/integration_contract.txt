@@ -1,1 +1,0 @@
-RING_ABI 0x00110005; N45669 NE1513231 INPUT721; HP1 DDR64bit; target100MHz; no board operations

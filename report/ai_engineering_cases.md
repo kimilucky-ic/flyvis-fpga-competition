@@ -42,7 +42,7 @@
 
 **验证与边界（整理）：**这是历史GUI修改的对话证据；原回答提到970步既有ON/OFF数据核对，本次未重新执行该核对，不将对话中的数值单独提升为新验证结果。后续区域均值版本有独立定义，不能与本案例混称。
 
-[对应工程证据](../src/flyvis_runtime/fly/viewer/competition_full_pl.js)
+[对应工程证据](https://github.com/kimilucky-ic/flyvis-fpga-competition/tree/archive/full-development-before-slim/src/flyvis_runtime/fly/viewer/competition_full_pl.js)
 
 ## 案例3：FP32优化：数值正确之后仍须修复布线时序
 

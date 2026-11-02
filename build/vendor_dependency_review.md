@@ -17,3 +17,7 @@ ALIENTEK headers in camera sources reserve rights. [The held-file inventory](../
 PYNQ's [v2.7 license](https://github.com/Xilinx/PYNQ/blob/v2.7.0/LICENSE) and component notices apply to PYNQ-origin code. They do not license unrelated ALIENTEK camera modules. Exact third-party notices must be retained.
 
 The accepted environment's identities and portable preparation checks exist. Fresh source-to-BIT reproduction from the current official download, alternate-machine Vivado verification and electrical signoff have not been executed. This acquisition route closes the missing source-locator documentation; it does not manufacture those validations or permissions.
+
+## Current bundled snapshot
+
+The consolidated main branch includes all 56 exact dependencies at [src/vendor](../src/vendor/README.md), copied from the accepted local platform tree and matched against portable/vendor_requirements.json. The original headers are retained. This closes the delivery-file gap; it does not create new third-party permissions or prove a fresh Vivado build. The official download instructions above remain an alternative acquisition route, with their existing version limits. Historical paths from the original review are preserved in the archive branch.

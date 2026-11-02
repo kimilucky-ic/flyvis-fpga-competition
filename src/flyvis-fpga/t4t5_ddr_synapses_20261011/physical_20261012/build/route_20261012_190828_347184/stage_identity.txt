@@ -1,8 +1,0 @@
-tool=2026.1.1
-part=xc7z020clg400-2
-stage=OOC_PLACED_ROUTED_NO_SOC_NO_BIT
-clock_period_ns=10.000
-HD.CLK_SRC=BUFGCTRL_X0Y16
-general.maxThreads=1
-opt_place_route_ms=73229
-black_boxes=0

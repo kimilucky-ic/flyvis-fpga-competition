@@ -1,9 +1,0 @@
-Browser tab: 4, Title: "FlyVis · 全网络视觉实验", URL: "http://127.0.0.1:50544/".
-The following is a diff from the previous accessibility tree with ~ and + representing changed and added elements, respectively. Removed elements are summarized by ID range.
-Removed element IDs: 37-39
-~		3 heading 离线保存帧测试 old, Value: 1
-~			4 text 离线保存帧测试 old
-~	36 text 会话 604780dd · 本轮已结束 · 219 步 · 正在验收 0/219 步 · 当前为保存帧
-~	10 button 全屏展示, ID: fullscreen
-+		37 text 显示 56 帧 · 跳过 163 帧 · 当前神经步 219
-The focused UI element is 10 button 全屏展示, ID: fullscreen

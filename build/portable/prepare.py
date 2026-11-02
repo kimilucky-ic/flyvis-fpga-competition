@@ -3,6 +3,7 @@ from pathlib import Path
 import argparse,hashlib,json,shutil
 
 HERE=Path(__file__).resolve().parent
+NEURAL=HERE.parent.parent/'src/neural'
 STAGES=('migrate3','combine','synth','route','bitgen')
 
 def prepare(vendor,output):
@@ -15,10 +16,10 @@ def prepare(vendor,output):
         if not p.is_file() or hashlib.sha256(p.read_bytes()).hexdigest()!=digest:
             raise ValueError('Missing or different vendor dependency: '+relative)
     for row in json.loads((HERE/'relocation_manifest.json').read_text('utf8')):
-        if hashlib.sha256((HERE/row['path']).read_bytes()).hexdigest()!=row['sha256']:
+        if hashlib.sha256((NEURAL/Path(row['path']).relative_to('neural')).read_bytes()).hexdigest()!=row['sha256']:
             raise ValueError('Exported RTL/image identity mismatch: '+row['path'])
     output.mkdir(parents=True)
-    shutil.copytree(HERE/'neural',output/'neural')
+    shutil.copytree(NEURAL,output/'neural')
     for relative in expected:
         q=output/'vendor'/relative;q.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(vendor/relative,q)
     for name in ['base_2026.bd','camera_budget.xdc','audit_routed.tcl',*[s+'.tcl' for s in STAGES]]:
