@@ -1,0 +1,9 @@
+{
+  "status": "PASS_CURRENT_SOFTWARE_HISTORICAL_LIMITS_EXPLICIT",
+  "historical_missing_references_indexed": 150,
+  "historical_documents_updated": 20,
+  "known_negative_fixtures": 4,
+  "new_board_test": "DEFERRED_BY_USER",
+  "vendor_permission": "USER_CONFIRMED_PUBLIC_VENDOR_RESOURCES_AND_ACCEPTED_RESPONSIBILITY; independent grant not verified",
+  "new_GPU_camera_board_EDA_runs": 0
+}

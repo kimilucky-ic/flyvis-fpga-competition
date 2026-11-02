@@ -6,8 +6,8 @@
   },
   {
     "path": "README.md",
-    "bytes": 7667,
-    "sha256": "b4e667fbf96f76e82f732f50a7aecb36acf336656879c0f59e4d0c231123eb57"
+    "bytes": 7995,
+    "sha256": "65820b5cede6f46d50de2e13ebac8211747e036d680403423e0ca7439c0e76c2"
   },
   {
     "path": "board/analysis_formulas.json",
@@ -990,6 +990,16 @@
     "sha256": "746ccc4178afc5e0b50db9386d116b01a3d720d1311e8204395d2a7830668202"
   },
   {
+    "path": "report/archive_dependencies.json",
+    "bytes": 33643,
+    "sha256": "b127113cd7397eb70879afa186af193b7c0437249f0815fa1733076debd0c089"
+  },
+  {
+    "path": "report/archive_dependencies.md",
+    "bytes": 37747,
+    "sha256": "adb1782b6eee5a779065a8ea7b75494af408842cda0d3c6c7e296853d8bc4884"
+  },
+  {
     "path": "report/collaboration_selected.md",
     "bytes": 223,
     "sha256": "03ab7937ab03bdb2103f5be8dcecf1e7555a38984dcedd3a7dfe18a57a6ceb0d"
@@ -1036,13 +1046,18 @@
   },
   {
     "path": "report/third_party_holds.json",
-    "bytes": 8786,
-    "sha256": "1e4e1d3384c0a33638ffec5ba602296da63f505ad5263f254b5b695e98ac12d2"
+    "bytes": 9070,
+    "sha256": "c2ab4df9525a22950ce45bec7b1385aa29693e37702dad540dc114e569195658"
   },
   {
     "path": "sim/core_schedule.json",
     "bytes": 622,
     "sha256": "5dd0a318fadc43af48d4975e87ff2caf3dd87d8212c19218358870f4c41614ac"
+  },
+  {
+    "path": "sim/final_delivery_review_20261102.json",
+    "bytes": 397,
+    "sha256": "d90e0f8464de42b88cd6d55c114b17ca88fe82da66f72bd63e0ac5e382230223"
   },
   {
     "path": "sim/fp32_operators.json",
@@ -1486,8 +1501,8 @@
   },
   {
     "path": "src/flyvis-autorunner/README.md",
-    "bytes": 10749,
-    "sha256": "d9435f4a40c47adc3eab1633eafe8a0ff4ff09cfb055e94d4a430b1d4ce25339"
+    "bytes": 11238,
+    "sha256": "47253e5997994a69499d1c67d91d10b2828c0869753346f63eb3955877055bf2"
   },
   {
     "path": "src/flyvis-autorunner/autorunner.py",
@@ -1611,8 +1626,8 @@
   },
   {
     "path": "src/flyvis-circuit-selection/README.md",
-    "bytes": 3158,
-    "sha256": "b0a38deb18c58325f31987887c20d5d265cea35159ea86454c1d00176be19ec0"
+    "bytes": 3878,
+    "sha256": "b28f13ec5f0162bd15828c96657fb3baef3105a092ac73dbfad4ca02ab80e4c0"
   },
   {
     "path": "src/flyvis-circuit-selection/a_r4_generalization_p0_20261013/audit_p0.py",
@@ -2321,8 +2336,8 @@
   },
   {
     "path": "src/flyvis-circuit-selection/phase2_20261010/README.md",
-    "bytes": 1366,
-    "sha256": "f0769d731f76605a5a15930e8d1f0d8fe2a005c5a72cc5f0fddd93320b057fec"
+    "bytes": 1990,
+    "sha256": "8e928839fd0eb8893c17100d318e2c4414473c1e77aa47a03b258abfe1d47a34"
   },
   {
     "path": "src/flyvis-circuit-selection/phase2_20261010/artifacts/aggregate_gpu_native_r1/code_snapshot/a_full_oracle.py",
@@ -2616,8 +2631,8 @@
   },
   {
     "path": "src/flyvis-circuit-selection/phase3_20261010/README.md",
-    "bytes": 1554,
-    "sha256": "4c2b854d47d41174974362ee5d31408e68dba8e0d40daf3b5d5ecd8447d52874"
+    "bytes": 2108,
+    "sha256": "ce0a5a76dff55a73a00544b228cbeea882cff06c6ff3cbaa13636c21a07d53fc"
   },
   {
     "path": "src/flyvis-circuit-selection/phase3_20261010/a_video_adapter.py",
@@ -13606,8 +13621,8 @@
   },
   {
     "path": "src/flyvis-fpga/phase4_rtl92_20261011/README.md",
-    "bytes": 3045,
-    "sha256": "07d17f065de8646048791852b43a20a79bfa556a3c5e81377765bae21b83d8f7"
+    "bytes": 3260,
+    "sha256": "fb01714d322d64c25066809e398e99041cc673455011975d103c88c1625156f6"
   },
   {
     "path": "src/flyvis-fpga/phase4_rtl92_20261011/audit_simulations.py",
@@ -15776,8 +15791,8 @@
   },
   {
     "path": "src/flyvis-fpga/t4t5_ddr_synapses_20261011/README.md",
-    "bytes": 1776,
-    "sha256": "058b5d14ba7e4f62302cacd4a4410d1c9169237337ecaed503b9f2c1c8ee7583"
+    "bytes": 2047,
+    "sha256": "3beefb2f160613d33a82ae936ffeebec74bc816954701cbf26ff072717f660f0"
   },
   {
     "path": "src/flyvis-fpga/t4t5_ddr_synapses_20261011/audit_ramfix_ooc_20261012.py",
@@ -18176,8 +18191,8 @@
   },
   {
     "path": "src/flyvis-fpga/t4t5_ddr_synapses_20261011/soc_b_20261012/candidate/b_soc_20261012_222612_100mhz/README.md",
-    "bytes": 1109,
-    "sha256": "32b3763816bea11f7ff08bde1c38a11a27b25a7161df7e3a0d71790809ee0659"
+    "bytes": 1251,
+    "sha256": "25984b3b8b5dd7c7f60b4dddafece23806576187d5ffff6abaf564d65a27cb6e"
   },
   {
     "path": "src/flyvis-fpga/t4t5_ddr_synapses_20261011/soc_b_20261012/candidate/b_soc_20261012_222612_100mhz/arm_controller.py",
@@ -21186,8 +21201,8 @@
   },
   {
     "path": "src/flyvis-fpga/t4t5_scale_20261011/README.md",
-    "bytes": 4417,
-    "sha256": "141f17a8b35439869bbcefab2e00226874f94cfd39157ab60df4e8037f64025b"
+    "bytes": 4585,
+    "sha256": "93113e914efcfc681e31e83b0d925d309977336f9f30e69f04f0ebe881cf2ea2"
   },
   {
     "path": "src/flyvis-fpga/t4t5_scale_20261011/audit_graph.py",
@@ -21231,8 +21246,8 @@
   },
   {
     "path": "src/flyvis-gpu-validation/phase4_camera_rectb_20261011/README.md",
-    "bytes": 12677,
-    "sha256": "145c2e8cf4e75718afea8b1d50def6083bed425859c301c997f68f4c5eacbbe9"
+    "bytes": 13106,
+    "sha256": "ab136ffff4135c974b5870b158cf72761961c79bd8ca7de4a5e2151f47c53a3c"
   },
   {
     "path": "src/flyvis-gpu-validation/phase4_camera_rectb_20261011/b_reference_receipt_r1/verifier_source_failed.py",
@@ -21321,8 +21336,8 @@
   },
   {
     "path": "src/flyvis-lossless-study/README.md",
-    "bytes": 2951,
-    "sha256": "04ae214d42cd73d954c43fbf57b18513b7ffd72fb9bae83fe9b97e43ea7605cc"
+    "bytes": 3114,
+    "sha256": "d98f24c6a3867eb0147538b8e36359dc0b6f91e802c0a98b6c0ab5e51711ac98"
   },
   {
     "path": "src/flyvis-lossless-study/audit_monitor_fix_20261028/live_server.before.py",
@@ -44306,8 +44321,8 @@
   },
   {
     "path": "src/flyvis-visual-experiments/README.md",
-    "bytes": 3759,
-    "sha256": "d3d9e31d0b6c62309857da04e9f7b61fdcf2c13b259db587c927d8eb6917b6d4"
+    "bytes": 4181,
+    "sha256": "4e9dd21332a24bf4cba2a407e47fca421913833f2404edd2b6b3fe82a467c398"
   },
   {
     "path": "src/flyvis-visual-experiments/environment/requirements-cpu-lock.txt",
@@ -44351,8 +44366,8 @@
   },
   {
     "path": "src/flyvis_runtime/fly/README.md",
-    "bytes": 2662,
-    "sha256": "b52bc6610f01582ca639d0d9521f5b2295a870c5662ac1b9fc17e16a65cf9356"
+    "bytes": 3013,
+    "sha256": "c620d08be077fb10f2d8d039cf5f66f208adf869a9afc0e47143f5ac62a14057"
   },
   {
     "path": "src/flyvis_runtime/fly/artifacts/golden_reference_v1/requirements-lock.txt",
@@ -44366,8 +44381,8 @@
   },
   {
     "path": "src/flyvis_runtime/fly/camera_pipeline/README.md",
-    "bytes": 7773,
-    "sha256": "af94b2366b2bc583e0fd51dcdd2916ddfa0dd35fe051c9b89d671227f3988d98"
+    "bytes": 8424,
+    "sha256": "716555d518bc4a56d0caa9798baa3360eaf3a5502a9c488de4b7f8ecc7bf107c"
   },
   {
     "path": "src/flyvis_runtime/fly/camera_pipeline/adapter.py",
@@ -44396,8 +44411,8 @@
   },
   {
     "path": "src/flyvis_runtime/fly/camera_pipeline/controlled_video_20261010_r1/README.md",
-    "bytes": 5722,
-    "sha256": "e7f3878c2122e39fa9590a20d92988d5d8c250b646f55ce31373aa8d0503de31"
+    "bytes": 6393,
+    "sha256": "8fd256d0d38f7ccc4bc56c95600d859ff316224b1307320ab63495e97f9df3ed"
   },
   {
     "path": "src/flyvis_runtime/fly/camera_pipeline/controlled_video_20261010_r1/analyze.py",
@@ -44466,8 +44481,8 @@
   },
   {
     "path": "src/flyvis_runtime/fly/camera_pipeline/phase2/README.md",
-    "bytes": 8473,
-    "sha256": "bdd74d0c62f6b673d610d7a1fda04f408b0897298d9717fdd57a07d54fadfa21"
+    "bytes": 8918,
+    "sha256": "36da2ccd62dab39ac4c04327c6216b2124d5977e365a79b0fde1cd786bd9633b"
   },
   {
     "path": "src/flyvis_runtime/fly/camera_pipeline/phase2/finalize_phase2.py",
@@ -44526,8 +44541,8 @@
   },
   {
     "path": "src/flyvis_runtime/fly/camera_pipeline/phase3_input_20261010_r1/README.md",
-    "bytes": 2407,
-    "sha256": "f800da8e85aa4c10b6e3bf49406c3b0b680dc257487f7b427b2bcd50640e871c"
+    "bytes": 2637,
+    "sha256": "962e671c316a4f46b1898f55ee12272777a29051ad2398ed0722bf14a7d8de21"
   },
   {
     "path": "src/flyvis_runtime/fly/camera_pipeline/phase3_input_20261010_r1/finalize.py",
@@ -44556,8 +44571,8 @@
   },
   {
     "path": "src/flyvis_runtime/fly/camera_pipeline/phase4_phone_camera_20261010_r1/README.md",
-    "bytes": 11292,
-    "sha256": "bd17518557daf2bef932dbe3211965ce4d352f9236ab1569e1b20ce211c3cd14"
+    "bytes": 11533,
+    "sha256": "576e74a468fb2b587296e9dbef6360b9421875ce686f84cfa3414764fea8bb70"
   },
   {
     "path": "src/flyvis_runtime/fly/camera_pipeline/phase4_phone_camera_20261010_r1/camera_session.py",
@@ -44636,8 +44651,8 @@
   },
   {
     "path": "src/flyvis_runtime/fly/camera_pipeline/phone_screen_rectification_20261011_r1/README.md",
-    "bytes": 9238,
-    "sha256": "8536c780557971d70e113f5cd9d5fc88791ff099f215a51a515ffc18f0d85c18"
+    "bytes": 9334,
+    "sha256": "a4616b20fc9a54794dafea658f03da60241bd682cb3677fdb60fd59e0217f71a"
   },
   {
     "path": "src/flyvis_runtime/fly/camera_pipeline/phone_screen_rectification_20261011_r1/init__.py",
@@ -44646,8 +44661,8 @@
   },
   {
     "path": "src/flyvis_runtime/fly/camera_pipeline/phone_screen_rectification_20261011_r1/real_capture_review_camera_2dfba194_20261011_r1/README.md",
-    "bytes": 5874,
-    "sha256": "1de69485804b4e096ae8a2dd5830961841386ce619e6b4b298892bb7fe95f171"
+    "bytes": 6125,
+    "sha256": "987a3b3e115bb8148cd64c6ae6b96a40e90020c3d27b4462532dde6348e5caeb"
   },
   {
     "path": "src/flyvis_runtime/fly/camera_pipeline/phone_screen_rectification_20261011_r1/real_capture_review_camera_2dfba194_20261011_r1/accepted_audit_source.py.txt",
@@ -45601,8 +45616,8 @@
   },
   {
     "path": "src/flyvis_runtime/fly/gui_v1/README.md",
-    "bytes": 14406,
-    "sha256": "12fec01cad7e34f465f1b1bdf595715e68cb61ca37c79cbf1e23421b99156ee9"
+    "bytes": 15948,
+    "sha256": "1c5a2084f33058be0719bab8865e3cebd6fd9448f458413925e4a9f76b691a89"
   },
   {
     "path": "src/flyvis_runtime/fly/gui_v1/adapters.py",

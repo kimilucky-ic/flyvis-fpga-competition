@@ -32,7 +32,7 @@
 - 整段每一帧使用完全相同的矩阵和 OpenCV INTER_LINEAR。明确存在裁剪和几何重采样；没有每帧重新定位、运动跟踪、光流补偿、隐藏填边、亮度增强或归一化。源矩形视场被改变，不能与历史 A 曲线混作同一实验。
 - 校正后640×640对应网页逻辑画布；官方 BoxEye(15,13)实际采样中间的六边形区域，13×13窗口的包围范围是403×403，占正方形边长403/640。它不会计算整块屏幕所有像素。原图反投影覆盖图显示实际721个中心和每个窗口，CSV保存浮点位置。
 - BoxEye仍执行官方均值卷积和721六边形采样；RGB→Pillow L→float32/255沿用已有官方兼容方法。BoxEye采用 native，不再进行额外尺寸变换。官方卷积零边界行为如实记录；校正有效性检查保证实际采样窗口不使用原图外的零填充值。
-- [sampling_overlay_raw.png](validation/software_01966e847d38403499deeb32b8605d2d/calibration/sampling_overlay_raw.png) 是**合成软件说明图**，黄色是屏幕边界，绿色是原图中的实际输入窗口；不是真实手机拍摄图。
+- [sampling_overlay_raw.png — 历史依赖未随包提供](../../../../../report/archive_dependencies.md#missing-119) 是**合成软件说明图**，黄色是屏幕边界，绿色是原图中的实际输入窗口；不是真实手机拍摄图。
 - 放大只改善摆放便利性，不恢复缺失的细节、曝光信息或准确物理速度。手机显著移动、遮挡、失焦、屏幕不全、频闪都必须从实际原始片段检查并报告；固定校正不会自动解决这些问题。
 
 上述四点透视与插值使用 [OpenCV 官方几何变换接口](https://docs.opencv.org/4.x/da/d54/group__imgproc__transform.html)。文件时间戳来自 [CAP_PROP_POS_MSEC](https://docs.opencv.org/4.x/d4/d15/group__videoio__flags__base.html)，支持范围依赖实际解码后端；本环境4.10.0/FFMPEG在已知30FPS软件片段上核验通过，尚未验证用户实际文件或所有可变帧率编码。
@@ -66,6 +66,6 @@ identity, stimulus, input_time, activity_time = load_input(frozen_input_director
 
 ## 验证及当前限制
 
-[最新软件结果](validation/software_01966e847d38403499deeb32b8605d2d/result.json)：30项PASS；左右/上下已知OFF边缘、较小倾斜屏幕、721投影、反射/交叉/坏时钟拒绝、因果输入值、完整冻结/只读重复加载、三时钟、文件不伪造UTC。两次使用独立新目录复现。完整输出的合成片段shape为[1,107,1,721]，不是实拍、更不是新神经活动。
+[最新软件结果 — 历史依赖未随包提供](../../../../../report/archive_dependencies.md#missing-120)：30项PASS；左右/上下已知OFF边缘、较小倾斜屏幕、721投影、反射/交叉/坏时钟拒绝、因果输入值、完整冻结/只读重复加载、三时钟、文件不伪造UTC。两次使用独立新目录复现。完整输出的合成片段shape为[1,107,1,721]，不是实拍、更不是新神经活动。
 
 实际新摄像头视频、曝光/对焦/ISP状态、频闪、全段固定位置、对应手机日志以及Full GPU/Python对照都未验收。可复用软件流程已在独立输出上复现；自助录制硬件流程尚未运行，不发布为通用硬件Skill。

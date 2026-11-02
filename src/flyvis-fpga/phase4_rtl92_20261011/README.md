@@ -1,6 +1,6 @@
 # 独立 FlyVis RTL 研究包
 
-入口：[REPORT.md](REPORT.md)、[最终仿真审计](artifacts/simulation_audit.json)、[综合资源检查](artifacts/synthesis_resource_gate.json)。
+入口：[REPORT.md — 历史依赖未随包提供](../../../report/archive_dependencies.md#missing-051)、[最终仿真审计 — 历史依赖未随包提供](../../../report/archive_dependencies.md#missing-052)、[综合资源检查 — 历史依赖未随包提供](../../../report/archive_dependencies.md#missing-053)。
 
 只在本目录生成新输出，不运行⑥的 build/board/driver 脚本。依赖冻结的 input_bundle_r2、formal_r2 SOURCE_RAW 轨迹、此前整数参考、Python/NumPy，以及本机 Vivado/XSim 2026.1.1。`amd2026_environment.ps1` 仅只读设定进程内工具和已验证许可证选择，不修改其文件或全局环境。
 

@@ -4,13 +4,13 @@
 
 唯一实现目录为本目录。GUI、神经回路提取、RTL、其他实验和既有 Golden 均保持独立。只在 Windows 打开摄像头。没有重新训练或修改权重/神经动力学。连续实时模式仍未验收。
 
-- [当前状态](STATUS.md)
-- [接口契约](API_CONTRACT.md)
-- [完整验收报告](results/validation/REPORT.md)、[机器验收](results/validation/acceptance.json)
-- [GUI 交接身份](results/validation/gui_handoff.json)、[文件校验清单](results/validation/manifest.json)
-- [采样范围叠加](results/real_camera_native_zoh_r1/camera_receptor_overlay.png)、[真实六边形输入](results/real_camera_native_zoh_r1/hex_input.png)
-- [四方向映射](results/direction_mapping_validation/result.json)、[方向图](results/direction_mapping_validation/direction_validation.png)
-- [真实视频 T4/T5 曲线](results/real_camera_gpu_zoh_r1/activity_T4_T5.png)、[重采样影响](results/validation/temporal_effect.png)
+- [当前状态 — 历史依赖未随包提供](../../../../report/archive_dependencies.md#missing-086)
+- [接口契约 — 历史依赖未随包提供](../../../../report/archive_dependencies.md#missing-087)
+- [完整验收报告 — 历史依赖未随包提供](../../../../report/archive_dependencies.md#missing-088)、[机器验收 — 历史依赖未随包提供](../../../../report/archive_dependencies.md#missing-089)
+- [GUI 交接身份 — 历史依赖未随包提供](../../../../report/archive_dependencies.md#missing-090)、[文件校验清单 — 历史依赖未随包提供](../../../../report/archive_dependencies.md#missing-091)
+- [采样范围叠加 — 历史依赖未随包提供](../../../../report/archive_dependencies.md#missing-092)、[真实六边形输入 — 历史依赖未随包提供](../../../../report/archive_dependencies.md#missing-093)
+- [四方向映射 — 历史依赖未随包提供](../../../../report/archive_dependencies.md#missing-094)、[方向图 — 历史依赖未随包提供](../../../../report/archive_dependencies.md#missing-095)
+- [真实视频 T4/T5 曲线 — 历史依赖未随包提供](../../../../report/archive_dependencies.md#missing-096)、[重采样影响 — 历史依赖未随包提供](../../../../report/archive_dependencies.md#missing-097)
 
 ## 已验证环境
 

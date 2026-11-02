@@ -77,7 +77,7 @@ N从真实最后一帧接收时间得到，5ms输入网格不超过最后实测�
 
 ## 后端和GUI
 
-详见 [BACKEND_CONTRACT.md](BACKEND_CONTRACT.md) 和 [现场流程](DEMO_FLOW.md)。当前只交付输入，三个计算模式状态均not_run，activity_path=null。A①“FlyVis GPU · 视觉实验”负责原Full GPU；B④“FlyVis · 神经回路移植”负责67节点T5c Python Replacement及一致性分析；未来C⑥负责真实板卡模式。
+详见 [BACKEND_CONTRACT.md — 历史依赖未随包提供](../../../../../report/archive_dependencies.md#missing-117) 和 [现场流程 — 历史依赖未随包提供](../../../../../report/archive_dependencies.md#missing-118)。当前只交付输入，三个计算模式状态均not_run，activity_path=null。A①“FlyVis GPU · 视觉实验”负责原Full GPU；B④“FlyVis · 神经回路移植”负责67节点T5c Python Replacement及一致性分析；未来C⑥负责真实板卡模式。
 
 A/B必须在这份新的冻结输入上建立共同初态、展开参数、节点表、数值配置和运行身份，按同一个N完成实际计算。不重新预处理、不独立做每块warmup、不读取旧动画活动。沿用已验收的独立实验初始化方案；改变初始化/截段策略需先说明并选择。⑥未提供本次真实板卡日志前，FPGA一直not_run。
 

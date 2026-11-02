@@ -51,6 +51,6 @@
 
 只验证已冻结内容，不重新预处理，复查结果写入新的 verification_runs/UUID 目录，不覆盖当前验收。acceptance.json的原验收脚本快照保存在 accepted_audit_source.py.txt，其SHA与报告一致。不要重跑 prepare_selected.py 去覆盖现有身份和产物；它故意拒绝已存在输出目录。
 
-Windows及现有WSL只读加载已实际通过，见 [平台核验](loader_validation.json) 和 [消费者API](BACKEND_HANDOFF.md)。①/④交接消息已送达，[送达记录](coordination_ab_20261011_r1/dispatch.json)；实际后端结果仍待返回。
+Windows及现有WSL只读加载已实际通过，见 [平台核验 — 历史依赖未随包提供](../../../../../../report/archive_dependencies.md#missing-121) 和 [消费者API — 历史依赖未随包提供](../../../../../../report/archive_dependencies.md#missing-122)。①/④交接消息已送达，[送达记录 — 历史依赖未随包提供](../../../../../../report/archive_dependencies.md#missing-123)；实际后端结果仍待返回。
 
 完整原始录像仍本地保留。本线给①/④发送本地交接路径、哈希及计算要求，不传送原始视频数据。相机已释放，未使用⑥板卡。自助录制实际成功一次属于 observed / not independently reproduced；没有因此发布通用硬件 Skill。

@@ -1,6 +1,6 @@
 # FlyVis T4/T5 DDR流式硬件B
 
-独立首批交付，2026-10-11。入口：[DDR_STREAM_MINI_RTL.md](DDR_STREAM_MINI_RTL.md)、[机器验收](RTL_STREAM_SMALL_PASS.json)、[资源风险](RESOURCE_RISKS.md)、[数值profile](NUMERIC_PROFILE.md)。仅RTL_SIM，完整433880边/5768H尚未仿真、综合、路由或上板。
+独立首批交付，2026-10-11。入口：[DDR_STREAM_MINI_RTL.md — 历史依赖未随包提供](../../../report/archive_dependencies.md#missing-054)、[机器验收 — 历史依赖未随包提供](../../../report/archive_dependencies.md#missing-055)、[资源风险 — 历史依赖未随包提供](../../../report/archive_dependencies.md#missing-056)、[数值profile — 历史依赖未随包提供](../../../report/archive_dependencies.md#missing-057)。仅RTL_SIM，完整433880边/5768H尚未仿真、综合、路由或上板。
 
 复现依赖：Windows x64 / PowerShell / Python3.14+NumPy2.4.6 / Vivado XSim2026.1.1、⑦冻结92/298夹具与t4t5_scale数据。每次创建新B build，单线程依次执行。无需安装或改全局设置；借用⑦既有AMD环境脚本仅设置当前进程变量，不修改它或许可证文件。
 

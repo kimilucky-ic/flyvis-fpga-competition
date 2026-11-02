@@ -1,7 +1,7 @@
 # FlyVis B SoC candidate — board not run
 
 2026-10-12. Vivado2026.1.1, xc7z020clg400-2, PS7 FCLK0 100MHz.
-Actual production BD simulation and full SoC routed timing passed. See [acceptance report](../../MILESTONE_RESULT.md) and [file identities](../../RELEASE_IDENTITY.json).
+Actual production BD simulation and full SoC routed timing passed. See [acceptance report — 历史依赖未随包提供](../../../../../../report/archive_dependencies.md#missing-058) and [file identities — 历史依赖未随包提供](../../../../../../report/archive_dependencies.md#missing-059).
 
 flyvis_b.bit and flyvis_b.hwh are the matching load pair; the ZIP contains exactly these two files. The ARM controller is provided separately and does not download an Overlay. Its constructor allocates and flushes a DDR edge buffer only when the caller explicitly invokes it on an already-loaded, separately authorized Overlay.
 

@@ -1,7 +1,7 @@
 # Phase 3 fixed-input consumer
 
 This lane only publishes already frozen sample1 and animation a0 identities. No camera/GPU/RTL backend is added.
-[Delivery and dependencies](INPUT_SINGLE_VIDEO_IDENTITY.md), [machine contract](INPUT_SINGLE_VIDEO_IDENTITY.json), [acceptance](acceptance.json).
+[Delivery and dependencies — 历史依赖未随包提供](../../../../../report/archive_dependencies.md#missing-114), [machine contract — 历史依赖未随包提供](../../../../../report/archive_dependencies.md#missing-115), [acceptance — 历史依赖未随包提供](../../../../../report/archive_dependencies.md#missing-116).
 
 From `C:\Users\hzy72\Documents\ChatGPT\fly`:
 

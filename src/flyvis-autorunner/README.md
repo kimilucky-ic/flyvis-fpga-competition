@@ -2,11 +2,11 @@
 
 Independent owner: ⑧. Specification: `../docs/workstreams/FLYVIS_SPRINT_20261011_AUTORUN_T4T5.md`, section ⑧. This directory owns the CLI, scheduling, cache index, progress, failure records and bounded acceptance. It calls the accepted ① Full and ④ H/R cores; those programs and data remain read-only.
 
-Phase two adds only the assigned④ science A→B independent CLI plugin. See [PHASE2_INTERFACE.md](PHASE2_INTERFACE.md), [researchA.fast.json](configs/researchA.fast.json), [researchB.fast.json](configs/researchB.fast.json) and the dedicated phase-two acceptance report. The camera609 engine/worker and all first-stage actual evidence are preserved; the original CLI source with its original release hash is saved in `phase1_snapshot/runner.py`. The limitations below describe phase one; the separate science contract enables the original full-network/decoder calculations for A/B without implementing new neural equations.
+Phase two adds only the assigned④ science A→B independent CLI plugin. See [PHASE2_INTERFACE.md — 历史依赖未随包提供](../../report/archive_dependencies.md#missing-001), [researchA.fast.json — 历史依赖未随包提供](../../report/archive_dependencies.md#missing-002), [researchB.fast.json — 历史依赖未随包提供](../../report/archive_dependencies.md#missing-003) and the dedicated phase-two acceptance report. The camera609 engine/worker and all first-stage actual evidence are preserved; the original CLI source with its original release hash is saved in `phase1_snapshot/runner.py`. The limitations below describe phase one; the separate science contract enables the original full-network/decoder calculations for A/B without implementing new neural equations.
 
 ## Current acceptance boundary
 
-**Latest actual acceptance:** [ACTUAL_SMOKE_20261011.md](ACTUAL_SMOKE_20261011.md): one authorized609-step new Python Replacement completed in37.307787s total CLI wall with cached Full, zero tolerance violations, no PL. Processes exited and the heartbeat is disabled. The dated authorized config is a closed one-shot record; daily config still defaults to no GPU permission.
+**Latest actual acceptance:** [ACTUAL_SMOKE_20261011.md — 历史依赖未随包提供](../../report/archive_dependencies.md#missing-004): one authorized609-step new Python Replacement completed in37.307787s total CLI wall with cached Full, zero tolerance violations, no PL. Processes exited and the heartbeat is disabled. The dated authorized config is a closed one-shot record; daily config still defaults to no GPU permission.
 
 Supports the frozen real-camera `selected_100_190` input: `[1,609,1,721]`, dt=.005, flow/0000/000, all45,669 nodes, H=67 B_T5c, original float32 profile, no intervention. The accepted camera result packages are imported as references without copying 111MB trajectories or rerunning GPU/CPU neural calculations.
 
@@ -40,7 +40,7 @@ The resource tests mock every GPU process query and only exercise actual Linux f
 
 ## Config and real smoke
 
-Use [configs/camera609.fast.json](configs/camera609.fast.json) as a reusable example; scope, filenames, source digests, accepted receipts, existing WSL environment and bounded timeouts are explicit. [configs/README.md](configs/README.md) explains the approval fields. `freeze_config.py` creates a **new** pinned baseline config only and refuses to overwrite one; do not use it to accept an unexplained changed hash.
+Use [configs/camera609.fast.json — 历史依赖未随包提供](../../report/archive_dependencies.md#missing-005) as a reusable example; scope, filenames, source digests, accepted receipts, existing WSL environment and bounded timeouts are explicit. [configs/README.md](configs/README.md) explains the approval fields. `freeze_config.py` creates a **new** pinned baseline config only and refuses to overwrite one; do not use it to accept an unexplained changed hash.
 
 For the first short smoke, copy the example to a new config, set `fresh_replacement=true`, retain `fresh_full=false`, and bind the user's exact window and both preflight cache keys. A normal `run --config <approved_copy>` then reuses Full and performs exactly one new609 Replacement process. The worker imports the accepted `RStepService`, `HUpdater`, `GPUAdapter` and `Coordinator`. The runner-owned `CameraBoundR` checks the frozen frame and before/after resident parameter digests; it supplies the correct R audit instead of calling a missing Full method. It does not change an equation, edge, neuron or checkpoint.
 
@@ -75,4 +75,4 @@ Consumers must read `status` and `actual_new_computation` together and keep FPGA
 
 Timings distinguish externally measured CLI wall time (including startup/seal), preflight/cache/fast-check stages, actual worker wall/load/loop, synchronized backend computation, host/device transfer plus recording/adapter time, and orchestration outside workers. Pure transfer-only time is `null` when unchanged adapter validation cannot be separated honestly; model load and per-step upload/download counts are explicit. Cache-only replay has zero new compute, loads and device transfers. No realtime or40-minute-to-real-GPU speedup claim follows from CPU/cache acceptance.
 
-See [ACCEPTANCE.md](ACCEPTANCE.md) and [verification](verification) for measured commands, results and unverified boundaries. No new cross-project Skill is claimed before actual GPU integration is independently accepted; the bounded CPU recipe above is reproduced locally.
+See [ACCEPTANCE.md — 历史依赖未随包提供](../../report/archive_dependencies.md#missing-006) and [verification — 历史依赖未随包提供](../../report/archive_dependencies.md#missing-007) for measured commands, results and unverified boundaries. No new cross-project Skill is claimed before actual GPU integration is independently accepted; the bounded CPU recipe above is reproduced locally.

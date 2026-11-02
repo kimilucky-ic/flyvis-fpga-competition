@@ -60,3 +60,7 @@ Historical export_path_map.json and archived source manifests retain their origi
 ## Runtime repair — 2026-11-02
 
 The earlier normalized export broke Python constructors despite passing syntax/reference checks. The current recommended runtime and its current source mirrors are repaired, with new display changes retained. [Actual checks](sim/runtime_repair_20261102.json) now include object construction, saved-state CPU comparison, actual isolated PC HTTP startup and official CPU flow warmup. This is not a new physical board test. Other archived versions are not current entries.
+
+## Historical archive navigation
+
+[Missing historical dependencies and four corrupt negative-test samples](report/archive_dependencies.md) are explicitly indexed. These are not the recommended experiment entry. Use board/runtime above; no unavailable historical attachment has been described as bundled or newly validated.

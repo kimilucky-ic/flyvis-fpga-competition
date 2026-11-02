@@ -12,7 +12,7 @@
 - All 609 steps use the original checkpoint network, including all 1,513,231 edges. Checkpoint tensors are exact before/after, tracked official source remains clean, all states are finite.
 - First run: model loading 10.981 s, calculation plus per-step recording 4.065 s, synchronized backend calls 2.662 s. Second run: loading 11.498 s, calculation/recording 4.301 s, backend calls 2.803 s. These intervals exclude input/source integrity verification and end-to-end camera capture; they are not a realtime guarantee.
 - Peak PyTorch allocated memory 290.356 MiB, reserved 312 MiB during each run. This is not total device usage. No rendering occurred in A.
-- [DELIVERY_ACCEPTANCE.json](DELIVERY_ACCEPTANCE.json): 629 checks, including each actual input/state/time chain. [INDEPENDENT_REPLAY_ACCEPTANCE.json](INDEPENDENT_REPLAY_ACCEPTANCE.json) and [independent_replay_errors.csv](independent_replay_errors.csv) retain the independent comparison.
+- [DELIVERY_ACCEPTANCE.json — 历史依赖未随包提供](../../../report/archive_dependencies.md#missing-062): 629 checks, including each actual input/state/time chain. [INDEPENDENT_REPLAY_ACCEPTANCE.json — 历史依赖未随包提供](../../../report/archive_dependencies.md#missing-063) and [independent_replay_errors.csv — 历史依赖未随包提供](../../../report/archive_dependencies.md#missing-064) retain the independent comparison.
 
 ## Frozen input and complete a0
 
@@ -41,7 +41,7 @@ The experiment's numeric profile is original float32; the existing software crit
 
 ## Handoff to B and display
 
-Read [CAMERA_BACKEND_HANDOFF.json](CAMERA_BACKEND_HANDOFF.json) first. It has both WSL paths and `windows_paths`, Full run ID and SHA, the common bundle and all required interface sources. A writes only its own tree; B accepts/copies into its own camera tree, verifies hashes, binds the same condition/input/a0/parameters and calculates H+GPU-R from its own live state. Full is a comparison after commit, never a production source of H or R boundary values.
+Read [CAMERA_BACKEND_HANDOFF.json — 历史依赖未随包提供](../../../report/archive_dependencies.md#missing-065) first. It has both WSL paths and `windows_paths`, Full run ID and SHA, the common bundle and all required interface sources. A writes only its own tree; B accepts/copies into its own camera tree, verifies hashes, binds the same condition/input/a0/parameters and calculates H+GPU-R from its own live state. Full is a comparison after commit, never a production source of H or R boundary values.
 
 Common bundle files:
 
@@ -73,7 +73,7 @@ B's first attempt submitted609steps but failed before final export because its w
 
 ### Independent reception of B's completed GPU results
 
-[B_reference_receipt_r2/receipt.json](B_reference_receipt_r2/receipt.json) records A's CPU-only independent verification of B's two new actual runs `python_camera_609_r2/r3`. All saved run/probe seals and shared input/model/a0/candidate identities match. A re-read the actual full trajectories and recomputed prefix1/32/609errors against its frozen Full. At609steps H max_abs=`4.76837158203125e-7`, RMSE=`4.9658011626795084e-8`; R max_abs=`9.5367431640625e-7`, RMSE=`3.589594033197043e-8`; full RMSE=`3.591999261871915e-8`. All existing float32 tolerance violation counts are0. The two independent B processes' entire trajectories are bitwise equal, max repeaterror0.
+[B_reference_receipt_r2/receipt.json — 历史依赖未随包提供](../../../report/archive_dependencies.md#missing-066) records A's CPU-only independent verification of B's two new actual runs `python_camera_609_r2/r3`. All saved run/probe seals and shared input/model/a0/candidate identities match. A re-read the actual full trajectories and recomputed prefix1/32/609errors against its frozen Full. At609steps H max_abs=`4.76837158203125e-7`, RMSE=`4.9658011626795084e-8`; R max_abs=`9.5367431640625e-7`, RMSE=`3.589594033197043e-8`; full RMSE=`3.591999261871915e-8`. All existing float32 tolerance violation counts are0. The two independent B processes' entire trajectories are bitwise equal, max repeaterror0.
 
 Each B run records609independentHupdates,609atomiccommits, nativeHproductionupdates0, guarded nativeFull calls0, and no Full trajectories as production boundaries. Current run code hashes match the recorded identities; A did not run H/R or modify B files during reception. B's sealed auxiliary GPU test record has15negative checks PASS and nonzero H→R/R→H/returnfeedback interventions; its production guards stay0, with one deliberate separate positive guard test. Those auxiliary checks were not rerun by A.
 
@@ -83,7 +83,7 @@ B reported its GPU work finished; subsequent work is CPU audit only. At the rece
 
 `demo_payload.json` links exact stimulus, time, central65activity, full trajectory, metadata and charts. Its GUI reader has not been independently tested; playing saved output is offline display. The data itself is actual new neural computation.
 
-![Recorded camera input and T4/T5 activities](recorded_camera_T4_T5.png)
+![Recorded camera input and T4/T5 activities — 历史依赖未随包提供](../../../report/archive_dependencies.md#missing-067)
 
 The initial response includes a brightness transition from gray-adapteda0 to the nearly white first camera frame. The later curves combine screen transition, camera/phone motion and exposure uncertainty. Their amplitude is visible in real continuous activities (central T5c peak-to-peak0.631859675), but this single selected clip does not isolate direction selectivity or motion speed. All65central statistics are retained in `central65_activity_statistics.csv`; the full45669node trajectory remains available.
 

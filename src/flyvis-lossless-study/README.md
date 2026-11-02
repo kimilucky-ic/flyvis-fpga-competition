@@ -2,7 +2,7 @@
 
 Assigned 2026-10-13. This is an independent CPU-only research lane, separate from hardware lines ⑦ and ⑨.
 
-**Accepted:** the 34,528-byte template reproduces every ordered source/target/FP32-weight record. Whole-network 1/32/800-step self-feedback is bitwise equal to the pinned CPU reference, with 36,535,200 state values checked in the 800-step run. A fresh compact-only process also passes. See [REPORT.md](REPORT.md) and [BINARY_FORMAT.md](BINARY_FORMAT.md). No FPGA implementation or real-time claim.
+**Accepted:** the 34,528-byte template reproduces every ordered source/target/FP32-weight record. Whole-network 1/32/800-step self-feedback is bitwise equal to the pinned CPU reference, with 36,535,200 state values checked in the 800-step run. A fresh compact-only process also passes. See [REPORT.md — 历史依赖未随包提供](../../report/archive_dependencies.md#missing-068) and [BINARY_FORMAT.md — 历史依赖未随包提供](../../report/archive_dependencies.md#missing-069). No FPGA implementation or real-time claim.
 
 ## Goal and stopping boundary
 

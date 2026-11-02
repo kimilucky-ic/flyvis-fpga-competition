@@ -5,7 +5,7 @@
 用户本轮无法布置黑白卡片/另一块屏幕，已选择先完成这两项，受控真实视频与实时性能试验保留待办。
 
 第一阶段的 324 个封存文件、API_CONTRACT.md、录像、输入、输出和 manifest 均未改写，保持 GUI 固定 SHA256 导入有效。
-`camera_pipeline/STATUS.md` 是第一阶段封存快照；当前进展看本目录 [STATUS.md](STATUS.md)。
+`camera_pipeline/STATUS.md` 是第一阶段封存快照；当前进展看本目录 [STATUS.md — 历史依赖未随包提供](../../../../../report/archive_dependencies.md#missing-107)。
 只更新 FPGA 仓库的摄像头工作线 checkpoint，不修改 GUI、GPU 实验、回路提取或 RTL 工作线的源码和状态文档。
 
 ## 已验收的完整状态
@@ -27,10 +27,10 @@
 初始灰度 0.5 适应 1 秒只执行一次；新进程与各分块均无额外 warmup。
 一次性中央活动也与第一阶段已验收结果逐值相同，前后权重与模型 buffer 均保持原 checkpoint 数值。
 
-详细证据：[state_validation.json](results/continuous_state_r2/state_validation.json)、
-[逐步比较](results/continuous_state_r2/step_comparison.csv)、
-[新进程逐步比较](results/continuous_state_r2/fresh_process_step_comparison.csv)、
-[完整节点轨迹](results/continuous_state_r2/activity_all_nodes_monolithic.npy)。
+详细证据：[state_validation.json — 历史依赖未随包提供](../../../../../report/archive_dependencies.md#missing-108)、
+[逐步比较 — 历史依赖未随包提供](../../../../../report/archive_dependencies.md#missing-109)、
+[新进程逐步比较 — 历史依赖未随包提供](../../../../../report/archive_dependencies.md#missing-110)、
+[完整节点轨迹 — 历史依赖未随包提供](../../../../../report/archive_dependencies.md#missing-111)。
 完整节点轨迹约 219.6 MB；失败的 r1 证据保留，不删除或伪装为成功。
 
 重跑必须使用一个新的结果名称，脚本拒绝覆盖已有目录：
@@ -45,7 +45,7 @@ wsl -d FlyVisCPU -- bash /mnt/c/Users/hzy72/Documents/ChatGPT/fly/camera_pipelin
 
 ## GUI 交接
 
-正式本地描述文件：[experiment.json](results/gui_real_video_r1/experiment.json)，schema 为
+正式本地描述文件：[experiment.json — 历史依赖未随包提供](../../../../../report/archive_dependencies.md#missing-112)，schema 为
 `flyvis-camera-experiment-v2`，GUI 类型为 `recorded_camera_flyvis`。
 描述文件是 21 个本地文件的只读引用及 SHA256/大小清单，不嵌入像素或活动序列，不上传视频。
 它引用原来的真实录像、A/ZOH 输入、实际完整模型活动和本轮状态验收；条件明确为 `ordinary_real_scene`。
@@ -114,5 +114,5 @@ GUI 当前仍明确锁定第一阶段 handoff；v2 描述文件不自动切换�
 r1 的同进程磁盘分块已一致，但新进程在第二块报 `KeyError: sources`。
 原因是官方 hook 位于 `_state_api` 构造 `sources/targets` 之前；只拿 hook 状态传给下一块不完整。
 `simulate_block` 现在移除只读 hook 后调用原 `_state_api`，返回完整可连续传递状态。
-r2 冷启动恢复及多块内存延续已独立验证，错误与修复证据保留在 [日志](logs/continuous_state_r1.log)。
+r2 冷启动恢复及多块内存延续已独立验证，错误与修复证据保留在 [日志 — 历史依赖未随包提供](../../../../../report/archive_dependencies.md#missing-113)。
 此经验固化为本目录脚本和协议，只覆盖当前固定候选与版本，没有新增通用 Skill 或跨动力学支持声明。

@@ -45,7 +45,7 @@ wsl -d FlyVisCPU -- bash /mnt/c/Users/hzy72/Documents/ChatGPT/fly/camera_pipelin
 
 ## GUI 与未来四模式
 
-[gui/experiment.json](gui/experiment.json) 为经过读取验证的本地引用描述文件。
+[gui/experiment.json — 历史依赖未随包提供](../../../../../report/archive_dependencies.md#missing-098) 为经过读取验证的本地引用描述文件。
 schema=`flyvis-controlled-video-experiment-v1`，dataset_type=`controlled_video_flyvis`，source_kind=`synthetic_controlled_video`。
 `source_is_camera=false`，`source_received_utc`和`source_received_monotonic_ns`为null。
 不改变现有真实摄像头或官方刺激入口，GUI须显式加入这一新类型，不能自动扫描目录后宣称验收。
@@ -70,9 +70,9 @@ Full模式已有实际数据；Ablation/Python Replacement/FPGA Replacement继�
 这不是官方角度空间MovingEdge等价实验，也不是12方向正式DSI、物理速度标定或完整光流验收。
 实际屏幕拍摄将形成新的真实输入，必须单独记录相机设置、采样覆盖和实收时间，再冻结/验收。
 
-[详细报告](REPORT.md)、[验收](acceptance.json)、[数据与时序审核](analysis/analysis.json)、
-[全部六条件曲线](analysis/all_conditions_T4_T5.png)、[方向/极性对照](analysis/direction_comparison.png)、
-[采样范围](analysis/sampling_overlay.png)、[峰值和响应指标](analysis/T4_T5_condition_metrics.csv)、[文件清单](manifest.json)。
+[详细报告 — 历史依赖未随包提供](../../../../../report/archive_dependencies.md#missing-099)、[验收 — 历史依赖未随包提供](../../../../../report/archive_dependencies.md#missing-100)、[数据与时序审核 — 历史依赖未随包提供](../../../../../report/archive_dependencies.md#missing-101)、
+[全部六条件曲线 — 历史依赖未随包提供](../../../../../report/archive_dependencies.md#missing-102)、[方向/极性对照 — 历史依赖未随包提供](../../../../../report/archive_dependencies.md#missing-103)、
+[采样范围 — 历史依赖未随包提供](../../../../../report/archive_dependencies.md#missing-104)、[峰值和响应指标 — 历史依赖未随包提供](../../../../../report/archive_dependencies.md#missing-105)、[文件清单 — 历史依赖未随包提供](../../../../../report/archive_dependencies.md#missing-106)。
 
 输入审核纠错：边缘在运动开始前处于画面外，均匀画面不能用梯度argmax定位边缘。
 现在先检查可见边界，再拟合位置；四个移动条件的图像边缘速度约±320.998px/s，721个位置的阈值穿越时序确认方向。

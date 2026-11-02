@@ -143,5 +143,6 @@
     }
   ],
   "firmware_contains_third_party_logic": true,
-  "root_mit_does_not_override_upstream": true
+  "root_mit_does_not_override_upstream": true,
+  "operator_statement_20261102": "Project owner confirms vendor resources are publicly downloadable and requests retaining required dependencies, accepts publication responsibility. This statement is not an independently verified upstream license grant; original notices remain."
 }

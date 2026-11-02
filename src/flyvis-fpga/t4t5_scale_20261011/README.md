@@ -2,7 +2,7 @@
 
 2026-10-11 / ⑦ / xc7z020clg400-2. Independent directory. **No new synthesis, implementation or board execution.**
 
-Start with [hardware feasibility report](ARCH_A_B_COMPARISON.md) and [decision sheet](READINESS_DECISION.md).
+Start with [hardware feasibility report — 历史依赖未随包提供](../../../report/archive_dependencies.md#missing-060) and [decision sheet — 历史依赖未随包提供](../../../report/archive_dependencies.md#missing-061).
 
 ## Primary deliverables
 

@@ -2,13 +2,13 @@
 
 本目录是 2026-10-09 的独立实验交付，使用已经安装的 WSL CPU/GPU 环境。没有修改队友打包目录、原始 FlyVis 源码、官方 checkpoint 或此前验收数据；所有活动均来自原完整视觉网络的软件仿真。
 
-- [技术报告](docs/flyvis_experiments_report.md)：结果、数值容差、耗时、内存、纠错记录和未解决项。
-- [交接清单](handoff.json)：提供给另一边打包工作只读引用。
-- [Golden Reference v2](artifacts/golden_reference_v2/)：24 条件固定输入的 CPU/GPU 活动、T4/T5 CSV/NPY、方向指标、元数据与哈希。
-- [功能验收](artifacts/functional_acceptance.json)：逐项 PASS / FAIL / NOT_RUN，光流整体 PARTIAL。
-- [展示素材](artifacts/analysis/)：方向、ON/OFF、速度、热力图、实际解码矢量和预录制 GIF。
-- [边界数据](artifacts/boundary_cuda_r1/)：T4c/T5c 各四组原始完整网络轨迹，连接参数、初态与跨界输入。
-- [本任务检查点](../docs/workstreams/flyvis-visual-experiments.md)。
+- [技术报告 — 历史依赖未随包提供](../../report/archive_dependencies.md#missing-070)：结果、数值容差、耗时、内存、纠错记录和未解决项。
+- [交接清单 — 历史依赖未随包提供](../../report/archive_dependencies.md#missing-071)：提供给另一边打包工作只读引用。
+- [Golden Reference v2 — 历史依赖未随包提供](../../report/archive_dependencies.md#missing-072)：24 条件固定输入的 CPU/GPU 活动、T4/T5 CSV/NPY、方向指标、元数据与哈希。
+- [功能验收 — 历史依赖未随包提供](../../report/archive_dependencies.md#missing-073)：逐项 PASS / FAIL / NOT_RUN，光流整体 PARTIAL。
+- [展示素材 — 历史依赖未随包提供](../../report/archive_dependencies.md#missing-074)：方向、ON/OFF、速度、热力图、实际解码矢量和预录制 GIF。
+- [边界数据 — 历史依赖未随包提供](../../report/archive_dependencies.md#missing-075)：T4c/T5c 各四组原始完整网络轨迹，连接参数、初态与跨界输入。
+- [本任务检查点 — 历史依赖未随包提供](../../report/archive_dependencies.md#missing-076)。
 
 ## 环境和运行
 
@@ -35,4 +35,4 @@ wsl -d FlyVisCPU -- bash /mnt/c/Users/hzy72/Documents/ChatGPT/fpga/flyvis-visual
 
 GIF 是预录制原始软件仿真回放；图和 CSV 不代表实时视频分析、真实生物测量、FPGA 仿真或板上执行。光流仅验证原预训练解码器在合成刺激上的功能及复算，尚无真实标注数据 EPE 验收。
 
-新增的解码器工作流记录在 [项目 Skill](../.agents/skills/flyvis-decoder-inference/SKILL.md)。本目录没有创建或修改队友运行包。
+新增的解码器工作流记录在 [项目 Skill — 历史依赖未随包提供](../../report/archive_dependencies.md#missing-077)。本目录没有创建或修改队友运行包。
