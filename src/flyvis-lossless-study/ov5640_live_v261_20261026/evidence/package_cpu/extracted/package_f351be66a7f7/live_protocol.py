@@ -138,7 +138,7 @@ def load_packet(out,k):
 
 class Store:
     """One durable packet per step; identical resend has no additional effect."""
-    def init__(self,path,config):
+    def __init__(self,path,config):
         self.path=Path(path);self.path.mkdir(parents=True,exist_ok=True);self.config=config;self.lock=threading.RLock();self.meta=[];self.digests=[]
         files=sorted(self.path.glob('*.packet'))
         for k,f in enumerate(files):

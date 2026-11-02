@@ -30,7 +30,7 @@ def clocks(raw):
     return results
 
 class CheckedVideo:
-    def init__(self,video,memory,barrier,out,diagnostics=False):
+    def __init__(self,video,memory,barrier,out,diagnostics=False):
         self.video,self.memory,self.barrier,self.out=video,memory,barrier,Path(out)
         self.held=None;self.readout_count=0;self.diagnostics=diagnostics
     def readframe(self):
@@ -66,7 +66,7 @@ class CheckedVideo:
 
 class PynqRuntime:
     evidence='OPERATOR_PHYSICAL_RUN_UNATTESTED'
-    def init__(self,root,out):
+    def __init__(self,root,out):
         self.root,self.out=Path(root),Path(out);self.owner={};self.pages={}
     def prepare(self):
         if platform.machine()!='armv7l':raise RuntimeError('ARMv7 Zynq required')

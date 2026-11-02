@@ -4,7 +4,7 @@ Inclusive/exclusive timings have profiler overhead; not a zero-overhead benchmar
 import sys,time,hashlib,ast
 from pathlib import Path
 class CallTiming:
-    def init__(self):self.stack=[];self.rows={};self.previous=None
+    def __init__(self):self.stack=[];self.rows={};self.previous=None
     def _profile(self,frame,event,arg):
         if event=='call':
             key=frame.f_code.co_filename+':'+str(frame.f_code.co_firstlineno)+':'+frame.f_code.co_name
@@ -34,7 +34,7 @@ def source_inventory(directory):
 
 def source_excerpts(sources):
     selected={};budget=100000
-    names={'readframe','readframe_async','_readframe_internal','getframe','_clear_errors','wait','init__'}
+    names={'readframe','readframe_async','_readframe_internal','getframe','_clear_errors','wait','__init__'}
     for filename,record in sources.items():
         fragments=[]
         for node in ast.walk(ast.parse(record['source'])):

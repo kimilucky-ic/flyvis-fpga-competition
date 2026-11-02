@@ -3,7 +3,7 @@ import os,json,hashlib,threading,time
 from pathlib import Path
 import numpy as np
 class FlowReader:
-    def init__(self,assets):
+    def __init__(self,assets):
         os.environ['CUDA_VISIBLE_DEVICES']='-1'
         import torch
         self.torch=torch;torch.set_num_threads(1)

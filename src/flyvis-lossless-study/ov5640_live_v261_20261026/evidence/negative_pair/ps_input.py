@@ -40,7 +40,7 @@ class PsInput:
     Full-field geometry follows camera_pipeline/adapter.py. Numerical tolerance
     must be recorded; neural strict FP32 verification uses actual saved inputs.
     """
-    def init__(self, height=480, width=640, channel_order='RGB'):
+    def __init__(self, height=480, width=640, channel_order='RGB'):
         if (not isinstance(height, int) or not isinstance(width, int) or
                 min(height, width) < 2 or max(height, width) > 2048):
             raise ValueError('require integer dimensions 2..2048')

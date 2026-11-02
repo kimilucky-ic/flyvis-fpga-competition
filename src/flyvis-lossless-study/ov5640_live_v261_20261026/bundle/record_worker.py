@@ -11,7 +11,7 @@ from capture_binding import save_json
 from live_protocol import packet_from_committed,atomic,sha
 
 class RecordWorker:
-    def init__(self,out,config,context,packets,capacity=32,uploader=None):
+    def __init__(self,out,config,context,packets,capacity=32,uploader=None):
         if type(capacity) is not int or not 1<=capacity<=32:raise ValueError('bounded worker capacity')
         self.out,self.config,self.context,self.packets=out,dict(config),dict(context),packets
         self.uploader=uploader

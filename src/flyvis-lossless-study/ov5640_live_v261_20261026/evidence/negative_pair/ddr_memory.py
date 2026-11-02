@@ -17,7 +17,7 @@ _PINNED={}
 
 
 class OwnedDdr:
-    def init__(self,allocator,barrier,slots):
+    def __init__(self,allocator,barrier,slots):
         if not isinstance(slots,int) or isinstance(slots,bool) or not 1<=slots<=65535:
             raise ValueError('Invalid exact slot count')
         if slots*STRIDE>0x3ff00000 or not callable(barrier):raise ValueError('DDR bounds/barrier')

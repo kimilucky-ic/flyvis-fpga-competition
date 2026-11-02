@@ -36,7 +36,7 @@ def read_audit_progress(path, previous):
         return previous
 
 class App:
-    def init__(self,config,records):
+    def __init__(self,config,records):
         self.config=config;self.store=Store(records,config);self.started=time.time();self.last_received=None
         self.audit_result=None;self.audit_running=False;self.audit_lock=threading.Lock();self.audit_progress={}
         self.display_cache=OrderedDict();self.display_lock=threading.Lock();self.display_builds=0

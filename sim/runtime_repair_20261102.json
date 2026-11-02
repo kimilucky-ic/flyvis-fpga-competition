@@ -1,0 +1,20 @@
+{
+  "status": "PASS_REPAIRED_RUNTIME_CPU_AND_LOCAL_PC_HTTP",
+  "restored_python_file_count": 88,
+  "cause": "Export renamed Python __init__ to init__; restored special-method semantics",
+  "checks": {
+    "status": "PASS_REPAIRED_CURRENT_RUNTIME_CPU_AND_ACTUAL_PC_START",
+    "constructors": "DirectInput and DdrControl PASS with CPU fake MMIO",
+    "independent_reference": "721 inputs/45669 statewords/zero mismatches",
+    "actual_http_status_and_home": "PASS",
+    "official_cpu_flow_warmup": "PASS",
+    "test_process_closed": true,
+    "GPU": false,
+    "camera_started": false,
+    "board_access": false,
+    "scope": "Isolated local PC receiver; no board client/requests"
+  },
+  "official_flow_artifact_sha256": "ecb7bcd5a47e64900fe27ca4cd5f980099c4877e8aaab5581ad510bebe11c216",
+  "historical_archive_variants": "Not all repaired or runnable; only the declared current runtime and its current source mirrors repaired",
+  "physical_acceptance": "NOT_RUN; operator must run the next board session"
+}

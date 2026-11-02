@@ -6,8 +6,8 @@
   },
   {
     "path": "README.md",
-    "bytes": 7158,
-    "sha256": "35045606a928417568cf6187205a984e2a2cd9522bc8ce63f922b7b69c187585"
+    "bytes": 7667,
+    "sha256": "b4e667fbf96f76e82f732f50a7aecb36acf336656879c0f59e4d0c231123eb57"
   },
   {
     "path": "board/analysis_formulas.json",
@@ -21,8 +21,8 @@
   },
   {
     "path": "board/runtime/README.md",
-    "bytes": 1894,
-    "sha256": "4688e37cfaefb54e3bf30c95a91775f3044e5a6d032c13e3e2586b396fd10c05"
+    "bytes": 2201,
+    "sha256": "78b677d1239e4f0438c5263b2fe36a7896829d9336579b581261f2edbc362629"
   },
   {
     "path": "board/runtime/app/assets/fixed_skeleton.js",
@@ -53,6 +53,11 @@
     "path": "board/runtime/app/assets/monitor.json",
     "bytes": 66156,
     "sha256": "3c8b887e1bcb867f75ed064f5c7f81603d10246e1fe51b2d03922ee5c544ab4f"
+  },
+  {
+    "path": "board/runtime/app/assets/official_flow_cpu.pt",
+    "bytes": 243239,
+    "sha256": "ecb7bcd5a47e64900fe27ca4cd5f980099c4877e8aaab5581ad510bebe11c216"
   },
   {
     "path": "board/runtime/app/assets/official_flow_manifest.json",
@@ -91,8 +96,8 @@
   },
   {
     "path": "board/runtime/app/bundle/batch_records.py",
-    "bytes": 7771,
-    "sha256": "5054d2fac8bbe0d5252613834331c5f8ffc6050edbcc6a0abf5e04d99bba9736"
+    "bytes": 7775,
+    "sha256": "c3a58ff8152f52f338116195cc9c5663fa9c875507c107e172b7ed94fe95152e"
   },
   {
     "path": "board/runtime/app/bundle/bit_container.py",
@@ -106,8 +111,8 @@
   },
   {
     "path": "board/runtime/app/bundle/board_runtime.py",
-    "bytes": 8131,
-    "sha256": "d844f4cca1225c85977a30640001db77c4ca4ebf41164354db60c04969453ccf"
+    "bytes": 8135,
+    "sha256": "893aebcfbdbd8113c3964b68ab653c847e125a8f687eaaa0efe1a5d26bd2df49"
   },
   {
     "path": "board/runtime/app/bundle/camera_config.py",
@@ -116,18 +121,18 @@
   },
   {
     "path": "board/runtime/app/bundle/camera_diagnostic.py",
-    "bytes": 2819,
-    "sha256": "e30ef830e7c9e30c75e9f3545a0016238d51b1d8f2c15ae8c6f251a44d39c6ee"
+    "bytes": 2823,
+    "sha256": "be6ad133efbe75b0b76607b8593c6dc95a56e055b3be3b8e560a2e26d6681447"
   },
   {
     "path": "board/runtime/app/bundle/camera_memory.py",
-    "bytes": 2624,
-    "sha256": "79d346dd8d51803e35633563d38818f7ff2f8b8d18c45732d283436df73e6ca7"
+    "bytes": 2626,
+    "sha256": "dd2d2c360a43966f69464f4a278e220e641ff7c20727b39ce5c5faaa0ed7976f"
   },
   {
     "path": "board/runtime/app/bundle/capture_binding.py",
-    "bytes": 9213,
-    "sha256": "be94988febb31f78d8029dd3875cf4a8fafa8de03d822910c2c2e6475f48bf1b"
+    "bytes": 9217,
+    "sha256": "3009ea52034db0f6e2daadc8a835b561576cb0604aba4e136cb5d309c23c3f64"
   },
   {
     "path": "board/runtime/app/bundle/cycle_contract.py",
@@ -136,28 +141,28 @@
   },
   {
     "path": "board/runtime/app/bundle/ddr_acceptance.py",
-    "bytes": 8027,
-    "sha256": "32603eed5eb443c8bd00f9ef44f0a124d35faacaf1f3150939d0551ab5572c3f"
+    "bytes": 8029,
+    "sha256": "a5470308f1b7a37899b1358214fe9e75950977ef9cdcb21fd6f16aa02054c231"
   },
   {
     "path": "board/runtime/app/bundle/ddr_control.py",
-    "bytes": 8480,
-    "sha256": "bb61021f9c43122093eec75eb49c10662392cd41869270c054df36491f62c9bf"
+    "bytes": 8482,
+    "sha256": "7d8445dfa2d985df0b5969bbf5587969c63bccd57ab9e1a760883002fae685b5"
   },
   {
     "path": "board/runtime/app/bundle/ddr_memory.py",
-    "bytes": 5073,
-    "sha256": "5eecb217aaf2b3b6b41d62f46783bae45cebc83724659dc8b19ec5f4219c937a"
+    "bytes": 5075,
+    "sha256": "e2bcc48778e1a4bfc3eb1b1eda179f5db60dde7f74816c24a93c415b6e13e3c8"
   },
   {
     "path": "board/runtime/app/bundle/direct_input.py",
-    "bytes": 6487,
-    "sha256": "8960c9585478b9a508eba0716190e30510c5a8d224c39f4c5ec1cb53b06545d8"
+    "bytes": 6493,
+    "sha256": "a65031e65e43c7d8de3f22274fed9eeec39696067017c3785a685de20eeded80"
   },
   {
     "path": "board/runtime/app/bundle/duration_run.py",
-    "bytes": 5232,
-    "sha256": "1eb298a3b98539f868d3538f13616f216db2ecc2e188196f4feb2ded5c2f829e"
+    "bytes": 5234,
+    "sha256": "8bc7994978b831fb01e439199a49ccf7aebc1199d65e33ccb72136e98264d18a"
   },
   {
     "path": "board/runtime/app/bundle/edges.bin",
@@ -176,8 +181,8 @@
   },
   {
     "path": "board/runtime/app/bundle/gc_events.py",
-    "bytes": 2060,
-    "sha256": "2aea3e68eaabbfcaf061b4f47410893f48dc98cdc988e825ced2d2633b4b4ab4"
+    "bytes": 2062,
+    "sha256": "4d9a79a44327a13dcc94cd1628286cc742234fbd1ac60234b34b90688feeab39"
   },
   {
     "path": "board/runtime/app/bundle/host_reference.cpp",
@@ -191,18 +196,18 @@
   },
   {
     "path": "board/runtime/app/bundle/live_board.py",
-    "bytes": 21919,
-    "sha256": "cba0ea669d9826ff45b571be78163fb33b442f6a471ffbfc1c41e67bf7e57c94"
+    "bytes": 21921,
+    "sha256": "c539abed323c1f50d15beaee6a33181adf4a12c49ea217b5f4ac58afdc307ba7"
   },
   {
     "path": "board/runtime/app/bundle/live_protocol.py",
-    "bytes": 16548,
-    "sha256": "61995d289db0b1a7bf8b878b4fcf575268a32ed4a413c0702ab90aee38be4865"
+    "bytes": 16550,
+    "sha256": "77fcc0676bccf1540bbadf800902807593f64b36c1a4cecca7e2911bb070be43"
   },
   {
     "path": "board/runtime/app/bundle/live_transport.py",
-    "bytes": 4144,
-    "sha256": "89c3060e09b2abfc81489d11fc5c328ece7e02fa8f91b15a2cb29dcc07bcda0a"
+    "bytes": 4146,
+    "sha256": "96d63391b25fb57e3bdfe32b81fe963cb078e3da95ed6f1acf8376f2b316c37f"
   },
   {
     "path": "board/runtime/app/bundle/meta.hex",
@@ -216,13 +221,13 @@
   },
   {
     "path": "board/runtime/app/bundle/native_payload.py",
-    "bytes": 3127,
-    "sha256": "5fcd4176a9ecee9c6a7c4610df683f89b71ad7edda1acd432dab0b367c380c28"
+    "bytes": 3129,
+    "sha256": "d126d59961b71078dfabd1be35236157e4feea25155de9da8cbf64b62c9d26c6"
   },
   {
     "path": "board/runtime/app/bundle/official_bridge.py",
-    "bytes": 6017,
-    "sha256": "31b302e257a728761f3c0b070339b4214e5a99a8bdba02621fec76557a535e51"
+    "bytes": 6019,
+    "sha256": "94a7f98aec8feebbc768995d71e1a00900481f52b58f886fa8556be154382765"
   },
   {
     "path": "board/runtime/app/bundle/official_iic21.py",
@@ -251,8 +256,8 @@
   },
   {
     "path": "board/runtime/app/bundle/ps_input.py",
-    "bytes": 5299,
-    "sha256": "ab25b7c6cd5d512b6b17d9164166b2f6603063b081cd5856f0e8d3b908f59ec7"
+    "bytes": 5301,
+    "sha256": "cfb97c578828ce5967f76364b289878d055df91dc05b9f4330b17cb6975185db"
   },
   {
     "path": "board/runtime/app/bundle/ps_preflight.py",
@@ -261,13 +266,13 @@
   },
   {
     "path": "board/runtime/app/bundle/ram_records.py",
-    "bytes": 5292,
-    "sha256": "7081e42168fbf7184c4ffdbf0d0ccf8cc2d585fa7bdb31f4ac48724158125a51"
+    "bytes": 5294,
+    "sha256": "32563e43955c954631527070e00039c7830141a158632ddb83a367cac082ef2e"
   },
   {
     "path": "board/runtime/app/bundle/record_worker.py",
-    "bytes": 4742,
-    "sha256": "7a1e3e6a2ba615da48ae1bbcca5f8f16b32f50c3524ad6891648e323b50af8c6"
+    "bytes": 4744,
+    "sha256": "ce6e726735358e0f3fd217171ec455d1092cea396f60380edcd5905c0bd9c1f2"
   },
   {
     "path": "board/runtime/app/bundle/reference.cpp",
@@ -286,13 +291,13 @@
   },
   {
     "path": "board/runtime/app/bundle/release_manifest.json",
-    "bytes": 6118,
-    "sha256": "853246836eeca5cc65514bec0e542dc6c4a90b330de13f57d4e52a4e644c8c1d"
+    "bytes": 6120,
+    "sha256": "2fc5e66155f392f53e8d7e624aa1f999956519c0fbb74fcc6a47871dc182cf4a"
   },
   {
     "path": "board/runtime/app/bundle/snapshot_records.py",
-    "bytes": 5943,
-    "sha256": "e991ce00cc67daddee18151d5da342fe1be9a436952ad6aa2922737dca80367e"
+    "bytes": 5947,
+    "sha256": "01f0a73302cfd9443ad58c5c68aee600237b28360d4eff3bfc2f9cda176db5cc"
   },
   {
     "path": "board/runtime/app/bundle/step_profile.py",
@@ -331,8 +336,8 @@
   },
   {
     "path": "board/runtime/app/pc/flow_reader.py",
-    "bytes": 1995,
-    "sha256": "3f8865307205629af91ff9726a1b999097915034559a99a5167486054c2a228b"
+    "bytes": 1997,
+    "sha256": "fbf5e49ac004dc8ccf0eba21314cc21873437ab62d0a01d0ed79190939819956"
   },
   {
     "path": "board/runtime/app/pc/full_audit.py",
@@ -346,18 +351,18 @@
   },
   {
     "path": "board/runtime/app/pc/live_server.py",
-    "bytes": 17263,
-    "sha256": "82e2a6adac63c20d5e8c256e9a9424b3856c88f577aa37d8380a3275daaf40df"
+    "bytes": 17265,
+    "sha256": "55e85fd14c856cb034c3f8f2df8e66d448d8e99736d388847df4455130b97e65"
   },
   {
     "path": "board/runtime/app/pc/neuron_observer.py",
-    "bytes": 1970,
-    "sha256": "94de23a0abf5ff60a5120e93c9dc4a71c1db421044733d0a76eb2e7ed171d144"
+    "bytes": 1972,
+    "sha256": "f67a66bc8eb25e36434882a5448697c958626e33e58fcb6990be0fc6f53cd9b3"
   },
   {
     "path": "board/runtime/app/pc/round_sessions.py",
-    "bytes": 8629,
-    "sha256": "10bed2ae4ac4273066f5cb8381c4e2c6442eb187b0b44202eeba355f6de5845c"
+    "bytes": 8631,
+    "sha256": "89791cb6ecfedbfd06588ffa3330a02c7f72f98d23e49058974f1c28c8f5645a"
   },
   {
     "path": "board/runtime/app/pc/stream_audit.py",
@@ -391,13 +396,13 @@
   },
   {
     "path": "board/runtime/manifest.json",
-    "bytes": 11728,
-    "sha256": "c81d1344c3554cad4b32e6bf0e68289b6afae7416226e1b970674c40b949b031"
+    "bytes": 11888,
+    "sha256": "fb903778c992f7911dd67bf6dd8fdeb71a54280928206683340c627cb2c210a5"
   },
   {
     "path": "board/runtime/requirements.txt",
-    "bytes": 46,
-    "sha256": "7d5b07ce570905bab3cd59452bf37258573a8d71986d5b73f06ade80b1472932"
+    "bytes": 60,
+    "sha256": "ab13fad74e2baa70e7dffaf2c1b0bbdad6c0a35db423ca9ef9f4b0dabf71ff01"
   },
   {
     "path": "board/runtime/run.py",
@@ -1073,6 +1078,11 @@
     "path": "sim/repository_delivery_check.json",
     "bytes": 877,
     "sha256": "739983e7a3974346cac00be20c6fbfeeb741f8058f2ffba0fe4159db7123b77f"
+  },
+  {
+    "path": "sim/runtime_repair_20261102.json",
+    "bytes": 1027,
+    "sha256": "6663183bf99426893f7fbc0675aaf80d0fe538e8f72e5da2477df0455ead3ee8"
   },
   {
     "path": "skill/README.md",
@@ -33386,8 +33396,8 @@
   },
   {
     "path": "src/flyvis-lossless-study/ov5640_live_v261_20261026/bundle/batch_records.py",
-    "bytes": 7771,
-    "sha256": "5054d2fac8bbe0d5252613834331c5f8ffc6050edbcc6a0abf5e04d99bba9736"
+    "bytes": 7642,
+    "sha256": "4917f5a09c9c5ef4f3e0648c8cb7118f564419d98656b0614930ce58e3d284d2"
   },
   {
     "path": "src/flyvis-lossless-study/ov5640_live_v261_20261026/bundle/bit_container.py",
@@ -33401,8 +33411,8 @@
   },
   {
     "path": "src/flyvis-lossless-study/ov5640_live_v261_20261026/bundle/board_runtime.py",
-    "bytes": 8131,
-    "sha256": "d844f4cca1225c85977a30640001db77c4ca4ebf41164354db60c04969453ccf"
+    "bytes": 8004,
+    "sha256": "4f14f6ac303b75d37ef51cdfb6a4ee09061981c006c2bcd7b0bb230bb589b1b0"
   },
   {
     "path": "src/flyvis-lossless-study/ov5640_live_v261_20261026/bundle/camera_config.py",
@@ -33411,18 +33421,18 @@
   },
   {
     "path": "src/flyvis-lossless-study/ov5640_live_v261_20261026/bundle/camera_diagnostic.py",
-    "bytes": 2819,
-    "sha256": "e30ef830e7c9e30c75e9f3545a0016238d51b1d8f2c15ae8c6f251a44d39c6ee"
+    "bytes": 2777,
+    "sha256": "e609ca1e77def2c65ed12cdb689f5bab3d465e3e4986b8c596fe69e61c4b1524"
   },
   {
     "path": "src/flyvis-lossless-study/ov5640_live_v261_20261026/bundle/camera_memory.py",
-    "bytes": 2624,
-    "sha256": "79d346dd8d51803e35633563d38818f7ff2f8b8d18c45732d283436df73e6ca7"
+    "bytes": 2586,
+    "sha256": "c88713bf7240c8488ffa6539d7d4c89b563445a4a0e55c1575aa014aeee806d3"
   },
   {
     "path": "src/flyvis-lossless-study/ov5640_live_v261_20261026/bundle/capture_binding.py",
-    "bytes": 9213,
-    "sha256": "be94988febb31f78d8029dd3875cf4a8fafa8de03d822910c2c2e6475f48bf1b"
+    "bytes": 9064,
+    "sha256": "ac23f1386776233df3dbe354285b73bee72dc91fa837a94ad48484118e41e045"
   },
   {
     "path": "src/flyvis-lossless-study/ov5640_live_v261_20261026/bundle/cycle_contract.py",
@@ -33431,28 +33441,28 @@
   },
   {
     "path": "src/flyvis-lossless-study/ov5640_live_v261_20261026/bundle/ddr_acceptance.py",
-    "bytes": 8027,
-    "sha256": "32603eed5eb443c8bd00f9ef44f0a124d35faacaf1f3150939d0551ab5572c3f"
+    "bytes": 8029,
+    "sha256": "a5470308f1b7a37899b1358214fe9e75950977ef9cdcb21fd6f16aa02054c231"
   },
   {
     "path": "src/flyvis-lossless-study/ov5640_live_v261_20261026/bundle/ddr_control.py",
-    "bytes": 8480,
-    "sha256": "bb61021f9c43122093eec75eb49c10662392cd41869270c054df36491f62c9bf"
+    "bytes": 8321,
+    "sha256": "6aa7bf1bd7be14ca96ffe35f6691655f669f50cccb42f4e7607397a78ec493bf"
   },
   {
     "path": "src/flyvis-lossless-study/ov5640_live_v261_20261026/bundle/ddr_memory.py",
-    "bytes": 5073,
-    "sha256": "5eecb217aaf2b3b6b41d62f46783bae45cebc83724659dc8b19ec5f4219c937a"
+    "bytes": 4985,
+    "sha256": "cfa5225c8909be10230c641de70903d72104cbe365361ca13a25878df853b456"
   },
   {
     "path": "src/flyvis-lossless-study/ov5640_live_v261_20261026/bundle/direct_input.py",
-    "bytes": 6487,
-    "sha256": "8960c9585478b9a508eba0716190e30510c5a8d224c39f4c5ec1cb53b06545d8"
+    "bytes": 6386,
+    "sha256": "ba176093dde295007ff02511b9f9beb39d31f50ca12e6e8074be4239b8aa5ae5"
   },
   {
     "path": "src/flyvis-lossless-study/ov5640_live_v261_20261026/bundle/duration_run.py",
-    "bytes": 5232,
-    "sha256": "1eb298a3b98539f868d3538f13616f216db2ecc2e188196f4feb2ded5c2f829e"
+    "bytes": 5153,
+    "sha256": "cd4001c8b2ae4b4707edb05f73a38ae2abc555fe6775941676c87406f8694651"
   },
   {
     "path": "src/flyvis-lossless-study/ov5640_live_v261_20261026/bundle/edges.bin",
@@ -33471,8 +33481,8 @@
   },
   {
     "path": "src/flyvis-lossless-study/ov5640_live_v261_20261026/bundle/gc_events.py",
-    "bytes": 2060,
-    "sha256": "2aea3e68eaabbfcaf061b4f47410893f48dc98cdc988e825ced2d2633b4b4ab4"
+    "bytes": 2032,
+    "sha256": "cd3ca6d4af882b8888d2ff522b6b36ca7ff495f3df5fc0cc18c82a6d4fe230b0"
   },
   {
     "path": "src/flyvis-lossless-study/ov5640_live_v261_20261026/bundle/host_reference.cpp",
@@ -33486,18 +33496,18 @@
   },
   {
     "path": "src/flyvis-lossless-study/ov5640_live_v261_20261026/bundle/live_board.py",
-    "bytes": 21919,
-    "sha256": "cba0ea669d9826ff45b571be78163fb33b442f6a471ffbfc1c41e67bf7e57c94"
+    "bytes": 21619,
+    "sha256": "b7b2403ed5c04b18e87bc0920df2853cb6ddd326e53ddcee435bb72966e899a2"
   },
   {
     "path": "src/flyvis-lossless-study/ov5640_live_v261_20261026/bundle/live_protocol.py",
-    "bytes": 16548,
-    "sha256": "61995d289db0b1a7bf8b878b4fcf575268a32ed4a413c0702ab90aee38be4865"
+    "bytes": 16319,
+    "sha256": "deed715583f8e5b61c573fc1b58c7d145f7573147c1b4ae066614d01c7f0e796"
   },
   {
     "path": "src/flyvis-lossless-study/ov5640_live_v261_20261026/bundle/live_transport.py",
-    "bytes": 4144,
-    "sha256": "89c3060e09b2abfc81489d11fc5c328ece7e02fa8f91b15a2cb29dcc07bcda0a"
+    "bytes": 4083,
+    "sha256": "278c20d88ec5ab6e8aa6c7f6420f280ab9b334ed134b63b9903fe47be3e7b0e1"
   },
   {
     "path": "src/flyvis-lossless-study/ov5640_live_v261_20261026/bundle/meta.hex",
@@ -33511,13 +33521,13 @@
   },
   {
     "path": "src/flyvis-lossless-study/ov5640_live_v261_20261026/bundle/native_payload.py",
-    "bytes": 3127,
-    "sha256": "5fcd4176a9ecee9c6a7c4610df683f89b71ad7edda1acd432dab0b367c380c28"
+    "bytes": 3078,
+    "sha256": "dfd7b121bd45c12006fd369795d2cbca5c704ba46cc758387bbd26c592bd8160"
   },
   {
     "path": "src/flyvis-lossless-study/ov5640_live_v261_20261026/bundle/official_bridge.py",
-    "bytes": 6017,
-    "sha256": "31b302e257a728761f3c0b070339b4214e5a99a8bdba02621fec76557a535e51"
+    "bytes": 5896,
+    "sha256": "e0b87cfc6c8bb6b4721eb28dbb30ea78c714cd44aa583fbf4ea9257a7ede978d"
   },
   {
     "path": "src/flyvis-lossless-study/ov5640_live_v261_20261026/bundle/official_iic21.py",
@@ -33546,8 +33556,8 @@
   },
   {
     "path": "src/flyvis-lossless-study/ov5640_live_v261_20261026/bundle/ps_input.py",
-    "bytes": 5299,
-    "sha256": "ab25b7c6cd5d512b6b17d9164166b2f6603063b081cd5856f0e8d3b908f59ec7"
+    "bytes": 5201,
+    "sha256": "a42b2fffa5fca5b1203e5271af7d2e9aeab8e2889d4983b276849757a73f183b"
   },
   {
     "path": "src/flyvis-lossless-study/ov5640_live_v261_20261026/bundle/ps_preflight.py",
@@ -33556,13 +33566,13 @@
   },
   {
     "path": "src/flyvis-lossless-study/ov5640_live_v261_20261026/bundle/ram_records.py",
-    "bytes": 5292,
-    "sha256": "7081e42168fbf7184c4ffdbf0d0ccf8cc2d585fa7bdb31f4ac48724158125a51"
+    "bytes": 5209,
+    "sha256": "f2e1d407c75245e64945358ec9a11641ae21d4a843d3509644f4ab373aa3752d"
   },
   {
     "path": "src/flyvis-lossless-study/ov5640_live_v261_20261026/bundle/record_worker.py",
-    "bytes": 4742,
-    "sha256": "7a1e3e6a2ba615da48ae1bbcca5f8f16b32f50c3524ad6891648e323b50af8c6"
+    "bytes": 4672,
+    "sha256": "10d7a27f83484e89f12057d63847441966d267f83a09e2c03c338cd99ebb1528"
   },
   {
     "path": "src/flyvis-lossless-study/ov5640_live_v261_20261026/bundle/reference.cpp",
@@ -33581,13 +33591,13 @@
   },
   {
     "path": "src/flyvis-lossless-study/ov5640_live_v261_20261026/bundle/release_manifest.json",
-    "bytes": 6118,
-    "sha256": "853246836eeca5cc65514bec0e542dc6c4a90b330de13f57d4e52a4e644c8c1d"
+    "bytes": 6120,
+    "sha256": "a693a6802d23adba408a31ef1cd5a3d4c0960860550ce5dda8ea48daf1c00b2a"
   },
   {
     "path": "src/flyvis-lossless-study/ov5640_live_v261_20261026/bundle/snapshot_records.py",
-    "bytes": 5943,
-    "sha256": "e991ce00cc67daddee18151d5da342fe1be9a436952ad6aa2922737dca80367e"
+    "bytes": 5822,
+    "sha256": "41373d8059060d71444b932b2c7df3a4c8a53b2de31e1027a0f2a316970c2397"
   },
   {
     "path": "src/flyvis-lossless-study/ov5640_live_v261_20261026/bundle/step_profile.py",
@@ -33621,8 +33631,8 @@
   },
   {
     "path": "src/flyvis-lossless-study/ov5640_live_v261_20261026/evidence/negative_pair/batch_records.py",
-    "bytes": 4283,
-    "sha256": "a99e609b790882351259e7abf10d11e7c5339c1cb6d12fd565c874d966d20194"
+    "bytes": 4215,
+    "sha256": "003cb49fd42898395da50f50557f8fec1ef96245e3fc45c14589380e7231bd3f"
   },
   {
     "path": "src/flyvis-lossless-study/ov5640_live_v261_20261026/evidence/negative_pair/bit_container.py",
@@ -33636,8 +33646,8 @@
   },
   {
     "path": "src/flyvis-lossless-study/ov5640_live_v261_20261026/evidence/negative_pair/board_runtime.py",
-    "bytes": 8131,
-    "sha256": "d844f4cca1225c85977a30640001db77c4ca4ebf41164354db60c04969453ccf"
+    "bytes": 8004,
+    "sha256": "4f14f6ac303b75d37ef51cdfb6a4ee09061981c006c2bcd7b0bb230bb589b1b0"
   },
   {
     "path": "src/flyvis-lossless-study/ov5640_live_v261_20261026/evidence/negative_pair/camera_config.py",
@@ -33646,18 +33656,18 @@
   },
   {
     "path": "src/flyvis-lossless-study/ov5640_live_v261_20261026/evidence/negative_pair/camera_diagnostic.py",
-    "bytes": 2819,
-    "sha256": "e30ef830e7c9e30c75e9f3545a0016238d51b1d8f2c15ae8c6f251a44d39c6ee"
+    "bytes": 2777,
+    "sha256": "e609ca1e77def2c65ed12cdb689f5bab3d465e3e4986b8c596fe69e61c4b1524"
   },
   {
     "path": "src/flyvis-lossless-study/ov5640_live_v261_20261026/evidence/negative_pair/camera_memory.py",
-    "bytes": 2624,
-    "sha256": "79d346dd8d51803e35633563d38818f7ff2f8b8d18c45732d283436df73e6ca7"
+    "bytes": 2586,
+    "sha256": "c88713bf7240c8488ffa6539d7d4c89b563445a4a0e55c1575aa014aeee806d3"
   },
   {
     "path": "src/flyvis-lossless-study/ov5640_live_v261_20261026/evidence/negative_pair/capture_binding.py",
-    "bytes": 8898,
-    "sha256": "c6cbe023ad485994080f7bcb13e7cb5252c3675c939cb21855d71a0155f1205f"
+    "bytes": 8752,
+    "sha256": "16dfe1549469dd5e6fef95615ed2b24d843e9bd870d91611d32a372b39215b01"
   },
   {
     "path": "src/flyvis-lossless-study/ov5640_live_v261_20261026/evidence/negative_pair/cycle_contract.py",
@@ -33666,33 +33676,33 @@
   },
   {
     "path": "src/flyvis-lossless-study/ov5640_live_v261_20261026/evidence/negative_pair/ddr_acceptance.py",
-    "bytes": 8027,
-    "sha256": "32603eed5eb443c8bd00f9ef44f0a124d35faacaf1f3150939d0551ab5572c3f"
+    "bytes": 8029,
+    "sha256": "a5470308f1b7a37899b1358214fe9e75950977ef9cdcb21fd6f16aa02054c231"
   },
   {
     "path": "src/flyvis-lossless-study/ov5640_live_v261_20261026/evidence/negative_pair/ddr_control.py",
-    "bytes": 8480,
-    "sha256": "bb61021f9c43122093eec75eb49c10662392cd41869270c054df36491f62c9bf"
+    "bytes": 8321,
+    "sha256": "6aa7bf1bd7be14ca96ffe35f6691655f669f50cccb42f4e7607397a78ec493bf"
   },
   {
     "path": "src/flyvis-lossless-study/ov5640_live_v261_20261026/evidence/negative_pair/ddr_memory.py",
-    "bytes": 5073,
-    "sha256": "5eecb217aaf2b3b6b41d62f46783bae45cebc83724659dc8b19ec5f4219c937a"
+    "bytes": 4985,
+    "sha256": "cfa5225c8909be10230c641de70903d72104cbe365361ca13a25878df853b456"
   },
   {
     "path": "src/flyvis-lossless-study/ov5640_live_v261_20261026/evidence/negative_pair/direct_input.py",
-    "bytes": 6487,
-    "sha256": "8960c9585478b9a508eba0716190e30510c5a8d224c39f4c5ec1cb53b06545d8"
+    "bytes": 6386,
+    "sha256": "ba176093dde295007ff02511b9f9beb39d31f50ca12e6e8074be4239b8aa5ae5"
   },
   {
     "path": "src/flyvis-lossless-study/ov5640_live_v261_20261026/evidence/negative_pair/duration_run.py",
-    "bytes": 5232,
-    "sha256": "1eb298a3b98539f868d3538f13616f216db2ecc2e188196f4feb2ded5c2f829e"
+    "bytes": 5153,
+    "sha256": "cd4001c8b2ae4b4707edb05f73a38ae2abc555fe6775941676c87406f8694651"
   },
   {
     "path": "src/flyvis-lossless-study/ov5640_live_v261_20261026/evidence/negative_pair/gc_events.py",
-    "bytes": 2060,
-    "sha256": "2aea3e68eaabbfcaf061b4f47410893f48dc98cdc988e825ced2d2633b4b4ab4"
+    "bytes": 2032,
+    "sha256": "cd3ca6d4af882b8888d2ff522b6b36ca7ff495f3df5fc0cc18c82a6d4fe230b0"
   },
   {
     "path": "src/flyvis-lossless-study/ov5640_live_v261_20261026/evidence/negative_pair/host_reference.cpp",
@@ -33701,18 +33711,18 @@
   },
   {
     "path": "src/flyvis-lossless-study/ov5640_live_v261_20261026/evidence/negative_pair/live_board.py",
-    "bytes": 20854,
-    "sha256": "98d79ed9f46b1189ca411203f8cb14203a51c7b972cf3a239e8d94468486e2ec"
+    "bytes": 20565,
+    "sha256": "3a7d8d7fc6e3fed3d499e85d94c1c6fd58e6a852c57a8af8a95a2e9e0894d539"
   },
   {
     "path": "src/flyvis-lossless-study/ov5640_live_v261_20261026/evidence/negative_pair/live_protocol.py",
-    "bytes": 15189,
-    "sha256": "8b11141d15cdf760b51ab15cd50951be61870ba51c1e47a61e5aab407c09a493"
+    "bytes": 14975,
+    "sha256": "f970a4a946375cd9f309fa60370713a12139f074e5f04b2c70c67d8ffb871ead"
   },
   {
     "path": "src/flyvis-lossless-study/ov5640_live_v261_20261026/evidence/negative_pair/live_transport.py",
-    "bytes": 4144,
-    "sha256": "89c3060e09b2abfc81489d11fc5c328ece7e02fa8f91b15a2cb29dcc07bcda0a"
+    "bytes": 4083,
+    "sha256": "278c20d88ec5ab6e8aa6c7f6420f280ab9b334ed134b63b9903fe47be3e7b0e1"
   },
   {
     "path": "src/flyvis-lossless-study/ov5640_live_v261_20261026/evidence/negative_pair/meta.hex",
@@ -33721,13 +33731,13 @@
   },
   {
     "path": "src/flyvis-lossless-study/ov5640_live_v261_20261026/evidence/negative_pair/native_payload.py",
-    "bytes": 3127,
-    "sha256": "5fcd4176a9ecee9c6a7c4610df683f89b71ad7edda1acd432dab0b367c380c28"
+    "bytes": 3078,
+    "sha256": "dfd7b121bd45c12006fd369795d2cbca5c704ba46cc758387bbd26c592bd8160"
   },
   {
     "path": "src/flyvis-lossless-study/ov5640_live_v261_20261026/evidence/negative_pair/official_bridge.py",
-    "bytes": 6017,
-    "sha256": "31b302e257a728761f3c0b070339b4214e5a99a8bdba02621fec76557a535e51"
+    "bytes": 5896,
+    "sha256": "e0b87cfc6c8bb6b4721eb28dbb30ea78c714cd44aa583fbf4ea9257a7ede978d"
   },
   {
     "path": "src/flyvis-lossless-study/ov5640_live_v261_20261026/evidence/negative_pair/official_iic21.py",
@@ -33751,8 +33761,8 @@
   },
   {
     "path": "src/flyvis-lossless-study/ov5640_live_v261_20261026/evidence/negative_pair/ps_input.py",
-    "bytes": 5299,
-    "sha256": "ab25b7c6cd5d512b6b17d9164166b2f6603063b081cd5856f0e8d3b908f59ec7"
+    "bytes": 5201,
+    "sha256": "a42b2fffa5fca5b1203e5271af7d2e9aeab8e2889d4983b276849757a73f183b"
   },
   {
     "path": "src/flyvis-lossless-study/ov5640_live_v261_20261026/evidence/negative_pair/ps_preflight.py",
@@ -33761,13 +33771,13 @@
   },
   {
     "path": "src/flyvis-lossless-study/ov5640_live_v261_20261026/evidence/negative_pair/ram_records.py",
-    "bytes": 3508,
-    "sha256": "ee649f00f30ee50fdb3cc61b2d4a98c1cd2a0eb21bc87fc7725efe61445f989f"
+    "bytes": 3449,
+    "sha256": "9cd644b25d8d9bab4cc3b3206e05b3929667a1c9de72d8a35763ac79bd9a374d"
   },
   {
     "path": "src/flyvis-lossless-study/ov5640_live_v261_20261026/evidence/negative_pair/record_worker.py",
-    "bytes": 4563,
-    "sha256": "5c741d9ec61c77544fb97fe1b140073c4e68595befcc1a48a0b36cf3e419e117"
+    "bytes": 4496,
+    "sha256": "da1b80f4645f0f6c770453b1720101962d3a7a2fb957adec2bb4fe0f7a81e6a1"
   },
   {
     "path": "src/flyvis-lossless-study/ov5640_live_v261_20261026/evidence/negative_pair/reference.cpp",
@@ -33776,8 +33786,8 @@
   },
   {
     "path": "src/flyvis-lossless-study/ov5640_live_v261_20261026/evidence/negative_pair/snapshot_records.py",
-    "bytes": 5943,
-    "sha256": "e991ce00cc67daddee18151d5da342fe1be9a436952ad6aa2922737dca80367e"
+    "bytes": 5822,
+    "sha256": "41373d8059060d71444b932b2c7df3a4c8a53b2de31e1027a0f2a316970c2397"
   },
   {
     "path": "src/flyvis-lossless-study/ov5640_live_v261_20261026/evidence/negative_pair/step_profile.py",
@@ -33816,8 +33826,8 @@
   },
   {
     "path": "src/flyvis-lossless-study/ov5640_live_v261_20261026/evidence/package_cpu/extracted/package_f351be66a7f7/batch_records.py",
-    "bytes": 4283,
-    "sha256": "a99e609b790882351259e7abf10d11e7c5339c1cb6d12fd565c874d966d20194"
+    "bytes": 4215,
+    "sha256": "003cb49fd42898395da50f50557f8fec1ef96245e3fc45c14589380e7231bd3f"
   },
   {
     "path": "src/flyvis-lossless-study/ov5640_live_v261_20261026/evidence/package_cpu/extracted/package_f351be66a7f7/bit_container.py",
@@ -33831,8 +33841,8 @@
   },
   {
     "path": "src/flyvis-lossless-study/ov5640_live_v261_20261026/evidence/package_cpu/extracted/package_f351be66a7f7/board_runtime.py",
-    "bytes": 8131,
-    "sha256": "d844f4cca1225c85977a30640001db77c4ca4ebf41164354db60c04969453ccf"
+    "bytes": 8004,
+    "sha256": "4f14f6ac303b75d37ef51cdfb6a4ee09061981c006c2bcd7b0bb230bb589b1b0"
   },
   {
     "path": "src/flyvis-lossless-study/ov5640_live_v261_20261026/evidence/package_cpu/extracted/package_f351be66a7f7/camera_config.py",
@@ -33841,18 +33851,18 @@
   },
   {
     "path": "src/flyvis-lossless-study/ov5640_live_v261_20261026/evidence/package_cpu/extracted/package_f351be66a7f7/camera_diagnostic.py",
-    "bytes": 2819,
-    "sha256": "e30ef830e7c9e30c75e9f3545a0016238d51b1d8f2c15ae8c6f251a44d39c6ee"
+    "bytes": 2777,
+    "sha256": "e609ca1e77def2c65ed12cdb689f5bab3d465e3e4986b8c596fe69e61c4b1524"
   },
   {
     "path": "src/flyvis-lossless-study/ov5640_live_v261_20261026/evidence/package_cpu/extracted/package_f351be66a7f7/camera_memory.py",
-    "bytes": 2624,
-    "sha256": "79d346dd8d51803e35633563d38818f7ff2f8b8d18c45732d283436df73e6ca7"
+    "bytes": 2586,
+    "sha256": "c88713bf7240c8488ffa6539d7d4c89b563445a4a0e55c1575aa014aeee806d3"
   },
   {
     "path": "src/flyvis-lossless-study/ov5640_live_v261_20261026/evidence/package_cpu/extracted/package_f351be66a7f7/capture_binding.py",
-    "bytes": 8898,
-    "sha256": "c6cbe023ad485994080f7bcb13e7cb5252c3675c939cb21855d71a0155f1205f"
+    "bytes": 8752,
+    "sha256": "16dfe1549469dd5e6fef95615ed2b24d843e9bd870d91611d32a372b39215b01"
   },
   {
     "path": "src/flyvis-lossless-study/ov5640_live_v261_20261026/evidence/package_cpu/extracted/package_f351be66a7f7/cycle_contract.py",
@@ -33861,33 +33871,33 @@
   },
   {
     "path": "src/flyvis-lossless-study/ov5640_live_v261_20261026/evidence/package_cpu/extracted/package_f351be66a7f7/ddr_acceptance.py",
-    "bytes": 8027,
-    "sha256": "32603eed5eb443c8bd00f9ef44f0a124d35faacaf1f3150939d0551ab5572c3f"
+    "bytes": 8029,
+    "sha256": "a5470308f1b7a37899b1358214fe9e75950977ef9cdcb21fd6f16aa02054c231"
   },
   {
     "path": "src/flyvis-lossless-study/ov5640_live_v261_20261026/evidence/package_cpu/extracted/package_f351be66a7f7/ddr_control.py",
-    "bytes": 8480,
-    "sha256": "bb61021f9c43122093eec75eb49c10662392cd41869270c054df36491f62c9bf"
+    "bytes": 8321,
+    "sha256": "6aa7bf1bd7be14ca96ffe35f6691655f669f50cccb42f4e7607397a78ec493bf"
   },
   {
     "path": "src/flyvis-lossless-study/ov5640_live_v261_20261026/evidence/package_cpu/extracted/package_f351be66a7f7/ddr_memory.py",
-    "bytes": 5073,
-    "sha256": "5eecb217aaf2b3b6b41d62f46783bae45cebc83724659dc8b19ec5f4219c937a"
+    "bytes": 4985,
+    "sha256": "cfa5225c8909be10230c641de70903d72104cbe365361ca13a25878df853b456"
   },
   {
     "path": "src/flyvis-lossless-study/ov5640_live_v261_20261026/evidence/package_cpu/extracted/package_f351be66a7f7/direct_input.py",
-    "bytes": 6487,
-    "sha256": "8960c9585478b9a508eba0716190e30510c5a8d224c39f4c5ec1cb53b06545d8"
+    "bytes": 6386,
+    "sha256": "ba176093dde295007ff02511b9f9beb39d31f50ca12e6e8074be4239b8aa5ae5"
   },
   {
     "path": "src/flyvis-lossless-study/ov5640_live_v261_20261026/evidence/package_cpu/extracted/package_f351be66a7f7/duration_run.py",
-    "bytes": 5232,
-    "sha256": "1eb298a3b98539f868d3538f13616f216db2ecc2e188196f4feb2ded5c2f829e"
+    "bytes": 5153,
+    "sha256": "cd4001c8b2ae4b4707edb05f73a38ae2abc555fe6775941676c87406f8694651"
   },
   {
     "path": "src/flyvis-lossless-study/ov5640_live_v261_20261026/evidence/package_cpu/extracted/package_f351be66a7f7/gc_events.py",
-    "bytes": 2060,
-    "sha256": "2aea3e68eaabbfcaf061b4f47410893f48dc98cdc988e825ced2d2633b4b4ab4"
+    "bytes": 2032,
+    "sha256": "cd3ca6d4af882b8888d2ff522b6b36ca7ff495f3df5fc0cc18c82a6d4fe230b0"
   },
   {
     "path": "src/flyvis-lossless-study/ov5640_live_v261_20261026/evidence/package_cpu/extracted/package_f351be66a7f7/host_reference.cpp",
@@ -33896,18 +33906,18 @@
   },
   {
     "path": "src/flyvis-lossless-study/ov5640_live_v261_20261026/evidence/package_cpu/extracted/package_f351be66a7f7/live_board.py",
-    "bytes": 20854,
-    "sha256": "98d79ed9f46b1189ca411203f8cb14203a51c7b972cf3a239e8d94468486e2ec"
+    "bytes": 20565,
+    "sha256": "3a7d8d7fc6e3fed3d499e85d94c1c6fd58e6a852c57a8af8a95a2e9e0894d539"
   },
   {
     "path": "src/flyvis-lossless-study/ov5640_live_v261_20261026/evidence/package_cpu/extracted/package_f351be66a7f7/live_protocol.py",
-    "bytes": 15189,
-    "sha256": "8b11141d15cdf760b51ab15cd50951be61870ba51c1e47a61e5aab407c09a493"
+    "bytes": 14975,
+    "sha256": "f970a4a946375cd9f309fa60370713a12139f074e5f04b2c70c67d8ffb871ead"
   },
   {
     "path": "src/flyvis-lossless-study/ov5640_live_v261_20261026/evidence/package_cpu/extracted/package_f351be66a7f7/live_transport.py",
-    "bytes": 4144,
-    "sha256": "89c3060e09b2abfc81489d11fc5c328ece7e02fa8f91b15a2cb29dcc07bcda0a"
+    "bytes": 4083,
+    "sha256": "278c20d88ec5ab6e8aa6c7f6420f280ab9b334ed134b63b9903fe47be3e7b0e1"
   },
   {
     "path": "src/flyvis-lossless-study/ov5640_live_v261_20261026/evidence/package_cpu/extracted/package_f351be66a7f7/meta.hex",
@@ -33916,13 +33926,13 @@
   },
   {
     "path": "src/flyvis-lossless-study/ov5640_live_v261_20261026/evidence/package_cpu/extracted/package_f351be66a7f7/native_payload.py",
-    "bytes": 3127,
-    "sha256": "5fcd4176a9ecee9c6a7c4610df683f89b71ad7edda1acd432dab0b367c380c28"
+    "bytes": 3078,
+    "sha256": "dfd7b121bd45c12006fd369795d2cbca5c704ba46cc758387bbd26c592bd8160"
   },
   {
     "path": "src/flyvis-lossless-study/ov5640_live_v261_20261026/evidence/package_cpu/extracted/package_f351be66a7f7/official_bridge.py",
-    "bytes": 6017,
-    "sha256": "31b302e257a728761f3c0b070339b4214e5a99a8bdba02621fec76557a535e51"
+    "bytes": 5896,
+    "sha256": "e0b87cfc6c8bb6b4721eb28dbb30ea78c714cd44aa583fbf4ea9257a7ede978d"
   },
   {
     "path": "src/flyvis-lossless-study/ov5640_live_v261_20261026/evidence/package_cpu/extracted/package_f351be66a7f7/official_iic21.py",
@@ -33946,8 +33956,8 @@
   },
   {
     "path": "src/flyvis-lossless-study/ov5640_live_v261_20261026/evidence/package_cpu/extracted/package_f351be66a7f7/ps_input.py",
-    "bytes": 5299,
-    "sha256": "ab25b7c6cd5d512b6b17d9164166b2f6603063b081cd5856f0e8d3b908f59ec7"
+    "bytes": 5201,
+    "sha256": "a42b2fffa5fca5b1203e5271af7d2e9aeab8e2889d4983b276849757a73f183b"
   },
   {
     "path": "src/flyvis-lossless-study/ov5640_live_v261_20261026/evidence/package_cpu/extracted/package_f351be66a7f7/ps_preflight.py",
@@ -33956,13 +33966,13 @@
   },
   {
     "path": "src/flyvis-lossless-study/ov5640_live_v261_20261026/evidence/package_cpu/extracted/package_f351be66a7f7/ram_records.py",
-    "bytes": 3508,
-    "sha256": "ee649f00f30ee50fdb3cc61b2d4a98c1cd2a0eb21bc87fc7725efe61445f989f"
+    "bytes": 3449,
+    "sha256": "9cd644b25d8d9bab4cc3b3206e05b3929667a1c9de72d8a35763ac79bd9a374d"
   },
   {
     "path": "src/flyvis-lossless-study/ov5640_live_v261_20261026/evidence/package_cpu/extracted/package_f351be66a7f7/record_worker.py",
-    "bytes": 4563,
-    "sha256": "5c741d9ec61c77544fb97fe1b140073c4e68595befcc1a48a0b36cf3e419e117"
+    "bytes": 4496,
+    "sha256": "da1b80f4645f0f6c770453b1720101962d3a7a2fb957adec2bb4fe0f7a81e6a1"
   },
   {
     "path": "src/flyvis-lossless-study/ov5640_live_v261_20261026/evidence/package_cpu/extracted/package_f351be66a7f7/reference.cpp",
@@ -33971,8 +33981,8 @@
   },
   {
     "path": "src/flyvis-lossless-study/ov5640_live_v261_20261026/evidence/package_cpu/extracted/package_f351be66a7f7/snapshot_records.py",
-    "bytes": 5943,
-    "sha256": "e991ce00cc67daddee18151d5da342fe1be9a436952ad6aa2922737dca80367e"
+    "bytes": 5822,
+    "sha256": "41373d8059060d71444b932b2c7df3a4c8a53b2de31e1027a0f2a316970c2397"
   },
   {
     "path": "src/flyvis-lossless-study/ov5640_live_v261_20261026/evidence/package_cpu/extracted/package_f351be66a7f7/step_profile.py",
@@ -34011,8 +34021,8 @@
   },
   {
     "path": "src/flyvis-lossless-study/ov5640_live_v261_20261026/pc/flow_reader.py",
-    "bytes": 1995,
-    "sha256": "3f8865307205629af91ff9726a1b999097915034559a99a5167486054c2a228b"
+    "bytes": 1996,
+    "sha256": "bebd71b3fe91603434afdd3230ab2615770421f6c7fb8d0d94119659989e2bfb"
   },
   {
     "path": "src/flyvis-lossless-study/ov5640_live_v261_20261026/pc/full_audit.py",
@@ -34026,18 +34036,18 @@
   },
   {
     "path": "src/flyvis-lossless-study/ov5640_live_v261_20261026/pc/live_server.py",
-    "bytes": 17263,
-    "sha256": "82e2a6adac63c20d5e8c256e9a9424b3856c88f577aa37d8380a3275daaf40df"
+    "bytes": 17024,
+    "sha256": "984243c69e6ffcaeb78309e1fa1535b21c68143675dfef9227c84c72024cecc7"
   },
   {
     "path": "src/flyvis-lossless-study/ov5640_live_v261_20261026/pc/neuron_observer.py",
-    "bytes": 1970,
-    "sha256": "94de23a0abf5ff60a5120e93c9dc4a71c1db421044733d0a76eb2e7ed171d144"
+    "bytes": 1941,
+    "sha256": "964a0818d2abf6b4810b071f5383fe0039eedbce5336ae7fbae2433d90cf6fd4"
   },
   {
     "path": "src/flyvis-lossless-study/ov5640_live_v261_20261026/pc/round_sessions.py",
-    "bytes": 8629,
-    "sha256": "10bed2ae4ac4273066f5cb8381c4e2c6442eb187b0b44202eeba355f6de5845c"
+    "bytes": 8539,
+    "sha256": "4a5e88477425d4e4906daf3da938a3ab4202039858ecde03d91b51da0d6e324d"
   },
   {
     "path": "src/flyvis-lossless-study/ov5640_live_v261_20261026/pc/stream_audit.py",

@@ -8,8 +8,8 @@ from pathlib import Path
 from ram_records import RamRecords
 
 class BatchRecords(RamRecords):
-    def init__(self,root,limit=32*1024*1024,batch_steps=16,pending_batches=2,wait_timeout=10):
-        super().init__(root,limit)
+    def __init__(self,root,limit=32*1024*1024,batch_steps=16,pending_batches=2,wait_timeout=10):
+        super().__init__(root,limit)
         if not 1<=batch_steps<=32:raise ValueError('batch bound')
         if type(pending_batches) is not int or not 1<=pending_batches<=2:raise ValueError('writer queue bound')
         if not 0<wait_timeout<=10:raise ValueError('writer wait bound')

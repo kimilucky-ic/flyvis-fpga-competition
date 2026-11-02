@@ -4,7 +4,7 @@ from pathlib import Path
 import numpy as np
 MAP_SHA='3c8b887e1bcb867f75ed064f5c7f81603d10246e1fe51b2d03922ee5c544ab4f'
 class Observer:
-    def init__(self,path):
+    def __init__(self,path):
         data=Path(path).read_bytes()
         if hashlib.sha256(data).hexdigest()!=MAP_SHA:raise ValueError('Observer map identity')
         self.map=json.loads(data);self.ids=[np.asarray(r['ids'],dtype=np.intp) for r in self.map['regions']]

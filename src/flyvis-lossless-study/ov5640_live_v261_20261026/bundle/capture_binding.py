@@ -11,7 +11,7 @@ import step_profile as prof
 import ram_records
 
 class CapturePool:
-    def init__(self, frame_bytes, slots=3):
+    def __init__(self, frame_bytes, slots=3):
         if frame_bytes<=0 or slots<2: raise ValueError('invalid capture pool')
         self.size=frame_bytes;self.states=['FREE']*slots;self.generations=[0]*slots
         self.frames={};self.lock=threading.Lock();self.failed=False;self.last_id=-1
@@ -82,7 +82,7 @@ class BoundSteps:
     decoded immutable record with frame_id, input_bits, state_bits. Oracle checks
     belong to the existing full-state auditor; this layer does NOT claim them.
     """
-    def init__(self,path,capacity,first_step=0):
+    def __init__(self,path,capacity,first_step=0):
         if capacity<1 or first_step<0: raise ValueError('invalid bounded session')
         self.path=Path(path);self.path.mkdir(exist_ok=False)
         self.capacity,self.first,self.next=capacity,first_step,first_step

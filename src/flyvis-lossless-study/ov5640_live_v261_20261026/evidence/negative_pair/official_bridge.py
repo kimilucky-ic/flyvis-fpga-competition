@@ -31,7 +31,7 @@ class OfficialBridge:
     Readout ordinal is not a sensor exposure counter. Unselected camera frames
     may be skipped; neural steps and their audit records must not be skipped.
     """
-    def init__(self, video, control, memory, output, capacity,
+    def __init__(self, video, control, memory, output, capacity,
                  evidence='CPU_MOCK_ONLY',payload_checker=None):
         if evidence not in ('CPU_MOCK_ONLY', 'OPERATOR_PHYSICAL_RUN_UNATTESTED'):
             raise ValueError('explicit evidence required')

@@ -7,3 +7,5 @@ Start with `python run.py --ip YOUR_PC_IPV4` (or start.cmd after activating your
 First deployment uses the current exported app/pc and app/assets, not the older layout in the original20261027 package. Firmware pair is unchanged. The included original reference.exe is paired with reference.cpp and host_reference.cpp. Rebuild it for another host before attempting operation there. selfcheck is Windows-only until that rebuild is supplied.
 
 The Notebook template is deliberately unconfigured. No checked-in token,active session or old camera frame is used. checks/identity.json names the existing operator run and step; checks/state.bin is its saved full state. Offline reference equality is not a new board result. evidence/last_board_result.json is a historical summary, not newly executed data.
+
+2026-11-02 repair: Python special constructors restored from the accepted runtime; current pages retained. The pinned official CPU flow artifact is now included with its original SHA; PyTorch2.5.1 is required for that display readout. The neural model, firmware and numerical state update are unchanged.

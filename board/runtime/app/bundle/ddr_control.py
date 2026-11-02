@@ -23,7 +23,7 @@ class Published:
 
 
 class DdrControl:
-    def init__(self,mmio,bulk_input=False):
+    def __init__(self,mmio,bulk_input=False):
         self.bulk_input=bulk_input;self.mmio=mmio;self.failed=False;self.session=None
         self._publication_lock=threading.Lock();self._owner_thread=threading.get_ident()
         if tuple(self._r(x) for x in (0x30,0x34,0x38,0x3c))!=(N,NE,VERSION,STRIDE):

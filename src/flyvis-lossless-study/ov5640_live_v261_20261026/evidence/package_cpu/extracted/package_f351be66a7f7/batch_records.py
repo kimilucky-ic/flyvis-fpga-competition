@@ -7,8 +7,8 @@ from pathlib import Path
 from ram_records import RamRecords
 
 class BatchRecords(RamRecords):
-    def init__(self,root,limit=32*1024*1024,batch_steps=16):
-        super().init__(root,limit)
+    def __init__(self,root,limit=32*1024*1024,batch_steps=16):
+        super().__init__(root,limit)
         if not 1<=batch_steps<=32:raise ValueError('batch bound')
         self.batch_steps=batch_steps;self.persisted_steps=0;self.completed_steps=0
         self.archive_index={};self.batches=[];self.peak_ram_bytes=0

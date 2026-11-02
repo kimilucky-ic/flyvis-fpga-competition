@@ -47,7 +47,7 @@ def notebook(root,config):
     return json.dumps(nb,ensure_ascii=False).encode('utf-8'),base
 
 class Rounds:
-    def init__(self,root,factory):
+    def __init__(self,root,factory):
         self.root=Path(root);self.factory=factory;self.lock=threading.RLock();self.pc=self.root/'pc';self.pointer=self.pc/'ACTIVE_ROUND.json'
         self.current=self.load()
     def load(self):

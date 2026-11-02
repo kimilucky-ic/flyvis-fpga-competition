@@ -4,7 +4,7 @@ with only its allocate global bound to the already resolved memory object.
 """
 import types
 class CameraMemory:
-    def init__(self,channel):
+    def __init__(self,channel):
         cache=channel._cache;original=cache.getframe
         if 'getframe' in cache.__dict__ or not isinstance(original,types.MethodType):
             raise RuntimeError('camera cache already adapted or unexpected method')

@@ -4,7 +4,7 @@ A coincident event supports timing correlation, not proof of causation.
 """
 import gc,threading,time
 class GcEvents:
-    def init__(self,capacity=256):
+    def __init__(self,capacity=256):
         if type(capacity) is not int or not 1<=capacity<=1024:raise ValueError('bounded GC events')
         self.capacity=capacity;self.events=[];self.dropped=0;self.errors=0;self.step=None;self.active=False
         self.callback=self._event;self.before=dict(enabled=gc.isenabled(),threshold=list(gc.get_threshold()))

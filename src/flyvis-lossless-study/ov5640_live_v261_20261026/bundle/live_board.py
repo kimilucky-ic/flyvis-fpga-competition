@@ -26,7 +26,7 @@ def stored_archive(root,target):
     return target
 
 class Timings:
-    def init__(self):self.values={};self.step_write_ns=None;self.input_write_ns=None
+    def __init__(self):self.values={};self.step_write_ns=None;self.input_write_ns=None
     def wrap(self,obj,name,label):
         fn=getattr(obj,name)
         def call(*a,**k):

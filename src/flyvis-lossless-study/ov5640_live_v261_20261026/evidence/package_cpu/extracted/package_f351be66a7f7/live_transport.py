@@ -10,7 +10,7 @@ def request(config,route,data=None):
         return json.loads(r.read(65536))
 
 class Uploader:
-    def init__(self,out,config,send=request):
+    def __init__(self,out,config,send=request):
         self.out=Path(out);self.config=config;self.send=send;self.stop=threading.Event();self.done=threading.Event();self.thread=None
         self.wake=threading.Event();self.digests={};self.ack_timings={}
         self.cached=None;self.next=0;self.error=None;self.fatal=False;self.finish_sent=False

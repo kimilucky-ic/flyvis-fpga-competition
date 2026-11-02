@@ -32,7 +32,7 @@ def read_memory_plan(config):
     return memory_plan(config,Path('/proc/meminfo').read_text())
 
 class RunWindow:
-    def init__(self,config,clock=time.monotonic,sleep=time.sleep):
+    def __init__(self,config,clock=time.monotonic,sleep=time.sleep):
         self.duration=float(config['duration_s']);self.period=float(config['minimum_period_s']);self.capacity=config['max_steps']
         if not math.isfinite(self.duration) or not 0<self.duration<=60:raise ValueError('duration bound')
         if not math.isfinite(self.period) or self.period!=0:raise ValueError('period bound')

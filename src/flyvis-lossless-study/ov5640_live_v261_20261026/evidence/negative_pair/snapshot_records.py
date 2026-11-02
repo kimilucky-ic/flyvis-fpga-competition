@@ -78,7 +78,7 @@ def decode_record(raw,expected_frame,n=45669,ne=1513231,input_words=721,payload_
 
 class AuditSequence:
     """Single-writer PC receipts for a finite, non-overwriting DDR session."""
-    def init__(self,capacity,first_frame=0):
+    def __init__(self,capacity,first_frame=0):
         if capacity<1:raise ValueError('Finite positive capacity required')
         self.capacity,self.next_frame=capacity,first_frame
         self.records=[];self.receipts=[];self.chain='0'*64
@@ -100,7 +100,7 @@ class LatestDisplay:
 The third ownership role is the hardware writer's uncommitted DDR record.
 All records remain in the audit; no physical full-state triple copy is needed.
 """
-    def init__(self):
+    def __init__(self):
         self.lock=threading.Lock();self.latest=None;self.reading=None
         self.last_acquired=-1;self.skipped_display_frames=0
 

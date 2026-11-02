@@ -5,7 +5,7 @@ from pathlib import Path
 import ctypes,hashlib,json,platform,shutil,struct,subprocess
 ABI=0x12110001
 class PayloadChecker:
-    def init__(self,library):
+    def __init__(self,library):
         self.lib=ctypes.CDLL(str(Path(library).resolve()))
         abi=self.lib.line11_payload_abi;abi.argtypes=[];abi.restype=ctypes.c_uint32
         if abi()!=ABI:raise RuntimeError('native payload ABI mismatch')

@@ -56,3 +56,7 @@ Use [board/runtime](board/runtime/README.md), which assembles the current PC/web
 The repository follows the AMD recommended top-level layout: `src/` design sources, `sim/` verification, `build/` build scripts/reports, `board/` operation and measured outputs, `data/` saved inputs/references, `skill/` reusable workflows, and `report/` design/AI records. See [data](data/README.md) for sample scope. The existing runtime retains identical sample copies under board/runtime/checks to preserve its accepted entry.
 
 Historical export_path_map.json and archived source manifests retain their original path labels as provenance. For a former top-level source/ path, use src/ in this layout. Directory relocation is not new acceptance of every historical implementation.
+
+## Runtime repair — 2026-11-02
+
+The earlier normalized export broke Python constructors despite passing syntax/reference checks. The current recommended runtime and its current source mirrors are repaired, with new display changes retained. [Actual checks](sim/runtime_repair_20261102.json) now include object construction, saved-state CPU comparison, actual isolated PC HTTP startup and official CPU flow warmup. This is not a new physical board test. Other archived versions are not current entries.

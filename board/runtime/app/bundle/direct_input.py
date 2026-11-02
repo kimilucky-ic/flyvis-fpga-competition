@@ -6,7 +6,7 @@ import step_profile as prof
 from ps_input import receptor_centers, _weights
 
 class DirectInput:
-    def init__(self,height=48,width=80,channel_order='BGR'):
+    def __init__(self,height=48,width=80,channel_order='BGR'):
         if type(height) is not int or type(width) is not int or min(height,width)<2 or max(height,width)>2048:
             raise ValueError('bounded image dimensions')
         if channel_order not in ('RGB','BGR','GBR'):raise ValueError('channel order')
@@ -52,8 +52,8 @@ class DirectAreaInput(DirectInput):
     Center square crop fills the same721 receptor coordinates without padding.
     Grey conversion only visits the crop. This changes the visual stimulus.
     """
-    def init__(self,height=48,width=80,channel_order='BGR'):
-        super().init__(height,width,channel_order)
+    def __init__(self,height=48,width=80,channel_order='BGR'):
+        super().__init__(height,width,channel_order)
         self.crop_size=min(height,width)
         self.crop_top=(height-self.crop_size)//2
         self.crop_left=(width-self.crop_size)//2

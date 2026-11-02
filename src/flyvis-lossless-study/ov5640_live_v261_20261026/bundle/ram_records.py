@@ -5,7 +5,7 @@ import os,threading,time
 import step_profile as prof
 from pathlib import Path
 class RamRecords:
-    def init__(self,root,limit=16*1024*1024):
+    def __init__(self,root,limit=16*1024*1024):
         self.root=Path(root).resolve();self.limit=limit;self.files={};self.bytes=0
         self.known_keys={};self.active=False;self.lock=threading.RLock();self.flush_ms=None
     def start(self):self.active=True

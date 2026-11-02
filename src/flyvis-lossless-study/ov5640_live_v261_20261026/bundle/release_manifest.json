@@ -8,8 +8,8 @@
     "sha256": "f9f01d75a0e9f4cfc6c4e5128d5538c480f51476d3bdc46cd9e98f72747de833"
   },
   "batch_records.py": {
-    "bytes": 7771,
-    "sha256": "5054d2fac8bbe0d5252613834331c5f8ffc6050edbcc6a0abf5e04d99bba9736"
+    "bytes": 7642,
+    "sha256": "4917f5a09c9c5ef4f3e0648c8cb7118f564419d98656b0614930ce58e3d284d2"
   },
   "bit_container.py": {
     "bytes": 1254,
@@ -20,48 +20,48 @@
     "sha256": "9f22259a8b01ca0a9f3dc27a5d4bf83d5462ab3d7b54607466fd8a3218e2db32"
   },
   "board_runtime.py": {
-    "bytes": 8131,
-    "sha256": "d844f4cca1225c85977a30640001db77c4ca4ebf41164354db60c04969453ccf"
+    "bytes": 8004,
+    "sha256": "4f14f6ac303b75d37ef51cdfb6a4ee09061981c006c2bcd7b0bb230bb589b1b0"
   },
   "camera_config.py": {
     "bytes": 66,
     "sha256": "474077a328d175a94c86530be0e363380d213ce0818608b4e18f2d69a28fe149"
   },
   "camera_diagnostic.py": {
-    "bytes": 2819,
-    "sha256": "e30ef830e7c9e30c75e9f3545a0016238d51b1d8f2c15ae8c6f251a44d39c6ee"
+    "bytes": 2777,
+    "sha256": "e609ca1e77def2c65ed12cdb689f5bab3d465e3e4986b8c596fe69e61c4b1524"
   },
   "camera_memory.py": {
-    "bytes": 2624,
-    "sha256": "79d346dd8d51803e35633563d38818f7ff2f8b8d18c45732d283436df73e6ca7"
+    "bytes": 2586,
+    "sha256": "c88713bf7240c8488ffa6539d7d4c89b563445a4a0e55c1575aa014aeee806d3"
   },
   "capture_binding.py": {
-    "bytes": 9213,
-    "sha256": "be94988febb31f78d8029dd3875cf4a8fafa8de03d822910c2c2e6475f48bf1b"
+    "bytes": 9064,
+    "sha256": "ac23f1386776233df3dbe354285b73bee72dc91fa837a94ad48484118e41e045"
   },
   "cycle_contract.py": {
     "bytes": 778,
     "sha256": "76a7f85ef8bf9cc82841ab9526f16f51aac33c1380a6a538f4ef161857d15360"
   },
   "ddr_acceptance.py": {
-    "bytes": 8027,
-    "sha256": "32603eed5eb443c8bd00f9ef44f0a124d35faacaf1f3150939d0551ab5572c3f"
+    "bytes": 8029,
+    "sha256": "a5470308f1b7a37899b1358214fe9e75950977ef9cdcb21fd6f16aa02054c231"
   },
   "ddr_control.py": {
-    "bytes": 8480,
-    "sha256": "bb61021f9c43122093eec75eb49c10662392cd41869270c054df36491f62c9bf"
+    "bytes": 8321,
+    "sha256": "6aa7bf1bd7be14ca96ffe35f6691655f669f50cccb42f4e7607397a78ec493bf"
   },
   "ddr_memory.py": {
-    "bytes": 5073,
-    "sha256": "5eecb217aaf2b3b6b41d62f46783bae45cebc83724659dc8b19ec5f4219c937a"
+    "bytes": 4985,
+    "sha256": "cfa5225c8909be10230c641de70903d72104cbe365361ca13a25878df853b456"
   },
   "direct_input.py": {
-    "bytes": 6487,
-    "sha256": "8960c9585478b9a508eba0716190e30510c5a8d224c39f4c5ec1cb53b06545d8"
+    "bytes": 6386,
+    "sha256": "ba176093dde295007ff02511b9f9beb39d31f50ca12e6e8074be4239b8aa5ae5"
   },
   "duration_run.py": {
-    "bytes": 5232,
-    "sha256": "1eb298a3b98539f868d3538f13616f216db2ecc2e188196f4feb2ded5c2f829e"
+    "bytes": 5153,
+    "sha256": "cd4001c8b2ae4b4707edb05f73a38ae2abc555fe6775941676c87406f8694651"
   },
   "edges.bin": {
     "bytes": 12105848,
@@ -76,8 +76,8 @@
     "sha256": "00eb04c23bd2c6666aaec6a9e7809829bedca8591471d7160bb813ae86e6851f"
   },
   "gc_events.py": {
-    "bytes": 2060,
-    "sha256": "2aea3e68eaabbfcaf061b4f47410893f48dc98cdc988e825ced2d2633b4b4ab4"
+    "bytes": 2032,
+    "sha256": "cd3ca6d4af882b8888d2ff522b6b36ca7ff495f3df5fc0cc18c82a6d4fe230b0"
   },
   "host_reference.cpp": {
     "bytes": 835,
@@ -88,16 +88,16 @@
     "sha256": "d276601573420bf787a81ffa8c81f2da3499a20df2bb858f6082c2e449ff564f"
   },
   "live_board.py": {
-    "bytes": 21919,
-    "sha256": "cba0ea669d9826ff45b571be78163fb33b442f6a471ffbfc1c41e67bf7e57c94"
+    "bytes": 21619,
+    "sha256": "b7b2403ed5c04b18e87bc0920df2853cb6ddd326e53ddcee435bb72966e899a2"
   },
   "live_protocol.py": {
-    "bytes": 16548,
-    "sha256": "61995d289db0b1a7bf8b878b4fcf575268a32ed4a413c0702ab90aee38be4865"
+    "bytes": 16319,
+    "sha256": "deed715583f8e5b61c573fc1b58c7d145f7573147c1b4ae066614d01c7f0e796"
   },
   "live_transport.py": {
-    "bytes": 4144,
-    "sha256": "89c3060e09b2abfc81489d11fc5c328ece7e02fa8f91b15a2cb29dcc07bcda0a"
+    "bytes": 4083,
+    "sha256": "278c20d88ec5ab6e8aa6c7f6420f280ab9b334ed134b63b9903fe47be3e7b0e1"
   },
   "meta.hex": {
     "bytes": 76630,
@@ -108,12 +108,12 @@
     "sha256": "9a4befabea9b368d55071f50fac8a8ea463340e17669d7a4a3ff33512467ab28"
   },
   "native_payload.py": {
-    "bytes": 3127,
-    "sha256": "5fcd4176a9ecee9c6a7c4610df683f89b71ad7edda1acd432dab0b367c380c28"
+    "bytes": 3078,
+    "sha256": "dfd7b121bd45c12006fd369795d2cbca5c704ba46cc758387bbd26c592bd8160"
   },
   "official_bridge.py": {
-    "bytes": 6017,
-    "sha256": "31b302e257a728761f3c0b070339b4214e5a99a8bdba02621fec76557a535e51"
+    "bytes": 5896,
+    "sha256": "e0b87cfc6c8bb6b4721eb28dbb30ea78c714cd44aa583fbf4ea9257a7ede978d"
   },
   "official_iic21.py": {
     "bytes": 521,
@@ -136,24 +136,24 @@
     "sha256": "0a0d3ad86044737c32632f6f0a893e2207772671f13541db1dced5dd8e2a554f"
   },
   "ps_input.py": {
-    "bytes": 5299,
-    "sha256": "ab25b7c6cd5d512b6b17d9164166b2f6603063b081cd5856f0e8d3b908f59ec7"
+    "bytes": 5201,
+    "sha256": "a42b2fffa5fca5b1203e5271af7d2e9aeab8e2889d4983b276849757a73f183b"
   },
   "ps_preflight.py": {
     "bytes": 2711,
     "sha256": "49082ab07d8201e20815ec7c1fe8d06d1d2b7d9371f15c176264126c01ccd170"
   },
   "ram_records.py": {
-    "bytes": 5292,
-    "sha256": "7081e42168fbf7184c4ffdbf0d0ccf8cc2d585fa7bdb31f4ac48724158125a51"
+    "bytes": 5209,
+    "sha256": "f2e1d407c75245e64945358ec9a11641ae21d4a843d3509644f4ab373aa3752d"
   },
   "README.md": {
     "bytes": 2773,
     "sha256": "0bfed0faa392b7a388f45a35813cf6be6bd9fdd4c5e63bcb208d4f647ea1b254"
   },
   "record_worker.py": {
-    "bytes": 4742,
-    "sha256": "7a1e3e6a2ba615da48ae1bbcca5f8f16b32f50c3524ad6891648e323b50af8c6"
+    "bytes": 4672,
+    "sha256": "10d7a27f83484e89f12057d63847441966d267f83a09e2c03c338cd99ebb1528"
   },
   "reference.cpp": {
     "bytes": 2391,
@@ -168,8 +168,8 @@
     "sha256": "9a4939bc6e455a1f360b25e01c4af6021004277d305d105d265089f961d8bd6a"
   },
   "snapshot_records.py": {
-    "bytes": 5943,
-    "sha256": "e991ce00cc67daddee18151d5da342fe1be9a436952ad6aa2922737dca80367e"
+    "bytes": 5822,
+    "sha256": "41373d8059060d71444b932b2c7df3a4c8a53b2de31e1027a0f2a316970c2397"
   },
   "step_profile.py": {
     "bytes": 1158,

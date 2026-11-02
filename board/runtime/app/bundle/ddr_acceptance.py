@@ -27,7 +27,7 @@ def compare_bits(actual,expected):
 
 
 class AcceptanceSession:
-    def init__(self,mmio,allocator,barrier,inputs,expected,output,evidence='CPU_MOCK_ONLY'):
+    def __init__(self,mmio,allocator,barrier,inputs,expected,output,evidence='CPU_MOCK_ONLY'):
         if evidence not in ('CPU_MOCK_ONLY','OPERATOR_PHYSICAL_READS_UNATTESTED'):raise ValueError('Evidence scope')
         self.inputs=tuple(bytes(x) for x in inputs);self.expected=tuple(bytes(x) for x in expected)
         if not self.inputs or len(self.inputs)!=len(self.expected) or any(len(x)!=2884 for x in self.inputs) or any(len(x)!=N*4 for x in self.expected):raise ValueError('Complete bounded plan required')
