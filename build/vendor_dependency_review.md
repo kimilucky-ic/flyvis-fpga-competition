@@ -12,7 +12,7 @@ Updated 2026-10-29. Official acquisition route verified; third-party redistribut
 
 ## License and clean-build limits
 
-ALIENTEK headers in camera sources reserve rights. [The held-file inventory](../report/third_party_holds.json) identifies 28 source instances; team MIT licensing does not override them or automatically clear derived BIT/HWH. The official resource page and free download do not establish permission to republish the source. Keep the repository private until the public redistribution scope is resolved. No external vendor contact was sent.
+ALIENTEK headers in camera sources reserve rights. [The held-file inventory](../report/third_party_holds.json) identifies 28 source instances; team MIT licensing does not override them or automatically clear derived BIT/HWH. The official resource page and free download do not establish permission to republish the source. The repository is currently public under the owner’s publication authorization. This review retains the unresolved third-party scope; public visibility and the project license do not themselves settle third-party redistribution rights. No external vendor contact was sent.
 
 PYNQ's [v2.7 license](https://github.com/Xilinx/PYNQ/blob/v2.7.0/LICENSE) and component notices apply to PYNQ-origin code. They do not license unrelated ALIENTEK camera modules. Exact third-party notices must be retained.
 

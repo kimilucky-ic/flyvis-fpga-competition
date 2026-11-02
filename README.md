@@ -1,14 +1,14 @@
-# FlyVis visual neural network on Zynq-7020
+# Biological visual circuit simulation on Zynq-7020
 
 Competition source delivery, updated 2026-11-02. Public repository access was verified on 2026-11-02. Only selected sanitized engineering exchanges are included; full private conversations remain withdrawn. Full configured FlyVis network:45,669 nodes,1,513,231 connections,721 visual inputs,strict FP32/Euler,5ms model step. PL executes the neural updates; PS handles OV5640 capture/mapping/DDR records; PC displays results and independently audits states.
 
 ## Start here
 
-1. Read the [current seven-page design report](report/design_report.pdf), based on the 2026-11-01 revision with repository status and reproduction links corrected on 2026-11-02.
+1. Read the [approved seven-page design report](report/design_report.pdf) and [English competition poster](report/poster_en_a4.pdf). The [editable poster](report/poster_en.pptx) is also included. The poster highlights hardware simulation of a biological visual circuit, with model neuron types, connectivity and recurrent state updates.
 2. For the current full-FPGA camera experiment, use [board/runtime](board/runtime/README.md). On Windows x64/Python3.12 install its requirements, then run `python run.py --check-only`. For an operator-authorized board experiment use `python run.py --ip YOUR_PC_IPV4` and the newly generated fixed Notebook. This is the recommended PC entry; archived GPU/hybrid variants below are historical.
 3. Review [sanitized engineering collaboration cases](report/ai_engineering_cases.md), [Skill](skill/README.md) and [build/vendor acquisition instructions](build/vendor_dependency_review.md).
 
-The poster is still under revision and is not included as a final poster. The desktop submission archive is separately versioned; changing this repository does not update that RAR automatically.
+The approved design-report PDF and latest English poster are synchronized with the current local materials. The report content is preserved as approved. The desktop submission archive is separately versioned; changing this repository does not update that RAR automatically.
 
 ## Current implementation
 
@@ -34,7 +34,7 @@ All published paths and hashes are in public_manifest.json. Personal running not
 
 ## AMD guide audit
 
-[Requirement-to-file map](report/amd_requirements.md), [seven-page design report](report/design_report.pdf), [actual implementation reports](build/), [verification summaries](sim/), [operation steps](board/reproduce.md), and [selected current AI collaboration record](report/ai_collaboration_record.md). Repository delivery is distinct from public-release permission and fresh source-to-BIT validation; remaining boundaries are in report/amd_compliance_audit.json.
+[Requirement-to-file map](report/amd_requirements.md), [seven-page design report](report/design_report.pdf), [actual implementation reports](build/), [verification summaries](sim/), [operation steps](board/reproduce.md), and [engineering AI collaboration cases](report/ai_engineering_cases.md). Repository delivery is distinct from public-release permission and fresh source-to-BIT validation; remaining boundaries are in report/amd_compliance_audit.json.
 
 ## Normalized export verification
 
@@ -64,3 +64,9 @@ The earlier normalized export broke Python constructors despite passing syntax/r
 ## Historical archive navigation
 
 [Missing historical dependencies and four corrupt negative-test samples](report/archive_dependencies.md) are explicitly indexed. These are not the recommended experiment entry. Use board/runtime above; no unavailable historical attachment has been described as bundled or newly validated.
+
+## Competition poster
+
+![Biological visual circuit simulation on FPGA](report/poster_preview.png)
+
+[Print-ready A4 PDF](report/poster_en_a4.pdf) · [Editable PowerPoint](report/poster_en.pptx)

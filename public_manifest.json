@@ -6,8 +6,8 @@
   },
   {
     "path": "README.md",
-    "bytes": 7995,
-    "sha256": "65820b5cede6f46d50de2e13ebac8211747e036d680403423e0ca7439c0e76c2"
+    "bytes": 8432,
+    "sha256": "47e96d54f57482058a2c9322f37627e961ba9b00cd1203a91f0f1b3135df13ae"
   },
   {
     "path": "board/analysis_formulas.json",
@@ -911,8 +911,8 @@
   },
   {
     "path": "build/vendor_dependency_review.md",
-    "bytes": 3230,
-    "sha256": "6592bfb04da95014b6c6fcbfeffde6841cf3f709d9ff98c666505e0f98d597bd"
+    "bytes": 3389,
+    "sha256": "83baa5737a28e6b6efbbee186042ea33f556cf94769fd83a2f7e503066cea2fe"
   },
   {
     "path": "data/README.md",
@@ -986,8 +986,8 @@
   },
   {
     "path": "report/amd_requirements.md",
-    "bytes": 2863,
-    "sha256": "746ccc4178afc5e0b50db9386d116b01a3d720d1311e8204395d2a7830668202"
+    "bytes": 3417,
+    "sha256": "971dff9d4b4b282ab7cebdaa2e9509fcb8eeba4dccf92f64a7992c9659d80ffa"
   },
   {
     "path": "report/archive_dependencies.json",
@@ -1006,8 +1006,8 @@
   },
   {
     "path": "report/design_report.pdf",
-    "bytes": 830608,
-    "sha256": "dd46403f821ba508859496519464092b6184e9599d6b7a0cb32a58643bd75665"
+    "bytes": 775787,
+    "sha256": "a1214c9d8e23120464eb9390dc3d83b5609deee91575e3d23373d017776a8d74"
   },
   {
     "path": "report/evidence/ddr_ring_summary.json",
@@ -1028,6 +1028,21 @@
     "path": "report/normalization_check.json",
     "bytes": 1559,
     "sha256": "2724e60a62c71109b92750960ba6f88524bf3b8a8d49da88d7e26895eee8d48d"
+  },
+  {
+    "path": "report/poster_en.pptx",
+    "bytes": 3453105,
+    "sha256": "fb0a883be25c151e928fe364cb1682709efcbba295419f3000fbfcc98e1cc763"
+  },
+  {
+    "path": "report/poster_en_a4.pdf",
+    "bytes": 299031,
+    "sha256": "7e2ea34a1601bd78f49505e333163753e2330309e76bccb99e29426bfc0d6f79"
+  },
+  {
+    "path": "report/poster_preview.png",
+    "bytes": 361337,
+    "sha256": "f0f4d83e15f1bdc7b5b80410205e63ebc589f71d5e7206f83e2359cb8824bd6c"
   },
   {
     "path": "report/project_ai_excerpts.json",

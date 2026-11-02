@@ -9,7 +9,7 @@ Original 2026 AMD guide, sections3.3.3–3.3.5, PDF pages22–25, SHA256 `c6ad82
 - Synthesis/implementation and build: [build](../build/), [portable steps](../build/portable/README.md), [official vendor acquisition](../build/vendor_dependency_review.md).
 - Skill: [index](../skill/README.md), scope, usage, failure conditions, historical effects and limitations. Generic cross-board bonus is not claimed.
 - Seven report topics: [seven-page design report](design_report.pdf) and [detailed engineering report](technical_report.md). Background/innovation, diagram, partition/interfaces, optimization comparisons, AI collaboration, Skill extraction and reproduction are all addressed.
-- Selected current AI prompt/answer/correction record: [ai_collaboration_record.md](ai_collaboration_record.md). Older JSONs are summaries; private historical chats remain withdrawn. A complete historical transcript is not claimed.
+- Main AI collaboration evidence: [engineering cases](ai_engineering_cases.md), with two short original prompt/answer pairs and two labelled engineering summaries. [Historical repository-delivery exchanges](ai_collaboration_record.md) are supplementary. Private historical chats remain withdrawn; missing original dialogues are not reconstructed.
 - Identity and attribution: root `public_manifest.json`, `license` and `third_party_notices.md`. The manifest name is an inventory convention; it does not mean the repository is public.
 
 ## Honest remaining boundaries
@@ -21,4 +21,10 @@ Official manufacturer download locators have been verified, but today's full ven
 Tool/device and performance evidence must retain the original version and scope. No new board/GPU/camera/EDA experiment was run to fill documentation gaps.
 
 
-[补充：实际研发脱敏案例](ai_engineering_cases.md)（短原文与工程摘要分列；既有设计PDF为前一交付版本。）
+[补充：实际研发脱敏案例](ai_engineering_cases.md)（短原文与工程摘要分列；设计PDF已同步用户确认稿。）
+
+## Final presentation materials
+
+- [Approved design report](design_report.pdf): synchronized byte-for-byte with the user-approved local PDF; content unchanged by this publication update.
+- [English poster PDF](poster_en_a4.pdf), [editable poster](poster_en.pptx) and [preview](poster_preview.png): biological visual-circuit simulation on FPGA.
+- Existing reported runs, estimates and limitations retain their original evidence scopes.
