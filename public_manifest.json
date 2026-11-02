@@ -1,5 +1,10 @@
 [
   {
+    "path": ".gitattributes",
+    "bytes": 460,
+    "sha256": "34b0361d91c28f189b009034e23dd78097685d9576e80597307173c5475303b9"
+  },
+  {
     "path": ".gitignore",
     "bytes": 105,
     "sha256": "e8f7fd9098d8e42ca2036a13548331b5accbdbbc1a3ebd7b20ab658cd12cb912"
@@ -386,18 +391,33 @@
   },
   {
     "path": "board/runtime/manifest.json",
-    "bytes": 11888,
-    "sha256": "fb903778c992f7911dd67bf6dd8fdeb71a54280928206683340c627cb2c210a5"
+    "bytes": 12320,
+    "sha256": "49b67d72febef0f39797bb49a7d71581f324d7383a0b1f38d146b628438a4e90"
   },
   {
     "path": "board/runtime/README.md",
-    "bytes": 2201,
-    "sha256": "78b677d1239e4f0438c5263b2fe36a7896829d9336579b581261f2edbc362629"
+    "bytes": 2956,
+    "sha256": "1145b22f07274a2ec77aee788a020ea5a79f8f144089e2619726b6b33058c5a4"
+  },
+  {
+    "path": "board/runtime/REFERENCE_BUILD.md",
+    "bytes": 1754,
+    "sha256": "1a7e26983e38c9c80c3ee42e95c5f3f33e1f6bfdcb9730010b9f10685e99e1c8"
+  },
+  {
+    "path": "board/runtime/requirements-check.txt",
+    "bytes": 43,
+    "sha256": "d483924ac6ab79c19cea483dd287ed25ae8abd37d28fbfaf60506c2b8a8611fb"
+  },
+  {
+    "path": "board/runtime/requirements-full.txt",
+    "bytes": 39,
+    "sha256": "a1852764d3c8b91033eeebf049974f60cd73e4d997ce9ba757ff543199744ef4"
   },
   {
     "path": "board/runtime/requirements.txt",
-    "bytes": 60,
-    "sha256": "ab13fad74e2baa70e7dffaf2c1b0bbdad6c0a35db423ca9ef9f4b0dabf71ff01"
+    "bytes": 96,
+    "sha256": "938af7c4a319284a55a78193092c08a2f878d88cf9c7f355bfe44c9e622a1952"
   },
   {
     "path": "board/runtime/run.py",
@@ -541,8 +561,8 @@
   },
   {
     "path": "build/portable/README.md",
-    "bytes": 2856,
-    "sha256": "c92362210eeed5f869e6e2ef9eaff081688eede1745321969c4da122a2a8b6f5"
+    "bytes": 3118,
+    "sha256": "d7b9b4299dd1ff94986b75082f5ea8fc4e3405fa0dbf64b8d6c33f72db84b4de"
   },
   {
     "path": "build/portable/relocation_manifest.json",
@@ -558,6 +578,11 @@
     "path": "build/portable/synth.tcl",
     "bytes": 697,
     "sha256": "e53b719287ee8f12381786b58840b1a34826a9916c967dab20b89c7ad54b3367"
+  },
+  {
+    "path": "build/portable/vendor_file_map.md",
+    "bytes": 14642,
+    "sha256": "82224a181e7e9b01d4e844f2f463f73dd8c0bb84e542caf218cd9ef213494d65"
   },
   {
     "path": "build/portable/vendor_requirements.json",
@@ -651,8 +676,8 @@
   },
   {
     "path": "README.md",
-    "bytes": 3665,
-    "sha256": "ec7f777ccc4d44aa634859ea4f4a94502df2e47d47a0dad838312da6238e97f3"
+    "bytes": 4274,
+    "sha256": "764bc69555b6c7cecaa3bdda11c69276c9bca7f804b8516144d842a56c74b7c7"
   },
   {
     "path": "report/ai_chat_excerpts.json",
@@ -701,8 +726,8 @@
   },
   {
     "path": "report/current_delivery_inventory.json",
-    "bytes": 454,
-    "sha256": "9cc9e88b3cceb88b485ee8b89de34ecb47ad1172b01ebbbc8031c8fc24454828"
+    "bytes": 633,
+    "sha256": "b9c83d0e229381af763a119b8160716904eb855ef66ef13f4974bd0c9bf79407"
   },
   {
     "path": "report/design_report.pdf",
@@ -813,6 +838,11 @@
     "path": "sim/runtime_repair_20261102.json",
     "bytes": 1027,
     "sha256": "6663183bf99426893f7fbc0675aaf80d0fe538e8f72e5da2477df0455ead3ee8"
+  },
+  {
+    "path": "sim/windows_checkout_check.json",
+    "bytes": 628,
+    "sha256": "414570902b19963a0032c4ae3b85f5624c494be511dc27101eb689823ef33016"
   },
   {
     "path": "skill/audit_index.json",

@@ -1,0 +1,18 @@
+{
+  "status": "PASS_WINDOWS_CHECKOUT_AND_LIGHTWEIGHT_REFERENCE",
+  "checkout_core_autocrlf": true,
+  "checkout_core_longpaths": false,
+  "checked_manifest_payloads": 365,
+  "checkout_byte_mismatches": [],
+  "torch_deliberately_blocked": true,
+  "reference_input_words": 721,
+  "reference_state_words": 45669,
+  "reference_mismatches": 0,
+  "tampered_run_py_rejected": true,
+  "gpp_rebuild": "PASS_WINDOWS_X64_MINGW10",
+  "rebuilt_reference_bytes_equal": true,
+  "vendor_prepare_from_git_checkout": "PASS_56_FILES",
+  "linux_build_executed": false,
+  "arm_supported": false,
+  "new_gpu_eda_board_operations": 0
+}

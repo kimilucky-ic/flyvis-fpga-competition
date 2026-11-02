@@ -4,9 +4,17 @@
 
 本仓库主分支只保留最新完整系统：45,669个模型神经元、1,513,231条连接、721项视觉输入，FP32/Euler状态递推。PL执行完整神经计算，PS负责摄像头输入与DDR记录，电脑展示神经活动与官方光流读出。
 
+## 获取当前版本
+
+```text
+git clone --config core.longpaths=true https://github.com/kimilucky-ic/flyvis-fpga-competition.git
+```
+
+也可下载Code → Download ZIP。主分支已清除超长历史工程路径；.gitattributes保护封存文件字节，Windows的core.autocrlf=true也不会改写它们。
+
 ## 从这里开始
 
-- **运行实验：**[board/runtime](board/runtime/README.md)。Windows x64、Python3.12、原有Zynq-7020/PYNQ2.7板端环境。先安装requirements，再运行 `python run.py --check-only`；实际实验按说明生成并运行固定Notebook。
+- **运行实验：**[board/runtime](board/runtime/README.md)。Windows x64、Python3.12、原有Zynq-7020/PYNQ2.7板端环境。自检安装 `requirements-check.txt`，再运行 `python run.py --check-only`；完整界面与官方光流安装 `requirements-full.txt`；实际实验按说明生成并运行固定Notebook。
 - **查看硬件：**[src/neural](src/neural/README.md) 是最终8个神经计算RTL模块及50个初始化/映射数据文件。[src/vendor](src/vendor/README.md) 保留匹配构建要求的56项摄像头与平台依赖，原版权声明保留。
 - **构建固件：**[build/portable](build/portable/README.md)，使用Vivado2026.1。已有BIT/HWH直接随运行包提供。
 - **报告和海报：**[五页定稿报告](report/design_report.pdf)、[海报PDF](report/poster_en_a4.pdf)、[可编辑海报](report/poster_en.pptx)、[技术说明](report/technical_report.md)。
@@ -32,3 +40,7 @@
 
 许可与第三方范围见[声明](third_party_notices.md)及[平台依赖说明](build/vendor_dependency_review.md)。保留原声明不等于将第三方代码改为本项目许可证。
 
+
+## 自检平台
+
+自带reference.exe面向Windows x64；[参考核编译说明](board/runtime/REFERENCE_BUILD.md)提供g++命令和独立输入/状态比较步骤。SSE参考核面向x86/x64，ARM不在已验证范围。

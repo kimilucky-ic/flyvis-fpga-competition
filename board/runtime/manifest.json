@@ -2,12 +2,12 @@
   "schema": "flyvis.public.runtime.files/v1",
   "files": {
     "README.md": {
-      "bytes": 2201,
-      "sha256": "78b677d1239e4f0438c5263b2fe36a7896829d9336579b581261f2edbc362629"
+      "bytes": 2956,
+      "sha256": "1145b22f07274a2ec77aee788a020ea5a79f8f144089e2619726b6b33058c5a4"
     },
     "requirements.txt": {
-      "bytes": 60,
-      "sha256": "ab13fad74e2baa70e7dffaf2c1b0bbdad6c0a35db423ca9ef9f4b0dabf71ff01"
+      "bytes": 96,
+      "sha256": "938af7c4a319284a55a78193092c08a2f878d88cf9c7f355bfe44c9e622a1952"
     },
     "run.py": {
       "bytes": 5013,
@@ -316,6 +316,18 @@
     "app/assets/official_flow_cpu.pt": {
       "bytes": 243239,
       "sha256": "ecb7bcd5a47e64900fe27ca4cd5f980099c4877e8aaab5581ad510bebe11c216"
+    },
+    "requirements-check.txt": {
+      "bytes": 43,
+      "sha256": "d483924ac6ab79c19cea483dd287ed25ae8abd37d28fbfaf60506c2b8a8611fb"
+    },
+    "requirements-full.txt": {
+      "bytes": 39,
+      "sha256": "a1852764d3c8b91033eeebf049974f60cd73e4d997ce9ba757ff543199744ef4"
+    },
+    "REFERENCE_BUILD.md": {
+      "bytes": 1754,
+      "sha256": "1a7e26983e38c9c80c3ee42e95c5f3f33e1f6bfdcb9730010b9f10685e99e1c8"
     }
   }
 }

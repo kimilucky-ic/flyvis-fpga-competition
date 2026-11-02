@@ -1,4 +1,2 @@
-numpy==1.26.4
-Pillow==12.3.0
-psutil==7.2.2
-torch==2.5.1
+# Default installation supports numerical self-check and preparation.
+-r requirements-check.txt

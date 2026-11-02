@@ -35,3 +35,5 @@ No stage connects to a board. Physical loading remains a separate operator actio
 ## Consolidated current source
 
 Neural RTL/images are stored once at [src/neural](../../src/neural/README.md). The matching 56 platform dependencies are at [src/vendor](../../src/vendor/README.md). This command validates those exact bytes before preparing the build. Original notices and license scope remain applicable. Fresh source-to-BIT execution is not claimed by this file consolidation.
+
+[Complete 56-file dependency map](vendor_file_map.md) lists every required relative path, its bundled location and SHA256. From the repository root use `python build/portable/prepare.py --vendor-dir src/vendor --output ../flyvis_build`; from this portable directory use the relative command above.

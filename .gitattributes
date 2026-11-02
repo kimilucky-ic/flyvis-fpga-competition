@@ -1,0 +1,21 @@
+# Normal documentation uses LF on every host.
+* text=auto eol=lf
+# These directories are byte-pinned by release/source manifests.
+# Prevent checkout conversion rather than weakening any hash check.
+/board/** -text
+/src/** -text
+/build/** -text
+/sim/** -text
+/skill/** -text
+/data/** -text
+/report/** -text
+/license -text
+/third_party_notices.md -text
+/.gitignore -text
+*.exe binary
+*.bit binary
+*.bin binary
+*.pt binary
+*.pdf binary
+*.pptx binary
+*.png binary

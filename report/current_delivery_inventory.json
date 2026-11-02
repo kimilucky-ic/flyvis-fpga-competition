@@ -1,8 +1,9 @@
 {
   "retained": "Current full-network runtime, all current neural sources/images, exact 56 platform dependencies, build/report/evidence/Skill package",
   "archive_branch": "archive/full-development-before-slim",
-  "runtime_unchanged": true,
   "neural_logic_unchanged": true,
   "vendor_files": 56,
-  "old_paths": "Archived source paths and unavailable historical research remain in archive branch; their original evidence scopes are unchanged."
+  "old_paths": "Archived source paths and unavailable historical research remain in archive branch; their original evidence scopes are unchanged.",
+  "runtime_compute_code_and_firmware_unchanged": true,
+  "packaging_update": "Attributes protect byte-pinned checkout; check/full requirements split; x86 reference build and 56-file source map documented."
 }
