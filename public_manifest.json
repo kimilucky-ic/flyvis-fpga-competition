@@ -651,8 +651,8 @@
   },
   {
     "path": "README.md",
-    "bytes": 3277,
-    "sha256": "c705184feb680fff71fe270790e70c49dd3d1a378dc7b433100cd99f180533bb"
+    "bytes": 3665,
+    "sha256": "ec7f777ccc4d44aa634859ea4f4a94502df2e47d47a0dad838312da6238e97f3"
   },
   {
     "path": "report/ai_chat_excerpts.json",
@@ -691,8 +691,8 @@
   },
   {
     "path": "report/amd_requirements.md",
-    "bytes": 3417,
-    "sha256": "971dff9d4b4b282ab7cebdaa2e9509fcb8eeba4dccf92f64a7992c9659d80ffa"
+    "bytes": 3649,
+    "sha256": "38ac4f61e902f8703a7393c1b611dc8b37466416b752e2692c8ce663a4f34a99"
   },
   {
     "path": "report/collaboration_selected.md",
@@ -706,8 +706,8 @@
   },
   {
     "path": "report/design_report.pdf",
-    "bytes": 775787,
-    "sha256": "a1214c9d8e23120464eb9390dc3d83b5609deee91575e3d23373d017776a8d74"
+    "bytes": 584596,
+    "sha256": "748d8498f451d493031506a0f7a863dd7bf2871298fd80b1f756afa58379057a"
   },
   {
     "path": "report/evidence/ddr_ring_summary.json",

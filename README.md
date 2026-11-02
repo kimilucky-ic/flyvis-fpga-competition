@@ -1,4 +1,6 @@
-# 果蝇生物视觉神经回路的 FPGA 硬件模拟
+# 生物神经网络的 FPGA 硬件化
+
+本项目探索把生物连接组约束的神经网络模型部署到芯片，让神经计算在硬件中持续运行。已实现的首个实例是完整 FlyVis 果蝇视觉网络；视觉输入用于检验神经活动与运动响应。面向未来，我们关注低能耗神经计算，以及脑机接口相关的神经建模与辅助计算。后两者是应用方向，不代表已完成人脑模拟或脑机接口实验。
 
 本仓库主分支只保留最新完整系统：45,669个模型神经元、1,513,231条连接、721项视觉输入，FP32/Euler状态递推。PL执行完整神经计算，PS负责摄像头输入与DDR记录，电脑展示神经活动与官方光流读出。
 
@@ -7,7 +9,7 @@
 - **运行实验：**[board/runtime](board/runtime/README.md)。Windows x64、Python3.12、原有Zynq-7020/PYNQ2.7板端环境。先安装requirements，再运行 `python run.py --check-only`；实际实验按说明生成并运行固定Notebook。
 - **查看硬件：**[src/neural](src/neural/README.md) 是最终8个神经计算RTL模块及50个初始化/映射数据文件。[src/vendor](src/vendor/README.md) 保留匹配构建要求的56项摄像头与平台依赖，原版权声明保留。
 - **构建固件：**[build/portable](build/portable/README.md)，使用Vivado2026.1。已有BIT/HWH直接随运行包提供。
-- **报告和海报：**[设计报告](report/design_report.pdf)、[海报PDF](report/poster_en_a4.pdf)、[可编辑海报](report/poster_en.pptx)、[技术说明](report/technical_report.md)。
+- **报告和海报：**[五页定稿报告](report/design_report.pdf)、[海报PDF](report/poster_en_a4.pdf)、[可编辑海报](report/poster_en.pptx)、[技术说明](report/technical_report.md)。
 - **研发过程：**[协作案例](report/ai_engineering_cases.md)包含两组真实短原文与两组明确标记的工程摘要；[14个Skill](skill/README.md)连同经验和验证依据保留。
 
 ![Competition poster](report/poster_preview.png)
@@ -29,3 +31,4 @@
 [完整研发归档分支](https://github.com/kimilucky-ic/flyvis-fpga-competition/tree/archive/full-development-before-slim)保留精简前全部文件，包括67节点、A/B路线、旧GUI和实验版本。历史证据中的旧路径从归档分支查看。主分支不再混入这些旧实现、工具缓存或重复网表。旧提交与本地实验未删除，Git历史未重写。需要只下载当前内容可用GitHub的Code → Download ZIP。
 
 许可与第三方范围见[声明](third_party_notices.md)及[平台依赖说明](build/vendor_dependency_review.md)。保留原声明不等于将第三方代码改为本项目许可证。
+
