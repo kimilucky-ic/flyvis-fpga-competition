@@ -17,7 +17,7 @@ git clone --config core.longpaths=true https://github.com/kimilucky-ic/flyvis-fp
 - **运行实验：**[board/runtime](board/runtime/README.md)。Windows x64、Python3.12、原有Zynq-7020/PYNQ2.7板端环境。自检安装 `requirements-check.txt`，再运行 `python run.py --check-only`；完整界面与官方光流安装 `requirements-full.txt`；实际实验按说明生成并运行固定Notebook。
 - **查看硬件：**[src/neural](src/neural/README.md) 是最终8个神经计算RTL模块及50个初始化/映射数据文件。[src/vendor](src/vendor/README.md) 保留匹配构建要求的56项摄像头与平台依赖，原版权声明保留。
 - **构建固件：**[build/portable](build/portable/README.md)，使用Vivado2026.1。已有BIT/HWH直接随运行包提供。
-- **报告和海报：**[五页定稿报告](report/design_report.pdf)、[海报PDF](report/poster_en_a4.pdf)、[可编辑海报](report/poster_en.pptx)、[技术说明](report/technical_report.md)。
+- **报告和海报：**[中文海报PPTX](report/poster_cn.pptx)、[五页定稿报告](report/design_report.pdf)、[海报PDF](report/poster_en_a4.pdf)、[可编辑海报](report/poster_en.pptx)、[技术说明](report/technical_report.md)。
 - **研发过程：**[协作案例](report/ai_engineering_cases.md)包含两组真实短原文与两组明确标记的工程摘要；[14个Skill](skill/README.md)连同经验和验证依据保留。
 
 ![Competition poster](report/poster_preview.png)
